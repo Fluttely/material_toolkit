@@ -1,6 +1,6 @@
 part of x_metrics_data;
 
-class XSpacingsData extends XSizes {
+class XSpacingsData extends XSizesTokens {
   XSpacingsData({
     double? none,
     double? extraSmall,
@@ -11,17 +11,15 @@ class XSpacingsData extends XSizes {
     double? large,
     double? extraLarge,
   }) : super(
-          none: none ?? XSizesTokens.none.value,
-          extraSmall: extraSmall ?? XSizesTokens.extraSmall.value,
-          small: small ?? XSizesTokens.small.value,
-          semiSmall: semiSmall ?? XSizesTokens.semiSmall.value,
-          medium: medium ?? XSizesTokens.medium.value,
-          semiLarge: semiLarge ?? XSizesTokens.semiLarge.value,
-          large: large ?? XSizesTokens.large.value,
-          extraLarge: extraLarge ?? XSizesTokens.extraLarge.value,
+          none: none ?? XSizesTokens().none,
+          extraSmall: extraSmall ?? XSizesTokens().extraSmall,
+          small: small ?? XSizesTokens().small,
+          semiSmall: semiSmall ?? XSizesTokens().semiSmall,
+          medium: medium ?? XSizesTokens().medium,
+          semiLarge: semiLarge ?? XSizesTokens().semiLarge,
+          large: large ?? XSizesTokens().large,
+          extraLarge: extraLarge ?? XSizesTokens().extraLarge,
         );
-
-  factory XSpacingsData._fallback() => XSpacingsData();
 
   // EdgeInsets padding() => EdgeInsets.all(none);
 }

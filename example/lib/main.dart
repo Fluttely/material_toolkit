@@ -10,19 +10,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialX(
-      metrics: XMetricsData.fallback(),
+      metrics: XMetricsData(),
       child: MaterialApp(
         theme: ThemeData(
-          // Define the default IconTheme
           iconTheme: const IconThemeData(
-            size: 30.0, // Set your default icon size here
+            size: 30.0,
           ),
-          // You can also define IconTheme specifically for dark mode
-          // darkTheme: ThemeData(
-          //   iconTheme: IconThemeData(
-          //     size: 30.0,
-          //   ),
-          // ),
         ),
         home: const HomePage(),
       ),
@@ -31,22 +24,25 @@ class MainApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final mX = MaterialX.of(context);
-    final theme = Theme.of(context);
-    final asd = theme.iconTheme.size;
+
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(mX.metrics.spacings.extraLarge),
+        child: Container(
+          color: Colors.red,
+          padding: XEdgeInsets().card, // Use your custom class here
           child: const Text('Hello World!'),
         ),
       ),
     );
   }
+}
+
+// Extension to access the private and public members of XEdgeInsets
+extension XEdgeInsetsFoundation on XEdgeInsets {
+  EdgeInsets get card => allExtraLarge;
 }

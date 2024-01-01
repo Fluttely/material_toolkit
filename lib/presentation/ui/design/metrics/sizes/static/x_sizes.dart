@@ -1,6 +1,6 @@
 part of x_metrics_data;
 
-abstract class XSizes {
+class XSizesTokens {
   final double none;
   final double extraSmall;
   final double small;
@@ -10,14 +10,25 @@ abstract class XSizes {
   final double large;
   final double extraLarge;
 
-  XSizes({
-    required this.none,
-    required this.extraSmall,
-    required this.small,
-    required this.semiSmall,
-    required this.medium,
-    required this.semiLarge,
-    required this.large,
-    required this.extraLarge,
-  });
+  XSizesTokens({
+    double? none,
+    double? extraSmall,
+    double? small,
+    double? semiSmall,
+    double? medium,
+    double? semiLarge,
+    double? large,
+    double? extraLarge,
+  })  : none = none ?? 0,
+        extraSmall = extraSmall ?? 4,
+        small = small ?? 8,
+        semiSmall = semiSmall ?? 12,
+        medium = medium ?? 16,
+        semiLarge = semiLarge ?? 20,
+        large = large ?? 24,
+        extraLarge = extraLarge ?? 32;
+}
+
+extension Adasd on XSizesTokens {
+  double get testValue => 18;
 }

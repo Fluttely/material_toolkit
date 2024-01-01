@@ -6,14 +6,10 @@ class XDurationsData {
   final Duration quick;
 
   const XDurationsData({
-    required this.areAnimationEnabled,
-    required this.regular,
-    required this.quick,
-  });
-
-  factory XDurationsData._fallback() => const XDurationsData(
-        areAnimationEnabled: true,
-        regular: Duration(milliseconds: 250),
-        quick: Duration(milliseconds: 100),
-      );
+    bool? areAnimationEnabled,
+    Duration? regular,
+    Duration? quick,
+  })  : areAnimationEnabled = areAnimationEnabled ?? true,
+        regular = regular ?? const Duration(milliseconds: 250),
+        quick = quick ?? const Duration(milliseconds: 100);
 }

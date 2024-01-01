@@ -3,5 +3,6 @@ library material_toolkit;
 export 'package:flutter/material.dart';
 
 export 'configuration/configuration.dart';
-export 'material_x/material_x.dart';
+export 'data/data.dart';
 export 'presentation/presentation.dart';
+export 'presentation/presenters/material_x.dart';

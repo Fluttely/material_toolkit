@@ -10,41 +10,60 @@ class XRadiusData {
   final Radius large;
   final Radius extraLarge;
 
-  const XRadiusData({
-    required this.none,
-    required this.extraSmall,
-    required this.small,
-    required this.semiSmall,
-    required this.medium,
-    required this.semiLarge,
-    required this.large,
-    required this.extraLarge,
-  });
+  XRadiusData({
+    Radius? none,
+    Radius? extraSmall,
+    Radius? small,
+    Radius? semiSmall,
+    Radius? medium,
+    Radius? semiLarge,
+    Radius? large,
+    Radius? extraLarge,
+  })  : none = none ?? Radius.circular(XSpacingsData().none * 2),
+        extraSmall = extraSmall ??
+            Radius.circular(XSpacingsData().extraSmall * 2),
+        small = small ?? Radius.circular(XSpacingsData().small * 2),
+        semiSmall = semiSmall ??
+            Radius.circular(XSpacingsData().semiSmall * 2),
+        medium =
+            medium ?? Radius.circular(XSpacingsData().medium * 2),
+        semiLarge = semiLarge ??
+            Radius.circular(XSpacingsData().semiLarge * 2),
+        large =
+            large ?? Radius.circular(XSpacingsData().semiLarge * 2),
+        extraLarge = extraLarge ??
+            Radius.circular(XSpacingsData().extraLarge * 2);
 
-  XRadiusData._fallback()
-      : none = Radius.circular(XSpacingsData._fallback().none),
-        extraSmall = Radius.circular(XSpacingsData._fallback().extraSmall),
-        small = Radius.circular(XSpacingsData._fallback().small),
-        semiSmall = Radius.circular(XSpacingsData._fallback().semiSmall),
-        medium = Radius.circular(XSpacingsData._fallback().medium),
-        semiLarge = Radius.circular(XSpacingsData._fallback().semiLarge),
-        large = Radius.circular(XSpacingsData._fallback().semiLarge),
-        extraLarge = Radius.circular(XSpacingsData._fallback().extraLarge);
-
-  XBorderRadiusData get border => XBorderRadiusData(this);
+  // XBorderRadiusData get border => XBorderRadiusData(this);
 }
 
-class XBorderRadiusData {
-  final XRadiusData _radius;
+// extension ASsda on XRadiusData {
+//   BorderRadius get border => switch (this) {
+//         // 0 => DrawerSignedInRootType.home,
+//         // 1 => DrawerSignedInRootType.findingMyselfGame,
+//         // _ => DrawerSignedInRootType.home,
+//         none => BorderRadius.all(_radius.none),
+//         extraSmall => BorderRadius.all(_radius.extraSmall),
+//         small => BorderRadius.all(_radius.small),
+//         semiSmall => BorderRadius.all(_radius.semiSmall),
+//         medium => BorderRadius.all(_radius.medium),
+//         semiLarge => BorderRadius.all(_radius.semiLarge),
+//         large => BorderRadius.all(_radius.semiLarge),
+//         extraLarge => BorderRadius.all(_radius.extraLarge),
+//       };
+// }
 
-  const XBorderRadiusData(this._radius);
+// class XBorderRadiusData {
+//   final XRadiusData _radius;
 
-  BorderRadius get none => BorderRadius.all(_radius.none);
-  BorderRadius get extraSmall => BorderRadius.all(_radius.extraSmall);
-  BorderRadius get small => BorderRadius.all(_radius.small);
-  BorderRadius get semiSmall => BorderRadius.all(_radius.semiSmall);
-  BorderRadius get medium => BorderRadius.all(_radius.medium);
-  BorderRadius get semiLarge => BorderRadius.all(_radius.semiLarge);
-  BorderRadius get large => BorderRadius.all(_radius.semiLarge);
-  BorderRadius get extraLarge => BorderRadius.all(_radius.extraLarge);
-}
+//   const XBorderRadiusData(this._radius);
+
+//   BorderRadius get none => BorderRadius.all(_radius.none);
+//   BorderRadius get extraSmall => BorderRadius.all(_radius.extraSmall);
+//   BorderRadius get small => BorderRadius.all(_radius.small);
+//   BorderRadius get semiSmall => BorderRadius.all(_radius.semiSmall);
+//   BorderRadius get medium => BorderRadius.all(_radius.medium);
+//   BorderRadius get semiLarge => BorderRadius.all(_radius.semiLarge);
+//   BorderRadius get large => BorderRadius.all(_radius.semiLarge);
+//   BorderRadius get extraLarge => BorderRadius.all(_radius.extraLarge);
+// }

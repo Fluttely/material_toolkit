@@ -1,6 +1,6 @@
 part of x_metrics_data;
 
-class XBoxSizesData extends XSizes {
+class XBoxSizesData extends XSizesTokens {
   XBoxSizesData({
     double? none,
     double? extraSmall,
@@ -11,15 +11,13 @@ class XBoxSizesData extends XSizes {
     double? large,
     double? extraLarge,
   }) : super(
-          none: none ?? XSizesTokens.none.value * 10,
-          extraSmall: extraSmall ?? XSizesTokens.extraSmall.value * 10,
-          small: small ?? XSizesTokens.small.value * 10,
-          semiSmall: semiSmall ?? XSizesTokens.semiSmall.value * 10,
-          medium: medium ?? XSizesTokens.medium.value * 10,
-          semiLarge: semiLarge ?? XSizesTokens.semiLarge.value * 10,
-          large: large ?? XSizesTokens.large.value * 10,
-          extraLarge: extraLarge ?? XSizesTokens.extraLarge.value * 10,
+          none: none ?? XSizesTokens().none * 10,
+          extraSmall: extraSmall ?? XSizesTokens().extraSmall * 10,
+          small: small ?? XSizesTokens().small * 10,
+          semiSmall: semiSmall ?? XSizesTokens().semiSmall * 10,
+          medium: medium ?? XSizesTokens().medium * 10,
+          semiLarge: semiLarge ?? XSizesTokens().semiLarge * 10,
+          large: large ?? XSizesTokens().large * 10,
+          extraLarge: extraLarge ?? XSizesTokens().extraLarge * 10,
         );
-
-  factory XBoxSizesData._fallback() => XBoxSizesData();
 }
