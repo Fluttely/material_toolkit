@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(children: const [
         AppCard(),
+        XCard(),
         AppListTile(),
       ]),
     );
@@ -47,7 +48,7 @@ class AppListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: XIconFoundation.homeLogo(
+      leading: AppIcon.homeLogo(
         Icons.menu,
       ),
     );
@@ -63,21 +64,39 @@ class AppCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // final mX = MaterialX.of(context);
 
-    return CustomPadding.listTile(
+    return AppPadding.listTile(
       child: Container(
         color: Colors.red,
-        margin: XEdgeInsets.cardMargin(),
-        padding: XEdgeInsets.cardPadding(),
-        child: const Text('Hello World!'),
+        margin: AppEdgeInsets.cardMargin(),
+        padding: AppEdgeInsets.cardPadding(),
+        child: AppText.ada('Hello World!'),
       ),
     );
   }
 }
 
-class CmosPaddingsConstants {
-  static EdgeInsets appCard = EdgeInsets.only(left: CmosSizes.extraLarge);
-}
+class XCard extends StatelessWidget {
+  const XCard({
+    super.key,
+  });
 
-class CmosSizes {
-  static double extraLarge = 32;
+  @override
+  Widget build(BuildContext context) {
+    final mX = MaterialX.of(context);
+
+    return XPadding.allExtraLarge(
+      child: Container(
+        color: Colors.red,
+        margin: XEdgeInsets.allLarge(),
+        padding: XEdgeInsets.allExtraLarge(),
+        child: XPadding(
+          padding: XEdgeInsets.all(mX.metrics.sizes.spacing.extraLarge),
+          child: XText(
+            'Hello World!',
+            style: mX.theme.textTheme.bodyLarge,
+          ),
+        ),
+      ),
+    );
+  }
 }

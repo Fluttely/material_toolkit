@@ -1,7 +1,7 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XText extends Text {
-  const XText.custom(
+  const XText(
     super.data, {
     super.style,
     super.key,

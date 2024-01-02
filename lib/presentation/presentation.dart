@@ -5,3 +5,4 @@ export 'ui/design/tokens/x_edge_insets.dart';
 export 'ui/design/tokens/x_gap.dart';
 export 'ui/design/tokens/x_icon.dart';
 export 'ui/design/tokens/x_padding.dart';
+export 'ui/design/tokens/x_text.dart';

@@ -1,8 +1,8 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XEdgeInsets extends EdgeInsets {
-  const XEdgeInsets.allCustom(double value) : super.all(value);
-  const XEdgeInsets.onlyCustom({
+  const XEdgeInsets.all(double value) : super.all(value);
+  const XEdgeInsets.only({
     double? left,
     double? top,
     double? right,
@@ -14,7 +14,7 @@ class XEdgeInsets extends EdgeInsets {
           bottom: bottom ?? 0.0,
         );
 
-  const XEdgeInsets.symetricCustom({
+  const XEdgeInsets.symmetric({
     double? horizontal,
     double? vertical,
   }) : super.symmetric(

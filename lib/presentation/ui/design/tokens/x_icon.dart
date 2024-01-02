@@ -1,7 +1,7 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XIcon extends Icon {
-  const XIcon.custom(
+  const XIcon(
     super.icon, {
     super.key,
     super.size,

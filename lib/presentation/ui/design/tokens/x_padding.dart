@@ -1,7 +1,7 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XPadding extends Padding {
-  const XPadding.custom({
+  const XPadding({
     super.key,
     required XEdgeInsets padding,
     super.child,
