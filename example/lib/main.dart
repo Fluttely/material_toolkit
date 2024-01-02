@@ -33,14 +33,28 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: const [
-        XMaterialCard(),
+        AppCard(),
+        AppListTile(),
       ]),
     );
   }
 }
 
-class XMaterialCard extends StatelessWidget {
-  const XMaterialCard({
+class AppListTile extends StatelessWidget {
+  const AppListTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: XIconFoundation.homeLogo(
+        Icons.menu,
+      ),
+    );
+  }
+}
+
+class AppCard extends StatelessWidget {
+  const AppCard({
     super.key,
   });
 
@@ -48,10 +62,10 @@ class XMaterialCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // final mX = MaterialX.of(context);
 
-    return XPaddingFoundation.card(
+    return XPaddingFoundation.listTile(
       child: Container(
         color: Colors.red,
-        padding: XEdgeInsetsFoundation.card(),
+        padding: XEdgeInsetsFoundation.cardPadding(),
         child: const Text('Hello World!'),
       ),
     );

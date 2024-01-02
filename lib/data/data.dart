@@ -1,1 +1,1 @@
-export 'services/material_x_service.dart';
+export 'services/x_service.dart';

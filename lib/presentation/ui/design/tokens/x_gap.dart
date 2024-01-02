@@ -1,33 +1,33 @@
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XGap extends Gap {
-  const XGap.custom(
+class XGapTokens extends Gap {
+  const XGapTokens.custom(
     double value, {
     super.key,
   }) : super(value);
 
-  XGap.none({super.key})
+  XGapTokens.none({super.key})
       : super(XService.instance.metrics.sizes.spacing.none);
 
-  XGap.extraSmall({super.key})
+  XGapTokens.extraSmall({super.key})
       : super(XService.instance.metrics.sizes.spacing.extraSmall);
 
-  XGap.small({super.key})
+  XGapTokens.small({super.key})
       : super(XService.instance.metrics.sizes.spacing.small);
 
-  XGap.semiSmall({super.key})
+  XGapTokens.semiSmall({super.key})
       : super(XService.instance.metrics.sizes.spacing.semiSmall);
 
-  XGap.medium({super.key})
+  XGapTokens.medium({super.key})
       : super(XService.instance.metrics.sizes.spacing.medium);
 
-  XGap.semiLarge({super.key})
+  XGapTokens.semiLarge({super.key})
       : super(XService.instance.metrics.sizes.spacing.semiLarge);
 
-  XGap.large({super.key})
+  XGapTokens.large({super.key})
       : super(XService.instance.metrics.sizes.spacing.large);
 
-  XGap.extraLarge({super.key})
+  XGapTokens.extraLarge({super.key})
       : super(XService.instance.metrics.sizes.spacing.extraLarge);
 }

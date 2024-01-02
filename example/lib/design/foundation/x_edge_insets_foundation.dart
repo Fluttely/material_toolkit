@@ -2,7 +2,7 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XEdgeInsetsFoundation extends XEdgeInsetsTokens {
-  XEdgeInsetsFoundation.card() : super.allExtraLarge();
+  XEdgeInsetsFoundation.cardPadding() : super.allExtraLarge();
   // EdgeInsets get card => XEdgeInsetsTokens.allCustom(value: value);
 
   // XEdgeInsetsFoundation();
