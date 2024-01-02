@@ -23,16 +23,17 @@ class XMaterialService {
   /// Initializes the Globals.
   /// It initializes necessary controllers and sets the _hasInit flag to true.
   /// This method should be called before accessing the instance.
-  static void initializeApp({required XMetricsData metrics}) {
+  static void initializeApp({
+    required ThemeData theme,
+    required XMetricsData metrics,
+  }) {
     if (!_hasInit) {
       _hasInit = true;
+      instance.theme = theme;
       instance.metrics = metrics;
     }
   }
 
+  late ThemeData theme;
   late XMetricsData metrics;
-}
-
-extension ThemeDataExtension on ThemeData {
-  XMetricsData get data => XMaterialService.instance.metrics;
 }

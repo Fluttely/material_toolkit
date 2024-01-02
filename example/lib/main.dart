@@ -1,6 +1,12 @@
 import 'package:example/example.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
+final theme = ThemeData(
+  iconTheme: const IconThemeData(
+    size: 30.0,
+  ),
+);
+
 void main() {
   runApp(const MainApp());
 }
@@ -11,12 +17,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialX(
+      theme: theme,
       child: MaterialApp(
-        theme: ThemeData(
-          iconTheme: const IconThemeData(
-            size: 30.0,
-          ),
-        ),
+        theme: theme,
         home: const HomePage(),
       ),
     );

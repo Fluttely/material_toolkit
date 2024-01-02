@@ -18,7 +18,7 @@
 // //     super.key,
 // //     this.color,
 // //     this.sizeType = AppIconSizeType.medium,
-// //   }): super();
+// //   });
 
 // //   @override
 // //   Widget build(BuildContext context) {
