@@ -1,17 +1,60 @@
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XGap extends StatelessWidget {
-  final double sizeType;
+class XGap extends Gap {
+  XGap.none({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.none,
+        );
 
-  const XGap(this.sizeType, {super.key});
+  XGap.allExtraSmall({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.extraSmall,
+        );
 
-  @override
-  Widget build(BuildContext context) {
-    // final mX = MaterialX.of(context);
-    return Gap(sizeType);
-  }
+  XGap.allSmall({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.small,
+        );
+
+  XGap.allSemiSmall({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.semiSmall,
+        );
+
+  XGap.allMedium({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.medium,
+        );
+
+  XGap.allSemiLarge({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.semiLarge,
+        );
+
+  XGap.allLarge({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.large,
+        );
+
+  XGap.allExtraLarge({super.key})
+      : super(
+          XMaterialService.instance.metrics.sizes.spacing.extraLarge,
+        );
 }
+
+
+// class XGap extends Gap {
+//   const XGap({
+//     super.key,
+//   }) : super(12);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     // final mX = MaterialX.of(context);
+//     return Gap(sizeType);
+//   }
+// }
 
 // enum XSizesTokens {
 //   none,

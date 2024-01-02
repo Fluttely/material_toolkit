@@ -14,7 +14,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.none,
+          padding: XEdgeInsetsTokens.none(),
           child: child,
         );
 
@@ -22,8 +22,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allExtraSmall,
+          padding: XEdgeInsetsTokens.allExtraSmall(),
           child: child,
         );
 
@@ -31,7 +30,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allSmall,
+          padding: XEdgeInsetsTokens.allSmall(),
           child: child,
         );
 
@@ -39,8 +38,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allSemiSmall,
+          padding: XEdgeInsetsTokens.allSemiSmall(),
           child: child,
         );
 
@@ -48,7 +46,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allMedium,
+          padding: XEdgeInsetsTokens.allMedium(),
           child: child,
         );
 
@@ -56,8 +54,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allSemiLarge,
+          padding: XEdgeInsetsTokens.allSemiLarge(),
           child: child,
         );
 
@@ -65,7 +62,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allLarge,
+          padding: XEdgeInsetsTokens.allLarge(),
           child: child,
         );
 
@@ -73,8 +70,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allExtraLarge,
+          padding: XEdgeInsetsTokens.allExtraLarge(),
           child: child,
         );
 
@@ -82,8 +78,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalExtraSmall,
+          padding: XEdgeInsetsTokens.horizontalExtraSmall(),
           child: child,
         );
 
@@ -91,8 +86,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalSmall,
+          padding: XEdgeInsetsTokens.horizontalSmall(),
           child: child,
         );
 
@@ -100,8 +94,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalSemiSmall,
+          padding: XEdgeInsetsTokens.horizontalSemiSmall(),
           child: child,
         );
 
@@ -109,8 +102,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalMedium,
+          padding: XEdgeInsetsTokens.horizontalMedium(),
           child: child,
         );
 
@@ -118,8 +110,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalSemiLarge,
+          padding: XEdgeInsetsTokens.horizontalSemiLarge(),
           child: child,
         );
 
@@ -127,8 +118,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalLarge,
+          padding: XEdgeInsetsTokens.horizontalLarge(),
           child: child,
         );
 
@@ -136,8 +126,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalExtraLarge,
+          padding: XEdgeInsetsTokens.horizontalExtraLarge(),
           child: child,
         );
 
@@ -145,8 +134,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalExtraSmall,
+          padding: XEdgeInsetsTokens.verticalExtraSmall(),
           child: child,
         );
 
@@ -154,8 +142,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalSmall,
+          padding: XEdgeInsetsTokens.verticalSmall(),
           child: child,
         );
 
@@ -163,8 +150,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalSemiSmall,
+          padding: XEdgeInsetsTokens.verticalSemiSmall(),
           child: child,
         );
 
@@ -172,8 +158,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalMedium,
+          padding: XEdgeInsetsTokens.verticalMedium(),
           child: child,
         );
 
@@ -181,8 +166,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalSemiLarge,
+          padding: XEdgeInsetsTokens.verticalSemiLarge(),
           child: child,
         );
 
@@ -190,8 +174,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalLarge,
+          padding: XEdgeInsetsTokens.verticalLarge(),
           child: child,
         );
 
@@ -199,8 +182,7 @@ class XPaddingTokens extends Padding {
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalExtraLarge,
+          padding: XEdgeInsetsTokens.verticalExtraLarge(),
           child: child,
         );
 }
