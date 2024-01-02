@@ -1,7 +1,7 @@
 part of x_metrics_data;
 
-class XSpacingsData extends XSizesTokens {
-  XSpacingsData({
+class XSpacingSizesData extends XSizesTokens {
+  XSpacingSizesData({
     double? none,
     double? extraSmall,
     double? small,

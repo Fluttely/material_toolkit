@@ -1,3 +1,4 @@
+import 'package:example/example.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 void main() {
@@ -10,7 +11,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialX(
-      metrics: XMetricsData(),
       child: MaterialApp(
         theme: ThemeData(
           iconTheme: const IconThemeData(
@@ -28,21 +28,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mX = MaterialX.of(context);
-
     return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.red,
-          padding: XEdgeInsets().card, // Use your custom class here
-          child: const Text('Hello World!'),
-        ),
-      ),
+      body: ListView(children: const [
+        XMaterialCard(),
+      ]),
     );
   }
 }
 
-// Extension to access the private and public members of XEdgeInsets
-extension XEdgeInsetsFoundation on XEdgeInsets {
-  EdgeInsets get card => allExtraLarge;
+class XMaterialCard extends StatelessWidget {
+  const XMaterialCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // final mX = MaterialX.of(context);
+
+    return XPaddingFoundation.card(
+      child: Container(
+        color: Colors.red,
+        padding: XEdgeInsetsFoundation.card,
+        child: const Text('Hello World!'),
+      ),
+    );
+  }
 }

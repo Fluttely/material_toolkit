@@ -1,15 +1,15 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class MaterialXService {
+class XMaterialService {
   // Private constructor for internal use to ensure singleton pattern.
-  MaterialXService._internal();
+  XMaterialService._internal();
 
   // The single instance of Globals.
-  static final MaterialXService _instance = MaterialXService._internal();
+  static final XMaterialService _instance = XMaterialService._internal();
 
   /// Gets the singleton instance of Globals.
   /// Throws an exception if called before the module is initialized.
-  static MaterialXService get instance {
+  static XMaterialService get instance {
     if (!_hasInit) {
       throw Exception(
           '''MaterialX must be initialized before use. Call Globals.init() on main() { Globals.init(); }.''');
@@ -23,10 +23,10 @@ class MaterialXService {
   /// Initializes the Globals.
   /// It initializes necessary controllers and sets the _hasInit flag to true.
   /// This method should be called before accessing the instance.
-  static void initializeApp({required XMetricsData themeSizes}) {
+  static void initializeApp({required XMetricsData metrics}) {
     if (!_hasInit) {
       _hasInit = true;
-      instance.metrics = themeSizes;
+      instance.metrics = metrics;
     }
   }
 
@@ -34,5 +34,5 @@ class MaterialXService {
 }
 
 extension ThemeDataExtension on ThemeData {
-  XMetricsData get data => MaterialXService.instance.metrics;
+  XMetricsData get data => XMaterialService.instance.metrics;
 }

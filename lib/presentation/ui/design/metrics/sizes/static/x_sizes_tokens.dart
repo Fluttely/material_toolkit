@@ -1,36 +1,34 @@
-// part of x_metrics_data;
+part of x_metrics_data;
 
-// class XSizesTokens {
-//   none(0),
-//   extraSmall(4),
-//   small(8),
-//   semiSmall(12),
-//   medium(16),
-//   semiLarge(20),
-//   large(24),
-//   extraLarge(32);
+class XSizesTokens {
+  final double none;
+  final double extraSmall;
+  final double small;
+  final double semiSmall;
+  final double medium;
+  final double semiLarge;
+  final double large;
+  final double extraLarge;
 
-//   final double value;
-//   const XSizesTokens(this.value);
-// }
+  XSizesTokens({
+    double? none,
+    double? extraSmall,
+    double? small,
+    double? semiSmall,
+    double? medium,
+    double? semiLarge,
+    double? large,
+    double? extraLarge,
+  })  : none = none ?? 0,
+        extraSmall = extraSmall ?? 4,
+        small = small ?? 8,
+        semiSmall = semiSmall ?? 12,
+        medium = medium ?? 16,
+        semiLarge = semiLarge ?? 20,
+        large = large ?? 24,
+        extraLarge = extraLarge ?? 32;
+}
 
-// extension ASD on XSizesTokens {
-//   static double get newEnum => 32;
-// }
-
-// // class XIcon extends Icon {
-// //   XIcon(
-// //     IconData icon, {
-// //     Key? key,
-// //     XSizesTokens? size,
-// //   }) : super(
-// //           icon,
-// //           key: key,
-// //           size: size?.value ??
-// //               Builder(
-// //                 builder: (context) {
-// //                   return Theme.of(context).iconTheme.size;
-// //                 },
-// //               ),
-// //         );
-// // }
+extension Adasd on XSizesTokens {
+  double get testValue => 18;
+}

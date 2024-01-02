@@ -1,235 +1,136 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XPaddingTokens extends Padding {
-  const XPaddingTokens.custom({
-    super.key,
-    required EdgeInsets padding,
-    required Widget child,
-  }) : super(
-          padding: padding,
-          child: child,
-        );
+class XEdgeInsetsTokens {
+  // final EdgeInsets padding;
 
-  XPaddingTokens.allNone({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allNone,
-          child: child,
-        );
+  // const XEdgeInsets.custom({
+  //   super.key,
+  //   required this.padding,
+  // });
 
-  XPaddingTokens.allExtraSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allExtraSmall,
-          child: child,
-        );
+   static EdgeInsets get allExtraLarge =>
+      XMaterialService.instance.metrics.sizes.edgeInsets.allExtraLarge;
 
-  XPaddingTokens.allSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allSmall,
-          child: child,
-        );
+  // padding = XMaterialService.instance.metrics.sizes.edgeInsets.allNone;
 
-  XPaddingTokens.allSemiSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allSemiSmall,
-          child: child,
-        );
+  // XEdgeInsets.allExtraSmall({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.allExtraSmall;
 
-  XPaddingTokens.allMedium({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allMedium,
-          child: child,
-        );
+  // XEdgeInsets.allSmall({
+  //   super.key,
+  // }) : padding = XMaterialService.instance.metrics.sizes.edgeInsets.allSmall;
 
-  XPaddingTokens.allSemiLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allSemiLarge,
-          child: child,
-        );
+  // XEdgeInsets.allSemiSmall({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.allSemiSmall;
 
-  XPaddingTokens.allLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allLarge,
-          child: child,
-        );
+  // XEdgeInsets.allMedium({
+  //   super.key,
+  // }) : padding = XMaterialService.instance.metrics.sizes.edgeInsets.allMedium;
 
-  XPaddingTokens.allExtraLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.allExtraLarge,
-          child: child,
-        );
+  // XEdgeInsets.allSemiLarge({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.allSemiLarge;
 
-  XPaddingTokens.horizontalNone({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.horizontalNone,
-          child: child,
-        );
+  // XEdgeInsets.allLarge({
+  //   super.key,
+  // }) : padding = XMaterialService.instance.metrics.sizes.edgeInsets.allLarge;
 
-  XPaddingTokens.horizontalExtraSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalExtraSmall,
-          child: child,
-        );
+  // XEdgeInsets.allExtraLarge({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.allExtraLarge;
 
-  XPaddingTokens.horizontalSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalSmall,
-          child: child,
-        );
+  // XEdgeInsets.horizontalNone({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.horizontalNone;
 
-  XPaddingTokens.horizontalSemiSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalSemiSmall,
-          child: child,
-        );
+  // XEdgeInsets.horizontalExtraSmall({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.horizontalExtraSmall;
 
-  XPaddingTokens.horizontalMedium({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalMedium,
-          child: child,
-        );
+  // XEdgeInsets.horizontalSmall({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.horizontalSmall;
 
-  XPaddingTokens.horizontalSemiLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalSemiLarge,
-          child: child,
-        );
+  // XEdgeInsets.horizontalSemiSmall({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.horizontalSemiSmall;
 
-  XPaddingTokens.horizontalLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalLarge,
-          child: child,
-        );
+  // XEdgeInsets.horizontalMedium({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.horizontalMedium;
 
-  XPaddingTokens.horizontalExtraLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.horizontalExtraLarge,
-          child: child,
-        );
+  // XEdgeInsets.horizontalSemiLarge({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.horizontalSemiLarge;
 
-  XPaddingTokens.verticalNone({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalNone,
-          child: child,
-        );
+  // XEdgeInsets.horizontalLarge({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.horizontalLarge;
 
-  XPaddingTokens.verticalExtraSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalExtraSmall,
-          child: child,
-        );
+  // XEdgeInsets.horizontalExtraLarge({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.horizontalExtraLarge;
 
-  XPaddingTokens.verticalSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalSmall,
-          child: child,
-        );
+  // XEdgeInsets.verticalNone({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.verticalNone;
 
-  XPaddingTokens.verticalSemiSmall({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalSemiSmall,
-          child: child,
-        );
+  // XEdgeInsets.verticalExtraSmall({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.verticalExtraSmall;
 
-  XPaddingTokens.verticalMedium({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalMedium,
-          child: child,
-        );
+  // XEdgeInsets.verticalSmall({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.verticalSmall;
 
-  XPaddingTokens.verticalSemiLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalSemiLarge,
-          child: child,
-        );
+  // XEdgeInsets.verticalSemiSmall({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.verticalSemiSmall;
 
-  XPaddingTokens.verticalLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalLarge,
-          child: child,
-        );
+  // XEdgeInsets.verticalMedium({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.verticalMedium;
 
-  XPaddingTokens.verticalExtraLarge({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding: XMaterialService
-              .instance.metrics.sizes.edgeInsets.verticalExtraLarge,
-          child: child,
-        );
+  // XEdgeInsets.verticalSemiLarge({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.verticalSemiLarge;
+
+  // XEdgeInsets.verticalLarge({
+  //   super.key,
+  // }) : padding =
+  //           XMaterialService.instance.metrics.sizes.edgeInsets.verticalLarge;
+
+  // XEdgeInsets.verticalExtraLarge({
+  //   super.key,
+  // }) : padding = XMaterialService
+  //           .instance.metrics.sizes.edgeInsets.verticalExtraLarge;
 
   // @override
   // Widget build(BuildContext context) {
   //   // final mX = MaterialX.of(context);
 
-  //   return Padding(
-  //padding: padding, //mX.metrics.sizes.edgeInsets.allExtraLarge,
-  //child: child,
-  //     child: chil,d,
+  //   return EdgeInsets.all(
+  //     padding: padding, //mX.metrics.sizes.edgeInsets.allExtraLarge,
   //   );
   // }
 }
@@ -366,12 +267,12 @@ class XPaddingTokens extends Padding {
 
 // class XPadding extends StatelessWidget {
 //   final XPadding padding;
-//   final Widget? child;
+
 
 //   const XPadding({
 //     Key? key,
 //     required this.padding,
-//     this.child,
+
 //   }) : super(key: key);
 
 //   @override
@@ -379,30 +280,29 @@ class XPaddingTokens extends Padding {
 //     final mX = MaterialX.of(context);
 
 //     return Padding(
-//padding: padding.toPadding(mX.metrics),
-//child: child,
-//       child: chil,d,
+//       padding: padding.toPadding(mX.metrics),
+
 //     );
 //   }
 // }
 
+
 // class XPadding extends StatelessWidget {
 //   final XPadding padding;
-//   final Widget? child;
+
 
 //   const XPadding({
 //     required this.padding,
 //     super.key,
-//     this.child,
+
 //   });
 
 //   @override
 //   Widget build(BuildContext context) {
 //     final theme = Theme.of(context).data;
 //     return Padding(
-//padding: padding.toPadding(theme),
-//child: child,
-//       child: chil,d,
+//       padding: padding.toPadding(theme),
+
 //     );
 //   }
 // }

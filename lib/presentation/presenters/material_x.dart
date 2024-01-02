@@ -10,11 +10,13 @@ class MaterialX extends InheritedWidget {
   /// Constructs a MaterialX widget.
   /// [metrics] can be used to provide custom theme metrics data.
   /// [child] is the subtree over which MaterialX will be available.
-  const MaterialX({
+  MaterialX({
     super.key,
-    required this.metrics,
+    XMetricsData? metrics,
     required super.child,
-  });
+  }) : metrics = metrics ?? XMetricsData() {
+    XMaterialService.initializeApp(metrics: this.metrics);
+  }
 
   /// Retrieves the nearest MaterialX instance in the widget tree.
   /// Throws an exception if not found in the widget tree.
