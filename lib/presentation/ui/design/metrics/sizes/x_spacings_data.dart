@@ -1,6 +1,6 @@
 part of x_metrics_data;
 
-class XSizesTokens {
+class XSpacingsData {
   final double none;
   final double extraSmall;
   final double small;
@@ -10,7 +10,7 @@ class XSizesTokens {
   final double large;
   final double extraLarge;
 
-  XSizesTokens({
+  XSpacingsData({
     double? none,
     double? extraSmall,
     double? small,

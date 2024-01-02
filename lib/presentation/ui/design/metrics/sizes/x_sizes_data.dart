@@ -3,17 +3,13 @@ part of x_metrics_data;
 class XSizesData {
   final XIconSizesData icon;
   final XBoxSizesData box;
-  final XSpacingSizesData spacing;
-  // final XEdgeInsetsSizesData edgeInsets;
+  final XSpacingsData spacing;
 
   XSizesData({
     XIconSizesData? icon,
     XBoxSizesData? box,
-    XSpacingSizesData? spacing,
-    // XEdgeInsetsSizesData? edgeInsets,
+    XSpacingsData? spacing,
   })  : icon = icon ?? XIconSizesData(),
         box = box ?? XBoxSizesData(),
-        spacing = spacing ?? XSpacingSizesData()
-  // ,edgeInsets = edgeInsets ?? XEdgeInsetsSizesData()
-  ;
+        spacing = spacing ?? XSpacingsData();
 }

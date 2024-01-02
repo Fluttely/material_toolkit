@@ -19,20 +19,20 @@ class XRadiusData {
     Radius? semiLarge,
     Radius? large,
     Radius? extraLarge,
-  })  : none = none ?? Radius.circular(XSpacingSizesData().none * 2),
+  })  : none = none ?? Radius.circular(XSpacingsData().none * 2),
         extraSmall = extraSmall ??
-            Radius.circular(XSpacingSizesData().extraSmall * 2),
-        small = small ?? Radius.circular(XSpacingSizesData().small * 2),
+            Radius.circular(XSpacingsData().extraSmall * 2),
+        small = small ?? Radius.circular(XSpacingsData().small * 2),
         semiSmall = semiSmall ??
-            Radius.circular(XSpacingSizesData().semiSmall * 2),
+            Radius.circular(XSpacingsData().semiSmall * 2),
         medium =
-            medium ?? Radius.circular(XSpacingSizesData().medium * 2),
+            medium ?? Radius.circular(XSpacingsData().medium * 2),
         semiLarge = semiLarge ??
-            Radius.circular(XSpacingSizesData().semiLarge * 2),
+            Radius.circular(XSpacingsData().semiLarge * 2),
         large =
-            large ?? Radius.circular(XSpacingSizesData().semiLarge * 2),
+            large ?? Radius.circular(XSpacingsData().semiLarge * 2),
         extraLarge = extraLarge ??
-            Radius.circular(XSpacingSizesData().extraLarge * 2);
+            Radius.circular(XSpacingsData().extraLarge * 2);
 
   // XBorderRadiusData get border => XBorderRadiusData(this);
 }

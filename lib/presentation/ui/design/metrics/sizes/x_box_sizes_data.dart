@@ -1,6 +1,6 @@
 part of x_metrics_data;
 
-class XBoxSizesData extends XSizesTokens {
+class XBoxSizesData extends XSpacingsData {
   XBoxSizesData({
     double? none,
     double? extraSmall,
@@ -11,13 +11,13 @@ class XBoxSizesData extends XSizesTokens {
     double? large,
     double? extraLarge,
   }) : super(
-          none: none ?? XSizesTokens().none * 10,
-          extraSmall: extraSmall ?? XSizesTokens().extraSmall * 10,
-          small: small ?? XSizesTokens().small * 10,
-          semiSmall: semiSmall ?? XSizesTokens().semiSmall * 10,
-          medium: medium ?? XSizesTokens().medium * 10,
-          semiLarge: semiLarge ?? XSizesTokens().semiLarge * 10,
-          large: large ?? XSizesTokens().large * 10,
-          extraLarge: extraLarge ?? XSizesTokens().extraLarge * 10,
+          none: none ?? XSpacingsData().none * 10,
+          extraSmall: extraSmall ?? XSpacingsData().extraSmall * 10,
+          small: small ?? XSpacingsData().small * 10,
+          semiSmall: semiSmall ?? XSpacingsData().semiSmall * 10,
+          medium: medium ?? XSpacingsData().medium * 10,
+          semiLarge: semiLarge ?? XSpacingsData().semiLarge * 10,
+          large: large ?? XSpacingsData().large * 10,
+          extraLarge: extraLarge ?? XSpacingsData().extraLarge * 10,
         );
 }
