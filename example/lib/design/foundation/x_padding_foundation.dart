@@ -5,9 +5,4 @@ class XPaddingFoundation extends XPaddingTokens {
     super.key,
     required Widget child,
   }) : super.allExtraLarge(child: child);
-
-  XPaddingFoundation.card2({
-    super.key,
-    required Widget child,
-  }) : super.allExtraLarge(child: child);
 }

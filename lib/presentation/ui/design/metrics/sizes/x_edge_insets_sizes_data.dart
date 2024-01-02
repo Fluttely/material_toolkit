@@ -1,7 +1,7 @@
 part of x_metrics_data;
 
 class XEdgeInsetsSizesData {
-  final EdgeInsets allNone;
+  final EdgeInsets none;
   final EdgeInsets allExtraSmall;
   final EdgeInsets allSmall;
   final EdgeInsets allSemiSmall;
@@ -9,7 +9,6 @@ class XEdgeInsetsSizesData {
   final EdgeInsets allSemiLarge;
   final EdgeInsets allLarge;
   final EdgeInsets allExtraLarge;
-  final EdgeInsets horizontalNone;
   final EdgeInsets horizontalExtraSmall;
   final EdgeInsets horizontalSmall;
   final EdgeInsets horizontalSemiSmall;
@@ -17,7 +16,6 @@ class XEdgeInsetsSizesData {
   final EdgeInsets horizontalSemiLarge;
   final EdgeInsets horizontalLarge;
   final EdgeInsets horizontalExtraLarge;
-  final EdgeInsets verticalNone;
   final EdgeInsets verticalExtraSmall;
   final EdgeInsets verticalSmall;
   final EdgeInsets verticalSemiSmall;
@@ -27,7 +25,7 @@ class XEdgeInsetsSizesData {
   final EdgeInsets verticalExtraLarge;
 
   XEdgeInsetsSizesData({
-    EdgeInsets? allNone,
+    EdgeInsets? none,
     EdgeInsets? allExtraSmall,
     EdgeInsets? allSmall,
     EdgeInsets? allSemiSmall,
@@ -51,7 +49,7 @@ class XEdgeInsetsSizesData {
     EdgeInsets? verticalSemiLarge,
     EdgeInsets? verticalLarge,
     EdgeInsets? verticalExtraLarge,
-  })  : allNone = allNone ?? EdgeInsets.all(XSpacingSizesData().none),
+  })  : none = none ?? EdgeInsets.all(XSpacingSizesData().none),
         allExtraSmall =
             allExtraSmall ?? EdgeInsets.all(XSpacingSizesData().extraSmall),
         allSmall = allSmall ?? EdgeInsets.all(XSpacingSizesData().small),
@@ -63,8 +61,6 @@ class XEdgeInsetsSizesData {
         allLarge = allLarge ?? EdgeInsets.all(XSpacingSizesData().large),
         allExtraLarge =
             allExtraLarge ?? EdgeInsets.all(XSpacingSizesData().extraLarge),
-        horizontalNone = horizontalNone ??
-            EdgeInsets.symmetric(horizontal: XSpacingSizesData().none),
         horizontalExtraSmall = horizontalExtraSmall ??
             EdgeInsets.symmetric(horizontal: XSpacingSizesData().extraSmall),
         horizontalSmall = horizontalSmall ??
@@ -79,8 +75,6 @@ class XEdgeInsetsSizesData {
             EdgeInsets.symmetric(horizontal: XSpacingSizesData().large),
         horizontalExtraLarge = horizontalExtraLarge ??
             EdgeInsets.symmetric(horizontal: XSpacingSizesData().extraLarge),
-        verticalNone = verticalNone ??
-            EdgeInsets.symmetric(vertical: XSpacingSizesData().none),
         verticalExtraSmall = verticalExtraSmall ??
             EdgeInsets.symmetric(vertical: XSpacingSizesData().extraSmall),
         verticalSmall = verticalSmall ??

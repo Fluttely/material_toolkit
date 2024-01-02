@@ -10,11 +10,11 @@ class XPaddingTokens extends Padding {
           child: child,
         );
 
-  XPaddingTokens.allNone({
+  XPaddingTokens.none({
     super.key,
     required Widget child,
   }) : super(
-          padding: XMaterialService.instance.metrics.sizes.edgeInsets.allNone,
+          padding: XMaterialService.instance.metrics.sizes.edgeInsets.none,
           child: child,
         );
 
@@ -75,15 +75,6 @@ class XPaddingTokens extends Padding {
   }) : super(
           padding:
               XMaterialService.instance.metrics.sizes.edgeInsets.allExtraLarge,
-          child: child,
-        );
-
-  XPaddingTokens.horizontalNone({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.horizontalNone,
           child: child,
         );
 
@@ -150,15 +141,6 @@ class XPaddingTokens extends Padding {
           child: child,
         );
 
-  XPaddingTokens.verticalNone({
-    super.key,
-    required Widget child,
-  }) : super(
-          padding:
-              XMaterialService.instance.metrics.sizes.edgeInsets.verticalNone,
-          child: child,
-        );
-
   XPaddingTokens.verticalExtraSmall({
     super.key,
     required Widget child,
@@ -221,17 +203,6 @@ class XPaddingTokens extends Padding {
               .instance.metrics.sizes.edgeInsets.verticalExtraLarge,
           child: child,
         );
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   // final mX = MaterialX.of(context);
-
-  //   return Padding(
-  //padding: padding, //mX.metrics.sizes.edgeInsets.allExtraLarge,
-  //child: child,
-  //     child: chil,d,
-  //   );
-  // }
 }
 
 // class XPaddingData {

@@ -48,7 +48,7 @@ class XMaterialCard extends StatelessWidget {
     return XPaddingFoundation.card(
       child: Container(
         color: Colors.red,
-        padding: XEdgeInsetsFoundation.card,
+        padding: XEdgeInsetsFoundation.card(),
         child: const Text('Hello World!'),
       ),
     );

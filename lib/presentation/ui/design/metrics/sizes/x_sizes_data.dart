@@ -4,15 +4,16 @@ class XSizesData {
   final XIconSizesData icon;
   final XBoxSizesData box;
   final XSpacingSizesData spacing;
-  final XEdgeInsetsSizesData edgeInsets;
+  // final XEdgeInsetsSizesData edgeInsets;
 
   XSizesData({
     XIconSizesData? icon,
     XBoxSizesData? box,
     XSpacingSizesData? spacing,
-    XEdgeInsetsSizesData? edgeInsets,
+    // XEdgeInsetsSizesData? edgeInsets,
   })  : icon = icon ?? XIconSizesData(),
         box = box ?? XBoxSizesData(),
-        spacing = spacing ?? XSpacingSizesData(),
-        edgeInsets = edgeInsets ?? XEdgeInsetsSizesData();
+        spacing = spacing ?? XSpacingSizesData()
+  // ,edgeInsets = edgeInsets ?? XEdgeInsetsSizesData()
+  ;
 }

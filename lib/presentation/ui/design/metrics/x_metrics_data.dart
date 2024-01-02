@@ -8,7 +8,7 @@ part 'shadows/x_box_shadows_data.dart';
 part 'shapes/x_radius_data.dart';
 part 'sizes/static/x_sizes_tokens.dart';
 part 'sizes/x_box_sizes_data.dart';
-part 'sizes/x_edge_insets_sizes_data.dart';
+// part 'sizes/x_edge_insets_sizes_data.dart';
 part 'sizes/x_icon_sizes_data.dart';
 part 'sizes/x_sizes_data.dart';
 part 'sizes/x_spacing_sizes_data.dart';
