@@ -1,6 +1,10 @@
 import 'package:example/example.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
+// class XThemeData {
+//   final XMetricsData metrics;
+// }
+
 final theme = ThemeData(
   iconTheme: const IconThemeData(
     size: 30.0,
@@ -16,12 +20,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialX(
+    return MaterialApp(
       theme: theme,
-      child: MaterialApp(
-        theme: theme,
-        home: const HomePage(),
-      ),
+      home: const HomePage(),
     );
   }
 }
@@ -62,12 +63,21 @@ class AppCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // final mX = MaterialX.of(context);
 
-    return XPaddingFoundation.listTile(
+    return CustomPadding.listTile(
       child: Container(
         color: Colors.red,
-        padding: XEdgeInsetsFoundation.cardPadding(),
+        margin: XEdgeInsets.cardMargin(),
+        padding: XEdgeInsets.cardPadding(),
         child: const Text('Hello World!'),
       ),
     );
   }
+}
+
+class CmosPaddingsConstants {
+  static EdgeInsets appCard = EdgeInsets.only(left: CmosSizes.extraLarge);
+}
+
+class CmosSizes {
+  static double extraLarge = 32;
 }

@@ -1,119 +1,119 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XPaddingTokens extends Padding {
-  const XPaddingTokens.custom({
+class XPadding extends Padding {
+  const XPadding.custom({
     super.key,
-    required XEdgeInsetsTokens padding,
+    required XEdgeInsets padding,
     super.child,
   }) : super(padding: padding);
 
-  XPaddingTokens.none({
+  XPadding.none({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.none());
+  }) : super(padding: XEdgeInsets.none());
 
-  XPaddingTokens.allExtraSmall({
+  XPadding.allExtraSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allExtraSmall());
+  }) : super(padding: XEdgeInsets.allExtraSmall());
 
-  XPaddingTokens.allSmall({
+  XPadding.allSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allSmall());
+  }) : super(padding: XEdgeInsets.allSmall());
 
-  XPaddingTokens.allSemiSmall({
+  XPadding.allSemiSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allSemiSmall());
+  }) : super(padding: XEdgeInsets.allSemiSmall());
 
-  XPaddingTokens.allMedium({
+  XPadding.allMedium({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allMedium());
+  }) : super(padding: XEdgeInsets.allMedium());
 
-  XPaddingTokens.allSemiLarge({
+  XPadding.allSemiLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allSemiLarge());
+  }) : super(padding: XEdgeInsets.allSemiLarge());
 
-  XPaddingTokens.allLarge({
+  XPadding.allLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allLarge());
+  }) : super(padding: XEdgeInsets.allLarge());
 
-  XPaddingTokens.allExtraLarge({
+  XPadding.allExtraLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.allExtraLarge());
+  }) : super(padding: XEdgeInsets.allExtraLarge());
 
-  XPaddingTokens.horizontalExtraSmall({
+  XPadding.horizontalExtraSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalExtraSmall());
+  }) : super(padding: XEdgeInsets.horizontalExtraSmall());
 
-  XPaddingTokens.horizontalSmall({
+  XPadding.horizontalSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalSmall());
+  }) : super(padding: XEdgeInsets.horizontalSmall());
 
-  XPaddingTokens.horizontalSemiSmall({
+  XPadding.horizontalSemiSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalSemiSmall());
+  }) : super(padding: XEdgeInsets.horizontalSemiSmall());
 
-  XPaddingTokens.horizontalMedium({
+  XPadding.horizontalMedium({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalMedium());
+  }) : super(padding: XEdgeInsets.horizontalMedium());
 
-  XPaddingTokens.horizontalSemiLarge({
+  XPadding.horizontalSemiLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalSemiLarge());
+  }) : super(padding: XEdgeInsets.horizontalSemiLarge());
 
-  XPaddingTokens.horizontalLarge({
+  XPadding.horizontalLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalLarge());
+  }) : super(padding: XEdgeInsets.horizontalLarge());
 
-  XPaddingTokens.horizontalExtraLarge({
+  XPadding.horizontalExtraLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.horizontalExtraLarge());
+  }) : super(padding: XEdgeInsets.horizontalExtraLarge());
 
-  XPaddingTokens.verticalExtraSmall({
+  XPadding.verticalExtraSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalExtraSmall());
+  }) : super(padding: XEdgeInsets.verticalExtraSmall());
 
-  XPaddingTokens.verticalSmall({
+  XPadding.verticalSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalSmall());
+  }) : super(padding: XEdgeInsets.verticalSmall());
 
-  XPaddingTokens.verticalSemiSmall({
+  XPadding.verticalSemiSmall({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalSemiSmall());
+  }) : super(padding: XEdgeInsets.verticalSemiSmall());
 
-  XPaddingTokens.verticalMedium({
+  XPadding.verticalMedium({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalMedium());
+  }) : super(padding: XEdgeInsets.verticalMedium());
 
-  XPaddingTokens.verticalSemiLarge({
+  XPadding.verticalSemiLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalSemiLarge());
+  }) : super(padding: XEdgeInsets.verticalSemiLarge());
 
-  XPaddingTokens.verticalLarge({
+  XPadding.verticalLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalLarge());
+  }) : super(padding: XEdgeInsets.verticalLarge());
 
-  XPaddingTokens.verticalExtraLarge({
+  XPadding.verticalExtraLarge({
     super.key,
     super.child,
-  }) : super(padding: XEdgeInsetsTokens.verticalExtraLarge());
+  }) : super(padding: XEdgeInsets.verticalExtraLarge());
 }

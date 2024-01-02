@@ -193,7 +193,7 @@
 
 //   @override
 //   Widget build(BuildContext context) {
-//     XMaterialService.initializeApp(themeSizes: xMetrics ?? XMetricsData());
+//     XService.initializeApp(themeSizes: xMetrics ?? XMetricsData());
 
 //     return MaterialApp.router(
 //       routerDelegate: routerDelegate,

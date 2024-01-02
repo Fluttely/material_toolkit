@@ -1,48 +1,48 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XIconTokens extends Icon {
-  const XIconTokens.custom(
+class XIcon extends Icon {
+  const XIcon.custom(
     super.icon, {
     super.key,
     super.size,
   });
 
-  XIconTokens.none(
+  XIcon.none(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.none);
 
-  XIconTokens.extraSmall(
+  XIcon.extraSmall(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.extraSmall);
 
-  XIconTokens.small(
+  XIcon.small(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.small);
 
-  XIconTokens.semiSmall(
+  XIcon.semiSmall(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.semiSmall);
 
-  XIconTokens.medium(
+  XIcon.medium(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.medium);
 
-  XIconTokens.semiLarge(
+  XIcon.semiLarge(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.semiLarge);
 
-  XIconTokens.large(
+  XIcon.large(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.large);
 
-  XIconTokens.extraLarge(
+  XIcon.extraLarge(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.sizes.icon.extraLarge);

@@ -1,83 +1,83 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XTextTokens extends Text {
-  const XTextTokens.custom(
+class XText extends Text {
+  const XText.custom(
     super.data, {
     super.style,
     super.key,
   });
 
-  XTextTokens.displayLarge(
+  XText.displayLarge(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.displayLarge!);
 
-  XTextTokens.displayMedium(
+  XText.displayMedium(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.displayMedium!);
 
-  XTextTokens.displaySmall(
+  XText.displaySmall(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.displaySmall!);
 
-  XTextTokens.headlineLarge(
+  XText.headlineLarge(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.headlineLarge!);
 
-  XTextTokens.headlineMedium(
+  XText.headlineMedium(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.headlineMedium!);
 
-  XTextTokens.headlineSmall(
+  XText.headlineSmall(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.headlineSmall!);
 
-  XTextTokens.titleLarge(
+  XText.titleLarge(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.titleLarge!);
 
-  XTextTokens.titleMedium(
+  XText.titleMedium(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.titleMedium!);
 
-  XTextTokens.titleSmall(
+  XText.titleSmall(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.titleSmall!);
 
-  XTextTokens.bodyLarge(
+  XText.bodyLarge(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.bodyLarge!);
 
-  XTextTokens.bodyMedium(
+  XText.bodyMedium(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.bodyMedium!);
 
-  XTextTokens.bodySmall(
+  XText.bodySmall(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.bodySmall!);
 
-  XTextTokens.labelLarge(
+  XText.labelLarge(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.labelLarge!);
 
-  XTextTokens.labelMedium(
+  XText.labelMedium(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.labelMedium!);
 
-  XTextTokens.labelSmall(
+  XText.labelSmall(
     super.data, {
     super.key,
   }) : super(style: XService.instance.theme.textTheme.labelSmall!);
