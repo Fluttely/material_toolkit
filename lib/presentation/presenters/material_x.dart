@@ -27,7 +27,7 @@ class MaterialX extends InheritedWidget {
 //       GetIt.I.registerSingleton<AppModel>(AppModel());
 //     }
 
-    XMaterialService.initializeApp(
+    XService.initializeApp(
       theme: this.theme,
       metrics: this.metrics,
     );

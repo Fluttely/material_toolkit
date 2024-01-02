@@ -1,114 +1,84 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XText extends Text {
-  const XText.custom(
+class XTextTokens extends Text {
+  const XTextTokens.custom(
     super.data, {
     super.style,
     super.key,
   });
 
-  XText.displayLarge(
+  XTextTokens.displayLarge(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.displayLarge!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.displayLarge!);
 
-  XText.displayMedium(
+  XTextTokens.displayMedium(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.displayMedium!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.displayMedium!);
 
-  XText.displaySmall(
+  XTextTokens.displaySmall(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.displaySmall!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.displaySmall!);
 
-  XText.headlineLarge(
+  XTextTokens.headlineLarge(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.headlineLarge!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.headlineLarge!);
 
-  XText.headlineMedium(
+  XTextTokens.headlineMedium(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.headlineMedium!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.headlineMedium!);
 
-  XText.headlineSmall(
+  XTextTokens.headlineSmall(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.headlineSmall!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.headlineSmall!);
 
-  XText.titleLarge(
+  XTextTokens.titleLarge(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.titleLarge!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.titleLarge!);
 
-  XText.titleMedium(
+  XTextTokens.titleMedium(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.titleMedium!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.titleMedium!);
 
-  XText.titleSmall(
+  XTextTokens.titleSmall(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.titleSmall!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.titleSmall!);
 
-  XText.bodyLarge(
+  XTextTokens.bodyLarge(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.bodyLarge!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.bodyLarge!);
 
-  XText.bodyMedium(
+  XTextTokens.bodyMedium(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.bodyMedium!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.bodyMedium!);
 
-  XText.bodySmall(
+  XTextTokens.bodySmall(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.bodySmall!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.bodySmall!);
 
-  XText.labelLarge(
+  XTextTokens.labelLarge(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.labelLarge!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.labelLarge!);
 
-  XText.labelMedium(
+  XTextTokens.labelMedium(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.labelMedium!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.labelMedium!);
 
-  XText.labelSmall(
+  XTextTokens.labelSmall(
     super.data, {
     super.key,
-  }) : super(
-          style: XMaterialService.instance.theme.textTheme.labelSmall!,
-        );
+  }) : super(style: XService.instance.theme.textTheme.labelSmall!);
 }

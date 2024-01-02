@@ -29,113 +29,113 @@ class XEdgeInsetsTokens extends EdgeInsets {
 
   XEdgeInsetsTokens.none()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.none,
+          XService.instance.metrics.sizes.spacing.none,
         );
 
   XEdgeInsetsTokens.allExtraSmall()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.extraSmall,
+          XService.instance.metrics.sizes.spacing.extraSmall,
         );
 
   XEdgeInsetsTokens.allSmall()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.small,
+          XService.instance.metrics.sizes.spacing.small,
         );
 
   XEdgeInsetsTokens.allSemiSmall()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.semiSmall,
+          XService.instance.metrics.sizes.spacing.semiSmall,
         );
 
   XEdgeInsetsTokens.allMedium()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.medium,
+          XService.instance.metrics.sizes.spacing.medium,
         );
 
   XEdgeInsetsTokens.allSemiLarge()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.semiLarge,
+          XService.instance.metrics.sizes.spacing.semiLarge,
         );
 
   XEdgeInsetsTokens.allLarge()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.large,
+          XService.instance.metrics.sizes.spacing.large,
         );
 
   XEdgeInsetsTokens.allExtraLarge()
       : super.all(
-          XMaterialService.instance.metrics.sizes.spacing.extraLarge,
+          XService.instance.metrics.sizes.spacing.extraLarge,
         );
 
   XEdgeInsetsTokens.horizontalExtraSmall()
       : super.symmetric(
           horizontal:
-              XMaterialService.instance.metrics.sizes.spacing.extraSmall,
+              XService.instance.metrics.sizes.spacing.extraSmall,
         );
 
   XEdgeInsetsTokens.horizontalSmall()
       : super.symmetric(
-          horizontal: XMaterialService.instance.metrics.sizes.spacing.small,
+          horizontal: XService.instance.metrics.sizes.spacing.small,
         );
 
   XEdgeInsetsTokens.horizontalSemiSmall()
       : super.symmetric(
-          horizontal: XMaterialService.instance.metrics.sizes.spacing.semiSmall,
+          horizontal: XService.instance.metrics.sizes.spacing.semiSmall,
         );
 
   XEdgeInsetsTokens.horizontalMedium()
       : super.symmetric(
-          horizontal: XMaterialService.instance.metrics.sizes.spacing.medium,
+          horizontal: XService.instance.metrics.sizes.spacing.medium,
         );
 
   XEdgeInsetsTokens.horizontalSemiLarge()
       : super.symmetric(
-          horizontal: XMaterialService.instance.metrics.sizes.spacing.semiLarge,
+          horizontal: XService.instance.metrics.sizes.spacing.semiLarge,
         );
 
   XEdgeInsetsTokens.horizontalLarge()
       : super.symmetric(
-          horizontal: XMaterialService.instance.metrics.sizes.spacing.large,
+          horizontal: XService.instance.metrics.sizes.spacing.large,
         );
 
   XEdgeInsetsTokens.horizontalExtraLarge()
       : super.symmetric(
           horizontal:
-              XMaterialService.instance.metrics.sizes.spacing.extraLarge,
+              XService.instance.metrics.sizes.spacing.extraLarge,
         );
 
   XEdgeInsetsTokens.verticalExtraSmall()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.extraSmall,
+          vertical: XService.instance.metrics.sizes.spacing.extraSmall,
         );
 
   XEdgeInsetsTokens.verticalSmall()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.small,
+          vertical: XService.instance.metrics.sizes.spacing.small,
         );
 
   XEdgeInsetsTokens.verticalSemiSmall()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.semiSmall,
+          vertical: XService.instance.metrics.sizes.spacing.semiSmall,
         );
 
   XEdgeInsetsTokens.verticalMedium()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.medium,
+          vertical: XService.instance.metrics.sizes.spacing.medium,
         );
 
   XEdgeInsetsTokens.verticalSemiLarge()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.semiLarge,
+          vertical: XService.instance.metrics.sizes.spacing.semiLarge,
         );
 
   XEdgeInsetsTokens.verticalLarge()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.large,
+          vertical: XService.instance.metrics.sizes.spacing.large,
         );
 
   XEdgeInsetsTokens.verticalExtraLarge()
       : super.symmetric(
-          vertical: XMaterialService.instance.metrics.sizes.spacing.extraLarge,
+          vertical: XService.instance.metrics.sizes.spacing.extraLarge,
         );
 }

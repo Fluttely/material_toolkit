@@ -1,15 +1,15 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XMaterialService {
+class XService {
   // Private constructor for internal use to ensure singleton pattern.
-  XMaterialService._internal();
+  XService._internal();
 
   // The single instance of Globals.
-  static final XMaterialService _instance = XMaterialService._internal();
+  static final XService _instance = XService._internal();
 
   /// Gets the singleton instance of Globals.
   /// Throws an exception if called before the module is initialized.
-  static XMaterialService get instance {
+  static XService get instance {
     if (!_hasInit) {
       throw Exception(
           '''MaterialX must be initialized before use. Call Globals.init() on main() { Globals.init(); }.''');
