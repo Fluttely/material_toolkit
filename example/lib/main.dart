@@ -5,12 +5,13 @@ import 'package:material_toolkit/material_toolkit.dart';
 //   final XMetricsData metrics;
 // }
 
-final theme = ThemeData(
-  iconTheme: const IconThemeData(
-
-    size: 24.0,
-  ),
-);
+ThemeData theme(BuildContext context) => ThemeData(
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.red)
+          .copyWith(background: Colors.blue),
+      iconTheme: const IconThemeData(
+          // size: MaterialX.of(context).metrics.iconSizes.medium,
+          ),
+    );
 
 void main() {
   runApp(const MainApp());
@@ -22,11 +23,22 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialX(
-      theme: theme,
-      child: MaterialApp(
-        theme: theme,
-        home: const HomePage(),
-      ),
+      theme: theme(context),
+      child: const App(),
+    );
+  }
+}
+
+class App extends StatelessWidget {
+  const App({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: theme(context),
+      home: const HomePage(),
     );
   }
 }
@@ -38,16 +50,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: [
-        AppCard(),
-        XCard(),
-        // AppListTile(),
+        const AppCard(),
+        const XCard(),
+        const AppListTile(),
         XIcon.large(
           Icons.menu,
         ),
         Icon(
           Icons.menu,
           size: 24,
+          color: XColor.tertiary(context),
         ),
+        AppIcon.bottomNavigation(Icons.menu),
       ]),
     );
   }
@@ -59,7 +73,7 @@ class AppListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: AppIcon.homeLogo(
+      leading: AppIcon.bottomNavigation(
         Icons.menu,
       ),
     );
@@ -77,7 +91,7 @@ class AppCard extends StatelessWidget {
 
     return AppPadding.listTile(
       child: Container(
-        color: Colors.red,
+        color: XColor.error(context),
         margin: AppEdgeInsets.cardMargin(),
         padding: AppEdgeInsets.cardPadding(),
         child: AppText.ada('Hello World 1!'),

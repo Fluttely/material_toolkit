@@ -1,8 +1,14 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class AppIcon extends XIcon {
-   AppIcon.homeLogo(
+  AppIcon.bottomNavigation(
     super.icon, {
     super.key,
-  }) : super.large();
+  }) : super(
+          size: XService.instance.metrics.iconSizes.large,
+        );
 }
+
+// extension Aasdsad on XIcon {
+//   XIcon homeLogo(icon) => XIcon.large(icon);
+// }
