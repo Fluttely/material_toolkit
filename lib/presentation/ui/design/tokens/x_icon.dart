@@ -10,40 +10,20 @@ class XIcon extends Icon {
   XIcon.none(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.none);
-
-  XIcon.extraSmall(
-    super.icon, {
-    super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.extraSmall);
+  }) : super(size: XService.instance.metrics.iconSizes.none);
 
   XIcon.small(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.small);
-
-  XIcon.semiSmall(
-    super.icon, {
-    super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.semiSmall);
+  }) : super(size: XService.instance.metrics.iconSizes.small);
 
   XIcon.medium(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.medium);
-
-  XIcon.semiLarge(
-    super.icon, {
-    super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.semiLarge);
+  }) : super(size: XService.instance.metrics.iconSizes.medium);
 
   XIcon.large(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.large);
-
-  XIcon.extraLarge(
-    super.icon, {
-    super.key,
-  }) : super(size: XService.instance.metrics.sizes.icon.extraLarge);
+  }) : super(size: XService.instance.metrics.iconSizes.large);
 }

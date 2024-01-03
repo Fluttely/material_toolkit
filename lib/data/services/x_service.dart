@@ -12,7 +12,7 @@ class XService {
   static XService get instance {
     if (!_hasInit) {
       throw Exception(
-          '''MaterialX must be initialized before use. Call Globals.init() on main() { Globals.init(); }.''');
+          '''XService must be initialized before use. Call XService.init() on main() { XService.init(); }.''');
     }
     return _instance;
   }

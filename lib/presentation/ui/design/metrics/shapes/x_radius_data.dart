@@ -9,6 +9,7 @@ class XRadiusData {
   final Radius semiLarge;
   final Radius large;
   final Radius extraLarge;
+  final Radius superLarge;
 
   XRadiusData({
     Radius? none,
@@ -19,20 +20,16 @@ class XRadiusData {
     Radius? semiLarge,
     Radius? large,
     Radius? extraLarge,
-  })  : none = none ?? Radius.circular(XSpacingsData().none * 2),
-        extraSmall = extraSmall ??
-            Radius.circular(XSpacingsData().extraSmall * 2),
-        small = small ?? Radius.circular(XSpacingsData().small * 2),
-        semiSmall = semiSmall ??
-            Radius.circular(XSpacingsData().semiSmall * 2),
-        medium =
-            medium ?? Radius.circular(XSpacingsData().medium * 2),
-        semiLarge = semiLarge ??
-            Radius.circular(XSpacingsData().semiLarge * 2),
-        large =
-            large ?? Radius.circular(XSpacingsData().semiLarge * 2),
-        extraLarge = extraLarge ??
-            Radius.circular(XSpacingsData().extraLarge * 2);
+    Radius? superLarge,
+  })  : none = none ?? Radius.circular(XSpacingsData().none),
+        extraSmall = extraSmall ?? Radius.circular(XSpacingsData().extraSmall),
+        small = small ?? Radius.circular(XSpacingsData().small),
+        semiSmall = semiSmall ?? Radius.circular(XSpacingsData().semiSmall),
+        medium = medium ?? Radius.circular(XSpacingsData().medium),
+        semiLarge = semiLarge ?? Radius.circular(XSpacingsData().semiLarge),
+        large = large ?? Radius.circular(XSpacingsData().semiLarge),
+        extraLarge = extraLarge ?? Radius.circular(XSpacingsData().extraLarge),
+        superLarge = superLarge ?? Radius.circular(XSpacingsData().superLarge);
 
   // XBorderRadiusData get border => XBorderRadiusData(this);
 }

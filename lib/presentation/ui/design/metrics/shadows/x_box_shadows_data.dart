@@ -9,6 +9,7 @@ class XBoxShadowsData {
   final BoxShadow semiLarge;
   final BoxShadow large;
   final BoxShadow extraLarge;
+  final BoxShadow superLarge;
 
   XBoxShadowsData({
     BoxShadow? none,
@@ -19,11 +20,12 @@ class XBoxShadowsData {
     BoxShadow? semiLarge,
     BoxShadow? large,
     BoxShadow? extraLarge,
+    BoxShadow? superLarge,
   })  : none = none ??
             const BoxShadow(
               blurRadius: 0,
               spreadRadius: 0,
-              color: Colors.transparent,
+              // color: Colors.transparent,
             ),
         extraSmall = extraSmall ??
             BoxShadow(
@@ -62,6 +64,12 @@ class XBoxShadowsData {
               color: Colors.black.withOpacity(.4),
             ),
         extraLarge = extraLarge ??
+            BoxShadow(
+              blurRadius: 12,
+              spreadRadius: 2,
+              color: Colors.black.withOpacity(.4),
+            ),
+        superLarge = superLarge ??
             BoxShadow(
               blurRadius: 12,
               spreadRadius: 2,

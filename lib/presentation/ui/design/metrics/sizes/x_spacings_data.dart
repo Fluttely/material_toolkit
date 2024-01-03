@@ -9,6 +9,7 @@ class XSpacingsData {
   final double semiLarge;
   final double large;
   final double extraLarge;
+  final double superLarge;
 
   XSpacingsData({
     double? none,
@@ -19,6 +20,7 @@ class XSpacingsData {
     double? semiLarge,
     double? large,
     double? extraLarge,
+    double? superLarge,
   })  : none = none ?? 0,
         extraSmall = extraSmall ?? 4,
         small = small ?? 8,
@@ -26,9 +28,6 @@ class XSpacingsData {
         medium = medium ?? 16,
         semiLarge = semiLarge ?? 20,
         large = large ?? 24,
-        extraLarge = extraLarge ?? 32;
+        extraLarge = extraLarge ?? 32,
+        superLarge = superLarge ?? 48;
 }
-
-// extension Adasd on XSizesTokens {
-//   double get testValue => 18;
-// }

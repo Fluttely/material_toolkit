@@ -3,36 +3,44 @@ library x_metrics_data;
 import 'package:material_toolkit/material_toolkit.dart';
 
 part 'animations/x_durations_data.dart';
-part 'assets/x_images_assets_data.dart';
+part 'assets/x_image_assets_data.dart';
+part 'assets/x_icon_assets_data.dart';
 part 'shadows/x_box_shadows_data.dart';
 part 'shapes/x_radius_data.dart';
-part 'sizes/x_box_sizes_data.dart';
-// part 'sizes/x_edge_insets_sizes_data.dart';
 part 'sizes/x_icon_sizes_data.dart';
-part 'sizes/x_sizes_data.dart';
 part 'sizes/x_spacings_data.dart';
 
 class XMetricsData {
-  final XSizesData sizes;
+  /// sizes
+  final XSpacingsData spacing;
+  final XIconSizesData iconSizes;
 
   /// shapes
-  /// shadows
-  /// assets
-  /// durations
   final XRadiusData radius;
+
+  /// shadows
   final XBoxShadowsData boxShadows;
+
+  /// durations
   final XDurationsData durations;
-  final XAssetsData images;
+
+  /// assets
+  final XImageAssetsData images;
+  final XIconAssetsData icons;
 
   XMetricsData({
-    XSizesData? sizes,
+    XIconSizesData? icon,
+    XSpacingsData? spacing,
     XRadiusData? radius,
     XBoxShadowsData? shadows,
     XDurationsData? durations,
-    XAssetsData? images,
-  })  : sizes = sizes ?? XSizesData(),
+    XImageAssetsData? images,
+    XIconAssetsData? icons,
+  })  : iconSizes = icon ?? XIconSizesData(),
+        spacing = spacing ?? XSpacingsData(),
         radius = radius ?? XRadiusData(),
         boxShadows = shadows ?? XBoxShadowsData(),
         durations = durations ?? const XDurationsData(),
-        images = images ?? const XAssetsData();
+        images = images ?? const XImageAssetsData(),
+        icons = icons ?? const XIconAssetsData();
 }

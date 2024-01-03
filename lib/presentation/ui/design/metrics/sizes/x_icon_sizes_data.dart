@@ -1,23 +1,18 @@
 part of x_metrics_data;
 
-class XIconSizesData extends XSpacingsData {
+class XIconSizesData {
+  final double none;
+  final double small;
+  final double medium;
+  final double large;
+
   XIconSizesData({
     double? none,
-    double? extraSmall,
     double? small,
-    double? semiSmall,
     double? medium,
-    double? semiLarge,
     double? large,
-    double? extraLarge,
-  }) : super(
-          none: none ?? XSpacingsData().none * 2,
-          extraSmall: extraSmall ?? XSpacingsData().extraSmall * 2,
-          small: small ?? XSpacingsData().small * 2,
-          semiSmall: semiSmall ?? XSpacingsData().semiSmall * 2,
-          medium: medium ?? XSpacingsData().medium * 2,
-          semiLarge: semiLarge ?? XSpacingsData().semiLarge * 2,
-          large: large ?? XSpacingsData().large * 2,
-          extraLarge: extraLarge ?? XSpacingsData().extraLarge * 2,
-        );
+  })  : none = none ?? XSpacingsData().none,
+        small = small ?? XSpacingsData().medium,
+        medium = medium ?? XSpacingsData().large,
+        large = large ?? XSpacingsData().superLarge;
 }

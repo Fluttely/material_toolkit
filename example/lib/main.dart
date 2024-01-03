@@ -7,7 +7,8 @@ import 'package:material_toolkit/material_toolkit.dart';
 
 final theme = ThemeData(
   iconTheme: const IconThemeData(
-    size: 30.0,
+
+    size: 24.0,
   ),
 );
 
@@ -20,9 +21,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialX(
       theme: theme,
-      home: const HomePage(),
+      child: MaterialApp(
+        theme: theme,
+        home: const HomePage(),
+      ),
     );
   }
 }
@@ -33,10 +37,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: const [
+      body: ListView(children: [
         AppCard(),
         XCard(),
-        AppListTile(),
+        // AppListTile(),
+        XIcon.large(
+          Icons.menu,
+        ),
+        Icon(
+          Icons.menu,
+          size: 24,
+        ),
       ]),
     );
   }
@@ -69,7 +80,7 @@ class AppCard extends StatelessWidget {
         color: Colors.red,
         margin: AppEdgeInsets.cardMargin(),
         padding: AppEdgeInsets.cardPadding(),
-        child: AppText.ada('Hello World!'),
+        child: AppText.ada('Hello World 1!'),
       ),
     );
   }
@@ -90,9 +101,9 @@ class XCard extends StatelessWidget {
         margin: XEdgeInsets.allLarge(),
         padding: XEdgeInsets.allExtraLarge(),
         child: XPadding(
-          padding: XEdgeInsets.all(mX.metrics.sizes.spacing.extraLarge),
+          padding: XEdgeInsets.all(mX.metrics.spacing.extraLarge),
           child: XText(
-            'Hello World!',
+            'Hello World! 2',
             style: mX.theme.textTheme.bodyLarge,
           ),
         ),
