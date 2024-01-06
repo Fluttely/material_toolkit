@@ -17,8 +17,8 @@ class XCard extends Card {
           // clipBehavior: Clip.none,
           // elevation: 1.0,
           margin: margin ?? XEdgeInsets.allExtraSmall(),
-          shape: shape ??
-              const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12.0))),
+          shape: shape ?? RoundedRectangleBorder(borderRadius: BorderRadius.all(
+              // Radius.circular(12.0)
+              MaterialX.of(MaterialX.context).metrics.radius.small)),
         );
 }

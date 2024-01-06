@@ -44,6 +44,8 @@ class HomePage extends StatelessWidget {
         ),
         const AppListTile(),
         const Card(
+          // shape: ,
+
           child: Text('asda'),
         ),
         XIcon.x16(

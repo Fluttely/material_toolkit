@@ -3,9 +3,9 @@ library x_metrics_data;
 import 'package:material_toolkit/material_toolkit.dart';
 
 part 'animations/x_durations_data.dart';
-part 'assets/x_image_assets_data.dart';
 part 'assets/x_icon_assets_data.dart';
-part 'shadows/x_box_shadows_data.dart';
+part 'assets/x_image_assets_data.dart';
+// part 'shadows/x_box_shadows_data.dart';
 part 'shapes/x_radius_data.dart';
 part 'sizes/x_icon_sizes_data.dart';
 part 'sizes/x_spacings_data.dart';
@@ -17,9 +17,10 @@ class XMetricsData {
 
   /// shapes
   final XRadiusData radius;
+  //  XRadiusData get radius => XRadiusData();
 
   /// shadows
-  final XBoxShadowsData boxShadows;
+  // final XBoxShadowsData boxShadows;
 
   /// durations
   final XDurationsData durations;
@@ -32,14 +33,14 @@ class XMetricsData {
     XIconSizesData? icon,
     XSpacingsData? spacing,
     XRadiusData? radius,
-    XBoxShadowsData? shadows,
+    // XBoxShadowsData? shadows,
     XDurationsData? durations,
     XImageAssetsData? images,
     XIconAssetsData? icons,
   })  : iconSizes = icon ?? XIconSizesData(),
-        spacing = spacing ?? XSpacingsData(),
-        radius = radius ?? XRadiusData(),
-        boxShadows = shadows ?? XBoxShadowsData(),
+        spacing = spacing ?? const XSpacingsData(),
+        radius = radius ?? const XRadiusData(),
+        // boxShadows = shadows ?? XBoxShadowsData(),
         durations = durations ?? const XDurationsData(),
         images = images ?? const XImageAssetsData(),
         icons = icons ?? const XIconAssetsData();

@@ -5,7 +5,10 @@ import 'package:material_toolkit/material_toolkit.dart';
 /// MaterialX is an InheritedWidget that provides access to XThemeMetricsData.
 /// It must be initialized at the root of your widget tree.
 class MaterialX extends InheritedWidget {
-  XMetricsData get metrics => XMetricsData();
+  // XMetricsData get metrics => XMetricsData();
+  //  XRadiusData get radius => XRadiusData();
+  final XMetricsData metrics;
+  // final XRadiusData radius;
   // final ThemeData theme;
   static final GlobalKey<NavigatorState> globalKey =
       GlobalKey<NavigatorState>();
@@ -17,10 +20,12 @@ class MaterialX extends InheritedWidget {
   MaterialX({
     // super.key,
     // ThemeData? theme,
-    // XMetricsData? metrics,
+    XMetricsData? metrics,
+    // XRadiusData? radius,
     required super.child,
-  }) :
-        //  metrics = metrics ?? XMetricsData(),
+  })  :
+        //  radius = radius ?? XRadiusData(),
+        metrics = metrics ?? XMetricsData(),
         super(
           key: globalKey,
           // metrics: metrics,
@@ -39,9 +44,9 @@ class MaterialX extends InheritedWidget {
 //     }
 
     XService.initializeApp(
-      // theme: this.theme,
-      // metrics: metrics,
-    );
+        // theme: this.theme,
+        // metrics: metrics,
+        );
   }
 
   /// Retrieves the nearest MaterialX instance in the widget tree.

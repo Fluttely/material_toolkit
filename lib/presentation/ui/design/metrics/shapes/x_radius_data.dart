@@ -11,7 +11,7 @@ class XRadiusData {
   final Radius extraLarge;
   final Radius superLarge;
 
-  XRadiusData({
+  const XRadiusData({
     Radius? none,
     Radius? extraSmall,
     Radius? small,
@@ -21,15 +21,25 @@ class XRadiusData {
     Radius? large,
     Radius? extraLarge,
     Radius? superLarge,
-  })  : none = none ?? Radius.circular(XSpacingsData().none),
-        extraSmall = extraSmall ?? Radius.circular(XSpacingsData().extraSmall),
-        small = small ?? Radius.circular(XSpacingsData().small),
-        semiSmall = semiSmall ?? Radius.circular(XSpacingsData().semiSmall),
-        medium = medium ?? Radius.circular(XSpacingsData().medium),
-        semiLarge = semiLarge ?? Radius.circular(XSpacingsData().semiLarge),
-        large = large ?? Radius.circular(XSpacingsData().semiLarge),
-        extraLarge = extraLarge ?? Radius.circular(XSpacingsData().extraLarge),
-        superLarge = superLarge ?? Radius.circular(XSpacingsData().superLarge);
+  })  : none = none ?? const Radius.circular(0),
+        extraSmall = extraSmall ?? const Radius.circular(4),
+        small = small ?? const Radius.circular(8),
+        semiSmall = semiSmall ?? const Radius.circular(12),
+        medium = medium ?? const Radius.circular(16),
+        semiLarge = semiLarge ?? const Radius.circular(20),
+        large = large ?? const Radius.circular(24),
+        extraLarge = extraLarge ?? const Radius.circular(32),
+        superLarge = superLarge ?? const Radius.circular(48);
+
+  // : none = none ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.none),
+  // extraSmall = extraSmall ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.extraSmall),
+  // small = small ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.small),
+  // semiSmall = semiSmall ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.semiSmall),
+  // medium = medium ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.medium),
+  // semiLarge = semiLarge ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.semiLarge),
+  // large = large ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.semiLarge),
+  // extraLarge = extraLarge ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.extraLarge),
+  // superLarge = superLarge ?? Radius.circular(MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
 
   // XBorderRadiusData get border => XBorderRadiusData(this);
 }
