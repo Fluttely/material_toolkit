@@ -7,6 +7,7 @@ part 'assets/x_icon_assets_data.dart';
 part 'assets/x_image_assets_data.dart';
 // part 'shadows/x_box_shadows_data.dart';
 part 'shapes/x_radius_data.dart';
+part 'sizes/x_elevation_sizes_data.dart';
 part 'sizes/x_icon_sizes_data.dart';
 part 'sizes/x_spacings_data.dart';
 
@@ -14,6 +15,7 @@ class XMetricsData {
   /// sizes
   final XSpacingsData spacing;
   final XIconSizesData iconSizes;
+  final XElevationSizesData elevationSizes;
 
   /// shapes
   final XRadiusData radius;
@@ -31,6 +33,7 @@ class XMetricsData {
 
   XMetricsData({
     XIconSizesData? icon,
+    XElevationSizesData? elevationSizes,
     XSpacingsData? spacing,
     XRadiusData? radius,
     // XBoxShadowsData? shadows,
@@ -38,6 +41,7 @@ class XMetricsData {
     XImageAssetsData? images,
     XIconAssetsData? icons,
   })  : iconSizes = icon ?? XIconSizesData(),
+        elevationSizes = elevationSizes ?? XElevationSizesData(),
         spacing = spacing ?? const XSpacingsData(),
         radius = radius ?? const XRadiusData(),
         // boxShadows = shadows ?? XBoxShadowsData(),

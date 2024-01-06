@@ -5,6 +5,7 @@ export 'ui/design/metrics/x_metrics_data.dart';
 export 'ui/design/tokens/x_card.dart';
 export 'ui/design/tokens/x_color.dart';
 export 'ui/design/tokens/x_edge_insets.dart';
+export 'ui/design/tokens/x_elevation.dart';
 export 'ui/design/tokens/x_gap.dart';
 export 'ui/design/tokens/x_icon.dart';
 export 'ui/design/tokens/x_padding.dart';

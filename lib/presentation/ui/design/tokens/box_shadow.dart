@@ -1,11 +1,14 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XBoxShadow extends BoxShadow {
-  const XBoxShadow({
+  XBoxShadow({
     super.blurRadius,
     super.spreadRadius,
-    super.color,
-  });
+    Color? color,
+  }) : super(
+          color:
+              color ?? MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
+        );
 
   const XBoxShadow.none()
       : super(
@@ -18,55 +21,55 @@ class XBoxShadow extends BoxShadow {
       : super(
           blurRadius: 1,
           spreadRadius: 1,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.small()
       : super(
           blurRadius: 2,
           spreadRadius: 1,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.semiSmall()
       : super(
           blurRadius: 3,
           spreadRadius: 1,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.medium()
       : super(
           blurRadius: 4,
           spreadRadius: 1,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.semiLarge()
       : super(
           blurRadius: 6,
           spreadRadius: 2,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.large()
       : super(
           blurRadius: 8,
           spreadRadius: 2,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.extraLarge()
       : super(
           blurRadius: 12,
           spreadRadius: 2,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 
   XBoxShadow.superLarge()
       : super(
           blurRadius: 12,
           spreadRadius: 2,
-          color: Theme.of(MaterialX.context).colorScheme.shadow,
+          color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
         );
 }

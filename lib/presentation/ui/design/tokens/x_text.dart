@@ -11,78 +11,104 @@ class XText extends Text {
     super.selectionColor,
   });
 
-  XText.displayLarge(
-    super.data, {
-    super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.displayLarge!);
+  // factory XText.displaySmall(String data,  {Key? key}) {
+  //   final textTheme = Theme.of(context).textTheme;
+  //   return XText(
+  //     data,
+  //     key: key,
+  //     style: textTheme.displaySmall,
+  //   );
+  // }
 
-  XText.displayMedium(
-    super.data, {
-    super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.displayMedium!);
+  // @override
+  // Widget build(BuildContext context) {
+  //   return const Text('');
+  // }
+  // XText.displaySmall(
+  //
+  //   super.data, {
+  //   super.key,
+  // }) : super() {
+  //   super.style =
+  //    Builder<>(
+  //               builder: (context) {
+  //                 return
+
+  // Theme.of(MaterialX.context).textTheme.displaySmall!;);
+  // }
 
   XText.displaySmall(
     super.data, {
     super.key,
   }) : super(style: Theme.of(MaterialX.context).textTheme.displaySmall!);
 
-  XText.headlineLarge(
+  XText.displayMedium(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineLarge!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.displayMedium!);
 
-  XText.headlineMedium(
+  XText.displayLarge(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineMedium!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.displayLarge!);
 
   XText.headlineSmall(
     super.data, {
     super.key,
   }) : super(style: Theme.of(MaterialX.context).textTheme.headlineSmall!);
 
-  XText.titleLarge(
+  XText.headlineMedium(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.titleLarge!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineMedium!);
 
-  XText.titleMedium(
+  XText.headlineLarge(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.titleMedium!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineLarge!);
 
   XText.titleSmall(
     super.data, {
     super.key,
   }) : super(style: Theme.of(MaterialX.context).textTheme.titleSmall!);
 
-  XText.bodyLarge(
+  XText.titleMedium(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.bodyLarge!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.titleMedium!);
 
-  XText.bodyMedium(
+  XText.titleLarge(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.bodyMedium!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.titleLarge!);
 
   XText.bodySmall(
     super.data, {
     super.key,
   }) : super(style: Theme.of(MaterialX.context).textTheme.bodySmall!);
 
-  XText.labelLarge(
+  XText.bodyMedium(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.labelLarge!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.bodyMedium!);
+
+  XText.bodyLarge(
+    super.data, {
+    super.key,
+  }) : super(style: Theme.of(MaterialX.context).textTheme.bodyLarge!);
+
+  XText.labelSmall(
+    super.data, {
+    super.key,
+  }) : super(style: Theme.of(MaterialX.context).textTheme.labelSmall!);
 
   XText.labelMedium(
     super.data, {
     super.key,
   }) : super(style: Theme.of(MaterialX.context).textTheme.labelMedium!);
 
-  XText.labelSmall(
+  XText.labelLarge(
     super.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.labelSmall!);
+  }) : super(style: Theme.of(MaterialX.context).textTheme.labelLarge!);
 }

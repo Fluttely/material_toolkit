@@ -32,55 +32,55 @@
 //               blurRadius: 1,
 //               spreadRadius: 1,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         small = small ??
 //             BoxShadow(
 //               blurRadius: 2,
 //               spreadRadius: 1,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         semiSmall = semiSmall ??
 //             BoxShadow(
 //               blurRadius: 3,
 //               spreadRadius: 1,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         medium = medium ??
 //             BoxShadow(
 //               blurRadius: 4,
 //               spreadRadius: 1,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         semiLarge = semiLarge ??
 //             BoxShadow(
 //               blurRadius: 6,
 //               spreadRadius: 2,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         large = large ??
 //             BoxShadow(
 //               blurRadius: 8,
 //               spreadRadius: 2,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         extraLarge = extraLarge ??
 //             BoxShadow(
 //               blurRadius: 12,
 //               spreadRadius: 2,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             ),
 //         superLarge = superLarge ??
 //             BoxShadow(
 //               blurRadius: 12,
 //               spreadRadius: 2,
 //               // color: Colors.black.withOpacity(.4),
-//               color: Theme.of(MaterialX.context).colorScheme.shadow,
+//               color: MaterialX.of(MaterialX.context).theme.colorScheme.shadow,
 //             );
 // }

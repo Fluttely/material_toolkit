@@ -4,95 +4,95 @@ class XColor extends Color {
   XColor(super.data);
 
   XColor.primary()
-      : super(Theme.of(MaterialX.context).colorScheme.primary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.primary.value);
 
   XColor.secondary()
-      : super(Theme.of(MaterialX.context).colorScheme.secondary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.secondary.value);
 
   XColor.surface()
-      : super(Theme.of(MaterialX.context).colorScheme.surface.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.surface.value);
 
   XColor.background()
-      : super(Theme.of(MaterialX.context).colorScheme.background.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.background.value);
 
   XColor.error()
-      : super(Theme.of(MaterialX.context).colorScheme.error.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.error.value);
 
   XColor.onPrimary()
-      : super(Theme.of(MaterialX.context).colorScheme.onPrimary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onPrimary.value);
 
   XColor.onSecondary()
-      : super(Theme.of(MaterialX.context).colorScheme.onSecondary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onSecondary.value);
 
   XColor.onSurface()
-      : super(Theme.of(MaterialX.context).colorScheme.onSurface.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onSurface.value);
 
   XColor.onBackground()
-      : super(Theme.of(MaterialX.context).colorScheme.onBackground.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onBackground.value);
 
   XColor.onError()
-      : super(Theme.of(MaterialX.context).colorScheme.onError.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onError.value);
 
   XColor.onPrimaryContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.onPrimaryContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onPrimaryContainer.value);
 
   XColor.primaryContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.primaryContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.primaryContainer.value);
 
   XColor.errorContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.errorContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.errorContainer.value);
 
   XColor.inversePrimary()
-      : super(Theme.of(MaterialX.context).colorScheme.inversePrimary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.inversePrimary.value);
 
   XColor.inverseSurface()
-      : super(Theme.of(MaterialX.context).colorScheme.inverseSurface.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.inverseSurface.value);
 
   XColor.onErrorContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.onErrorContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onErrorContainer.value);
 
   XColor.onSecondaryContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.onSecondaryContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onSecondaryContainer.value);
 
   XColor.onSurfaceVariant()
-      : super(Theme.of(MaterialX.context).colorScheme.onSurfaceVariant.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onSurfaceVariant.value);
 
   XColor.tertiary()
-      : super(Theme.of(MaterialX.context).colorScheme.tertiary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.tertiary.value);
 
   XColor.onInverseSurface()
-      : super(Theme.of(MaterialX.context).colorScheme.onInverseSurface.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onInverseSurface.value);
 
   XColor.onTertiary()
-      : super(Theme.of(MaterialX.context).colorScheme.onTertiary.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onTertiary.value);
 
   XColor.onTertiaryContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.onTertiaryContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.onTertiaryContainer.value);
 
   XColor.outline()
-      : super(Theme.of(MaterialX.context).colorScheme.outline.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.outline.value);
 
   XColor.outlineVariant()
-      : super(Theme.of(MaterialX.context).colorScheme.outlineVariant.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.outlineVariant.value);
 
   XColor.scrim()
-      : super(Theme.of(MaterialX.context).colorScheme.scrim.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.scrim.value);
 
   XColor.secondaryContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.secondaryContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.secondaryContainer.value);
 
   XColor.shadow()
-      : super(Theme.of(MaterialX.context).colorScheme.shadow.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.shadow.value);
 
   XColor.surfaceTint()
-      : super(Theme.of(MaterialX.context).colorScheme.surfaceTint.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.surfaceTint.value);
 
   XColor.surfaceVariant()
-      : super(Theme.of(MaterialX.context).colorScheme.surfaceVariant.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.surfaceVariant.value);
 
   XColor.tertiaryContainer()
-      : super(Theme.of(MaterialX.context).colorScheme.tertiaryContainer.value);
+      : super(MaterialX.of(MaterialX.context).theme.colorScheme.tertiaryContainer.value);
 
   static Brightness brightness() =>
-      Theme.of(MaterialX.context).colorScheme.brightness;
+      MaterialX.of(MaterialX.context).theme.colorScheme.brightness;
 }

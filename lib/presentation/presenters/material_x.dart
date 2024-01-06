@@ -7,6 +7,7 @@ import 'package:material_toolkit/material_toolkit.dart';
 class MaterialX extends InheritedWidget {
   // XMetricsData get metrics => XMetricsData();
   //  XRadiusData get radius => XRadiusData();
+  ThemeData get theme => Theme.of(context);
   final XMetricsData metrics;
   // final XRadiusData radius;
   // final ThemeData theme;
@@ -18,7 +19,7 @@ class MaterialX extends InheritedWidget {
   /// [metrics] can be used to provide custom theme metrics data.
   /// [child] is the subtree over which MaterialX will be available.
   MaterialX({
-    // super.key,
+    super.key,
     // ThemeData? theme,
     XMetricsData? metrics,
     // XRadiusData? radius,
@@ -27,7 +28,7 @@ class MaterialX extends InheritedWidget {
         //  radius = radius ?? XRadiusData(),
         metrics = metrics ?? XMetricsData(),
         super(
-          key: globalKey,
+          // key: globalKey,
           // metrics: metrics,
           // child: child,
         )
