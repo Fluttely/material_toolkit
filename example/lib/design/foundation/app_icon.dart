@@ -5,7 +5,7 @@ class AppIcon extends XIcon {
     super.icon, {
     super.key,
   }) : super(
-          size: XService.instance.metrics.iconSizes.large,
+          size: XService.instance.metrics.iconSizes.x16,
         );
 }
 

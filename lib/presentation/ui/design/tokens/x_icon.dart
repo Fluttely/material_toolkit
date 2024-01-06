@@ -5,25 +5,45 @@ class XIcon extends Icon {
     super.icon, {
     super.key,
     super.size,
-  });
+  }) : assert(size == null || (size >= 16.0 && size <= 512.0));
 
   XIcon.none(
     super.icon, {
     super.key,
   }) : super(size: XService.instance.metrics.iconSizes.none);
 
-  XIcon.small(
+  XIcon.x16(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.iconSizes.small);
+  }) : super(size: XService.instance.metrics.iconSizes.x16);
 
-  XIcon.medium(
+  XIcon.x24(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.iconSizes.medium);
+  }) : super(size: XService.instance.metrics.iconSizes.x24);
 
-  XIcon.large(
+  XIcon.x32(
     super.icon, {
     super.key,
-  }) : super(size: XService.instance.metrics.iconSizes.large);
+  }) : super(size: XService.instance.metrics.iconSizes.x32);
+
+  XIcon.x64(
+    super.icon, {
+    super.key,
+  }) : super(size: XService.instance.metrics.iconSizes.x64);
+
+  XIcon.x128(
+    super.icon, {
+    super.key,
+  }) : super(size: XService.instance.metrics.iconSizes.x128);
+
+  XIcon.x256(
+    super.icon, {
+    super.key,
+  }) : super(size: XService.instance.metrics.iconSizes.x256);
+
+  XIcon.x512(
+    super.icon, {
+    super.key,
+  }) : super(size: XService.instance.metrics.iconSizes.x512);
 }

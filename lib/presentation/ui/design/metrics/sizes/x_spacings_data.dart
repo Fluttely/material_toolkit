@@ -11,7 +11,7 @@ class XSpacingsData {
   final double extraLarge;
   final double superLarge;
 
-  XSpacingsData({
+  const XSpacingsData({
     double? none,
     double? extraSmall,
     double? small,

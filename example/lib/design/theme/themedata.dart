@@ -5,14 +5,8 @@ final ThemeData themeData = ThemeData(
     // primaryColor: Cor principal usada no app, para widgets como AppBar.
     primary: const Color(0xFF1E88E5), // Exemplo: Google Blue 600
 
-    // primaryColorDark: Variação mais escura da cor primária.
-    // primaryVariant: const Color(0xFF005CB2), // Exemplo: Google Blue 800
-
     // accentColor: Cor de destaque para elementos interativos como botões.
     secondary: const Color(0xFF00C853), // Exemplo: Google Green
-
-    // Não tinha equivalente direto: Variação da cor secundária/accent.
-    // secondaryVariant: const Color(0xFF009624), // Exemplo: Google Green 800
 
     // cardColor: Cor de fundo para cards.
     surface: Colors.white,
@@ -78,8 +72,5 @@ final ThemeData themeData = ThemeData(
     surfaceTint: const Color(0xFF1E88E5), // Exemplo: Google Blue 600
     surfaceVariant: const Color(0xFFEEEEEE), // Exemplo: Google Grey 200
     tertiaryContainer: const Color(0xFFFFD54F), // Exemplo: Google Amber 300
-
-    // Outras propriedades podem ser adicionadas conforme a necessidade do design do app.
   ),
-  // ... outros ajustes de tema podem ser adicionados aqui
 );

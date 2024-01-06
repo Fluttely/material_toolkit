@@ -3,8 +3,12 @@ import 'package:material_toolkit/material_toolkit.dart';
 class XText extends Text {
   const XText(
     super.data, {
-    super.style,
     super.key,
+    super.style,
+    super.locale,
+    super.maxLines,
+    super.overflow,
+    super.selectionColor,
   });
 
   XText.displayLarge(

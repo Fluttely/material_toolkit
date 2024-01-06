@@ -1,106 +1,127 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XEdgeInsets extends EdgeInsets {
+  // const factory XEdgeInsets.all2(double value) = XEdgeInsets.all;
   const XEdgeInsets.all(double value) : super.all(value);
-  XEdgeInsets.only({
+
+  const XEdgeInsets.only({
     double? left,
     double? top,
     double? right,
     double? bottom,
   }) : super.only(
-          left: left ?? XService.instance.metrics.spacing.none,
-          top: top ?? XService.instance.metrics.spacing.none,
-          right: right ?? XService.instance.metrics.spacing.none,
-          bottom: bottom ?? XService.instance.metrics.spacing.none,
+          left: left ?? 0,
+          top: top ?? 0,
+          right: right ?? 0,
+          bottom: bottom ?? 0,
         );
 
-  XEdgeInsets.symmetric({
+  const XEdgeInsets.symmetric({
     double? horizontal,
     double? vertical,
   }) : super.symmetric(
-          horizontal:
-              horizontal ?? XService.instance.metrics.spacing.none,
-          vertical: vertical ?? XService.instance.metrics.spacing.none,
+          horizontal: horizontal ?? 0,
+          vertical: vertical ?? 0,
         );
 
-  XEdgeInsets.none() : super.all(XService.instance.metrics.spacing.none);
+  XEdgeInsets.none()
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.none);
 
   XEdgeInsets.allExtraSmall()
-      : super.all(XService.instance.metrics.spacing.extraSmall);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.extraSmall);
 
   XEdgeInsets.allSmall()
-      : super.all(XService.instance.metrics.spacing.small);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.small);
 
   XEdgeInsets.allSemiSmall()
-      : super.all(XService.instance.metrics.spacing.semiSmall);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.semiSmall);
 
   XEdgeInsets.allMedium()
-      : super.all(XService.instance.metrics.spacing.medium);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.medium);
 
   XEdgeInsets.allSemiLarge()
-      : super.all(XService.instance.metrics.spacing.semiLarge);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.semiLarge);
 
   XEdgeInsets.allLarge()
-      : super.all(XService.instance.metrics.spacing.large);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.large);
 
   XEdgeInsets.allExtraLarge()
-      : super.all(XService.instance.metrics.spacing.extraLarge);
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.extraLarge);
+
+  XEdgeInsets.allSuperLarge()
+      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
 
   XEdgeInsets.horizontalExtraSmall()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.extraSmall);
+            horizontal:
+                MaterialX.of(MaterialX.context).metrics.spacing.extraSmall);
 
   XEdgeInsets.horizontalSmall()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.small);
+            horizontal: MaterialX.of(MaterialX.context).metrics.spacing.small);
 
   XEdgeInsets.horizontalSemiSmall()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.semiSmall);
+            horizontal:
+                MaterialX.of(MaterialX.context).metrics.spacing.semiSmall);
 
   XEdgeInsets.horizontalMedium()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.medium);
+            horizontal: MaterialX.of(MaterialX.context).metrics.spacing.medium);
 
   XEdgeInsets.horizontalSemiLarge()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.semiLarge);
+            horizontal:
+                MaterialX.of(MaterialX.context).metrics.spacing.semiLarge);
 
   XEdgeInsets.horizontalLarge()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.large);
+            horizontal: MaterialX.of(MaterialX.context).metrics.spacing.large);
 
   XEdgeInsets.horizontalExtraLarge()
       : super.symmetric(
-            horizontal: XService.instance.metrics.spacing.extraLarge);
+            horizontal:
+                MaterialX.of(MaterialX.context).metrics.spacing.extraLarge);
+
+  XEdgeInsets.horizontalSuperLarge()
+      : super.symmetric(
+            horizontal:
+                MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
 
   XEdgeInsets.verticalExtraSmall()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.extraSmall);
+            vertical:
+                MaterialX.of(MaterialX.context).metrics.spacing.extraSmall);
 
   XEdgeInsets.verticalSmall()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.small);
+            vertical: MaterialX.of(MaterialX.context).metrics.spacing.small);
 
   XEdgeInsets.verticalSemiSmall()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.semiSmall);
+            vertical:
+                MaterialX.of(MaterialX.context).metrics.spacing.semiSmall);
 
   XEdgeInsets.verticalMedium()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.medium);
+            vertical: MaterialX.of(MaterialX.context).metrics.spacing.medium);
 
   XEdgeInsets.verticalSemiLarge()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.semiLarge);
+            vertical:
+                MaterialX.of(MaterialX.context).metrics.spacing.semiLarge);
 
   XEdgeInsets.verticalLarge()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.large);
+            vertical: MaterialX.of(MaterialX.context).metrics.spacing.large);
 
   XEdgeInsets.verticalExtraLarge()
       : super.symmetric(
-            vertical: XService.instance.metrics.spacing.extraLarge);
+            vertical:
+                MaterialX.of(MaterialX.context).metrics.spacing.extraLarge);
 
-  EdgeInsets haha2() => const EdgeInsets.all(1);
+  XEdgeInsets.verticalSuperLarge()
+      : super.symmetric(
+            vertical:
+                MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
 }

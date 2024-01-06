@@ -47,6 +47,11 @@ class XPadding extends Padding {
     super.child,
   }) : super(padding: XEdgeInsets.allExtraLarge());
 
+  XPadding.allSuperLarge({
+    super.key,
+    super.child,
+  }) : super(padding: XEdgeInsets.allSuperLarge());
+
   XPadding.horizontalExtraSmall({
     super.key,
     super.child,
@@ -82,6 +87,11 @@ class XPadding extends Padding {
     super.child,
   }) : super(padding: XEdgeInsets.horizontalExtraLarge());
 
+  XPadding.horizontalSuperLarge({
+    super.key,
+    super.child,
+  }) : super(padding: XEdgeInsets.horizontalSuperLarge());
+
   XPadding.verticalExtraSmall({
     super.key,
     super.child,
@@ -116,4 +126,9 @@ class XPadding extends Padding {
     super.key,
     super.child,
   }) : super(padding: XEdgeInsets.verticalExtraLarge());
+
+  XPadding.verticalSuperLarge({
+    super.key,
+    super.child,
+  }) : super(padding: XEdgeInsets.verticalSuperLarge());
 }

@@ -197,7 +197,7 @@
 
 //     if (routerDelegate != null) {
 //       // Router-based navigation
-//       return MaterialApp.router(
+//       return GetMaterialApp.router(
 //         key: key,
 //         routerDelegate: routerDelegate!,
 //         routeInformationParser: routeInformationParser,
@@ -227,20 +227,12 @@
 //         actions: actions,
 //         useInheritedMediaQuery: useInheritedMediaQuery,
 //         locale: locale,
-//         builder: (context, child) {
-//           return child ?? const SizedBox();
-//         },
-//         onNavigationNotification: onNavigationNotification,
-//         restorationScopeId: restorationScopeId,
-//         scaffoldMessengerKey: scaffoldMessengerKey,
-//         themeAnimationCurve: themeAnimationCurve,
-//         themeAnimationDuration: themeAnimationDuration,
-//         // fallbackLocale: fallbackLocale,
-//         // navigatorObservers: navigatorObservers!,
+//         fallbackLocale: fallbackLocale,
+//         navigatorObservers: navigatorObservers!,
 //       );
 //     } else {
 //       // Standard navigation
-//       return MaterialApp(
+//       return GetMaterialApp(
 //         key: MaterialX.globalKey,
 //         navigatorKey: navigatorKey,
 //         scaffoldMessengerKey: scaffoldMessengerKey,

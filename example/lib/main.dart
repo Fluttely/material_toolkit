@@ -5,30 +5,52 @@ import 'package:material_toolkit/material_toolkit.dart';
 //   final XMetricsData metrics;
 // }
 
-ThemeData theme(BuildContext context) => ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.red)
-          .copyWith(background: Colors.blue),
+ThemeData get theme => ThemeData(
+      // brightness: Brightness.dark,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.orange,
+        brightness: Brightness.light,
+      ).copyWith(
+          // background: Colors.blue,
+          // brightness: Brightness.dark,
+          ),
       iconTheme: const IconThemeData(
-          // size: MaterialX.of(context).metrics.iconSizes.medium,
+          // size: MaterialX.of(MaterialX.context).metrics.iconSizes.medium,
           ),
     );
 
 void main() {
-  runApp(const MainApp());
+  runApp(const App());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+// class MainApp extends StatelessWidget {
+//   const MainApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialX(
-      theme: theme(context),
-      child: const App(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//         // MaterialX(
 
+//         //   theme: theme,
+//         //   metrics: XMetricsData(
+//         //     spacing: XSpacingsData(
+//         //       extraLarge: 10,
+//         //       large: 10,
+//         //       medium: 10,
+//         //       small: 10,
+//         //     ),
+//         //   ),
+//         //   child:
+//         const App()
+//         // )
+//         ;
+//   }
+// }
+
+// final GlobalKey<ScaffoldState> materialXKey = GlobalKey<ScaffoldState>();
+// final GlobalKey<NavigatorState> materialXKey = GlobalKey<NavigatorState>();
+
+// BuildContext get globalContext => materialXKey.currentContext!;
 class App extends StatelessWidget {
   const App({
     super.key,
@@ -36,9 +58,30 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: theme(context),
-      home: const HomePage(),
+    // MaterialX.of(context).
+    return MaterialX(
+      // theme: theme,
+      metrics: XMetricsData(
+        spacing: const XSpacingsData(
+          extraLarge: 100,
+          large: 100,
+          medium: 100,
+          small: 100,
+        ),
+      ),
+      child: MaterialApp(
+        key: MaterialX.globalKey,
+        // customParam: DustomParamData(),
+        theme: theme,
+        // builder: (context, child) {
+        //   // BuildContext context2 = materialXKey.currentState!.context;
+        //   return SizedBox(
+        //     key: materialXKey,
+        //     child: child,
+        //   );
+        // },
+        home: const HomePage(),
+      ),
     );
   }
 }
@@ -49,17 +92,28 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: XColor.background(),
       body: ListView(children: [
         const AppCard(),
-        const XCard(),
+        XCard(
+          // color: Colors.red,
+          elevation: 10,
+          child: XPadding(
+            padding: AppEdgeInsets.cardMargin(),
+            child: const Text('ASDIUHSADUHAS'),
+          ),
+        ),
         const AppListTile(),
-        XIcon.large(
+        const Card(
+          child: Text('asda'),
+        ),
+        XIcon.x16(
           Icons.menu,
         ),
         Icon(
           Icons.menu,
           size: 24,
-          color: XColor.tertiary(context),
+          color: XColor.tertiary(),
         ),
         AppIcon.bottomNavigation(Icons.menu),
       ]),
@@ -87,41 +141,45 @@ class AppCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final mX = MaterialX.of(context);
-
-    return AppPadding.listTile(
-      child: Container(
-        color: XColor.error(context),
-        margin: AppEdgeInsets.cardMargin(),
-        padding: AppEdgeInsets.cardPadding(),
-        child: AppText.ada('Hello World 1!'),
-      ),
-    );
-  }
-}
-
-class XCard extends StatelessWidget {
-  const XCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final mX = MaterialX.of(context);
+    // final mX = MaterialX.context;
 
     return XPadding.allExtraLarge(
       child: Container(
-        color: Colors.red,
-        margin: XEdgeInsets.allLarge(),
-        padding: XEdgeInsets.allExtraLarge(),
-        child: XPadding(
-          padding: XEdgeInsets.all(mX.metrics.spacing.extraLarge),
-          child: XText(
-            'Hello World! 2',
-            style: mX.theme.textTheme.bodyLarge,
-          ),
-        ),
+        color: XColor.error(),
+        margin: AppEdgeInsets.cardMargin(),
+        padding: AppEdgeInsets.cardMargin(),
+        // child: AppText.ada('Hello World 1!'),
       ),
     );
   }
 }
+
+// class XCard extends StatelessWidget {
+//   const XCard({
+//     super.key,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final mX = MaterialX.context;
+
+//     return XPadding.allExtraLarge(
+//       child: Container(
+//         color: Colors.red,
+//         margin: XEdgeInsets.allLarge(),
+//         padding: XEdgeInsets.allExtraLarge(),
+//         child: XPadding(
+//           padding: XEdgeInsets.all(mX.metrics.spacing.extraLarge),
+//           child: XText(
+//             'Hello World! 2',
+//             style: mX.theme.textTheme.bodyLarge,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// extension AppEdgeInsets3 on XEdgeInsets {
+//   static XEdgeInsets get card2 => XEdgeInsets.allExtraLarge();
+// }
