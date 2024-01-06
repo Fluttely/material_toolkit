@@ -7,26 +7,26 @@ class XGap extends Gap {
     super.key,
   });
 
-  XGap.none({super.key}) : super(XService.instance.metrics.spacing.none);
+  XGap.none({super.key}) : super(MaterialX.of(MaterialX.context).metrics!.spacing.none);
 
   XGap.extraSmall({super.key})
-      : super(XService.instance.metrics.spacing.extraSmall);
+      : super(MaterialX.of(MaterialX.context).metrics!.spacing.extraSmall);
 
-  XGap.small({super.key}) : super(XService.instance.metrics.spacing.small);
+  XGap.small({super.key}) : super(MaterialX.of(MaterialX.context).metrics!.spacing.small);
 
   XGap.semiSmall({super.key})
-      : super(XService.instance.metrics.spacing.semiSmall);
+      : super(MaterialX.of(MaterialX.context).metrics!.spacing.semiSmall);
 
-  XGap.medium({super.key}) : super(XService.instance.metrics.spacing.medium);
+  XGap.medium({super.key}) : super(MaterialX.of(MaterialX.context).metrics!.spacing.medium);
 
   XGap.semiLarge({super.key})
-      : super(XService.instance.metrics.spacing.semiLarge);
+      : super(MaterialX.of(MaterialX.context).metrics!.spacing.semiLarge);
 
-  XGap.large({super.key}) : super(XService.instance.metrics.spacing.large);
+  XGap.large({super.key}) : super(MaterialX.of(MaterialX.context).metrics!.spacing.large);
 
   XGap.extraLarge({super.key})
-      : super(XService.instance.metrics.spacing.extraLarge);
+      : super(MaterialX.of(MaterialX.context).metrics!.spacing.extraLarge);
 
   XGap.superLarge({super.key})
-      : super(XService.instance.metrics.spacing.superLarge);
+      : super(MaterialX.of(MaterialX.context).metrics!.spacing.superLarge);
 }

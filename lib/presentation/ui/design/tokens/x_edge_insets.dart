@@ -25,103 +25,103 @@ class XEdgeInsets extends EdgeInsets {
         );
 
   XEdgeInsets.none()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.none);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.none);
 
   XEdgeInsets.allExtraSmall()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.extraSmall);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.extraSmall);
 
   XEdgeInsets.allSmall()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.small);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.small);
 
   XEdgeInsets.allSemiSmall()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.semiSmall);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.semiSmall);
 
   XEdgeInsets.allMedium()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.medium);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.medium);
 
   XEdgeInsets.allSemiLarge()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.semiLarge);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.semiLarge);
 
   XEdgeInsets.allLarge()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.large);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.large);
 
   XEdgeInsets.allExtraLarge()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.extraLarge);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.extraLarge);
 
   XEdgeInsets.allSuperLarge()
-      : super.all(MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
+      : super.all(MaterialX.of(MaterialX.context).metrics!.spacing.superLarge);
 
   XEdgeInsets.horizontalExtraSmall()
       : super.symmetric(
             horizontal:
-                MaterialX.of(MaterialX.context).metrics.spacing.extraSmall);
+                MaterialX.of(MaterialX.context).metrics!.spacing.extraSmall);
 
   XEdgeInsets.horizontalSmall()
       : super.symmetric(
-            horizontal: MaterialX.of(MaterialX.context).metrics.spacing.small);
+            horizontal: MaterialX.of(MaterialX.context).metrics!.spacing.small);
 
   XEdgeInsets.horizontalSemiSmall()
       : super.symmetric(
             horizontal:
-                MaterialX.of(MaterialX.context).metrics.spacing.semiSmall);
+                MaterialX.of(MaterialX.context).metrics!.spacing.semiSmall);
 
   XEdgeInsets.horizontalMedium()
       : super.symmetric(
-            horizontal: MaterialX.of(MaterialX.context).metrics.spacing.medium);
+            horizontal: MaterialX.of(MaterialX.context).metrics!.spacing.medium);
 
   XEdgeInsets.horizontalSemiLarge()
       : super.symmetric(
             horizontal:
-                MaterialX.of(MaterialX.context).metrics.spacing.semiLarge);
+                MaterialX.of(MaterialX.context).metrics!.spacing.semiLarge);
 
   XEdgeInsets.horizontalLarge()
       : super.symmetric(
-            horizontal: MaterialX.of(MaterialX.context).metrics.spacing.large);
+            horizontal: MaterialX.of(MaterialX.context).metrics!.spacing.large);
 
   XEdgeInsets.horizontalExtraLarge()
       : super.symmetric(
             horizontal:
-                MaterialX.of(MaterialX.context).metrics.spacing.extraLarge);
+                MaterialX.of(MaterialX.context).metrics!.spacing.extraLarge);
 
   XEdgeInsets.horizontalSuperLarge()
       : super.symmetric(
             horizontal:
-                MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
+                MaterialX.of(MaterialX.context).metrics!.spacing.superLarge);
 
   XEdgeInsets.verticalExtraSmall()
       : super.symmetric(
             vertical:
-                MaterialX.of(MaterialX.context).metrics.spacing.extraSmall);
+                MaterialX.of(MaterialX.context).metrics!.spacing.extraSmall);
 
   XEdgeInsets.verticalSmall()
       : super.symmetric(
-            vertical: MaterialX.of(MaterialX.context).metrics.spacing.small);
+            vertical: MaterialX.of(MaterialX.context).metrics!.spacing.small);
 
   XEdgeInsets.verticalSemiSmall()
       : super.symmetric(
             vertical:
-                MaterialX.of(MaterialX.context).metrics.spacing.semiSmall);
+                MaterialX.of(MaterialX.context).metrics!.spacing.semiSmall);
 
   XEdgeInsets.verticalMedium()
       : super.symmetric(
-            vertical: MaterialX.of(MaterialX.context).metrics.spacing.medium);
+            vertical: MaterialX.of(MaterialX.context).metrics!.spacing.medium);
 
   XEdgeInsets.verticalSemiLarge()
       : super.symmetric(
             vertical:
-                MaterialX.of(MaterialX.context).metrics.spacing.semiLarge);
+                MaterialX.of(MaterialX.context).metrics!.spacing.semiLarge);
 
   XEdgeInsets.verticalLarge()
       : super.symmetric(
-            vertical: MaterialX.of(MaterialX.context).metrics.spacing.large);
+            vertical: MaterialX.of(MaterialX.context).metrics!.spacing.large);
 
   XEdgeInsets.verticalExtraLarge()
       : super.symmetric(
             vertical:
-                MaterialX.of(MaterialX.context).metrics.spacing.extraLarge);
+                MaterialX.of(MaterialX.context).metrics!.spacing.extraLarge);
 
   XEdgeInsets.verticalSuperLarge()
       : super.symmetric(
             vertical:
-                MaterialX.of(MaterialX.context).metrics.spacing.superLarge);
+                MaterialX.of(MaterialX.context).metrics!.spacing.superLarge);
 }

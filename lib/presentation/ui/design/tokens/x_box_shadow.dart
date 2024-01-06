@@ -9,56 +9,56 @@ class XBoxShadow extends BoxShadow {
 
   XBoxShadow.none()
       : super(
-          blurRadius: XService.instance.metrics.boxShadows.none.blurRadius,
-          spreadRadius: XService.instance.metrics.boxShadows.none.spreadRadius,
+          blurRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.none.blurRadius,
+          spreadRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.none.spreadRadius,
         );
 
   XBoxShadow.extraSmall()
       : super(
           blurRadius:
-              XService.instance.metrics.boxShadows.extraSmall.blurRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.extraSmall.blurRadius,
           spreadRadius:
-              XService.instance.metrics.boxShadows.extraSmall.spreadRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.extraSmall.spreadRadius,
         );
 
   XBoxShadow.small()
       : super(
-          blurRadius: XService.instance.metrics.boxShadows.small.blurRadius,
-          spreadRadius: XService.instance.metrics.boxShadows.small.spreadRadius,
+          blurRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.small.blurRadius,
+          spreadRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.small.spreadRadius,
         );
 
   XBoxShadow.semiSmall()
       : super(
-          blurRadius: XService.instance.metrics.boxShadows.semiSmall.blurRadius,
+          blurRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.semiSmall.blurRadius,
           spreadRadius:
-              XService.instance.metrics.boxShadows.semiSmall.spreadRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.semiSmall.spreadRadius,
         );
 
   XBoxShadow.medium()
       : super(
-          blurRadius: XService.instance.metrics.boxShadows.medium.blurRadius,
+          blurRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.medium.blurRadius,
           spreadRadius:
-              XService.instance.metrics.boxShadows.medium.spreadRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.medium.spreadRadius,
         );
 
   XBoxShadow.semiLarge()
       : super(
-          blurRadius: XService.instance.metrics.boxShadows.semiLarge.blurRadius,
+          blurRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.semiLarge.blurRadius,
           spreadRadius:
-              XService.instance.metrics.boxShadows.semiLarge.spreadRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.semiLarge.spreadRadius,
         );
 
   XBoxShadow.large()
       : super(
-          blurRadius: XService.instance.metrics.boxShadows.large.blurRadius,
-          spreadRadius: XService.instance.metrics.boxShadows.large.spreadRadius,
+          blurRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.large.blurRadius,
+          spreadRadius: MaterialX.of(MaterialX.context).metrics!.boxShadows.large.spreadRadius,
         );
 
   XBoxShadow.extraLarge()
       : super(
           blurRadius:
-              XService.instance.metrics.boxShadows.extraLarge.blurRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.extraLarge.blurRadius,
           spreadRadius:
-              XService.instance.metrics.boxShadows.extraLarge.spreadRadius,
+              MaterialX.of(MaterialX.context).metrics!.boxShadows.extraLarge.spreadRadius,
         );
 }

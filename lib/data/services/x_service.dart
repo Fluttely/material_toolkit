@@ -1,4 +1,4 @@
-import 'package:material_toolkit/material_toolkit.dart';
+
 
 class XService {
   // Private constructor for internal use to ensure singleton pattern.
@@ -23,17 +23,19 @@ class XService {
   /// Initializes the Globals.
   /// It initializes necessary controllers and sets the _hasInit flag to true.
   /// This method should be called before accessing the instance.
-  static void initializeApp({
-    // required ThemeData theme,
-    required XMetricsData metrics,
-  }) {
+  static void initializeApp(
+      // {
+      // required ThemeData theme,
+      // required XMetricsData metrics,
+      // }
+      ) {
     if (!_hasInit) {
       _hasInit = true;
       // instance.theme = theme;
-      instance.metrics = metrics;
+      // instance.metrics = metrics;
     }
   }
 
-  late ThemeData theme;
-  late XMetricsData metrics;
+  // late ThemeData theme;
+  // late XMetricsData metrics;
 }
