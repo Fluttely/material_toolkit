@@ -1,114 +1,373 @@
+import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XText extends Text {
+/// DONE
+enum XTextTheme {
+  displaySmall,
+  displayMedium,
+  displayLarge,
+  headlineSmall,
+  headlineMedium,
+  headlineLarge,
+  titleSmall,
+  titleMedium,
+  titleLarge,
+  bodySmall,
+  bodyMedium,
+  bodyLarge,
+  labelSmall,
+  labelMedium,
+  labelLarge,
+}
+
+class XText extends StatelessWidget {
+  final String data;
+  final TextStyle? style;
+  final StrutStyle? strutStyle;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final TextWidthBasis? textWidthBasis;
+  final TextHeightBehavior? textHeightBehavior;
+  final Color? selectionColor;
+  final TextScaler? textScaler;
+  final XTextTheme? xTextTheme;
+
   const XText(
-    super.data, {
+    this.data, {
     super.key,
-    super.style,
-    super.locale,
-    super.maxLines,
-    super.overflow,
-    super.selectionColor,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+    this.xTextTheme,
   });
 
-  // factory XText.displaySmall(String data,  {Key? key}) {
-  //   final textTheme = Theme.of(context).textTheme;
-  //   return XText(
-  //     data,
-  //     key: key,
-  //     style: textTheme.displaySmall,
-  //   );
-  // }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return const Text('');
-  // }
-  // XText.displaySmall(
-  //
-  //   super.data, {
-  //   super.key,
-  // }) : super() {
-  //   super.style =
-  //    Builder<>(
-  //               builder: (context) {
-  //                 return
-
-  // Theme.of(MaterialX.context).textTheme.displaySmall!;);
-  // }
-
-  XText.displaySmall(
-    super.data, {
+  const XText.displaySmall(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.displaySmall!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.displaySmall;
 
-  XText.displayMedium(
-    super.data, {
+  const XText.displayMedium(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.displayMedium!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.displayMedium;
 
-  XText.displayLarge(
-    super.data, {
+  const XText.displayLarge(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.displayLarge!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.displayLarge;
 
-  XText.headlineSmall(
-    super.data, {
+  const XText.headlineSmall(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineSmall!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.headlineSmall;
 
-  XText.headlineMedium(
-    super.data, {
+  const XText.headlineMedium(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineMedium!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.headlineMedium;
 
-  XText.headlineLarge(
-    super.data, {
+  const XText.headlineLarge(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.headlineLarge!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.headlineLarge;
 
-  XText.titleSmall(
-    super.data, {
+  const XText.titleSmall(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.titleSmall!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.titleSmall;
 
-  XText.titleMedium(
-    super.data, {
+  const XText.titleMedium(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.titleMedium!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.titleMedium;
 
-  XText.titleLarge(
-    super.data, {
+  const XText.titleLarge(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.titleLarge!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.titleLarge;
 
-  XText.bodySmall(
-    super.data, {
+  const XText.bodySmall(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.bodySmall!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.bodySmall;
 
-  XText.bodyMedium(
-    super.data, {
+  const XText.bodyMedium(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.bodyMedium!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.bodyMedium;
 
-  XText.bodyLarge(
-    super.data, {
+  const XText.bodyLarge(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.bodyLarge!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.bodyLarge;
 
-  XText.labelSmall(
-    super.data, {
+  const XText.labelSmall(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.labelSmall!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.labelSmall;
 
-  XText.labelMedium(
-    super.data, {
+  const XText.labelMedium(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.labelMedium!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.labelMedium;
 
-  XText.labelLarge(
-    super.data, {
+  const XText.labelLarge(
+    this.data, {
     super.key,
-  }) : super(style: Theme.of(MaterialX.context).textTheme.labelLarge!);
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  })  : style = null,
+        xTextTheme = XTextTheme.labelLarge;
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final xStyle =
+        resolveXTextStyle(xTextTheme: xTextTheme, textTheme: textTheme);
+
+    return Text(
+      data,
+      style: xStyle ?? style,
+      strutStyle: strutStyle,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior: textHeightBehavior,
+      selectionColor: selectionColor,
+      textScaler: textScaler,
+    );
+  }
+
+  TextStyle? resolveXTextStyle(
+          {required XTextTheme? xTextTheme, required TextTheme textTheme}) =>
+      switch (xTextTheme) {
+        XTextTheme.displaySmall => textTheme.displaySmall!,
+        XTextTheme.displayMedium => textTheme.displayMedium!,
+        XTextTheme.displayLarge => textTheme.displayLarge!,
+        XTextTheme.headlineSmall => textTheme.headlineSmall!,
+        XTextTheme.headlineMedium => textTheme.headlineMedium!,
+        XTextTheme.headlineLarge => textTheme.headlineLarge!,
+        XTextTheme.titleSmall => textTheme.titleSmall!,
+        XTextTheme.titleMedium => textTheme.titleMedium!,
+        XTextTheme.titleLarge => textTheme.titleLarge!,
+        XTextTheme.bodySmall => textTheme.bodySmall!,
+        XTextTheme.bodyMedium => textTheme.bodyMedium!,
+        XTextTheme.bodyLarge => textTheme.bodyLarge!,
+        XTextTheme.labelSmall => textTheme.labelSmall!,
+        XTextTheme.labelMedium => textTheme.labelMedium!,
+        XTextTheme.labelLarge => textTheme.labelLarge!,
+        null => null,
+      };
 }

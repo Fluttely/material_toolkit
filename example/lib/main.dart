@@ -30,14 +30,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialX(
+    return XMetricsData2(
       child: ValueListenableBuilder(
         valueListenable: themeChange,
         builder: (_, value, __) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             theme: value,
             home: HomePage(
-              key: MaterialX.globalKey,
+              key: XMetricsData2.globalKey,
             ),
           );
         },
@@ -67,33 +68,7 @@ class HomePage extends StatelessWidget {
             child: const Text('Change Theme 2'),
           ),
           const AppCard(),
-          Card(
-            elevation: 10,
-            //  XElevation.mediumSize().value,
-            child: Column(
-              children: [
-                // XText(
-                //   'Custom',
-                //   xTextTheme: XTextTheme.displayMedium,
-                // ),
-                XText.displaySmall('displaySmall'),
-                XText.displayMedium('displayMedium'),
-                XText.displayLarge('displayLarge'),
-                XText.headlineSmall('headlineSmall'),
-                XText.headlineMedium('headlineMedium'),
-                XText.headlineLarge('headlineLarge'),
-                XText.titleSmall('titleSmall'),
-                XText.titleMedium('titleMedium'),
-                XText.titleLarge('titleLarge'),
-                XText.bodySmall('bodySmall'),
-                XText.bodyMedium('bodyMedium'),
-                XText.bodyLarge('bodyLarge'),
-                XText.labelSmall('labelSmall'),
-                XText.labelMedium('labelMedium'),
-                XText.labelLarge('labelLarge'),
-              ],
-            ),
-          ),
+          const Haha(),
           const AppListTile(),
           XCard(
             elevation: XElevation.level5(),
@@ -105,7 +80,7 @@ class HomePage extends StatelessWidget {
                 const Icon(
                   Icons.menu,
                   size: 24,
-                  // color: XColor.tertiary(),
+                  // color: XColor.tertiary(context),
                 ),
                 const AppIcon.bottomNavigation(Icons.menu),
               ],
@@ -114,16 +89,53 @@ class HomePage extends StatelessWidget {
           ListTile(
             leading: XIcon.x64(
               Icons.menu,
-              color: XColor.error(),
+              // color: XColor.error(context),
             ),
             // leading:
             // Icon(
             //             Icons.menu,
             //             size: 24,
-            //             color: XColor.tertiary(),
+            //             color: XColor.tertiary(context),
             //           ),
             // leading: AppIcon.bottomNavigation(Icons.menu),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class Haha extends StatelessWidget {
+  const Haha({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      elevation: 10,
+      //  XElevation.mediumSize().value,
+      child: Column(
+        children: [
+          XText(
+            'Custom',
+            xTextTheme: XTextTheme.displayMedium,
+          ),
+          // XText.displaySmall('displaySmall'),
+          // XText.displayMedium('displayMedium'),
+          // XText.displayLarge('displayLarge'),
+          // XText.headlineSmall('headlineSmall'),
+          // XText.headlineMedium('headlineMedium'),
+          XText.headlineLarge('headlineLarge'),
+          XText.titleSmall('titleSmall'),
+          XText.titleMedium('titleMedium'),
+          XText.titleLarge('titleLarge'),
+          XText.bodySmall('bodySmall'),
+          XText.bodyMedium('bodyMedium'),
+          XText.bodyLarge('bodyLarge'),
+          XText.labelSmall('labelSmall'),
+          XText.labelMedium('labelMedium'),
+          XText.labelLarge('labelLarge'),
         ],
       ),
     );
@@ -138,13 +150,13 @@ class AppListTile extends StatelessWidget {
     return ListTile(
       leading: XIcon.x64(
         Icons.menu,
-        color: XColor.error(),
+        // color: XColor.error(context),
       ),
       // leading:
       // Icon(
       //             Icons.menu,
       //             size: 24,
-      //             color: XColor.tertiary(),
+      //             color: XColor.tertiary(context),
       //           ),
       // leading: AppIcon.bottomNavigation(Icons.menu),
     );
@@ -161,9 +173,10 @@ class AppCard extends StatelessWidget {
     return XPadding.allExtraLarge(
       // padding: XEdgeInsets.allExtraLarge(),
       child: Container(
-        color: XColor.error(),
+        color: XColor.inversePrimary(context),
         margin: AppEdgeInsets.cardMargin(),
         padding: AppEdgeInsets.cardMargin(),
+        child: const XText.bodyLarge('AppCard'),
       ),
     );
   }

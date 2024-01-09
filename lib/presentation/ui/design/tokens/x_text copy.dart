@@ -34,96 +34,96 @@
 //   //               builder: (context) {
 //   //                 return
 
-//   // Theme.of(MaterialX.context).textTheme.displaySmall!;);
+//   // MaterialX.theme.textTheme.displaySmall!;);
 //   // }
 
 //   XText.displaySmall(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.displaySmall!);
+//   }) : super(style: MaterialX.theme.textTheme.displaySmall!);
 
 //   XText.displayMedium(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.displayMedium!);
+//   }) : super(style: MaterialX.theme.textTheme.displayMedium!);
 
 //   XText.displayLarge(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.displayLarge!);
+//   }) : super(style: MaterialX.theme.textTheme.displayLarge!);
 
 //   XText.headlineSmall(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.headlineSmall!);
+//   }) : super(style: MaterialX.theme.textTheme.headlineSmall!);
 
 //   XText.headlineMedium(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.headlineMedium!);
+//   }) : super(style: MaterialX.theme.textTheme.headlineMedium!);
 
 //   XText.headlineLarge(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.headlineLarge!);
+//   }) : super(style: MaterialX.theme.textTheme.headlineLarge!);
 
 //   XText.titleSmall(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.titleSmall!);
+//   }) : super(style: MaterialX.theme.textTheme.titleSmall!);
 
 //   XText.titleMedium(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.titleMedium!);
+//   }) : super(style: MaterialX.theme.textTheme.titleMedium!);
 
 //   XText.titleLarge(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.titleLarge!);
+//   }) : super(style: MaterialX.theme.textTheme.titleLarge!);
 
 //   XText.bodySmall(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.bodySmall!);
+//   }) : super(style: MaterialX.theme.textTheme.bodySmall!);
 
 //   XText.bodyMedium(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.bodyMedium!);
+//   }) : super(style: MaterialX.theme.textTheme.bodyMedium!);
 
 //   XText.bodyLarge(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.bodyLarge!);
+//   }) : super(style: MaterialX.theme.textTheme.bodyLarge!);
 
 //   XText.labelSmall(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.labelSmall!);
+//   }) : super(style: MaterialX.theme.textTheme.labelSmall!);
 
 //   XText.labelMedium(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.labelMedium!);
+//   }) : super(style: MaterialX.theme.textTheme.labelMedium!);
 
 //   XText.labelLarge(
 //     BuildContext context,
 //     super.data, {
 //     super.key,
-//   }) : super(style: Theme.of(MaterialX.context).textTheme.labelLarge!);
+//   }) : super(style: MaterialX.theme.textTheme.labelLarge!);
 // }
