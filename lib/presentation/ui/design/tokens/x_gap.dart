@@ -1,32 +1,86 @@
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XGap extends Gap {
+enum XSpacings {
+  none,
+  extraSmall,
+  small,
+  semiSmall,
+  medium,
+  semiLarge,
+  large,
+  extraLarge,
+  superLarge,
+}
+
+class XGap extends StatelessWidget {
+  final double? value;
+  final XSpacings? xValue;
+
   const XGap(
-    super.value, {
+    this.value, {
     super.key,
+    this.xValue,
   });
 
-  XGap.none({super.key}) : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.none);
+  const XGap.none({super.key})
+      : value = null,
+        xValue = XSpacings.none;
 
-  XGap.extraSmall({super.key})
-      : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraSmall);
+  const XGap.extraSmall({super.key})
+      : value = null,
+        xValue = XSpacings.extraSmall;
 
-  XGap.small({super.key}) : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.small);
+  const XGap.small({super.key})
+      : value = null,
+        xValue = XSpacings.small;
 
-  XGap.semiSmall({super.key})
-      : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiSmall);
+  const XGap.semiSmall({super.key})
+      : value = null,
+        xValue = XSpacings.semiSmall;
 
-  XGap.medium({super.key}) : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.medium);
+  const XGap.medium({super.key})
+      : value = null,
+        xValue = XSpacings.medium;
 
-  XGap.semiLarge({super.key})
-      : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiLarge);
+  const XGap.semiLarge({super.key})
+      : value = null,
+        xValue = XSpacings.semiLarge;
 
-  XGap.large({super.key}) : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.large);
+  const XGap.large({super.key})
+      : value = null,
+        xValue = XSpacings.large;
 
-  XGap.extraLarge({super.key})
-      : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraLarge);
+  const XGap.extraLarge({super.key})
+      : value = null,
+        xValue = XSpacings.extraLarge;
 
-  XGap.superLarge({super.key})
-      : super(XMetricsData2.of(XMetricsData2.context).metrics.spacing.superLarge);
+  const XGap.superLarge({super.key})
+      : value = null,
+        xValue = XSpacings.superLarge;
+
+  @override
+  Widget build(BuildContext context) {
+    final xSpacingsData = MaterialX.of(context).metrics.spacing;
+    final resolvedSpacing =
+        resolveXSpacing(xSpacing: xValue, xSpacingsData: xSpacingsData);
+
+    return Gap(resolvedSpacing ?? value ?? 0);
+  }
+
+  double? resolveXSpacing(
+          {required XSpacings? xSpacing,
+          required XSpacingsData xSpacingsData}) =>
+      switch (xSpacing) {
+        XSpacings.none => xSpacingsData.none,
+        XSpacings.extraSmall => xSpacingsData.extraSmall,
+        XSpacings.small => xSpacingsData.small,
+        XSpacings.semiSmall => xSpacingsData.semiSmall,
+        XSpacings.medium => xSpacingsData.medium,
+        XSpacings.semiLarge => xSpacingsData.semiLarge,
+        XSpacings.large => xSpacingsData.large,
+        XSpacings.extraLarge => xSpacingsData.extraLarge,
+        XSpacings.superLarge => xSpacingsData.superLarge,
+        null => null,
+      };
 }

@@ -1,58 +1,119 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XIcon extends Icon {
+/// IN PROGRESS
+enum XIconSizes {
+  none,
+  x16,
+  x24,
+  x32,
+  x64,
+  x128,
+  x256,
+  x512,
+}
+
+class XIcon extends StatelessWidget {
+  final IconData? icon;
+  final double? size;
+  // final double? fill;
+  // final double? weight;
+  // final double? grade;
+  // final double? opticalSize;
+  final Color? color;
+  // final List<Shadow>? shadows;
+  // final String? semanticLabel;
+  // final TextDirection? textDirection;
+  final XIconSizes? xSize;
+
   const XIcon(
-    super.icon, {
+    this.icon, {
     super.key,
-    super.color,
-    super.size,
+    this.color,
+    this.size,
+    this.xSize,
   }) : assert(size == null || (size >= 16.0 && size <= 512.0));
 
-  XIcon.none(
-    super.icon, {
+  const XIcon.none(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.none);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.none;
 
-  XIcon.x16(
-    super.icon, {
+  const XIcon.x16(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x16);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x16;
 
-  XIcon.x24(
-    super.icon, {
+  const XIcon.x24(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x24);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x24;
 
-  XIcon.x32(
-    super.icon, {
+  const XIcon.x32(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x32);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x32;
 
-  XIcon.x64(
-    super.icon, {
+  const XIcon.x64(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x64);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x64;
 
-  XIcon.x128(
-    super.icon, {
+  const XIcon.x128(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x128);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x128;
 
-  XIcon.x256(
-    super.icon, {
+  const XIcon.x256(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x256);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x256;
 
-  XIcon.x512(
-    super.icon, {
+  const XIcon.x512(
+    this.icon, {
     super.key,
-    super.color,
-  }) : super(size: XMetricsData2.of(XMetricsData2.context).metrics.iconSizes.x512);
+    this.color,
+  })  : size = null,
+        xSize = XIconSizes.x512;
+
+  @override
+  Widget build(BuildContext context) {
+    final xIconSizesData = MaterialX.of(context).metrics.iconSizes;
+    final resolvedSize =
+        resolveXIconSize(xIconSize: xSize, xIconSizesData: xIconSizesData);
+
+    return Icon(
+      icon,
+      size: resolvedSize ?? size,
+      color: color,
+    );
+  }
+
+  double? resolveXIconSize(
+          {required XIconSizes? xIconSize,
+          required XIconSizesData xIconSizesData}) =>
+      switch (xIconSize) {
+        XIconSizes.none => xIconSizesData.none,
+        XIconSizes.x16 => xIconSizesData.x16,
+        XIconSizes.x24 => xIconSizesData.x24,
+        XIconSizes.x32 => xIconSizesData.x32,
+        XIconSizes.x64 => xIconSizesData.x64,
+        XIconSizes.x128 => xIconSizesData.x128,
+        XIconSizes.x256 => xIconSizesData.x256,
+        XIconSizes.x512 => xIconSizesData.x512,
+        null => null,
+      };
 }

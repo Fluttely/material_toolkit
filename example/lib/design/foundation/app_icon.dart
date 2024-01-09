@@ -4,9 +4,7 @@ class AppIcon extends XIcon {
   const AppIcon.bottomNavigation(
     super.icon, {
     super.key,
-  }) : super(
-          // size: MaterialX.of(MaterialX.context).metrics.iconSizes.x16,
-        );
+  }) : super(xSize: XIconSizes.x16);
 }
 
 // extension Aasdsad on XIcon {

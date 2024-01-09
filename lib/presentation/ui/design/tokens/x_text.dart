@@ -35,7 +35,7 @@ class XText extends StatelessWidget {
   final TextHeightBehavior? textHeightBehavior;
   final Color? selectionColor;
   final TextScaler? textScaler;
-  final XTextTheme? xTextTheme;
+  final XTextTheme? xStyle;
 
   const XText(
     this.data, {
@@ -53,7 +53,7 @@ class XText extends StatelessWidget {
     this.textHeightBehavior,
     this.selectionColor,
     this.textScaler,
-    this.xTextTheme,
+    this.xStyle,
   });
 
   const XText.displaySmall(
@@ -72,7 +72,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.displaySmall;
+        xStyle = XTextTheme.displaySmall;
 
   const XText.displayMedium(
     this.data, {
@@ -90,7 +90,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.displayMedium;
+        xStyle = XTextTheme.displayMedium;
 
   const XText.displayLarge(
     this.data, {
@@ -108,7 +108,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.displayLarge;
+        xStyle = XTextTheme.displayLarge;
 
   const XText.headlineSmall(
     this.data, {
@@ -126,7 +126,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.headlineSmall;
+        xStyle = XTextTheme.headlineSmall;
 
   const XText.headlineMedium(
     this.data, {
@@ -144,7 +144,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.headlineMedium;
+        xStyle = XTextTheme.headlineMedium;
 
   const XText.headlineLarge(
     this.data, {
@@ -162,7 +162,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.headlineLarge;
+        xStyle = XTextTheme.headlineLarge;
 
   const XText.titleSmall(
     this.data, {
@@ -180,7 +180,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.titleSmall;
+        xStyle = XTextTheme.titleSmall;
 
   const XText.titleMedium(
     this.data, {
@@ -198,7 +198,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.titleMedium;
+        xStyle = XTextTheme.titleMedium;
 
   const XText.titleLarge(
     this.data, {
@@ -216,7 +216,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.titleLarge;
+        xStyle = XTextTheme.titleLarge;
 
   const XText.bodySmall(
     this.data, {
@@ -234,7 +234,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.bodySmall;
+        xStyle = XTextTheme.bodySmall;
 
   const XText.bodyMedium(
     this.data, {
@@ -252,7 +252,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.bodyMedium;
+        xStyle = XTextTheme.bodyMedium;
 
   const XText.bodyLarge(
     this.data, {
@@ -270,7 +270,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.bodyLarge;
+        xStyle = XTextTheme.bodyLarge;
 
   const XText.labelSmall(
     this.data, {
@@ -288,7 +288,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.labelSmall;
+        xStyle = XTextTheme.labelSmall;
 
   const XText.labelMedium(
     this.data, {
@@ -306,7 +306,7 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.labelMedium;
+        xStyle = XTextTheme.labelMedium;
 
   const XText.labelLarge(
     this.data, {
@@ -324,17 +324,17 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
   })  : style = null,
-        xTextTheme = XTextTheme.labelLarge;
+        xStyle = XTextTheme.labelLarge;
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final xStyle =
-        resolveXTextStyle(xTextTheme: xTextTheme, textTheme: textTheme);
+    final textThemeData = Theme.of(context).textTheme;
+    final resolvedTextStyle =
+        resolveXTextStyle(xTextTheme: xStyle, textTheme: textThemeData);
 
     return Text(
       data,
-      style: xStyle ?? style,
+      style: resolvedTextStyle ?? style,
       strutStyle: strutStyle,
       textAlign: textAlign,
       textDirection: textDirection,

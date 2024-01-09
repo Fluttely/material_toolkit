@@ -30,16 +30,16 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return XMetricsData2(
+    return MaterialX(
       child: ValueListenableBuilder(
         valueListenable: themeChange,
         builder: (_, value, __) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: value,
-            home: HomePage(
-              key: XMetricsData2.globalKey,
-            ),
+            home: const HomePage(
+                // key: XMetricsData2.globalKey,
+                ),
           );
         },
       ),
@@ -71,22 +71,22 @@ class HomePage extends StatelessWidget {
           const Haha(),
           const AppListTile(),
           XCard(
-            elevation: XElevation.level5(),
-            child: Column(
+            elevation: XElevation.level5(context),
+            child: const Column(
               children: [
                 XIcon.x16(
                   Icons.menu,
                 ),
-                const Icon(
+                Icon(
                   Icons.menu,
                   size: 24,
                   // color: XColor.tertiary(context),
                 ),
-                const AppIcon.bottomNavigation(Icons.menu),
+                AppIcon.bottomNavigation(Icons.menu),
               ],
             ),
           ),
-          ListTile(
+          const ListTile(
             leading: XIcon.x64(
               Icons.menu,
               // color: XColor.error(context),
@@ -119,7 +119,7 @@ class Haha extends StatelessWidget {
         children: [
           XText(
             'Custom',
-            xTextTheme: XTextTheme.displayMedium,
+            xStyle: XTextTheme.displayMedium,
           ),
           // XText.displaySmall('displaySmall'),
           // XText.displayMedium('displayMedium'),
@@ -147,7 +147,7 @@ class AppListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       leading: XIcon.x64(
         Icons.menu,
         // color: XColor.error(context),
@@ -174,8 +174,8 @@ class AppCard extends StatelessWidget {
       // padding: XEdgeInsets.allExtraLarge(),
       child: Container(
         color: XColor.inversePrimary(context),
-        margin: AppEdgeInsets.cardMargin(),
-        padding: AppEdgeInsets.cardMargin(),
+        margin: AppEdgeInsets.cardMargin(context),
+        padding: AppEdgeInsets.cardMargin(context),
         child: const XText.bodyLarge('AppCard'),
       ),
     );

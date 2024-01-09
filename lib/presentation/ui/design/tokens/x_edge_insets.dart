@@ -24,104 +24,91 @@ class XEdgeInsets extends EdgeInsets {
           vertical: vertical ?? 0,
         );
 
-  XEdgeInsets.none()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.none);
+  XEdgeInsets.none(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.none);
 
-  XEdgeInsets.allExtraSmall()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraSmall);
+  XEdgeInsets.allExtraSmall(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.extraSmall);
 
-  XEdgeInsets.allSmall()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.small);
+  XEdgeInsets.allSmall(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.small);
 
-  XEdgeInsets.allSemiSmall()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiSmall);
+  XEdgeInsets.allSemiSmall(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.semiSmall);
 
-  XEdgeInsets.allMedium()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.medium);
+  XEdgeInsets.allMedium(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.medium);
 
-  XEdgeInsets.allSemiLarge()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiLarge);
+  XEdgeInsets.allSemiLarge(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.semiLarge);
 
-  XEdgeInsets.allLarge()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.large);
+  XEdgeInsets.allLarge(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.large);
 
-  XEdgeInsets.allExtraLarge()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraLarge);
+  XEdgeInsets.allExtraLarge(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.extraLarge);
 
-  XEdgeInsets.allSuperLarge()
-      : super.all(XMetricsData2.of(XMetricsData2.context).metrics.spacing.superLarge);
+  XEdgeInsets.allSuperLarge(BuildContext context)
+      : super.all(MaterialX.of(context).metrics.spacing.superLarge);
 
-  XEdgeInsets.horizontalExtraSmall()
+  XEdgeInsets.horizontalExtraSmall(BuildContext context)
       : super.symmetric(
-            horizontal:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraSmall);
+            horizontal: MaterialX.of(context).metrics.spacing.extraSmall);
 
-  XEdgeInsets.horizontalSmall()
+  XEdgeInsets.horizontalSmall(BuildContext context)
       : super.symmetric(
-            horizontal: XMetricsData2.of(XMetricsData2.context).metrics.spacing.small);
+            horizontal: MaterialX.of(context).metrics.spacing.small);
 
-  XEdgeInsets.horizontalSemiSmall()
+  XEdgeInsets.horizontalSemiSmall(BuildContext context)
       : super.symmetric(
-            horizontal:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiSmall);
+            horizontal: MaterialX.of(context).metrics.spacing.semiSmall);
 
-  XEdgeInsets.horizontalMedium()
+  XEdgeInsets.horizontalMedium(BuildContext context)
       : super.symmetric(
-            horizontal: XMetricsData2.of(XMetricsData2.context).metrics.spacing.medium);
+            horizontal: MaterialX.of(context).metrics.spacing.medium);
 
-  XEdgeInsets.horizontalSemiLarge()
+  XEdgeInsets.horizontalSemiLarge(BuildContext context)
       : super.symmetric(
-            horizontal:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiLarge);
+            horizontal: MaterialX.of(context).metrics.spacing.semiLarge);
 
-  XEdgeInsets.horizontalLarge()
+  XEdgeInsets.horizontalLarge(BuildContext context)
       : super.symmetric(
-            horizontal: XMetricsData2.of(XMetricsData2.context).metrics.spacing.large);
+            horizontal: MaterialX.of(context).metrics.spacing.large);
 
-  XEdgeInsets.horizontalExtraLarge()
+  XEdgeInsets.horizontalExtraLarge(BuildContext context)
       : super.symmetric(
-            horizontal:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraLarge);
+            horizontal: MaterialX.of(context).metrics.spacing.extraLarge);
 
-  XEdgeInsets.horizontalSuperLarge()
+  XEdgeInsets.horizontalSuperLarge(BuildContext context)
       : super.symmetric(
-            horizontal:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.superLarge);
+            horizontal: MaterialX.of(context).metrics.spacing.superLarge);
 
-  XEdgeInsets.verticalExtraSmall()
+  XEdgeInsets.verticalExtraSmall(BuildContext context)
       : super.symmetric(
-            vertical:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraSmall);
+            vertical: MaterialX.of(context).metrics.spacing.extraSmall);
 
-  XEdgeInsets.verticalSmall()
-      : super.symmetric(
-            vertical: XMetricsData2.of(XMetricsData2.context).metrics.spacing.small);
+  XEdgeInsets.verticalSmall(BuildContext context)
+      : super.symmetric(vertical: MaterialX.of(context).metrics.spacing.small);
 
-  XEdgeInsets.verticalSemiSmall()
+  XEdgeInsets.verticalSemiSmall(BuildContext context)
       : super.symmetric(
-            vertical:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiSmall);
+            vertical: MaterialX.of(context).metrics.spacing.semiSmall);
 
-  XEdgeInsets.verticalMedium()
-      : super.symmetric(
-            vertical: XMetricsData2.of(XMetricsData2.context).metrics.spacing.medium);
+  XEdgeInsets.verticalMedium(BuildContext context)
+      : super.symmetric(vertical: MaterialX.of(context).metrics.spacing.medium);
 
-  XEdgeInsets.verticalSemiLarge()
+  XEdgeInsets.verticalSemiLarge(BuildContext context)
       : super.symmetric(
-            vertical:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.semiLarge);
+            vertical: MaterialX.of(context).metrics.spacing.semiLarge);
 
-  XEdgeInsets.verticalLarge()
-      : super.symmetric(
-            vertical: XMetricsData2.of(XMetricsData2.context).metrics.spacing.large);
+  XEdgeInsets.verticalLarge(BuildContext context)
+      : super.symmetric(vertical: MaterialX.of(context).metrics.spacing.large);
 
-  XEdgeInsets.verticalExtraLarge()
+  XEdgeInsets.verticalExtraLarge(BuildContext context)
       : super.symmetric(
-            vertical:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.extraLarge);
+            vertical: MaterialX.of(context).metrics.spacing.extraLarge);
 
-  XEdgeInsets.verticalSuperLarge()
+  XEdgeInsets.verticalSuperLarge(BuildContext context)
       : super.symmetric(
-            vertical:
-                XMetricsData2.of(XMetricsData2.context).metrics.spacing.superLarge);
+            vertical: MaterialX.of(context).metrics.spacing.superLarge);
 }

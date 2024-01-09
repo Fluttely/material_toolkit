@@ -1,134 +1,250 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XPadding extends Padding {
+enum XEdgeInsetsSizes {
+  none,
+  allExtraSmall,
+  allSmall,
+  allSemiSmall,
+  allMedium,
+  allSemiLarge,
+  allLarge,
+  allExtraLarge,
+  allSuperLarge,
+
+  horizontalExtraSmall,
+  horizontalSmall,
+  horizontalSemiSmall,
+  horizontalMedium,
+  horizontalSemiLarge,
+  horizontalLarge,
+  horizontalExtraLarge,
+  horizontalSuperLarge,
+
+  verticalExtraSmall,
+  verticalSmall,
+  verticalSemiSmall,
+  verticalMedium,
+  verticalSemiLarge,
+  verticalLarge,
+  verticalExtraLarge,
+  verticalSuperLarge,
+}
+
+class XPadding extends StatelessWidget {
+  final EdgeInsets? padding;
+  final XEdgeInsetsSizes? xPadding;
+  final Widget child;
+
   const XPadding({
+    required this.child,
+    this.padding,
+    this.xPadding,
     super.key,
-    required XEdgeInsets padding,
-    super.child,
-  }) : super(padding: padding);
+  });
 
-  XPadding.none({
+  const XPadding.none({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.none());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.none;
 
-  XPadding.allExtraSmall({
+  const XPadding.allExtraSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allExtraSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allExtraSmall;
 
-  XPadding.allSmall({
+  const XPadding.allSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allSmall;
 
-  XPadding.allSemiSmall({
+  const XPadding.allSemiSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allSemiSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allSemiSmall;
 
-  XPadding.allMedium({
+  const XPadding.allMedium({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allMedium());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allMedium;
 
-  XPadding.allSemiLarge({
+  const XPadding.allSemiLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allSemiLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allSemiLarge;
 
-  XPadding.allLarge({
+  const XPadding.allLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allLarge;
 
-  XPadding.allExtraLarge({
+  const XPadding.allExtraLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allExtraLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allExtraLarge;
 
-  XPadding.allSuperLarge({
+  const XPadding.allSuperLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.allSuperLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.allSuperLarge;
 
-  XPadding.horizontalExtraSmall({
+  const XPadding.horizontalExtraSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalExtraSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalExtraSmall;
 
-  XPadding.horizontalSmall({
+  const XPadding.horizontalSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalSmall;
 
-  XPadding.horizontalSemiSmall({
+  const XPadding.horizontalSemiSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalSemiSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalSemiSmall;
 
-  XPadding.horizontalMedium({
+  const XPadding.horizontalMedium({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalMedium());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalMedium;
 
-  XPadding.horizontalSemiLarge({
+  const XPadding.horizontalSemiLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalSemiLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalSemiLarge;
 
-  XPadding.horizontalLarge({
+  const XPadding.horizontalLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalLarge;
 
-  XPadding.horizontalExtraLarge({
+  const XPadding.horizontalExtraLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalExtraLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalExtraLarge;
 
-  XPadding.horizontalSuperLarge({
+  const XPadding.horizontalSuperLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.horizontalSuperLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.horizontalSuperLarge;
 
-  XPadding.verticalExtraSmall({
+  const XPadding.verticalExtraSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalExtraSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalExtraSmall;
 
-  XPadding.verticalSmall({
+  const XPadding.verticalSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalSmall;
 
-  XPadding.verticalSemiSmall({
+  const XPadding.verticalSemiSmall({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalSemiSmall());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalSemiSmall;
 
-  XPadding.verticalMedium({
+  const XPadding.verticalMedium({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalMedium());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalMedium;
 
-  XPadding.verticalSemiLarge({
+  const XPadding.verticalSemiLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalSemiLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalSemiLarge;
 
-  XPadding.verticalLarge({
+  const XPadding.verticalLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalLarge;
 
-  XPadding.verticalExtraLarge({
+  const XPadding.verticalExtraLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalExtraLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalExtraLarge;
 
-  XPadding.verticalSuperLarge({
+  const XPadding.verticalSuperLarge({
+    required this.child,
     super.key,
-    super.child,
-  }) : super(padding: XEdgeInsets.verticalSuperLarge());
+  })  : padding = null,
+        xPadding = XEdgeInsetsSizes.verticalSuperLarge;
+
+  @override
+  Widget build(BuildContext context) {
+    final resolvedEdgeInsets =
+        resolveXEdgeInsets(context, xEdgeInsetsSizes: xPadding);
+
+    return Padding(
+      padding: resolvedEdgeInsets ?? padding ?? XEdgeInsets.none(context),
+    );
+  }
+
+  XEdgeInsets? resolveXEdgeInsets(
+    BuildContext context, {
+    required XEdgeInsetsSizes? xEdgeInsetsSizes,
+  }) =>
+      switch (xEdgeInsetsSizes) {
+        XEdgeInsetsSizes.none => XEdgeInsets.none(context),
+        XEdgeInsetsSizes.allExtraSmall => XEdgeInsets.allExtraSmall(context),
+        XEdgeInsetsSizes.allSmall => XEdgeInsets.allSmall(context),
+        XEdgeInsetsSizes.allSemiSmall => XEdgeInsets.allSemiSmall(context),
+        XEdgeInsetsSizes.allMedium => XEdgeInsets.allMedium(context),
+        XEdgeInsetsSizes.allSemiLarge => XEdgeInsets.allSemiLarge(context),
+        XEdgeInsetsSizes.allLarge => XEdgeInsets.allLarge(context),
+        XEdgeInsetsSizes.allExtraLarge => XEdgeInsets.allExtraLarge(context),
+        XEdgeInsetsSizes.allSuperLarge => XEdgeInsets.allSuperLarge(context),
+        XEdgeInsetsSizes.horizontalExtraSmall =>
+          XEdgeInsets.horizontalExtraSmall(context),
+        XEdgeInsetsSizes.horizontalSmall =>
+          XEdgeInsets.horizontalSmall(context),
+        XEdgeInsetsSizes.horizontalSemiSmall =>
+          XEdgeInsets.horizontalSemiSmall(context),
+        XEdgeInsetsSizes.horizontalMedium =>
+          XEdgeInsets.horizontalMedium(context),
+        XEdgeInsetsSizes.horizontalSemiLarge =>
+          XEdgeInsets.horizontalSemiLarge(context),
+        XEdgeInsetsSizes.horizontalLarge =>
+          XEdgeInsets.horizontalLarge(context),
+        XEdgeInsetsSizes.horizontalExtraLarge =>
+          XEdgeInsets.horizontalExtraLarge(context),
+        XEdgeInsetsSizes.horizontalSuperLarge =>
+          XEdgeInsets.horizontalSuperLarge(context),
+        XEdgeInsetsSizes.verticalExtraSmall =>
+          XEdgeInsets.verticalExtraSmall(context),
+        XEdgeInsetsSizes.verticalSmall => XEdgeInsets.verticalSmall(context),
+        XEdgeInsetsSizes.verticalSemiSmall =>
+          XEdgeInsets.verticalSemiSmall(context),
+        XEdgeInsetsSizes.verticalMedium => XEdgeInsets.verticalMedium(context),
+        XEdgeInsetsSizes.verticalSemiLarge =>
+          XEdgeInsets.verticalSemiLarge(context),
+        XEdgeInsetsSizes.verticalLarge => XEdgeInsets.verticalLarge(context),
+        XEdgeInsetsSizes.verticalExtraLarge =>
+          XEdgeInsets.verticalExtraLarge(context),
+        XEdgeInsetsSizes.verticalSuperLarge =>
+          XEdgeInsets.verticalSuperLarge(context),
+        null => null,
+      };
 }
