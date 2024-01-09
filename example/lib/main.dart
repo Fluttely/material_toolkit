@@ -1,23 +1,7 @@
+import 'package:example/design/theme/dark_red_theme.dart';
+import 'package:example/design/theme/light_green_theme.dart';
 import 'package:example/example.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-
-ThemeData get theme1 => ThemeData(
-      // brightness: Brightness.dark,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.red,
-        brightness: Brightness.dark,
-      ).copyWith(),
-      iconTheme: const IconThemeData(),
-    );
-
-ThemeData get theme2 => ThemeData(
-      // brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.green,
-        brightness: Brightness.light,
-      ).copyWith(),
-      iconTheme: const IconThemeData(),
-    );
 
 void main() {
   runApp(const App());
@@ -57,20 +41,31 @@ class HomePage extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              themeChange.value = theme1;
+              themeChange.value = darkRedTheme;
             },
-            child: const Text('Change Theme 1'),
+            child: const Text('Dark Red Theme'),
           ),
           ElevatedButton(
             onPressed: () {
-              themeChange.value = theme2;
+              themeChange.value = lightGreenTheme;
             },
-            child: const Text('Change Theme 2'),
+            child: const Text('Light Green Theme'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              themeChange.value = googleTheme;
+            },
+            child: XText(
+              'Google Theme',
+              style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
+              ),
+            ),
           ),
           const AppCard(),
-          const Haha(),
+          const TextExample(),
           const AppListTile(),
-          XCard(
+          Card(
             elevation: XElevation.level5(context),
             child: const Column(
               children: [
@@ -105,37 +100,36 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class Haha extends StatelessWidget {
-  const Haha({
+class TextExample extends StatelessWidget {
+  const TextExample({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
-      elevation: 10,
-      //  XElevation.mediumSize().value,
-      child: Column(
+    return XCard(
+      elevation: XElevation.level5(context),
+      child: const Column(
         children: [
+          XText.labelSmall('labelSmall'),
+          XText.labelMedium('labelMedium'),
+          XText.labelLarge('labelLarge'),
+          XText.bodySmall('bodySmall'),
+          XText.bodyMedium('bodyMedium'),
+          XText.bodyLarge('bodyLarge'),
+          XText.titleSmall('titleSmall'),
+          XText.titleMedium('titleMedium'),
+          XText.titleLarge('titleLarge'),
+          XText.headlineSmall('headlineSmall'),
+          XText.headlineMedium('headlineMedium'),
+          XText.headlineLarge('headlineLarge'),
+          XText.displaySmall('displaySmall'),
+          XText.displayMedium('displayMedium'),
+          XText.displayLarge('displayLarge'),
           XText(
             'Custom',
             xStyle: XTextTheme.displayMedium,
           ),
-          // XText.displaySmall('displaySmall'),
-          // XText.displayMedium('displayMedium'),
-          // XText.displayLarge('displayLarge'),
-          // XText.headlineSmall('headlineSmall'),
-          // XText.headlineMedium('headlineMedium'),
-          XText.headlineLarge('headlineLarge'),
-          XText.titleSmall('titleSmall'),
-          XText.titleMedium('titleMedium'),
-          XText.titleLarge('titleLarge'),
-          XText.bodySmall('bodySmall'),
-          XText.bodyMedium('bodyMedium'),
-          XText.bodyLarge('bodyLarge'),
-          XText.labelSmall('labelSmall'),
-          XText.labelMedium('labelMedium'),
-          XText.labelLarge('labelLarge'),
         ],
       ),
     );
@@ -170,13 +164,15 @@ class AppCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return XPadding.allExtraLarge(
-      // padding: XEdgeInsets.allExtraLarge(),
-      child: Container(
-        color: XColor.inversePrimary(context),
-        margin: AppEdgeInsets.cardMargin(context),
-        padding: AppEdgeInsets.cardMargin(context),
-        child: const XText.bodyLarge('AppCard'),
+    return Card(
+      child: Padding(
+        padding: XEdgeInsets.allExtraLarge(context),
+        child: Container(
+          color: XColor.inversePrimary(context),
+          margin: AppEdgeInsets.cardMargin(context),
+          padding: AppEdgeInsets.cardMargin(context),
+          child: const XText('AppCard'),
+        ),
       ),
     );
   }

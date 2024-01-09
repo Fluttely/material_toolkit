@@ -15,14 +15,14 @@ enum XIconSizes {
 class XIcon extends StatelessWidget {
   final IconData? icon;
   final double? size;
-  // final double? fill;
-  // final double? weight;
-  // final double? grade;
-  // final double? opticalSize;
+  final double? fill;
+  final double? weight;
+  final double? grade;
+  final double? opticalSize;
   final Color? color;
-  // final List<Shadow>? shadows;
-  // final String? semanticLabel;
-  // final TextDirection? textDirection;
+  final List<Shadow>? shadows;
+  final String? semanticLabel;
+  final TextDirection? textDirection;
   final XIconSizes? xSize;
 
   const XIcon(
@@ -31,12 +31,26 @@ class XIcon extends StatelessWidget {
     this.color,
     this.size,
     this.xSize,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   }) : assert(size == null || (size >= 16.0 && size <= 512.0));
 
   const XIcon.none(
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.none;
 
@@ -44,6 +58,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x16;
 
@@ -51,6 +72,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x24;
 
@@ -58,6 +86,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x32;
 
@@ -65,6 +100,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x64;
 
@@ -72,6 +114,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x128;
 
@@ -79,6 +128,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x256;
 
@@ -86,6 +142,13 @@ class XIcon extends StatelessWidget {
     this.icon, {
     super.key,
     this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
   })  : size = null,
         xSize = XIconSizes.x512;
 
@@ -99,6 +162,13 @@ class XIcon extends StatelessWidget {
       icon,
       size: resolvedSize ?? size,
       color: color,
+      fill: fill,
+      weight: weight,
+      grade: grade,
+      opticalSize: opticalSize,
+      shadows: shadows,
+      semanticLabel: semanticLabel,
+      textDirection: textDirection,
     );
   }
 

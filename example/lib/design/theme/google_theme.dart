@@ -1,7 +1,8 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-final ThemeData themeData = ThemeData(
-  colorScheme: ColorScheme(
+final ThemeData googleTheme = ThemeData(
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: const Color(0xFF1E88E5),
     // primaryColor: Cor principal usada no app, para widgets como AppBar.
     primary: const Color(0xFF1E88E5), // Exemplo: Google Blue 600
 
