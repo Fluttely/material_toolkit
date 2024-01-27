@@ -25,14 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
-  auto_injector:
-    dependency: transitive
-    description:
-      name: auto_injector
-      sha256: "2952a4d4339ed3b65e8e54765ec68ee6ada5cb21d83cb8d39e3f6b4e690ab5ca"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   bloc:
     dependency: transitive
     description:
@@ -262,14 +254,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0+1"
-  flutter_modular:
-    dependency: transitive
-    description:
-      name: flutter_modular
-      sha256: ac6298ce1abd414286ee5a554fc45e81e358461979b5d4e02c8abd685e3b23f2
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.3.2"
   flutter_svg:
     dependency: transitive
     description:
@@ -312,6 +296,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
+  get_it:
+    dependency: transitive
+    description:
+      name: get_it
+      sha256: d0b88dc35a7f97fd91fec0cf8f165abd97a57977968d8fc02ba0bc92e14ba07e
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.6.6"
   http:
     dependency: transitive
     description:
@@ -407,14 +399,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  modular_core:
-    dependency: transitive
-    description:
-      name: modular_core
-      sha256: "5baaa460ac9d85d457d6864ef41a2194b8115a6bdeb585a684789f2d9004c892"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.3.2"
   nested:
     dependency: transitive
     description:
@@ -607,14 +591,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
-  result_dart:
-    dependency: transitive
-    description:
-      name: result_dart
-      sha256: f28a171d55e2e1c1753b41d4d8edcaff886f103e73c575d14764913907e57928
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   rxdart:
     dependency: transitive
     description:

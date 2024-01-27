@@ -21,9 +21,7 @@ class App extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: value,
-            home: const HomePage(
-                // key: XMetricsData2.globalKey,
-                ),
+            home: const HomePage(),
           );
         },
       ),
@@ -38,142 +36,171 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              themeChange.value = darkRedTheme;
-            },
-            child: const Text('Dark Red Theme'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              themeChange.value = lightGreenTheme;
-            },
-            child: const Text('Light Green Theme'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              themeChange.value = googleTheme;
-            },
-            child: XText(
-              'Google Theme',
-              style: TextStyle(
-                fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
-              ),
-            ),
-          ),
-          const AppCard(),
-          const TextExample(),
-          const AppListTile(),
-          Card(
-            elevation: XElevation.level5(context),
-            child: const Column(
-              children: [
-                XIcon.x16(
-                  Icons.menu,
-                ),
-                Icon(
-                  Icons.menu,
-                  size: 24,
-                  // color: XColor.tertiary(context),
-                ),
-                AppIcon.bottomNavigation(Icons.menu),
-              ],
-            ),
-          ),
-          const ListTile(
-            leading: XIcon.x64(
-              Icons.menu,
-              // color: XColor.error(context),
-            ),
-            // leading:
-            // Icon(
-            //             Icons.menu,
-            //             size: 24,
-            //             color: XColor.tertiary(context),
-            //           ),
-            // leading: AppIcon.bottomNavigation(Icons.menu),
-          ),
+        children: const [
+          ThemeExample(),
+          XTextExample(),
+          XIconExample(),
+          XColorExample(),
         ],
       ),
     );
   }
 }
 
-class TextExample extends StatelessWidget {
-  const TextExample({
-    super.key,
-  });
+class ThemeExample extends StatelessWidget {
+  const ThemeExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return XCard(
-      elevation: XElevation.level5(context),
-      child: const Column(
-        children: [
-          XText.labelSmall('labelSmall'),
-          XText.labelMedium('labelMedium'),
-          XText.labelLarge('labelLarge'),
-          XText.bodySmall('bodySmall'),
-          XText.bodyMedium('bodyMedium'),
-          XText.bodyLarge('bodyLarge'),
-          XText.titleSmall('titleSmall'),
-          XText.titleMedium('titleMedium'),
-          XText.titleLarge('titleLarge'),
-          XText.headlineSmall('headlineSmall'),
-          XText.headlineMedium('headlineMedium'),
-          XText.headlineLarge('headlineLarge'),
-          XText.displaySmall('displaySmall'),
-          XText.displayMedium('displayMedium'),
-          XText.displayLarge('displayLarge'),
-          XText(
-            'Custom',
-            xStyle: XTextTheme.displayMedium,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class AppListTile extends StatelessWidget {
-  const AppListTile({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const ListTile(
-      leading: XIcon.x64(
-        Icons.menu,
-        // color: XColor.error(context),
-      ),
-      // leading:
-      // Icon(
-      //             Icons.menu,
-      //             size: 24,
-      //             color: XColor.tertiary(context),
-      //           ),
-      // leading: AppIcon.bottomNavigation(Icons.menu),
-    );
-  }
-}
-
-class AppCard extends StatelessWidget {
-  const AppCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: XEdgeInsets.allExtraLarge(context),
-        child: Container(
-          color: XColor.inversePrimary(context),
-          margin: AppEdgeInsets.cardMargin(context),
-          padding: AppEdgeInsets.cardMargin(context),
-          child: const XText('AppCard'),
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            themeChange.value = darkRedTheme;
+          },
+          child: const Text('Dark Red Theme'),
         ),
-      ),
+        ElevatedButton(
+          onPressed: () {
+            themeChange.value = lightGreenTheme;
+          },
+          child: const Text('Light Green Theme'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            themeChange.value = googleTheme;
+          },
+          child: Text(
+            'Google Theme',
+            style: TextStyle(
+              fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class XTextExample extends StatelessWidget {
+  const XTextExample({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.labelSmall('labelSmall'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.labelMedium('labelMedium'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.labelLarge('labelLarge'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.bodySmall('bodySmall'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.bodyMedium('bodyMedium'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.bodyLarge('bodyLarge'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.titleSmall('titleSmall'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.titleMedium('titleMedium'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.titleLarge('titleLarge'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.headlineSmall('headlineSmall'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.headlineMedium('headlineMedium'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.headlineLarge('headlineLarge'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.displaySmall('displaySmall'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.displayMedium('displayMedium'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText.displayLarge('displayLarge'),
+        ),
+        // ElevatedButton(onPressed:(){},
+        //   'Custom',
+        //   xStyle: XTextTheme.displayMedium,child:const XText(),
+        // ),
+      ],
+    );
+  }
+}
+
+class XIconExample extends StatelessWidget {
+  const XIconExample({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(onPressed: () {}, child: const XIcon.x16(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.x24(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.x32(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.x64(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.x128(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.x256(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.x512(Icons.add)),
+      ],
+    );
+  }
+}
+
+class XColorExample extends StatelessWidget {
+  const XColorExample({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: XColor.scrim(context),
+            foregroundColor: XColor.primary(context),
+          ),
+          child: const XText(
+            'background Color',
+          ),
+        ),
+      ],
     );
   }
 }
