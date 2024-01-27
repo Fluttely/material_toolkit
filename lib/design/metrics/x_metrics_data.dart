@@ -1,5 +1,6 @@
 library x_metrics_data;
 
+import 'package:design_system_toolkit/design_system_toolkit.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 part 'animations/x_durations_data.dart';
@@ -42,7 +43,7 @@ class XMetricsData {
     XIconAssetsData? icons,
   })  : iconSizes = icon ?? XIconSizesData(),
         elevationSizes = elevationSizes ?? XElevationSizesData(),
-        spacing = spacing ?? const XSpacingsData(),
+        spacing = spacing ?? XSpacingsData(),
         radius = radius ?? const XRadiusData(),
         // boxShadows = shadows ?? XBoxShadowsData(),
         durations = durations ?? const XDurationsData(),
