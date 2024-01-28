@@ -11,18 +11,18 @@ class XEdgeInsets extends EdgeInsets {
     double? right,
     double? bottom,
   }) : super.only(
-          left: left ?? TkSpacingsData.none,
-          top: top ?? TkSpacingsData.none,
-          right: right ?? TkSpacingsData.none,
-          bottom: bottom ?? TkSpacingsData.none,
+          left: left ?? XSpacingData.none,
+          top: top ?? XSpacingData.none,
+          right: right ?? XSpacingData.none,
+          bottom: bottom ?? XSpacingData.none,
         );
 
   const XEdgeInsets.symmetric({
     double? horizontal,
     double? vertical,
   }) : super.symmetric(
-          horizontal: horizontal ?? TkSpacingsData.none,
-          vertical: vertical ?? TkSpacingsData.none,
+          horizontal: horizontal ?? XSpacingData.none,
+          vertical: vertical ?? XSpacingData.none,
         );
 
   XEdgeInsets.none(BuildContext context)
