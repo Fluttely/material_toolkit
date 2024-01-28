@@ -1,7 +1,8 @@
+import 'package:design_system_toolkit/design_system_toolkit.dart';
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-enum XSpacings {
+enum XSpacingsType {
   none,
   extraSmall,
   small,
@@ -15,49 +16,48 @@ enum XSpacings {
 
 class XGap extends StatelessWidget {
   final double? value;
-  final XSpacings? xValue;
+  final XSpacingsType? xValue;
 
   const XGap(
     this.value, {
     super.key,
-    this.xValue,
-  });
+  }) : xValue = null;
 
   const XGap.none({super.key})
       : value = null,
-        xValue = XSpacings.none;
+        xValue = XSpacingsType.none;
 
   const XGap.extraSmall({super.key})
       : value = null,
-        xValue = XSpacings.extraSmall;
+        xValue = XSpacingsType.extraSmall;
 
   const XGap.small({super.key})
       : value = null,
-        xValue = XSpacings.small;
+        xValue = XSpacingsType.small;
 
   const XGap.semiSmall({super.key})
       : value = null,
-        xValue = XSpacings.semiSmall;
+        xValue = XSpacingsType.semiSmall;
 
   const XGap.medium({super.key})
       : value = null,
-        xValue = XSpacings.medium;
+        xValue = XSpacingsType.medium;
 
   const XGap.semiLarge({super.key})
       : value = null,
-        xValue = XSpacings.semiLarge;
+        xValue = XSpacingsType.semiLarge;
 
   const XGap.large({super.key})
       : value = null,
-        xValue = XSpacings.large;
+        xValue = XSpacingsType.large;
 
   const XGap.extraLarge({super.key})
       : value = null,
-        xValue = XSpacings.extraLarge;
+        xValue = XSpacingsType.extraLarge;
 
   const XGap.superLarge({super.key})
       : value = null,
-        xValue = XSpacings.superLarge;
+        xValue = XSpacingsType.superLarge;
 
   @override
   Widget build(BuildContext context) {
@@ -65,22 +65,22 @@ class XGap extends StatelessWidget {
     final resolvedSpacing =
         resolveXSpacing(xSpacing: xValue, xSpacingsData: xSpacingsData);
 
-    return Gap(resolvedSpacing ?? value ?? 0);
+    return Gap(resolvedSpacing ?? value ?? TkSpacingsData.none);
   }
 
   double? resolveXSpacing(
-          {required XSpacings? xSpacing,
+          {required XSpacingsType? xSpacing,
           required XSpacingsData xSpacingsData}) =>
       switch (xSpacing) {
-        XSpacings.none => xSpacingsData.none,
-        XSpacings.extraSmall => xSpacingsData.extraSmall,
-        XSpacings.small => xSpacingsData.small,
-        XSpacings.semiSmall => xSpacingsData.semiSmall,
-        XSpacings.medium => xSpacingsData.medium,
-        XSpacings.semiLarge => xSpacingsData.semiLarge,
-        XSpacings.large => xSpacingsData.large,
-        XSpacings.extraLarge => xSpacingsData.extraLarge,
-        XSpacings.superLarge => xSpacingsData.superLarge,
+        XSpacingsType.none => xSpacingsData.none,
+        XSpacingsType.extraSmall => xSpacingsData.extraSmall,
+        XSpacingsType.small => xSpacingsData.small,
+        XSpacingsType.semiSmall => xSpacingsData.semiSmall,
+        XSpacingsType.medium => xSpacingsData.medium,
+        XSpacingsType.semiLarge => xSpacingsData.semiLarge,
+        XSpacingsType.large => xSpacingsData.large,
+        XSpacingsType.extraLarge => xSpacingsData.extraLarge,
+        XSpacingsType.superLarge => xSpacingsData.superLarge,
         null => null,
       };
 }

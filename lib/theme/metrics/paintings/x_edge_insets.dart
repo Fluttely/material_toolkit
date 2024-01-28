@@ -1,3 +1,4 @@
+import 'package:design_system_toolkit/design_system_toolkit.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XEdgeInsets extends EdgeInsets {
@@ -10,18 +11,18 @@ class XEdgeInsets extends EdgeInsets {
     double? right,
     double? bottom,
   }) : super.only(
-          left: left ?? 0,
-          top: top ?? 0,
-          right: right ?? 0,
-          bottom: bottom ?? 0,
+          left: left ?? TkSpacingsData.none,
+          top: top ?? TkSpacingsData.none,
+          right: right ?? TkSpacingsData.none,
+          bottom: bottom ?? TkSpacingsData.none,
         );
 
   const XEdgeInsets.symmetric({
     double? horizontal,
     double? vertical,
   }) : super.symmetric(
-          horizontal: horizontal ?? 0,
-          vertical: vertical ?? 0,
+          horizontal: horizontal ?? TkSpacingsData.none,
+          vertical: vertical ?? TkSpacingsData.none,
         );
 
   XEdgeInsets.none(BuildContext context)
