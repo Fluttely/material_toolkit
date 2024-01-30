@@ -13,6 +13,6 @@ class XElevationSizesData {
         level1 = XAuxiliarySizeConstants.x1,
         level2 = XAuxiliarySizeConstants.x3,
         level3 = XAuxiliarySizeConstants.x6,
-        level4 = XAuxiliarySizeConstants.x9,
+        level4 = XStandardSizeConstants.x8,
         level5 = XStandardSizeConstants.x12;
 }
