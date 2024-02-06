@@ -65,7 +65,7 @@ class XGap extends StatelessWidget {
     final resolvedSpacing =
         resolveXSpacing(xSpacing: xValue, xSpacingsData: xSpacingsData);
 
-    return Gap(resolvedSpacing ?? value ?? XSpacingData.none);
+    return Gap(resolvedSpacing ?? value ?? TkSpacingData.none);
   }
 
   double? resolveXSpacing(

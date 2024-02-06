@@ -9,10 +9,10 @@ class XElevationSizesData {
   final double level5;
 
   XElevationSizesData()
-      : none = XStandardSizeConstants.x0,
-        level1 = XAuxiliarySizeConstants.x1,
-        level2 = XAuxiliarySizeConstants.x3,
-        level3 = XAuxiliarySizeConstants.x6,
-        level4 = XStandardSizeConstants.x8,
-        level5 = XStandardSizeConstants.x12;
+      : none = TkStandardSizeConstants.x0,
+        level1 = TkAuxiliarySizeConstants.x1,
+        level2 = TkAuxiliarySizeConstants.x3,
+        level3 = TkAuxiliarySizeConstants.x6,
+        level4 = TkStandardSizeConstants.x8,
+        level5 = TkStandardSizeConstants.x12;
 }
