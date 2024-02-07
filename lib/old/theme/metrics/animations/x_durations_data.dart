@@ -7,10 +7,10 @@ class XDurationsData {
   final Duration quick;
 
   const XDurationsData({
-    bool? areAnimationEnabled,
-    Duration? slow,
-    Duration? regular,
-    Duration? quick,
+    final bool? areAnimationEnabled,
+    final Duration? slow,
+    final Duration? regular,
+    final Duration? quick,
   })  : areAnimationEnabled = areAnimationEnabled ?? true,
         slow = regular ?? const Duration(milliseconds: 500),
         regular = regular ?? const Duration(milliseconds: 300),

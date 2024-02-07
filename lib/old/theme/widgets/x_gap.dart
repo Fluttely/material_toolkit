@@ -2,8 +2,9 @@ import 'package:design_system_toolkit/design_system_toolkit.dart';
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-enum XSpacingsType {
+enum XSpacingType {
   none,
+  superSmall,
   extraSmall,
   small,
   semiSmall,
@@ -16,7 +17,7 @@ enum XSpacingsType {
 
 class XGap extends StatelessWidget {
   final double? value;
-  final XSpacingsType? xValue;
+  final XSpacingType? xValue;
 
   const XGap(
     this.value, {
@@ -25,43 +26,43 @@ class XGap extends StatelessWidget {
 
   const XGap.none({super.key})
       : value = null,
-        xValue = XSpacingsType.none;
+        xValue = XSpacingType.none;
 
   const XGap.extraSmall({super.key})
       : value = null,
-        xValue = XSpacingsType.extraSmall;
+        xValue = XSpacingType.extraSmall;
 
   const XGap.small({super.key})
       : value = null,
-        xValue = XSpacingsType.small;
+        xValue = XSpacingType.small;
 
   const XGap.semiSmall({super.key})
       : value = null,
-        xValue = XSpacingsType.semiSmall;
+        xValue = XSpacingType.semiSmall;
 
   const XGap.medium({super.key})
       : value = null,
-        xValue = XSpacingsType.medium;
+        xValue = XSpacingType.medium;
 
   const XGap.semiLarge({super.key})
       : value = null,
-        xValue = XSpacingsType.semiLarge;
+        xValue = XSpacingType.semiLarge;
 
   const XGap.large({super.key})
       : value = null,
-        xValue = XSpacingsType.large;
+        xValue = XSpacingType.large;
 
   const XGap.extraLarge({super.key})
       : value = null,
-        xValue = XSpacingsType.extraLarge;
+        xValue = XSpacingType.extraLarge;
 
   const XGap.superLarge({super.key})
       : value = null,
-        xValue = XSpacingsType.superLarge;
+        xValue = XSpacingType.superLarge;
 
   @override
   Widget build(BuildContext context) {
-    final xSpacingsData = MaterialX.of(context).metrics.spacing;
+    final xSpacingsData = Theme.of(context).extension<XMetricsData>()!.spacing;
     final resolvedSpacing =
         resolveXSpacing(xSpacing: xValue, xSpacingsData: xSpacingsData);
 
@@ -69,18 +70,19 @@ class XGap extends StatelessWidget {
   }
 
   double? resolveXSpacing(
-          {required XSpacingsType? xSpacing,
+          {required XSpacingType? xSpacing,
           required XSpacingsData xSpacingsData}) =>
       switch (xSpacing) {
-        XSpacingsType.none => xSpacingsData.none,
-        XSpacingsType.extraSmall => xSpacingsData.extraSmall,
-        XSpacingsType.small => xSpacingsData.small,
-        XSpacingsType.semiSmall => xSpacingsData.semiSmall,
-        XSpacingsType.medium => xSpacingsData.medium,
-        XSpacingsType.semiLarge => xSpacingsData.semiLarge,
-        XSpacingsType.large => xSpacingsData.large,
-        XSpacingsType.extraLarge => xSpacingsData.extraLarge,
-        XSpacingsType.superLarge => xSpacingsData.superLarge,
+        XSpacingType.none => xSpacingsData.none,
+        XSpacingType.superSmall => xSpacingsData.superSmall,
+        XSpacingType.extraSmall => xSpacingsData.extraSmall,
+        XSpacingType.small => xSpacingsData.small,
+        XSpacingType.semiSmall => xSpacingsData.semiSmall,
+        XSpacingType.medium => xSpacingsData.medium,
+        XSpacingType.semiLarge => xSpacingsData.semiLarge,
+        XSpacingType.large => xSpacingsData.large,
+        XSpacingType.extraLarge => xSpacingsData.extraLarge,
+        XSpacingType.superLarge => xSpacingsData.superLarge,
         null => null,
       };
 }

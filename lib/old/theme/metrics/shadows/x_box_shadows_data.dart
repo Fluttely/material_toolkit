@@ -11,16 +11,16 @@
 //   final BoxShadow extraLarge;
 //   final BoxShadow superLarge;
 
-//   XBoxShadowsData({
-//     BoxShadow? none,
-//     BoxShadow? extraSmall,
-//     BoxShadow? small,
-//     BoxShadow? semiSmall,
-//     BoxShadow? medium,
-//     BoxShadow? semiLarge,
-//     BoxShadow? large,
-//     BoxShadow? extraLarge,
-//     BoxShadow? superLarge,
+//   const XBoxShadowsData({
+//     final BoxShadow? none,
+//     final BoxShadow? extraSmall,
+//     final BoxShadow? small,
+//     final BoxShadow? semiSmall,
+//     final BoxShadow? medium,
+//     final BoxShadow? semiLarge,
+//     final BoxShadow? large,
+//     final BoxShadow? extraLarge,
+//     final BoxShadow? superLarge,
 //   })  : none = none ??
 //             const BoxShadow(
 //               blurRadius: 0,

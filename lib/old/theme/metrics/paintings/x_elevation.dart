@@ -2,20 +2,20 @@ import 'package:material_toolkit/material_toolkit.dart';
 
 class XElevation {
   static double none(BuildContext context) =>
-      MaterialX.of(context).metrics.elevationSizes.none;
+      Theme.of(context).extension<XMetricsData>()!.elevationSizes.none;
 
   static double level1(BuildContext context) =>
-      MaterialX.of(context).metrics.elevationSizes.level1;
+      Theme.of(context).extension<XMetricsData>()!.elevationSizes.level1;
 
   static double level2(BuildContext context) =>
-      MaterialX.of(context).metrics.elevationSizes.level2;
+      Theme.of(context).extension<XMetricsData>()!.elevationSizes.level2;
 
   static double level3(BuildContext context) =>
-      MaterialX.of(context).metrics.elevationSizes.level3;
+      Theme.of(context).extension<XMetricsData>()!.elevationSizes.level3;
 
   static double level4(BuildContext context) =>
-      MaterialX.of(context).metrics.elevationSizes.level4;
+      Theme.of(context).extension<XMetricsData>()!.elevationSizes.level4;
 
   static double level5(BuildContext context) =>
-      MaterialX.of(context).metrics.elevationSizes.level5;
+      Theme.of(context).extension<XMetricsData>()!.elevationSizes.level5;
 }

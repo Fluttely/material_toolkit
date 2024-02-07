@@ -7,24 +7,30 @@ void main() {
   runApp(const App());
 }
 
-final themeChange = ValueNotifier<ThemeData>(ThemeData());
+final themeChange = ValueNotifier<ThemeData>(ThemeData(
+  extensions: const <ThemeExtension<dynamic>>[
+    XMetricsData(),
+  ],
+));
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialX(
-      child: ValueListenableBuilder(
-        valueListenable: themeChange,
-        builder: (_, value, __) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: value,
-            home: const HomePage(),
-          );
-        },
-      ),
+    return
+        // MaterialX(
+        //   child:
+        ValueListenableBuilder(
+      valueListenable: themeChange,
+      builder: (_, value, __) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: value,
+          home: const HomePage(),
+        );
+      },
+      // ),
     );
   }
 }
@@ -175,7 +181,6 @@ class XIconExample extends StatelessWidget {
         ElevatedButton(onPressed: () {}, child: const XIcon.x64(Icons.add)),
         ElevatedButton(onPressed: () {}, child: const XIcon.x128(Icons.add)),
         ElevatedButton(onPressed: () {}, child: const XIcon.x256(Icons.add)),
-        ElevatedButton(onPressed: () {}, child: const XIcon.x512(Icons.add)),
       ],
     );
   }
