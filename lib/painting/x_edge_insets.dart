@@ -27,7 +27,7 @@ class XEdgeInsets {
     this.bottom = XSpacing.none,
   });
 
-  EdgeInsets toEdgeInsets(XSpacingData xSpacing) {
+  EdgeInsets toEdgeInsets(XSpacingsData xSpacing) {
     return EdgeInsets.only(
       left: left.toDouble(xSpacing),
       top: top.toDouble(xSpacing),

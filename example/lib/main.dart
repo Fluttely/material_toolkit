@@ -18,10 +18,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // MaterialX(
-        //   child:
-        ValueListenableBuilder(
+    return ValueListenableBuilder(
       valueListenable: themeChange,
       builder: (_, value, __) {
         return MaterialApp(
@@ -30,7 +27,6 @@ class App extends StatelessWidget {
           home: const HomePage(),
         );
       },
-      // ),
     );
   }
 }
@@ -157,10 +153,13 @@ class XTextExample extends StatelessWidget {
           onPressed: () {},
           child: const XText.displayLarge('displayLarge'),
         ),
-        // ElevatedButton(onPressed:(){},
-        //   'Custom',
-        //   xStyle: XTextTheme.displayMedium,child:const XText(),
-        // ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const XText(
+            'Custom',
+            xStyle: XTextTheme.displayMedium,
+          ),
+        ),
       ],
     );
   }

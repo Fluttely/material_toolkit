@@ -19,8 +19,8 @@ class XPadding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final XSpacingData xSpacing =
-        Theme.of(context).extension<XMetricsData>()!.xSpacing;
+    final XSpacingsData xSpacing =
+        Theme.of(context).extension<XMetricsData>()!.xSpacings;
 
     return Padding(
       padding:

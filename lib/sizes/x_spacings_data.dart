@@ -1,6 +1,6 @@
 part of x_metrics_data;
 
-class XSpacingData {
+class XSpacingsData {
   final double none;
   final double superSmall;
   final double extraSmall;
@@ -12,7 +12,7 @@ class XSpacingData {
   final double extraLarge;
   final double superLarge;
 
-  const XSpacingData({
+  const XSpacingsData({
     final double? none,
     final double? superSmall,
     final double? extraSmall,
@@ -49,7 +49,7 @@ enum XSpacing {
 }
 
 extension XSpacingExtension on XSpacing {
-  double toDouble(XSpacingData spacing) => switch (this) {
+  double toDouble(XSpacingsData spacing) => switch (this) {
         XSpacing.none => spacing.none,
         XSpacing.superSmall => spacing.superSmall,
         XSpacing.extraSmall => spacing.extraSmall,

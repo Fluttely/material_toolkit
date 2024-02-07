@@ -39,7 +39,6 @@ class XText extends StatelessWidget {
   const XText(
     this.data, {
     super.key,
-    this.style,
     this.strutStyle,
     this.textAlign,
     this.textDirection,
@@ -53,7 +52,25 @@ class XText extends StatelessWidget {
     this.selectionColor,
     this.textScaler,
     this.xStyle,
-  });
+  }) : style = null;
+
+  const XText.custom(
+    this.data, {
+    super.key,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+    this.selectionColor,
+    this.textScaler,
+  }) : xStyle = null;
 
   const XText.labelSmall(
     this.data, {
