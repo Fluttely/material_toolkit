@@ -15,10 +15,10 @@ class XElevationsData {
     final double? level3,
     final double? level4,
     final double? level5,
-  })  : none = none ?? TkStandardSizeConstants.x0,
-        level1 = level1 ?? TkAuxiliarySizeConstants.x1,
-        level2 = level2 ?? TkAuxiliarySizeConstants.x3,
-        level3 = level3 ?? TkAuxiliarySizeConstants.x6,
-        level4 = level4 ?? TkStandardSizeConstants.x8,
-        level5 = level5 ?? TkStandardSizeConstants.x12;
+  })  : none = none ?? XStandardSizes.x0,
+        level1 = level1 ?? XAuxiliarySizes.x1,
+        level2 = level2 ?? XAuxiliarySizes.x3,
+        level3 = level3 ?? XAuxiliarySizes.x6,
+        level4 = level4 ?? XStandardSizes.x8,
+        level5 = level5 ?? XStandardSizes.x12;
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
-/// DONE
 enum XTextTheme {
   labelSmall,
   labelMedium,

@@ -1,18 +1,9 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-/// IN PROGRESS
-enum XIconSizes {
-  x16,
-  x24,
-  x32,
-  x64,
-  x128,
-  x256,
-}
-
 class XIcon extends StatelessWidget {
   final IconData? icon;
   final double? size;
+  final XIconSizes? xSize;
   final double? fill;
   final double? weight;
   final double? grade;
@@ -21,14 +12,12 @@ class XIcon extends StatelessWidget {
   final List<Shadow>? shadows;
   final String? semanticLabel;
   final TextDirection? textDirection;
-  final XIconSizes? xSize;
 
   const XIcon(
     this.icon, {
     super.key,
     this.color,
-    this.size,
-    this.xSize,
+    XIconSizes? xSize,
     this.fill,
     this.weight,
     this.grade,
@@ -36,9 +25,28 @@ class XIcon extends StatelessWidget {
     this.shadows,
     this.semanticLabel,
     this.textDirection,
-  }) : assert(size == null || (size >= 16.0 && size <= 512.0));
+  })  : size = null,
+        xSize = xSize ?? XIconSizes.medium,
+        assert(xSize != null);
 
-  const XIcon.x16(
+  const XIcon.custom(
+    this.icon, {
+    super.key,
+    this.color,
+    double? size,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
+  })  : xSize = null,
+        size = size ?? XStandardSizes.x24,
+        assert(size == null ||
+            (size >= XStandardSizes.x16 && size <= XStandardSizes.x128));
+
+  const XIcon.extraSmall(
     this.icon, {
     super.key,
     this.color,
@@ -50,9 +58,9 @@ class XIcon extends StatelessWidget {
     this.semanticLabel,
     this.textDirection,
   })  : size = null,
-        xSize = XIconSizes.x16;
+        xSize = XIconSizes.extraSmall;
 
-  const XIcon.x24(
+  const XIcon.small(
     this.icon, {
     super.key,
     this.color,
@@ -64,9 +72,9 @@ class XIcon extends StatelessWidget {
     this.semanticLabel,
     this.textDirection,
   })  : size = null,
-        xSize = XIconSizes.x24;
+        xSize = XIconSizes.small;
 
-  const XIcon.x32(
+  const XIcon.semiSmall(
     this.icon, {
     super.key,
     this.color,
@@ -78,9 +86,9 @@ class XIcon extends StatelessWidget {
     this.semanticLabel,
     this.textDirection,
   })  : size = null,
-        xSize = XIconSizes.x32;
+        xSize = XIconSizes.semiSmall;
 
-  const XIcon.x64(
+  const XIcon.medium(
     this.icon, {
     super.key,
     this.color,
@@ -92,9 +100,9 @@ class XIcon extends StatelessWidget {
     this.semanticLabel,
     this.textDirection,
   })  : size = null,
-        xSize = XIconSizes.x64;
+        xSize = XIconSizes.medium;
 
-  const XIcon.x128(
+  const XIcon.semiLarge(
     this.icon, {
     super.key,
     this.color,
@@ -106,9 +114,9 @@ class XIcon extends StatelessWidget {
     this.semanticLabel,
     this.textDirection,
   })  : size = null,
-        xSize = XIconSizes.x128;
+        xSize = XIconSizes.semiLarge;
 
-  const XIcon.x256(
+  const XIcon.large(
     this.icon, {
     super.key,
     this.color,
@@ -120,18 +128,44 @@ class XIcon extends StatelessWidget {
     this.semanticLabel,
     this.textDirection,
   })  : size = null,
-        xSize = XIconSizes.x256;
+        xSize = XIconSizes.large;
+
+  const XIcon.extraLarge(
+    this.icon, {
+    super.key,
+    this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
+  })  : size = null,
+        xSize = XIconSizes.extraLarge;
+
+  const XIcon.superLarge(
+    this.icon, {
+    super.key,
+    this.color,
+    this.fill,
+    this.weight,
+    this.grade,
+    this.opticalSize,
+    this.shadows,
+    this.semanticLabel,
+    this.textDirection,
+  })  : size = null,
+        xSize = XIconSizes.superLarge;
 
   @override
   Widget build(BuildContext context) {
-    final xIconSizesData =
-        Theme.of(context).extension<XMetricsData>()!.icons.sizes;
-    final resolvedSize =
-        resolveXIconSize(xIconSize: xSize, xIconSizesData: xIconSizesData);
+    final xIconSizes =
+        Theme.of(context).extension<XMetricsData>()!.xIcons.sizes;
 
     return Icon(
       icon,
-      size: resolvedSize ?? size,
+      size: xSize?.toDouble(xIconSizes) ?? size,
       color: color,
       fill: fill,
       weight: weight,
@@ -142,17 +176,4 @@ class XIcon extends StatelessWidget {
       textDirection: textDirection,
     );
   }
-
-  double? resolveXIconSize(
-          {required XIconSizes? xIconSize,
-          required XIconSizesData xIconSizesData}) =>
-      switch (xIconSize) {
-        XIconSizes.x16 => xIconSizesData.x16,
-        XIconSizes.x24 => xIconSizesData.x24,
-        XIconSizes.x32 => xIconSizesData.x32,
-        XIconSizes.x64 => xIconSizesData.x64,
-        XIconSizes.x128 => xIconSizesData.x128,
-        XIconSizes.x256 => xIconSizesData.x256,
-        null => null,
-      };
 }

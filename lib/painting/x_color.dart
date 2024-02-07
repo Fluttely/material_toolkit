@@ -1,7 +1,7 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
 class XColor extends Color {
-  XColor(super.data);
+  XColor.custom(super.data);
 
   XColor.primary(BuildContext context)
       : super(Theme.of(context).colorScheme.primary.value);

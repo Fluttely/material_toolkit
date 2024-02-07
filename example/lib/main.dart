@@ -8,7 +8,7 @@ void main() {
 }
 
 final themeChange = ValueNotifier<ThemeData>(ThemeData(
-  extensions: const <ThemeExtension<dynamic>>[
+  extensions: <ThemeExtension<dynamic>>[
     XMetricsData(),
   ],
 ));
@@ -175,12 +175,14 @@ class XIconExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ElevatedButton(onPressed: () {}, child: const XIcon.x16(Icons.add)),
-        ElevatedButton(onPressed: () {}, child: const XIcon.x24(Icons.add)),
-        ElevatedButton(onPressed: () {}, child: const XIcon.x32(Icons.add)),
-        ElevatedButton(onPressed: () {}, child: const XIcon.x64(Icons.add)),
-        ElevatedButton(onPressed: () {}, child: const XIcon.x128(Icons.add)),
-        ElevatedButton(onPressed: () {}, child: const XIcon.x256(Icons.add)),
+        const SizedBox(),
+        ElevatedButton(onPressed: () {}, child: const XIcon.small(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.medium(Icons.add)),
+        ElevatedButton(onPressed: () {}, child: const XIcon.large(Icons.add)),
+        ElevatedButton(
+            onPressed: () {}, child: const XIcon.extraLarge(Icons.add)),
+        ElevatedButton(
+            onPressed: () {}, child: const XIcon.superLarge(Icons.add)),
       ],
     );
   }

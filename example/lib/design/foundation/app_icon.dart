@@ -4,5 +4,5 @@ class AppIcon extends XIcon {
   const AppIcon.bottomNavigation(
     super.icon, {
     super.key,
-  }) : super.x16();
+  }) : super.small();
 }
