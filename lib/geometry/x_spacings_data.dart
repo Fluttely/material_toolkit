@@ -49,16 +49,16 @@ enum XSpacing {
 }
 
 extension XSpacingExtension on XSpacing {
-  double toDouble(XSpacingsData spacing) => switch (this) {
-        XSpacing.none => spacing.none,
-        XSpacing.superSmall => spacing.superSmall,
-        XSpacing.extraSmall => spacing.extraSmall,
-        XSpacing.small => spacing.small,
-        XSpacing.semiSmall => spacing.semiSmall,
-        XSpacing.medium => spacing.medium,
-        XSpacing.semiLarge => spacing.semiLarge,
-        XSpacing.large => spacing.large,
-        XSpacing.extraLarge => spacing.extraLarge,
-        XSpacing.superLarge => spacing.superLarge,
+  double? toDouble(XSpacingsData? spacing) => switch (this) {
+        XSpacing.none => spacing?.none,
+        XSpacing.superSmall => spacing?.superSmall,
+        XSpacing.extraSmall => spacing?.extraSmall,
+        XSpacing.small => spacing?.small,
+        XSpacing.semiSmall => spacing?.semiSmall,
+        XSpacing.medium => spacing?.medium,
+        XSpacing.semiLarge => spacing?.semiLarge,
+        XSpacing.large => spacing?.large,
+        XSpacing.extraLarge => spacing?.extraLarge,
+        XSpacing.superLarge => spacing?.superLarge,
       };
 }

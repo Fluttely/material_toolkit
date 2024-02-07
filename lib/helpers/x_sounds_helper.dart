@@ -5,7 +5,7 @@ import 'package:soundpool/soundpool.dart';
 
 abstract final class XSoundsHelper {
   final _pool = Soundpool.fromOptions(
-      options: const SoundpoolOptions(streamType: StreamType.music));
+      options: SoundpoolOptions(streamType: StreamType.music));
 
   final _map = <String, int>{};
 
@@ -13,8 +13,8 @@ abstract final class XSoundsHelper {
     return _map[path]!;
   }
 
-  void playSound(int sound) {
-    _pool.play(sound);
+  void playSound(int sound) async {
+    await _pool.play(sound);
   }
 
   Future<void> precacheCache({

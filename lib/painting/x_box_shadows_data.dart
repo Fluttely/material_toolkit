@@ -11,23 +11,23 @@ class XBoxShadowsData {
     final BoxShadow? large,
   })  : small = small ??
             const BoxShadow(
-              blurRadius: XStandardSizes.x4 / 2,
-              spreadRadius: XStandardSizes.x4 / 4,
+              blurRadius: XAuxiliarySizes.x2,
+              spreadRadius: XAuxiliarySizes.x1,
               // TODO: NOW - CHANGE COLOR
-              color: Colors.grey,
+              color: Color(0x44000000),
             ),
         medium = medium ??
             const BoxShadow(
               blurRadius: XStandardSizes.x4,
-              spreadRadius: XStandardSizes.x4 / 4,
+              spreadRadius: XAuxiliarySizes.x1,
               // TODO: NOW - CHANGE COLOR
-              color: Colors.grey,
+              color: Color(0x44000000),
             ),
         large = large ??
             const BoxShadow(
-              blurRadius: XStandardSizes.x4 * 2,
-              spreadRadius: XStandardSizes.x4 / 2,
+              blurRadius: XStandardSizes.x8,
+              spreadRadius: XAuxiliarySizes.x2,
               // TODO: NOW - CHANGE COLOR
-              color: Colors.grey,
+              color: Color(0x44000000),
             );
 }

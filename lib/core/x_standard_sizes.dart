@@ -53,4 +53,6 @@ abstract final class XStandardSizes {
 
   /// * 2
   static const double x512 = 512;
+  static const double x1024 = 1024;
+  static const double x2048 = 2048;
 }

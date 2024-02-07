@@ -1,96 +1,96 @@
 import 'package:material_toolkit/material_toolkit.dart';
 
-class XColor extends Color {
-  XColor.custom(super.data);
+class XColorScheme extends Color {
+  // XColorScheme.custom(super.data);
 
-  XColor.primary(BuildContext context)
+  XColorScheme.primary(BuildContext context)
       : super(Theme.of(context).colorScheme.primary.value);
 
-  XColor.secondary(BuildContext context)
+  XColorScheme.secondary(BuildContext context)
       : super(Theme.of(context).colorScheme.secondary.value);
 
-  XColor.surface(BuildContext context)
+  XColorScheme.surface(BuildContext context)
       : super(Theme.of(context).colorScheme.surface.value);
 
-  XColor.background(BuildContext context)
+  XColorScheme.background(BuildContext context)
       : super(Theme.of(context).colorScheme.background.value);
 
-  XColor.error(BuildContext context)
+  XColorScheme.error(BuildContext context)
       : super(Theme.of(context).colorScheme.error.value);
 
-  XColor.onPrimary(BuildContext context)
+  XColorScheme.onPrimary(BuildContext context)
       : super(Theme.of(context).colorScheme.onPrimary.value);
 
-  XColor.onSecondary(BuildContext context)
+  XColorScheme.onSecondary(BuildContext context)
       : super(Theme.of(context).colorScheme.onSecondary.value);
 
-  XColor.onSurface(BuildContext context)
+  XColorScheme.onSurface(BuildContext context)
       : super(Theme.of(context).colorScheme.onSurface.value);
 
-  XColor.onBackground(BuildContext context)
+  XColorScheme.onBackground(BuildContext context)
       : super(Theme.of(context).colorScheme.onBackground.value);
 
-  XColor.onError(BuildContext context)
+  XColorScheme.onError(BuildContext context)
       : super(Theme.of(context).colorScheme.onError.value);
 
-  XColor.onPrimaryContainer(BuildContext context)
+  XColorScheme.onPrimaryContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.onPrimaryContainer.value);
 
-  XColor.primaryContainer(BuildContext context)
+  XColorScheme.primaryContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.primaryContainer.value);
 
-  XColor.errorContainer(BuildContext context)
+  XColorScheme.errorContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.errorContainer.value);
 
-  XColor.inversePrimary(BuildContext context)
+  XColorScheme.inversePrimary(BuildContext context)
       : super(Theme.of(context).colorScheme.inversePrimary.value);
 
-  XColor.inverseSurface(BuildContext context)
+  XColorScheme.inverseSurface(BuildContext context)
       : super(Theme.of(context).colorScheme.inverseSurface.value);
 
-  XColor.onErrorContainer(BuildContext context)
+  XColorScheme.onErrorContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.onErrorContainer.value);
 
-  XColor.onSecondaryContainer(BuildContext context)
+  XColorScheme.onSecondaryContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.onSecondaryContainer.value);
 
-  XColor.onSurfaceVariant(BuildContext context)
+  XColorScheme.onSurfaceVariant(BuildContext context)
       : super(Theme.of(context).colorScheme.onSurfaceVariant.value);
 
-  XColor.tertiary(BuildContext context)
+  XColorScheme.tertiary(BuildContext context)
       : super(Theme.of(context).colorScheme.tertiary.value);
 
-  XColor.onInverseSurface(BuildContext context)
+  XColorScheme.onInverseSurface(BuildContext context)
       : super(Theme.of(context).colorScheme.onInverseSurface.value);
 
-  XColor.onTertiary(BuildContext context)
+  XColorScheme.onTertiary(BuildContext context)
       : super(Theme.of(context).colorScheme.onTertiary.value);
 
-  XColor.onTertiaryContainer(BuildContext context)
+  XColorScheme.onTertiaryContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.onTertiaryContainer.value);
 
-  XColor.outline(BuildContext context)
+  XColorScheme.outline(BuildContext context)
       : super(Theme.of(context).colorScheme.outline.value);
 
-  XColor.outlineVariant(BuildContext context)
+  XColorScheme.outlineVariant(BuildContext context)
       : super(Theme.of(context).colorScheme.outlineVariant.value);
 
-  XColor.scrim(BuildContext context)
+  XColorScheme.scrim(BuildContext context)
       : super(Theme.of(context).colorScheme.scrim.value);
 
-  XColor.secondaryContainer(BuildContext context)
+  XColorScheme.secondaryContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.secondaryContainer.value);
 
-  XColor.shadow(BuildContext context)
+  XColorScheme.shadow(BuildContext context)
       : super(Theme.of(context).colorScheme.shadow.value);
 
-  XColor.surfaceTint(BuildContext context)
+  XColorScheme.surfaceTint(BuildContext context)
       : super(Theme.of(context).colorScheme.surfaceTint.value);
 
-  XColor.surfaceVariant(BuildContext context)
+  XColorScheme.surfaceVariant(BuildContext context)
       : super(Theme.of(context).colorScheme.surfaceVariant.value);
 
-  XColor.tertiaryContainer(BuildContext context)
+  XColorScheme.tertiaryContainer(BuildContext context)
       : super(Theme.of(context).colorScheme.tertiaryContainer.value);
 
   static Brightness brightness(BuildContext context) =>

@@ -27,12 +27,12 @@ class XEdgeInsets {
     this.bottom = XSpacing.none,
   });
 
-  EdgeInsets toEdgeInsets(XSpacingsData xSpacing) {
+  EdgeInsets toEdgeInsets(XSpacingsData? xSpacing) {
     return EdgeInsets.only(
-      left: left.toDouble(xSpacing),
-      top: top.toDouble(xSpacing),
-      right: right.toDouble(xSpacing),
-      bottom: bottom.toDouble(xSpacing),
+      left: left.toDouble(xSpacing) ?? XStandardSizes.x0,
+      top: top.toDouble(xSpacing) ?? XStandardSizes.x0,
+      right: right.toDouble(xSpacing) ?? XStandardSizes.x0,
+      bottom: bottom.toDouble(xSpacing) ?? XStandardSizes.x0,
     );
   }
 }

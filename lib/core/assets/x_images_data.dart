@@ -1,4 +1,4 @@
-part of x_metrics_data;
+part of x_assets_data;
 
 class XImagesData {
   final Widget? appLogo;

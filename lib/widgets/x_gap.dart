@@ -53,8 +53,8 @@ class XGap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final xSpacing = Theme.of(context).extension<XMetricsData>()!.xSpacings;
+    final xSpacings = Theme.of(context).extension<XMetricsData>()?.xSpacings;
 
-    return Gap(xValue?.toDouble(xSpacing) ?? value ?? xSpacing.none);
+    return Gap(xValue?.toDouble(xSpacings) ?? value ?? XStandardSizes.x0);
   }
 }

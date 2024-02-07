@@ -14,4 +14,6 @@ class XBorderRadiusData {
   BorderRadius get large => BorderRadius.all(_radius.large);
   BorderRadius get extraLarge => BorderRadius.all(_radius.extraLarge);
   BorderRadius get superLarge => BorderRadius.all(_radius.superLarge);
+
+  XShapesData get shape => XShapesData(this);
 }
