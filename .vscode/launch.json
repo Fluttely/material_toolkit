@@ -1,10 +1,11 @@
 {
   "configurations": [
     {
-      "name": "Flutter",
+      "name": "MT EXAMPLE",
       "type": "dart",
       "request": "launch",
       "program": "example/lib/main.dart"
+      // "args": ["-d", "chrome", "--web-renderer", "canvaskit"]
     }
   ]
 }

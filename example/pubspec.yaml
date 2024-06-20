@@ -1,21 +1,37 @@
-name: example
-description: "A new Flutter project."
-publish_to: 'none'
-version: 0.1.0
+name: material_toolkit_example
+description: ""
+
+publish_to: "none"
+
+version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.4.1 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  material_toolkit:
-    path: ../
+
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+
+  flutter_lints: ^3.0.0
+  material_toolkit:
+    path: ../
+    version: ^0.0.1
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/data/sample.json
+    - assets/images/orange.jpg
+    - assets/svgs/fire.svg
+
+  fonts:
+    - family: Astronaut_PersonalUse
+      fonts:
+        - asset: assets/fonts/Astronaut_PersonalUse.otf

@@ -1,6 +1,6 @@
 {
-    "name": "example",
-    "short_name": "example",
+    "name": "material_toolkit_example",
+    "short_name": "material_toolkit_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
