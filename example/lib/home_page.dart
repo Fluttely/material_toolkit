@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final metrics = Theme.of(context).extension<XMetricsData>()!;
     // final sampleAsset = metrics.assets[$token.asset.sample]!;
     final mobileBreakpoint = metrics.breakpoints.mobile;
-    final quickDuration = metrics.durations.quick;
+    // final quickDuration = metrics.durations.quick;
     // final astronautFont = metrics.fonts[$token.font.astronaut]!;
     // final titleTextShadow = metrics.textShadows[$token.textShadow.title]!;
     // final titleTextStyle = metrics.textStyles[$token.textStyle.title]!;

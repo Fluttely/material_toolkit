@@ -3,7 +3,6 @@ library x_metrics_data;
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 part 'animation/x_durations_data.dart';
@@ -18,7 +17,7 @@ part 'painting/x_border_shapes.dart';
 part 'painting/x_box_shadows_data.dart';
 part 'painting/x_edge_insets.dart';
 part 'painting/x_gaps.dart';
-part 'painting/x_google_fonts_data.dart';
+// part 'painting/x_google_fonts_data.dart';
 part 'painting/x_padding.dart';
 part 'painting/x_text_shadows_data.dart';
 
@@ -49,11 +48,12 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   final XDurationsData durations;
   final XElevationsData elevations;
   final XFormFactor formFactor;
-  final XGoogleFontsData googleFonts;
+  // final XGoogleFontsData googleFonts;
   final XIconSizesData iconSizes;
   final XRadiiData radii;
   final XSpacesData spaces;
   final XTextShadowsData textShadows;
+  // blurs
 
   XMetricsData({
     final XBoxShadowsData? boxShadows,
@@ -61,7 +61,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
     final XDurationsData? durations,
     final XElevationsData? elevations,
     final XFormFactor? formFactor,
-    final XGoogleFontsData? googleFonts,
+    // final XGoogleFontsData? googleFonts,
     final XIconSizesData? iconSizes,
     final XRadiiData? radii,
     final XSpacesData? spaces,
@@ -71,13 +71,15 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
         durations = durations ?? const XDurationsData(),
         elevations = elevations ?? const XElevationsData(),
         formFactor = formFactor ?? XFormFactor.medium,
-        googleFonts = googleFonts ?? const XGoogleFontsData(),
+        // googleFonts = googleFonts ?? const XGoogleFontsData(),
         iconSizes = iconSizes ?? const XIconSizesData(),
         radii = radii ?? const XRadiiData(),
         spaces = spaces ?? const XSpacesData(),
         textShadows = textShadows ?? const XTextShadowsData();
 
   XGaps get gaps => XGaps(spaces);
+
+  // GoogleFonts get googleFonts => GoogleFonts;
 
   XBorderRadii get borderRadii => XBorderRadii(radii);
   XBorderShapes get borderShapes => XBorderShapes(borderRadii);
@@ -96,7 +98,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
         durations: durations,
         elevations: elevations,
         formFactor: formFactor,
-        googleFonts: googleFonts,
+        // googleFonts: googleFonts,
         iconSizes: iconSizes,
         radii: radii,
         spaces: spaces,
@@ -112,7 +114,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
     XDurationsData? durations,
     XElevationsData? elevations,
     XFormFactor? formFactor,
-    XGoogleFontsData? googleFonts,
+    // XGoogleFontsData? googleFonts,
     XIconSizesData? iconSizes,
     XRadiiData? radii,
     XSpacesData? spaces,
@@ -124,7 +126,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       durations: durations ?? this.durations,
       elevations: elevations ?? this.elevations,
       formFactor: formFactor ?? this.formFactor,
-      googleFonts: googleFonts ?? this.googleFonts,
+      // googleFonts: googleFonts ?? this.googleFonts,
       iconSizes: iconSizes ?? this.iconSizes,
       radii: radii ?? this.radii,
       spaces: spaces ?? this.spaces,
@@ -141,7 +143,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
           durations == other.durations &&
           elevations == other.elevations &&
           formFactor == other.formFactor &&
-          googleFonts == other.googleFonts &&
+          // googleFonts == other.googleFonts &&
           iconSizes == other.iconSizes &&
           radii == other.radii &&
           spaces == other.spaces &&
@@ -159,7 +161,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       durations.hashCode ^
       elevations.hashCode ^
       formFactor.hashCode ^
-      googleFonts.hashCode ^
+      // googleFonts.hashCode ^
       iconSizes.hashCode ^
       radii.hashCode ^
       spaces.hashCode ^
@@ -177,7 +179,6 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       durations: $durations,
       elevations: $elevations,
       formFactor: $formFactor,
-      googleFonts: $googleFonts,
       iconSizes: $iconSizes,
       radii: $radii,
       spaces: $spaces,
@@ -189,4 +190,5 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       paddings: $padding,
     )
   ''';
+  // googleFonts: $googleFonts,
 }

@@ -169,6 +169,7 @@ class XSpacesData extends Equatable {
   double get x24 => XStandardSizes.x24;
   double get x32 => XStandardSizes.x32;
   double get x48 => XStandardSizes.x48;
+  double get x64 => XStandardSizes.x64;
 
   @override
   List<Object?> get props => [
