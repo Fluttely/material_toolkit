@@ -28,23 +28,6 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   final XRadiiData radii;
   final XSpacesData spaces;
 
-  // XMetricsData({
-  //   final XBoxShadowsData? boxShadows,
-  //   final XBreakpointsData? breakpoints,
-  //   final XDurationsData? durations,
-  //   final XElevationsData? elevations,
-  //   final XFormFactor? formFactor,
-  //   final XRadiiData? radii,
-  //   final XSpacesData? spaces,
-  //   // final XTextShadowsData? textShadows,
-  // })  : boxShadows = boxShadows ?? const XBoxShadowsData(),
-  //       breakpoints = breakpoints ?? const XBreakpointsData(),
-  //       durations = durations ?? const XDurationsData(),
-  //       elevations = elevations ?? const XElevationsData(),
-  //       formFactor = formFactor ?? XFormFactor.medium,
-  //       radii = radii ?? const XRadiiData(),
-  //       spaces = spaces ?? const XSpacesData();
-
   XMetricsData({
     final XBoxShadowsData? boxShadows,
     final XBreakpointsData? breakpoints,

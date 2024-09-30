@@ -1,6 +1,6 @@
 # material_toolkit_example
 
-A new Flutter project.
+
 
 ## Getting Started
 
