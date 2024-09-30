@@ -8,6 +8,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - Initial release of `material_toolkit`.
 - Support for building custom design systems based on `MaterialApp`.
-- Light and dark themes available, including Neumorphic styles support.
+- Light and dark themes available.
 - Easy integration with Flutter projects.
 - Support for multiple theme configurations to facilitate customization and scalability.

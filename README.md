@@ -7,7 +7,7 @@
 - Build custom design systems on top of `MaterialApp`.
 - Easily integrates with various Flutter projects.
 - Flexible enough to adapt themes and layouts to your project's needs.
-- Supports both light and dark themes (including Neumorphic styles).
+- Supports both light and dark themes.
 - Scalable for different app types, from prototypes to final products.
 
 ## Getting started
