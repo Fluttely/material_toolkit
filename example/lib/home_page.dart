@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:material_toolkit/material_toolkit.dart';
 import 'package:material_toolkit_example/models/user.dart';
 import 'package:material_toolkit_example/theme/metrics.dart';
@@ -16,11 +13,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<User> users = [];
 
-  Future<List<User>> _loadJson(String path) async {
-    String jsonString = await rootBundle.loadString(path);
-    List<dynamic> jsonResponse = json.decode(jsonString);
-    return jsonResponse.map((user) => User.fromJson(user)).toList();
-  }
+  // Future<List<User>> _loadJson(String path) async {
+  //   String jsonString = await rootBundle.loadString(path);
+  //   List<dynamic> jsonResponse = json.decode(jsonString);
+  //   return jsonResponse.map((user) => User.fromJson(user)).toList();
+  // }
 
   @override
   Widget build(BuildContext context) {

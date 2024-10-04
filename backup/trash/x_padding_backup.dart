@@ -38,6 +38,7 @@
 
 //   @override
 //   Widget build(BuildContext context) {
+// TODO(Kevin): remove remo prefix
 //     final metrics = remo.apod.metrics;
 
 //     return Padding(

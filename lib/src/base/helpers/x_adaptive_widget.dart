@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:universal_io/io.dart' as IoPlatform;
+import 'package:universal_io/io.dart' as io_platform;
 
 abstract class XAdaptiveWidget extends StatelessWidget {
   const XAdaptiveWidget({super.key});
@@ -20,17 +20,17 @@ abstract class XAdaptiveWidget extends StatelessWidget {
       return web(context) ?? standard(context);
     }
 
-    if (IoPlatform.Platform.isAndroid) {
+    if (io_platform.Platform.isAndroid) {
       return android(context) ?? standard(context);
-    } else if (IoPlatform.Platform.isIOS) {
+    } else if (io_platform.Platform.isIOS) {
       return ios(context) ?? standard(context);
-    } else if (IoPlatform.Platform.isMacOS) {
+    } else if (io_platform.Platform.isMacOS) {
       return macos(context) ?? standard(context);
-    } else if (IoPlatform.Platform.isLinux) {
+    } else if (io_platform.Platform.isLinux) {
       return linux(context) ?? standard(context);
-    } else if (IoPlatform.Platform.isWindows) {
+    } else if (io_platform.Platform.isWindows) {
       return windows(context) ?? standard(context);
-    } else if (IoPlatform.Platform.isFuchsia) {
+    } else if (io_platform.Platform.isFuchsia) {
       return fuchsia(context) ?? standard(context);
     }
 

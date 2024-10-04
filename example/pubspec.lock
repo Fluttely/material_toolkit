@@ -140,7 +140,7 @@ packages:
     source: hosted
     version: "0.11.1"
   material_toolkit:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       path: ".."
       relative: true
