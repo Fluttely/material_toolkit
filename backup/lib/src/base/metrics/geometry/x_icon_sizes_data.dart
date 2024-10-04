@@ -1,4 +1,4 @@
-part of x_metrics_data;
+part of '../x_metrics_data.dart';
 
 // TODO: NOW
 class XIconSizesData extends Equatable {

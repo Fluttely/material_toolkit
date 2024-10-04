@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-part of x_metrics_data;
+part of '../x_metrics_data.dart';
 
 class XRadiiData extends Equatable {
   final Radius? _extraSmall;

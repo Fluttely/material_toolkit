@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable, library_private_types_in_public_api
 
-part of x_metrics_data;
+part of '../x_metrics_data.dart';
 
 class XBreakpointsData extends Equatable {
   final Breakpoint? _extraSmall;

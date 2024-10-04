@@ -1,4 +1,4 @@
-// part of x_assets_data;
+// part of '../x_assets_data.dart';
 
 // class XIconsData extends Equatable {
 //   final String? fontFamily;

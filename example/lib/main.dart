@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit_example/home_page.dart';
-import 'package:material_toolkit_example/theme/metrics.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        extensions: <ThemeExtension<dynamic>>[
+        extensions: const <ThemeExtension<dynamic>>[
           // metricsData,
         ],
       ),

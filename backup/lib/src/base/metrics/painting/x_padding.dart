@@ -1,4 +1,4 @@
-part of x_metrics_data;
+part of '../x_metrics_data.dart';
 
 class XPadding extends Equatable {
   final XEdgeInsets _edgeInsets;

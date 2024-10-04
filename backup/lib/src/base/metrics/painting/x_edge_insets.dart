@@ -1,4 +1,4 @@
-part of x_metrics_data;
+part of '../x_metrics_data.dart';
 
 enum XSpaces {
   none,
@@ -37,8 +37,7 @@ class XEdgeInsets extends Equatable {
 
   EdgeInsets get none => EdgeInsets.all(_spaces.none);
 
-  EdgeInsets all(final XSpaces value) =>
-      EdgeInsets.all(value.toDouble(_spaces));
+  EdgeInsets all(final XSpaces value) => EdgeInsets.all(value.toDouble(_spaces));
 
   EdgeInsets symmetric({
     final XSpaces? vertical,
