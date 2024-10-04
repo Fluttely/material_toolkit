@@ -1,3 +1,5 @@
+part of 'x_helpers.dart';
+
 abstract final class XMetricsError {
   static String getUnsupportedErrorMessage({
     required String attribute,

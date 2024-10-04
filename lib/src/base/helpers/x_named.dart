@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'x_helpers.dart';
 
 /// This class associated a [name] to a given [value].
 class XNamed<T> extends Equatable {

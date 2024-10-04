@@ -1,3 +1,5 @@
+part of 'x_helpers.dart';
+
 abstract final class XAuxiliarySizes {
   /// "dp"(density-independent pixels)
   /// Random

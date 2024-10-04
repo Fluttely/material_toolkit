@@ -1,3 +1,5 @@
+part of 'x_helpers.dart';
+
 abstract final class XStandardSizes {
   /// "dp"(density-independent pixels)
   /// + 4

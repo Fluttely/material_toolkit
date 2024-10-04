@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
-import 'package:universal_io/io.dart' as io_platform;
+part of 'x_helpers.dart';
 
 abstract class XAdaptiveWidget extends StatelessWidget {
   const XAdaptiveWidget({super.key});
