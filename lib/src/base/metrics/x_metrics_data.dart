@@ -25,7 +25,8 @@ class XMetrics extends InheritedWidget {
   const XMetrics({required super.child, required this.data, super.key});
 
   static XMetricsData of(BuildContext context) {
-    final metricsData = context.dependOnInheritedWidgetOfExactType<XMetrics>()?.data;
+    final metricsData =
+        context.dependOnInheritedWidgetOfExactType<XMetrics>()?.data;
 
     assert(metricsData != null, 'No XMetrics found in context');
 
@@ -88,7 +89,8 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   XPadding get padding => XPadding(edgeInsets);
 
   @override
-  ThemeExtension<XMetricsData> lerp(ThemeExtension<XMetricsData>? other, double t) {
+  ThemeExtension<XMetricsData> lerp(
+      ThemeExtension<XMetricsData>? other, double t) {
     if (other is! XMetricsData) {
       return this;
     } else {

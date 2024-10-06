@@ -76,16 +76,20 @@ class XBreakpointsData extends Equatable {
 
   Breakpoint get extraSmall =>
       _extraSmall ??
-      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'extraSmall', location: 'breakpoints')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(
+          attribute: 'extraSmall', location: 'breakpoints')));
   Breakpoint get small =>
       _small ??
-      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'small', location: 'breakpoints')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(
+          attribute: 'small', location: 'breakpoints')));
   Breakpoint get medium =>
       _medium ??
-      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'medium', location: 'breakpoints')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(
+          attribute: 'medium', location: 'breakpoints')));
   Breakpoint get large =>
       _large ??
-      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'large', location: 'breakpoints')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(
+          attribute: 'large', location: 'breakpoints')));
 
   @override
   List<Object?> get props => [

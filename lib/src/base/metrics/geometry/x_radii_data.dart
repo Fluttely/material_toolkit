@@ -125,7 +125,7 @@ class XRadiiData extends Equatable {
   Radius get x24 => const Radius.circular(XStandardSizes.x24);
   Radius get x32 => const Radius.circular(XStandardSizes.x32);
   Radius get x48 => const Radius.circular(XStandardSizes.x48);
-  
+
   @override
   List<Object?> get props => [
         none.named('none'),
