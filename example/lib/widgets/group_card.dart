@@ -22,7 +22,7 @@ class GroupCard extends StatelessWidget {
     final colorScheme = theme.colorScheme;
 
     return Card(
-      color: colorScheme.surfaceContainerLow,
+      // color: colorScheme.surfaceContainerLow,
       elevation: 0,
       child: padding.all(
         XSpaces.large,

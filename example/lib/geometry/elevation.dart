@@ -26,14 +26,14 @@ class ElevationGroup extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Surface Tint Color Only',
+          'Elevation',
           style: textTheme.titleSmall,
         ),
         gaps.small,
         Container(
           width: double.infinity,
           // height: double.infinity,
-          height: 106,
+          // height: 106,
           padding: edgeInsets.symmetric(
             vertical: XSpaces.medium,
             horizontal: XSpaces.extraLarge,
@@ -46,156 +46,117 @@ class ElevationGroup extends StatelessWidget {
             //   boxShadows.large,
             // ],
           ),
-          child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ElevationComponent(
-                description: 'Level 1\ndp',
-                elevation: elevations.level1,
-                isSurface: true,
+              Text(
+                'Surface Tint Color Only',
+                style: textTheme.titleSmall,
               ),
-              ElevationComponent(
-                description: 'Level 2\ndp',
-                elevation: elevations.level2,
-                isSurface: true,
+              gaps.small,
+              Row(
+                children: [
+                  ElevationComponent(
+                    description: 'Level 1\ndp',
+                    elevation: elevations.level1,
+                    isSurface: true,
+                  ),
+                  ElevationComponent(
+                    description: 'Level 2\ndp',
+                    elevation: elevations.level2,
+                    isSurface: true,
+                  ),
+                  ElevationComponent(
+                    description: 'Level 3\ndp',
+                    elevation: elevations.level3,
+                    isSurface: true,
+                  ),
+                  // ElevationComponent(
+                  //   description: 'Level 4\ndp',
+                  //   elevation: elevations.level4,
+                  //   isSurface: true,
+                  // ),
+                  ElevationComponent(
+                    description: 'Level 5\ndp',
+                    elevation: elevations.level5,
+                    isSurface: true,
+                  ),
+                ],
               ),
-              ElevationComponent(
-                description: 'Level 3\ndp',
-                elevation: elevations.level3,
-                isSurface: true,
+              gaps.large,
+              Text(
+                'Surface Tint Color and Shadow Color',
+                style: textTheme.titleSmall,
               ),
-              // ElevationComponent(
-              //   description: 'Level 4\ndp',
-              //   elevation: elevations.level4,
-              //   isSurface: true,
-              // ),
-              ElevationComponent(
-                description: 'Level 5\ndp',
-                elevation: elevations.level5,
-                isSurface: true,
+              gaps.small,
+              Row(
+                children: [
+                  ElevationComponent(
+                    description: 'Level 1\ndp',
+                    elevation: elevations.level1,
+                    isSurface: true,
+                    isShadow: true,
+                  ),
+                  ElevationComponent(
+                    description: 'Level 2\ndp',
+                    elevation: elevations.level2,
+                    isSurface: true,
+                    isShadow: true,
+                  ),
+                  ElevationComponent(
+                    description: 'Level 3\ndp',
+                    elevation: elevations.level3,
+                    isSurface: true,
+                    isShadow: true,
+                  ),
+                  // ElevationComponent(
+                  //   description: 'Level 4\ndp',
+                  //   elevation: elevations.level4,
+                  //   isSurface: true,
+                  //   isShadow: true,
+                  // ),
+                  ElevationComponent(
+                    description: 'Level 5\ndp',
+                    elevation: elevations.level5,
+                    isSurface: true,
+                    isShadow: true,
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        gaps.large,
-        Text(
-          'Surface Tint Color and Shadow Color',
-          style: textTheme.titleSmall,
-        ),
-        gaps.small,
-        Container(
-          width: double.infinity,
-          // height: double.infinity,
-          height: 106,
-          padding: edgeInsets.symmetric(
-            vertical: XSpaces.medium,
-            horizontal: XSpaces.extraLarge,
-          ),
-          decoration: BoxDecoration(
-            color: colorScheme.surface,
-            borderRadius: borderRadii.semiSmall,
-            border: Border.all(color: colorScheme.outlineVariant),
-            // boxShadow: [
-            //   boxShadows.large,
-            // ],
-          ),
-          child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-            children: [
-              ElevationComponent(
-                description: 'Level 1\ndp',
-                elevation: elevations.level1,
-                isSurface: true,
-                isShadow: true,
+              gaps.large,
+              Text(
+                'Shadow Color Only',
+                style: textTheme.titleSmall,
               ),
-              ElevationComponent(
-                description: 'Level 2\ndp',
-                elevation: elevations.level2,
-                isSurface: true,
-                isShadow: true,
-              ),
-              ElevationComponent(
-                description: 'Level 3\ndp',
-                elevation: elevations.level3,
-                isSurface: true,
-                isShadow: true,
-              ),
-              // ElevationComponent(
-              //   description: 'Level 4\ndp',
-              //   elevation: elevations.level4,
-              //   isSurface: true,
-              //   isShadow: true,
-              // ),
-              ElevationComponent(
-                description: 'Level 5\ndp',
-                elevation: elevations.level5,
-                isSurface: true,
-                isShadow: true,
-              ),
-            ],
-          ),
-        ),
-        gaps.large,
-        Text(
-          'Shadow Color Only',
-          style: textTheme.titleSmall,
-        ),
-        gaps.small,
-        Container(
-          width: double.infinity,
-          // height: double.infinity,
-          height: 106,
-          padding: edgeInsets.symmetric(
-            vertical: XSpaces.medium,
-            horizontal: XSpaces.extraLarge,
-          ),
-          decoration: BoxDecoration(
-            color: colorScheme.surface,
-            borderRadius: borderRadii.semiSmall,
-            border: Border.all(color: colorScheme.outlineVariant),
-            // boxShadow: [
-            //   boxShadows.large,
-            // ],
-          ),
-          child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-            children: [
-              ElevationComponent(
-                description: 'Level 1\ndp',
-                elevation: elevations.level1,
-                isShadow: true,
-              ),
-              ElevationComponent(
-                description: 'Level 2\ndp',
-                elevation: elevations.level2,
-                isShadow: true,
-              ),
-              ElevationComponent(
-                description: 'Level 3\ndp',
-                elevation: elevations.level3,
-                isShadow: true,
-              ),
-              // ElevationComponent(
-              //   description: 'Level 4\ndp',
-              //   elevation: elevations.level4,
-              //   isShadow: true,
-              // ),
-              ElevationComponent(
-                description: 'Level 5\ndp',
-                elevation: elevations.level5,
-                isShadow: true,
+              gaps.small,
+              Row(
+                children: [
+                  ElevationComponent(
+                    description: 'Level 1\ndp',
+                    elevation: elevations.level1,
+                    isShadow: true,
+                  ),
+                  ElevationComponent(
+                    description: 'Level 2\ndp',
+                    elevation: elevations.level2,
+                    isShadow: true,
+                  ),
+                  ElevationComponent(
+                    description: 'Level 3\ndp',
+                    elevation: elevations.level3,
+                    isShadow: true,
+                  ),
+                  // ElevationComponent(
+                  //   description: 'Level 4\ndp',
+                  //   elevation: elevations.level4,
+                  //   isShadow: true,
+                  // ),
+                  ElevationComponent(
+                    description: 'Level 5\ndp',
+                    elevation: elevations.level5,
+                    isShadow: true,
+                  ),
+                ],
               ),
             ],
           ),
