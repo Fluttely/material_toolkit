@@ -70,12 +70,17 @@ class XTextShadowsData extends Equatable {
   //     _large ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
+  Shadow get none => const Shadow(
+        blurRadius: XStandardSizes.zero,
+        color: Color(0x00000000),
+      );
   Shadow get small => _small;
   Shadow get medium => _medium;
   Shadow get large => _large;
 
   @override
   List<Object?> get props => [
+        none.named('none'),
         small.named('small'),
         medium.named('medium'),
         large.named('large'),
@@ -84,6 +89,7 @@ class XTextShadowsData extends Equatable {
   @override
   String toString() => '''
     XTextShadowsData(
+      none: $none,
       small: $small,
       medium: $medium,
       large: $large,

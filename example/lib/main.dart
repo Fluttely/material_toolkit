@@ -74,6 +74,10 @@ class _RootState extends State<Root> {
             label: 'Geometry',
           ),
           NavigationDestination(
+            icon: Icon(Icons.text_fields),
+            label: 'Text',
+          ),
+          NavigationDestination(
             icon: Icon(Icons.motion_photos_on),
             label: 'Animation',
           ),
@@ -105,7 +109,7 @@ List<Widget> _body(BuildContext context) {
       child: BorderRadiusGroup(),
     ),
     const GroupCard(
-      title: 'Elevation',
+      title: 'Shadows',
       child: ElevationGroup(),
     ),
   ];

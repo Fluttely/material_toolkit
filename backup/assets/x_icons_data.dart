@@ -33,6 +33,7 @@ class XIconCharacterKey {
   @override
   String toString() => '''
     XIconCharacterKey(
+      none: $none,
       name: $name,
     )
   ''';

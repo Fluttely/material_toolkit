@@ -39,16 +39,16 @@ class XDurationsData extends Equatable {
   bool get areAnimationEnabled =>
       _areAnimationEnabled ??
       (throw UnsupportedError(
-          XMetricsError.getUnsupportedErrorMessage(attribute: 'areAnimationEnabled', location: 'durations')));
+          XMetricsError.unsupportedErrorMessage(attribute: 'areAnimationEnabled', location: 'durations')));
   Duration get slow =>
       _slow ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'slow', location: 'durations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'slow', location: 'durations')));
   Duration get regular =>
       _regular ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'regular', location: 'durations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'regular', location: 'durations')));
   Duration get quick =>
       _quick ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'quick', location: 'durations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'quick', location: 'durations')));
   @override
   List<Object?> get props => [
         areAnimationEnabled.named('areAnimationEnabled'),

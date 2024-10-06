@@ -44,39 +44,39 @@ class BorderRadiusGroup extends StatelessWidget {
             ),
             children: [
               BorderRadiusComponent(
-                description: 'none',
+                description: 'None',
                 borderRadius: borderRadii.none,
               ),
               BorderRadiusComponent(
-                description: 'extraSmall',
+                description: 'Extra Small',
                 borderRadius: borderRadii.extraSmall,
               ),
               BorderRadiusComponent(
-                description: 'small',
+                description: 'Small',
                 borderRadius: borderRadii.small,
               ),
               BorderRadiusComponent(
-                description: 'semiSmall',
+                description: 'Semi Small',
                 borderRadius: borderRadii.semiSmall,
               ),
               BorderRadiusComponent(
-                description: 'medium',
+                description: 'Medium',
                 borderRadius: borderRadii.medium,
               ),
               BorderRadiusComponent(
-                description: 'semiLarge',
+                description: 'Semi Large',
                 borderRadius: borderRadii.semiLarge,
               ),
               BorderRadiusComponent(
-                description: 'large',
+                description: 'Large',
                 borderRadius: borderRadii.large,
               ),
               BorderRadiusComponent(
-                description: 'extraLarge',
+                description: 'Extra Large',
                 borderRadius: borderRadii.extraLarge,
               ),
               BorderRadiusComponent(
-                description: 'superLarge',
+                description: 'Super Large',
                 borderRadius: borderRadii.superLarge,
               ),
             ],

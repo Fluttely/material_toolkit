@@ -86,6 +86,7 @@ class XElevationsData extends Equatable {
 
   @override
   List<Object?> get props => [
+        none.named('none'),
         level1.named('level1'),
         level2.named('level2'),
         level3.named('level3'),
@@ -96,6 +97,7 @@ class XElevationsData extends Equatable {
   @override
   String toString() => '''
     XElevationsData(
+      none: $none,
       level1: $level1,
       level2: $level2,
       level3: $level3,

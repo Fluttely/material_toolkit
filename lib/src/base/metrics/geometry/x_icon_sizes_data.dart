@@ -50,6 +50,7 @@ class XIconSizesData extends Equatable {
 
   @override
   List<Object?> get props => [
+        none.named('none'),
         extraSmall.named('extraSmall'),
         small.named('small'),
         semiSmall.named('semiSmall'),
@@ -63,6 +64,7 @@ class XIconSizesData extends Equatable {
   @override
   String toString() => '''
     XIconSizesData(
+      none: $none,
       extraSmall: $extraSmall,
       small: $small,
       semiSmall: $semiSmall,

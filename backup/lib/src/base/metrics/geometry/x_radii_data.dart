@@ -69,28 +69,26 @@ class XRadiiData extends Equatable {
   Radius get none => Radius.zero;
   Radius get extraSmall =>
       _extraSmall ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'extraSmall', location: 'radii')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'extraSmall', location: 'radii')));
   Radius get small =>
-      _small ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'small', location: 'radii')));
+      _small ?? (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'small', location: 'radii')));
   Radius get semiSmall =>
       _semiSmall ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'semiSmall', location: 'radii')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'semiSmall', location: 'radii')));
   Radius get medium =>
       _medium ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'medium', location: 'radii')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'medium', location: 'radii')));
   Radius get semiLarge =>
       _semiLarge ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'semiLarge', location: 'radii')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'semiLarge', location: 'radii')));
   Radius get large =>
-      _large ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'radii')));
+      _large ?? (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'large', location: 'radii')));
   Radius get extraLarge =>
       _extraLarge ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'extraLarge', location: 'radii')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'extraLarge', location: 'radii')));
   Radius get superLarge =>
       _superLarge ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'superLarge', location: 'radii')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'superLarge', location: 'radii')));
 
   @override
   List<Object?> get props => [

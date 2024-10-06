@@ -53,19 +53,19 @@ class XElevationsData extends Equatable {
   double get none => XStandardSizes.zero;
   double get level1 =>
       _level1 ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'level1', location: 'elevations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'level1', location: 'elevations')));
   double get level2 =>
       _level2 ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'level2', location: 'elevations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'level2', location: 'elevations')));
   double get level3 =>
       _level3 ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'level3', location: 'elevations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'level3', location: 'elevations')));
   double get level4 =>
       _level4 ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'level4', location: 'elevations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'level4', location: 'elevations')));
   double get level5 =>
       _level5 ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'level5', location: 'elevations')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'level5', location: 'elevations')));
 
   @override
   List<Object?> get props => [

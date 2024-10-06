@@ -76,31 +76,29 @@ class XSpacesData extends Equatable {
   double get none => XStandardSizes.zero;
   double get superSmall =>
       _superSmall ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'superSmall', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'superSmall', location: 'spaces')));
   double get extraSmall =>
       _extraSmall ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'extraSmall', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'extraSmall', location: 'spaces')));
   double get small =>
-      _small ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'small', location: 'spaces')));
+      _small ?? (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'small', location: 'spaces')));
   double get semiSmall =>
       _semiSmall ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'semiSmall', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'semiSmall', location: 'spaces')));
   double get medium =>
       _medium ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'medium', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'medium', location: 'spaces')));
   double get semiLarge =>
       _semiLarge ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'semiLarge', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'semiLarge', location: 'spaces')));
   double get large =>
-      _large ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'spaces')));
+      _large ?? (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'large', location: 'spaces')));
   double get extraLarge =>
       _extraLarge ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'extraLarge', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'extraLarge', location: 'spaces')));
   double get superLarge =>
       _superLarge ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'superLarge', location: 'spaces')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'superLarge', location: 'spaces')));
 
   @override
   List<Object?> get props => [

@@ -76,12 +76,18 @@ class XBoxShadowsData extends Equatable {
   //     _large ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
+  BoxShadow get none => const BoxShadow(
+        blurRadius: XStandardSizes.zero,
+        spreadRadius: XStandardSizes.zero,
+        color: Color(0x00000000),
+      );
   BoxShadow get small => _small;
   BoxShadow get medium => _medium;
   BoxShadow get large => _large;
 
   @override
   List<Object?> get props => [
+        none.named('none'),
         small.named('small'),
         medium.named('medium'),
         large.named('large'),
@@ -90,6 +96,7 @@ class XBoxShadowsData extends Equatable {
   @override
   String toString() => '''
     XBoxShadowsData(
+      none: $none,
       small: $small,
       medium: $medium,
       large: $large,

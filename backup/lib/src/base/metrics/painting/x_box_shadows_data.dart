@@ -64,13 +64,13 @@ class XBoxShadowsData extends Equatable {
 
   BoxShadow get small =>
       _small ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
   BoxShadow get medium =>
       _medium ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
   BoxShadow get large =>
       _large ??
-      (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
+      (throw UnsupportedError(XMetricsError.unsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
   @override
   List<Object?> get props => [
