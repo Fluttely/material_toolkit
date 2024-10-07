@@ -1,86 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit_example/widgets/group_item_container.dart';
+import 'package:material_toolkit_example/widgets/group_item_row.dart';
+import 'package:material_toolkit_example/widgets/group_item_title.dart';
 
 class BorderRadiusGroup extends StatelessWidget {
   const BorderRadiusGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final metrics = Theme.of(context).extension<XMetricsData>()!;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
+    final metrics = theme.extension<XMetricsData>()!;
     final borderRadii = metrics.borderRadii;
-    final edgeInsets = metrics.edgeInsets;
     final gaps = metrics.gaps;
 
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Text(
-          'Border Radius',
-          style: textTheme.titleSmall,
-        ),
+        const GroupItemTitle(title: 'Border Radius'),
         gaps.small,
-        Container(
-          width: double.infinity,
-          // height: double.infinity,
-          height: 416,
-          padding: edgeInsets.symmetric(
-            vertical: XSpaces.medium,
-            horizontal: XSpaces.extraLarge,
-          ),
-          decoration: BoxDecoration(
-            color: colorScheme.surface,
-            borderRadius: borderRadii.semiSmall,
-            border: Border.all(color: colorScheme.outlineVariant),
-            // boxShadow: [
-            //   boxShadows.large,
-            // ],
-          ),
-          child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
+        GroupItemContainer(
+          children: [
+            GroupItemRow(
+              children: [
+                BorderRadiusComponent(
+                  description: 'None',
+                  borderRadius: borderRadii.none,
+                ),
+                gaps.small,
+                BorderRadiusComponent(
+                  description: 'Extra Small',
+                  borderRadius: borderRadii.extraSmall,
+                ),
+                gaps.small,
+                BorderRadiusComponent(
+                  description: 'Small',
+                  borderRadius: borderRadii.small,
+                ),
+              ],
             ),
-            children: [
-              BorderRadiusComponent(
-                description: 'None',
-                borderRadius: borderRadii.none,
-              ),
-              BorderRadiusComponent(
-                description: 'Extra Small',
-                borderRadius: borderRadii.extraSmall,
-              ),
-              BorderRadiusComponent(
-                description: 'Small',
-                borderRadius: borderRadii.small,
-              ),
-              BorderRadiusComponent(
-                description: 'Semi Small',
-                borderRadius: borderRadii.semiSmall,
-              ),
-              BorderRadiusComponent(
-                description: 'Medium',
-                borderRadius: borderRadii.medium,
-              ),
-              BorderRadiusComponent(
-                description: 'Semi Large',
-                borderRadius: borderRadii.semiLarge,
-              ),
-              BorderRadiusComponent(
-                description: 'Large',
-                borderRadius: borderRadii.large,
-              ),
-              BorderRadiusComponent(
-                description: 'Extra Large',
-                borderRadius: borderRadii.extraLarge,
-              ),
-              BorderRadiusComponent(
-                description: 'Super Large',
-                borderRadius: borderRadii.superLarge,
-              ),
-            ],
-          ),
+            gaps.small,
+            GroupItemRow(
+              children: [
+                BorderRadiusComponent(
+                  description: 'Semi Small',
+                  borderRadius: borderRadii.semiSmall,
+                ),
+                gaps.small,
+                BorderRadiusComponent(
+                  description: 'Medium',
+                  borderRadius: borderRadii.medium,
+                ),
+                gaps.small,
+                BorderRadiusComponent(
+                  description: 'Semi Large',
+                  borderRadius: borderRadii.semiLarge,
+                ),
+              ],
+            ),
+            gaps.small,
+            GroupItemRow(
+              children: [
+                BorderRadiusComponent(
+                  description: 'Large',
+                  borderRadius: borderRadii.large,
+                ),
+                gaps.small,
+                BorderRadiusComponent(
+                  description: 'Extra Large',
+                  borderRadius: borderRadii.extraLarge,
+                ),
+                gaps.small,
+                BorderRadiusComponent(
+                  description: 'Super Large',
+                  borderRadius: borderRadii.superLarge,
+                ),
+              ],
+            ),
+          ],
         ),
       ],
     );
@@ -103,6 +101,8 @@ class BorderRadiusComponent extends StatelessWidget {
     final colorScheme = theme.colorScheme;
 
     return Container(
+      height: 96,
+      width: 96,
       decoration: BoxDecoration(
         borderRadius: borderRadius,
         border: Border.all(color: colorScheme.outline),

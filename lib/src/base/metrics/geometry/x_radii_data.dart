@@ -126,6 +126,28 @@ class XRadiiData extends Equatable {
   Radius get x32 => const Radius.circular(XStandardSizes.x32);
   Radius get x48 => const Radius.circular(XStandardSizes.x48);
 
+  XRadiiData copyWith({
+    Radius? extraSmall,
+    Radius? small,
+    Radius? semiSmall,
+    Radius? medium,
+    Radius? semiLarge,
+    Radius? large,
+    Radius? extraLarge,
+    Radius? superLarge,
+  }) {
+    return XRadiiData(
+      extraSmall: extraSmall ?? _extraSmall,
+      small: small ?? _small,
+      semiSmall: semiSmall ?? _semiSmall,
+      medium: medium ?? _medium,
+      semiLarge: semiLarge ?? _semiLarge,
+      large: large ?? _large,
+      extraLarge: extraLarge ?? _extraLarge,
+      superLarge: superLarge ?? _superLarge,
+    );
+  }
+
   @override
   List<Object?> get props => [
         none.named('none'),

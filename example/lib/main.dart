@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 import 'package:material_toolkit_example/geometry/elevation.dart';
 import 'package:material_toolkit_example/geometry/radius.dart';
+import 'package:material_toolkit_example/notifiers/root_notifier.dart';
+import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
 import 'package:material_toolkit_example/paiting/border_radius.dart';
-import 'package:material_toolkit_example/theme_notifier.dart';
 import 'package:material_toolkit_example/widgets/group_card.dart';
 import 'package:provider/provider.dart';
 
@@ -16,19 +17,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ThemeNotifier(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ThemeNotifier>(create: (_) => ThemeNotifier()),
+        ChangeNotifierProvider<RootNotifier>(create: (_) => RootNotifier()),
+      ],
       child: Consumer<ThemeNotifier>(
         builder: (_, themeNotifier, __) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
-              extensions: [
-                XMetricsData(
-                  radii: themeNotifier.radiiData,
-                )
-              ],
+              extensions: [themeNotifier.metrics],
             ),
             home: const Root(),
           );
@@ -46,23 +46,18 @@ class Root extends StatefulWidget {
 }
 
 class _RootState extends State<Root> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
-    final metrics = theme.extension<XMetricsData>()!;
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
+
+    final metrics = theme.extension<XMetricsData>()!;
     final gaps = metrics.gaps;
-    final breakpoints = metrics.breakpoints;
+    // final breakpoints = metrics.breakpoints;
+
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    final rootNotifier = Provider.of<RootNotifier>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -70,8 +65,8 @@ class _RootState extends State<Root> {
         centerTitle: false,
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: _onItemTapped,
+        selectedIndex: rootNotifier.selectedIndex,
+        onDestinationSelected: rootNotifier.onItemTapped,
         destinations: const <NavigationDestination>[
           NavigationDestination(
             icon: Icon(Icons.brush),
@@ -91,118 +86,65 @@ class _RootState extends State<Root> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Enter Primary Color (Hex, e.g. FF0000 for Red)',
-              fillColor: colorScheme.primary,
-              filled: true,
-              labelStyle: textTheme.bodyLarge?.copyWith(
-                color: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Enter Primary Color (Hex, e.g. FF0000 for Red)',
+                fillColor: colorScheme.primary,
+                filled: true,
+                labelStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
+                border: InputBorder.none,
               ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(0),
-              ),
+              style: const TextStyle(color: Colors.white),
+              cursorColor: Colors.white,
+              onChanged: themeNotifier.updatePrimaryColor,
             ),
-            style: const TextStyle(
-              color: Colors.white,
-            ),
-            cursorColor: Colors.white,
-            onChanged: (value) {
-              themeNotifier.updatePrimaryColor(value);
-            },
-          ),
-          gaps.large,
-          Container(
-            height: 50,
-            width: double.infinity,
-            color: colorScheme.primary,
-            child: Center(
+            gaps.large,
+            ElevatedButton(
+              onPressed: themeNotifier.resetMetricsData,
               child: Text(
-                'Primary Color Preview',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Colors.white,
-                    ),
+                'Reset MetricsData to default',
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.error,
+                ),
               ),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              themeNotifier.updateRadiiData(
-                const XRadiiData(
-                  extraSmall: Radius.circular(4),
-                  small: Radius.circular(8),
-                  semiSmall: Radius.circular(12),
-                  medium: Radius.circular(16),
-                  semiLarge: Radius.circular(20),
-                  large: Radius.circular(24),
-                  extraLarge: Radius.circular(32),
-                  superLarge: Radius.circular(48),
-                ),
-              );
-            },
-            child: const Text('Radii standard(reset)'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              themeNotifier.updateRadiiData(
-                const XRadiiData(
-                  extraSmall: Radius.circular(13),
-                  small: Radius.circular(13),
-                  semiSmall: Radius.circular(19),
-                  medium: Radius.circular(25),
-                  semiLarge: Radius.circular(30),
-                  large: Radius.circular(60),
-                  extraLarge: Radius.circular(60),
-                  superLarge: Radius.circular(60),
-                ),
-              );
-            },
-            child: const Text('Radii standard(asda)'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              themeNotifier.updateRadiiData(
-                const XRadiiData(
-                  extraSmall: Radius.circular(48),
-                  small: Radius.circular(48),
-                  semiSmall: Radius.circular(48),
-                  medium: Radius.circular(48),
-                  semiLarge: Radius.circular(48),
-                  large: Radius.circular(48),
-                  extraLarge: Radius.circular(48),
-                  superLarge: Radius.circular(48),
-                ),
-              );
-            },
-            child: const Text('Radii 48'),
-          ),
-          Expanded(
-            child: LayoutBuilder(
+            LayoutBuilder(
               builder: (context, constraints) {
-                return ListView(
-                  scrollDirection: constraints.maxWidth < breakpoints.mobile.maxWidth ? Axis.vertical : Axis.horizontal,
-                  children: const [
-                    GroupCard(
-                      title: 'Shapes',
-                      child: Column(
+                return ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 480),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    // child: ListView(
+                    // shrinkWrap: true,
+                    // scrollDirection:
+                    //     constraints.maxWidth < breakpoints.mobile.maxWidth ? Axis.vertical : Axis.horizontal,
+                    children: [
+                      GroupCard(
+                        title: 'Shapes',
                         children: [
-                          RadiusGroup(),
-                          BorderRadiusGroup(),
+                          const RadiusGroup(),
+                          gaps.large,
+                          const BorderRadiusGroup(),
                         ],
                       ),
-                    ),
-                    GroupCard(
-                      title: 'Shadows',
-                      child: ElevationGroup(),
-                    ),
-                  ],
+                      gaps.extraSmall,
+                      const GroupCard(
+                        title: 'Shadows',
+                        children: [
+                          ElevationGroup(),
+                        ],
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
