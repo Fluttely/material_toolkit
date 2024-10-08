@@ -7,15 +7,15 @@
 
 //   Border get none => Border.all(_spaces.none);
 
-//   Border all(final XSpaces value) => Border.all(value.toDouble(_spaces));
+//   Border all(final XSpaces value) => Border.all(value.toData(_spaces));
 
 //   Border symmetric({
 //     final XSpaces? vertical,
 //     final XSpaces? horizontal,
 //   }) =>
 //       Border.symmetric(
-//         horizontal: (horizontal ?? XSpaces.none).toDouble(_spaces),
-//         vertical: (vertical ?? XSpaces.none).toDouble(_spaces),
+//         horizontal: (horizontal ?? XSpaces.none).toData(_spaces),
+//         vertical: (vertical ?? XSpaces.none).toData(_spaces),
 //       );
 
 //   Border only({
@@ -25,10 +25,10 @@
 //     final XSpaces? bottom,
 //   }) =>
 //       Border.only(
-//         left: (left ?? XSpaces.none).toDouble(_spaces),
-//         top: (top ?? XSpaces.none).toDouble(_spaces),
-//         right: (right ?? XSpaces.none).toDouble(_spaces),
-//         bottom: (bottom ?? XSpaces.none).toDouble(_spaces),
+//         left: (left ?? XSpaces.none).toData(_spaces),
+//         top: (top ?? XSpaces.none).toData(_spaces),
+//         right: (right ?? XSpaces.none).toData(_spaces),
+//         bottom: (bottom ?? XSpaces.none).toData(_spaces),
 //       );
 
 //   // Border get allSuperSmall => Border.all(_spaces.superSmall);

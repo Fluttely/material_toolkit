@@ -69,10 +69,10 @@
 
 //   EdgeInsets toEdgeInsets(XMetricsData theme) {
 //     return EdgeInsets.only(
-//       left: left.toDouble(theme),
-//       top: top.toDouble(theme),
-//       right: right.toDouble(theme),
-//       bottom: bottom.toDouble(theme),
+//       left: left.toData(theme),
+//       top: top.toData(theme),
+//       right: right.toData(theme),
+//       bottom: bottom.toData(theme),
 //     );
 //   }
 // }

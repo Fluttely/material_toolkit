@@ -13,7 +13,7 @@ enum XRadii {
 }
 
 extension XRadiiExtension on XRadii {
-  Radius toRadius(XRadiiData radii) {
+  double toData(XRadiiData radii) {
     return switch (this) {
       XRadii.none => radii.none,
       XRadii.extraSmall => radii.extraSmall,
@@ -29,33 +29,33 @@ extension XRadiiExtension on XRadii {
 }
 
 class XRadiiData extends Equatable {
-  // final Radius? _extraSmall;
-  // final Radius? _small;
-  // final Radius? _semiSmall;
-  // final Radius? _medium;
-  // final Radius? _semiLarge;
-  // final Radius? _large;
-  // final Radius? _extraLarge;
-  // final Radius? _superLarge;
+  // final double? _extraSmall;
+  // final double? _small;
+  // final double? _semiSmall;
+  // final double? _medium;
+  // final double? _semiLarge;
+  // final double? _large;
+  // final double? _extraLarge;
+  // final double? _superLarge;
 
-  final Radius _extraSmall;
-  final Radius _small;
-  final Radius _semiSmall;
-  final Radius _medium;
-  final Radius _semiLarge;
-  final Radius _large;
-  final Radius _extraLarge;
-  final Radius _superLarge;
+  final double _extraSmall;
+  final double _small;
+  final double _semiSmall;
+  final double _medium;
+  final double _semiLarge;
+  final double _large;
+  final double _extraLarge;
+  final double _superLarge;
 
   // const XRadiiData({
-  //   final Radius? extraSmall,
-  //   final Radius? small,
-  //   final Radius? semiSmall,
-  //   final Radius? medium,
-  //   final Radius? semiLarge,
-  //   final Radius? large,
-  //   final Radius? extraLarge,
-  //   final Radius? superLarge,
+  //   final double? extraSmall,
+  //   final double? small,
+  //   final double? semiSmall,
+  //   final double? medium,
+  //   final double? semiLarge,
+  //   final double? large,
+  //   final double? extraLarge,
+  //   final double? superLarge,
   // })  : _extraSmall = extraSmall,
   //       _small = small,
   //       _semiSmall = semiSmall,
@@ -66,103 +66,94 @@ class XRadiiData extends Equatable {
   //       _superLarge = superLarge;
 
   const XRadiiData({
-    final Radius? extraSmall,
-    final Radius? small,
-    final Radius? semiSmall,
-    final Radius? medium,
-    final Radius? semiLarge,
-    final Radius? large,
-    final Radius? extraLarge,
-    final Radius? superLarge,
-  })  : _extraSmall = extraSmall ?? const Radius.circular(XStandardSizes.x4),
-        _small = small ?? const Radius.circular(XStandardSizes.x8),
-        _semiSmall = semiSmall ?? const Radius.circular(XStandardSizes.x12),
-        _medium = medium ?? const Radius.circular(XStandardSizes.x16),
-        _semiLarge = semiLarge ?? const Radius.circular(XStandardSizes.x20),
-        _large = large ?? const Radius.circular(XStandardSizes.x24),
-        _extraLarge = extraLarge ?? const Radius.circular(XStandardSizes.x32),
-        _superLarge = superLarge ?? const Radius.circular(XStandardSizes.x48);
+    final double? extraSmall,
+    final double? small,
+    final double? semiSmall,
+    final double? medium,
+    final double? semiLarge,
+    final double? large,
+    final double? extraLarge,
+    final double? superLarge,
+  })  : _extraSmall = extraSmall ?? XStandardSizes.x4,
+        _small = small ?? XStandardSizes.x8,
+        _semiSmall = semiSmall ?? XStandardSizes.x12,
+        _medium = medium ?? XStandardSizes.x16,
+        _semiLarge = semiLarge ?? XStandardSizes.x20,
+        _large = large ?? XStandardSizes.x24,
+        _extraLarge = extraLarge ?? XStandardSizes.x32,
+        _superLarge = superLarge ?? XStandardSizes.x48;
 
   // XRadiiData.x({
-  //   final XAttribute<Radius?>? extraSmall,
-  //   final XAttribute<Radius?>? small,
-  //   final XAttribute<Radius?>? semiSmall,
-  //   final XAttribute<Radius?>? medium,
-  //   final XAttribute<Radius?>? semiLarge,
-  //   final XAttribute<Radius?>? large,
-  //   final XAttribute<Radius?>? extraLarge,
-  //   final XAttribute<Radius?>? superLarge,
-  // })  : _extraSmall = extraSmall == null ? const Radius.circular(XStandardSizes.x4) : extraSmall.value,
-  //       _small = small == null ? const Radius.circular(XStandardSizes.x8) : small.value,
-  //       _semiSmall = semiSmall == null ? const Radius.circular(XStandardSizes.x12) : semiSmall.value,
-  //       _medium = medium == null ? const Radius.circular(XStandardSizes.x16) : medium.value,
-  //       _semiLarge = semiLarge == null ? const Radius.circular(XStandardSizes.x20) : semiLarge.value,
-  //       _large = large == null ? const Radius.circular(XStandardSizes.x24) : large.value,
-  //       _extraLarge = extraLarge == null ? const Radius.circular(XStandardSizes.x32) : extraLarge.value,
-  //       _superLarge = superLarge == null ? const Radius.circular(XStandardSizes.x48) : superLarge.value;
+  //   final XAttribute<double?>? extraSmall,
+  //   final XAttribute<double?>? small,
+  //   final XAttribute<double?>? semiSmall,
+  //   final XAttribute<double?>? medium,
+  //   final XAttribute<double?>? semiLarge,
+  //   final XAttribute<double?>? large,
+  //   final XAttribute<double?>? extraLarge,
+  //   final XAttribute<double?>? superLarge,
+  // })  : _extraSmall = extraSmall == null ? const double.circular(XStandardSizes.x4) : extraSmall.value,
+  //       _small = small == null ? const double.circular(XStandardSizes.x8) : small.value,
+  //       _semiSmall = semiSmall == null ? const double.circular(XStandardSizes.x12) : semiSmall.value,
+  //       _medium = medium == null ? const double.circular(XStandardSizes.x16) : medium.value,
+  //       _semiLarge = semiLarge == null ? const double.circular(XStandardSizes.x20) : semiLarge.value,
+  //       _large = large == null ? const double.circular(XStandardSizes.x24) : large.value,
+  //       _extraLarge = extraLarge == null ? const double.circular(XStandardSizes.x32) : extraLarge.value,
+  //       _superLarge = superLarge == null ? const double.circular(XStandardSizes.x48) : superLarge.value;
 
-  // Radius get none => Radius.zero;
-  // Radius get extraSmall =>
+  // double get none => double.zero;
+  // double get extraSmall =>
   //     _extraSmall ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'extraSmall', location: 'radii')));
-  // Radius get small =>
+  // double get small =>
   //     _small ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'small', location: 'radii')));
-  // Radius get semiSmall =>
+  // double get semiSmall =>
   //     _semiSmall ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'semiSmall', location: 'radii')));
-  // Radius get medium =>
+  // double get medium =>
   //     _medium ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'medium', location: 'radii')));
-  // Radius get semiLarge =>
+  // double get semiLarge =>
   //     _semiLarge ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'semiLarge', location: 'radii')));
-  // Radius get large =>
+  // double get large =>
   //     _large ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'large', location: 'radii')));
-  // Radius get extraLarge =>
+  // double get extraLarge =>
   //     _extraLarge ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'extraLarge', location: 'radii')));
-  // Radius get superLarge =>
+  // double get superLarge =>
   //     _superLarge ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'superLarge', location: 'radii')));
 
-  Radius get extraSmall => _extraSmall;
-  Radius get small => _small;
-  Radius get semiSmall => _semiSmall;
-  Radius get medium => _medium;
-  Radius get semiLarge => _semiLarge;
-  Radius get large => _large;
-  Radius get extraLarge => _extraLarge;
-  Radius get superLarge => _superLarge;
-
-  Radius get none => Radius.zero;
-  Radius get x4 => const Radius.circular(XStandardSizes.x4);
-  Radius get x8 => const Radius.circular(XStandardSizes.x8);
-  Radius get x12 => const Radius.circular(XStandardSizes.x12);
-  Radius get x16 => const Radius.circular(XStandardSizes.x16);
-  Radius get x20 => const Radius.circular(XStandardSizes.x20);
-  Radius get x24 => const Radius.circular(XStandardSizes.x24);
-  Radius get x32 => const Radius.circular(XStandardSizes.x32);
-  Radius get x48 => const Radius.circular(XStandardSizes.x48);
+  double get none => XStandardSizes.zero;
+  double get extraSmall => _extraSmall;
+  double get small => _small;
+  double get semiSmall => _semiSmall;
+  double get medium => _medium;
+  double get semiLarge => _semiLarge;
+  double get large => _large;
+  double get extraLarge => _extraLarge;
+  double get superLarge => _superLarge;
 
   XRadiiData copyWith({
-    Radius? extraSmall,
-    Radius? small,
-    Radius? semiSmall,
-    Radius? medium,
-    Radius? semiLarge,
-    Radius? large,
-    Radius? extraLarge,
-    Radius? superLarge,
+    double? extraSmall,
+    double? small,
+    double? semiSmall,
+    double? medium,
+    double? semiLarge,
+    double? large,
+    double? extraLarge,
+    double? superLarge,
   }) {
     return XRadiiData(
       extraSmall: extraSmall ?? _extraSmall,

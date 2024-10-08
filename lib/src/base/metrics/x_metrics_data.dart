@@ -11,15 +11,15 @@ part 'geometry/x_elevations_data.dart';
 part 'geometry/x_form_factor.dart';
 part 'geometry/x_icon_sizes_data.dart';
 part 'geometry/x_radii_data.dart';
+part 'geometry/x_radius.dart';
 part 'geometry/x_spaces_data.dart';
-part 'painting/borders/input/x_input_borders.dart';
-part 'painting/borders/input/x_outline_input_borders.dart';
-part 'painting/borders/input/x_underline_input_borders.dart';
-part 'painting/borders/shape/x_beveled_rectangle_borders.dart';
-part 'painting/borders/shape/x_continuous_rectangle_borders.dart';
-// part 'painting/borders/shape/x_rounded_rectangle_borders.dart';
-part 'painting/borders/shape/x_rounded_rectangle_border.dart';
-part 'painting/borders/shape/x_shapes.dart';
+// part 'painting/borders/input/x_input_borders.dart';
+// part 'painting/borders/input/x_outline_input_borders.dart';
+// part 'painting/borders/input/x_underline_input_borders.dart';
+// part 'painting/borders/shape/x_beveled_rectangle_borders.dart';
+// part 'painting/borders/shape/x_continuous_rectangle_borders.dart';
+// part 'painting/borders/shape/x_rounded_rectangle_border.dart';
+// part 'painting/borders/shape/x_shapes.dart';
 // part 'painting/borders/x_border.dart';
 part 'painting/borders/x_border_radii.dart';
 part 'painting/x_box_shadows_data.dart';
@@ -91,9 +91,9 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   // GoogleFonts get googleFonts => GoogleFonts;
 
   /// borders
-  XBorderRadii get borderRadii => XBorderRadii(radii);
-  XShapes get shapes => XShapes(borderRadii);
-  XInputBorders get inputBorders => XInputBorders(borderRadii);
+  XBorderRadius get borderRadii => XBorderRadius(radii);
+  // XShapes get shapes => XShapes(borderRadii);
+  // XInputBorders get inputBorders => XInputBorders(borderRadii);
 
   /// Edges
   XEdgeInsets get edgeInsets => XEdgeInsets(spaces);
@@ -162,8 +162,8 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
           textShadows == other.textShadows &&
           gaps == other.gaps &&
           borderRadii == other.borderRadii &&
-          shapes == other.shapes &&
-          inputBorders == other.inputBorders &&
+          // shapes == other.shapes &&
+          // inputBorders == other.inputBorders &&
           edgeInsets == other.edgeInsets &&
           padding == other.padding &&
           runtimeType == other.runtimeType;
@@ -182,8 +182,8 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       textShadows.hashCode ^
       gaps.hashCode ^
       borderRadii.hashCode ^
-      shapes.hashCode ^
-      inputBorders.hashCode ^
+      // shapes.hashCode ^
+      // inputBorders.hashCode ^
       edgeInsets.hashCode ^
       padding.hashCode;
 
@@ -201,11 +201,11 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       textShadows: $textShadows,
       gaps: $gaps,
       borderRadii: $borderRadii,
-      shapes: $shapes,
-      inputBorders: $inputBorders,
       edgeInsets: $edgeInsets,
       padding: $padding,
     )
   ''';
+  // shapes: $shapes,
+  // inputBorders: $inputBorders,
   // googleFonts: $googleFonts,
 }

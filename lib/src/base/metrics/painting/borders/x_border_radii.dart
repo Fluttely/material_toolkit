@@ -1,60 +1,60 @@
 part of '../../x_metrics_data.dart';
 
-class XBorderRadii extends Equatable {
+class XBorderRadius extends Equatable {
   final XRadiiData _radii;
 
-  const XBorderRadii(this._radii);
+  const XBorderRadius(
+    this._radii,
+  );
 
-  BorderRadius get none => BorderRadius.all(_radii.none);
+  BorderRadius get none => BorderRadius.zero;
 
-  BorderRadius all(final XRadii value) => BorderRadius.all(value.toRadius(_radii));
+  BorderRadius all(final XRadius value) => BorderRadius.all(value.toRadius());
 
-  BorderRadius circular(final XRadii value) => BorderRadius.circular(
-        value.toRadius(_radii).x,
-      );
+  BorderRadius circular(final XRadii value) => BorderRadius.circular(value.toData(_radii));
 
   BorderRadius vertical({
-    final XRadii? top,
-    final XRadii? bottom,
+    final XRadius? top,
+    final XRadius? bottom,
   }) =>
       BorderRadius.vertical(
-        top: (top ?? XRadii.none).toRadius(_radii),
-        bottom: (bottom ?? XRadii.none).toRadius(_radii),
+        top: top?.toRadius() ?? XRadius.none,
+        bottom: bottom?.toRadius() ?? XRadius.none,
       );
 
   BorderRadius horizontal({
-    final XRadii? left,
-    final XRadii? right,
+    final XRadius? left,
+    final XRadius? right,
   }) =>
       BorderRadius.horizontal(
-        left: (left ?? XRadii.none).toRadius(_radii),
-        right: (right ?? XRadii.none).toRadius(_radii),
+        left: left?.toRadius() ?? XRadius.none,
+        right: right?.toRadius() ?? XRadius.none,
       );
 
   BorderRadius only({
-    final XRadii? topLeft,
-    final XRadii? topRight,
-    final XRadii? bottomLeft,
-    final XRadii? bottomRight,
+    final XRadius? topLeft,
+    final XRadius? topRight,
+    final XRadius? bottomLeft,
+    final XRadius? bottomRight,
   }) =>
       BorderRadius.only(
-        topLeft: (topLeft ?? XRadii.none).toRadius(_radii),
-        topRight: (topRight ?? XRadii.none).toRadius(_radii),
-        bottomLeft: (bottomLeft ?? XRadii.none).toRadius(_radii),
-        bottomRight: (bottomRight ?? XRadii.none).toRadius(_radii),
+        topLeft: topLeft?.toRadius() ?? XRadius.none,
+        topRight: topRight?.toRadius() ?? XRadius.none,
+        bottomLeft: bottomLeft?.toRadius() ?? XRadius.none,
+        bottomRight: bottomRight?.toRadius() ?? XRadius.none,
       );
 
   BorderRadius copyWith({
-    final XRadii? topLeft,
-    final XRadii? topRight,
-    final XRadii? bottomLeft,
-    final XRadii? bottomRight,
+    final XRadius? topLeft,
+    final XRadius? topRight,
+    final XRadius? bottomLeft,
+    final XRadius? bottomRight,
   }) {
     return BorderRadius.only(
-      topLeft: (topLeft ?? XRadii.none).toRadius(_radii),
-      topRight: (topRight ?? XRadii.none).toRadius(_radii),
-      bottomLeft: (bottomLeft ?? XRadii.none).toRadius(_radii),
-      bottomRight: (bottomRight ?? XRadii.none).toRadius(_radii),
+      topLeft: topLeft?.toRadius() ?? XRadius.none,
+      topRight: topRight?.toRadius() ?? XRadius.none,
+      bottomLeft: bottomLeft?.toRadius() ?? XRadius.none,
+      bottomRight: bottomRight?.toRadius() ?? XRadius.none,
     );
   }
 

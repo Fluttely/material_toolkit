@@ -94,70 +94,70 @@
 //     final XAttribute<XEdgeInsetsData?>? edgeInsets,
 //   })  : _none =
 //             // none?.value is int
-//             // ? none!.value.toDouble()
+//             // ? none!.value.toData()
 //             // :
 //             none == null ? XStandardSizes.zero : none.value
 //         // none.hasValue ? none.value != null ? none.value : ...
 //         ,
 //         _superSmall =
 //             // superSmall?.value is int
-//             // ? superSmall!.value.toDouble()
+//             // ? superSmall!.value.toData()
 //             // :
 //             superSmall == null ? XAuxiliarySizes.x2 : superSmall.value
 //         // superSmall.hasValue ? superSmall.value != null ? superSmall.value : ...
 //         ,
 //         _extraSmall =
 //             // extraSmall?.value is int
-//             // ? extraSmall!.value.toDouble()
+//             // ? extraSmall!.value.toData()
 //             // :
 //             extraSmall == null ? XStandardSizes.x4 : extraSmall.value
 //         // extraSmall.hasValue ? extraSmall.value != null ? extraSmall.value : ...
 //         ,
 //         _small =
 //             // small?.value is int
-//             // ? small!.value.toDouble()
+//             // ? small!.value.toData()
 //             // :
 //             small == null ? XStandardSizes.x8 : small.value
 //         // small.hasValue ? small.value != null ? small.value : ...
 //         ,
 //         _semiSmall =
 //             // semiSmall?.value is int
-//             // ? semiSmall!.value.toDouble()
+//             // ? semiSmall!.value.toData()
 //             // :
 //             semiSmall == null ? XStandardSizes.x12 : semiSmall.value
 //         // semiSmall.hasValue ? semiSmall.value != null ? semiSmall.value : ...
 //         ,
 //         _medium =
 //             // medium?.value is int
-//             // ? medium!.value.toDouble()
+//             // ? medium!.value.toData()
 //             // :
 //             medium == null ? XStandardSizes.x16 : medium.value
 //         // medium.hasValue ? medium.value != null ? medium.value : ...
 //         ,
 //         _semiLarge =
 //             // semiLarge?.value is int
-//             // ? semiLarge!.value.toDouble()
+//             // ? semiLarge!.value.toData()
 //             // :
 //             semiLarge == null ? XStandardSizes.x20 : semiLarge.value
 //         // semiLarge.hasValue ? semiLarge.value != null ? semiLarge.value : ...
 //         ,
 //         _large =
 //             // large?.value is int
-//             // ? large!.value.toDouble()
+//             // ? large!.value.toData()
 //             // :
 //             large == null ? XStandardSizes.x24 : large.value
 //         // large.hasValue ? large.value != null ? large.value : ...
 //         ,
 //         _extraLarge =
 //             // extraLarge?.value is int
-//             // ? extraLarge!.value.toDouble()
+//             // ? extraLarge!.value.toData()
 //             // :
 //             extraLarge == null ? XStandardSizes.x32 : extraLarge.value
 //         // extraLarge.hasValue ? extraLarge.value != null ? extraLarge.value : ...
 //         ,
 //         _superLarge =
 //             // superLarge?.value is int
-//             // ? superLarge!.value.toDouble()
+//             // ? superLarge!.value.toData()
 //             // :
 //             superLarge == null ? XStandardSizes.x48 : superLarge.value
 //   // superLarge.hasValue ? superLarge.value != null ? superLarge.value : ...
@@ -308,10 +308,10 @@
 //     final XSpacing? bottom,
 //   }) =>
 //       EdgeInsets.only(
-//         left: (left ?? XSpacing.none).toDouble(_spaces) ?? 0,
-//         top: (top ?? XSpacing.none).toDouble(_spaces) ?? 0,
-//         right: (right ?? XSpacing.none).toDouble(_spaces) ?? 0,
-//         bottom: (bottom ?? XSpacing.none).toDouble(_spaces) ?? 0,
+//         left: (left ?? XSpacing.none).toData(_spaces) ?? 0,
+//         top: (top ?? XSpacing.none).toData(_spaces) ?? 0,
+//         right: (right ?? XSpacing.none).toData(_spaces) ?? 0,
+//         bottom: (bottom ?? XSpacing.none).toData(_spaces) ?? 0,
 //       );
 
 //   @override
@@ -407,7 +407,7 @@
 // }
 
 // extension XSpacingExtension on XSpacing {
-//   double? toDouble(XSpacingsData? spaces) {
+//   double? toData(XSpacingsData? spaces) {
 //     return switch (this) {
 //       XSpacing.none => spaces?.none,
 //       XSpacing.superSmall => spaces?.superSmall,

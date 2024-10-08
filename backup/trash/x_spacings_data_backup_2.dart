@@ -140,11 +140,11 @@
 //   }) =>
 //       EdgeInsets.only(
 //         left:
-//             (left ?? Xspace.none).toDouble(_spaces) ?? XStandardSizes.zero,
-//         top: (top ?? Xspace.none).toDouble(_spaces) ?? XStandardSizes.zero,
+//             (left ?? Xspace.none).toData(_spaces) ?? XStandardSizes.zero,
+//         top: (top ?? Xspace.none).toData(_spaces) ?? XStandardSizes.zero,
 //         right:
-//             (right ?? Xspace.none).toDouble(_spaces) ?? XStandardSizes.zero,
-//         bottom: (bottom ?? Xspace.none).toDouble(_spaces) ??
+//             (right ?? Xspace.none).toData(_spaces) ?? XStandardSizes.zero,
+//         bottom: (bottom ?? Xspace.none).toData(_spaces) ??
 //             XStandardSizes.zero,
 //       );
 
@@ -247,7 +247,7 @@
 // }
 
 // extension XspaceExtension on Xspace {
-//   double? toDouble(XspacesData? spaces) {
+//   double? toData(XspacesData? spaces) {
 //     return switch (this) {
 //       Xspace.none => spaces?.none,
 //       Xspace.superSmall => spaces?.superSmall,

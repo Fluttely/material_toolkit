@@ -42,6 +42,6 @@
 //   Widget build(BuildContext context) {
 //     final metrics = Theme.of(context).extension<ApodThemeData>()!;
 
-//     return Gap(space.toDouble(metrics));
+//     return Gap(space.toData(metrics));
 //   }
 // }

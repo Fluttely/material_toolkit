@@ -14,7 +14,7 @@ enum XSpaces {
 }
 
 extension XSpacesExtension on XSpaces {
-  double toDouble(XSpacesData spaces) {
+  double toData(XSpacesData spaces) {
     return switch (this) {
       XSpaces.none => spaces.none,
       XSpaces.superSmall => spaces.superSmall,
