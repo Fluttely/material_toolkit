@@ -13,11 +13,11 @@ part 'geometry/x_icon_sizes_data.dart';
 part 'geometry/x_radii_data.dart';
 part 'geometry/x_spaces_data.dart';
 part 'painting/x_border_radii.dart';
+part 'painting/x_border_shapes.dart';
 part 'painting/x_box_shadows_data.dart';
 part 'painting/x_edge_insets.dart';
 part 'painting/x_gaps.dart';
 part 'painting/x_padding.dart';
-part 'painting/x_border_shapes.dart';
 
 class XMetricsData extends ThemeExtension<XMetricsData> {
   final XBoxShadowsData boxShadows;
@@ -56,8 +56,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   XPadding get padding => XPadding(edgeInsets);
 
   @override
-  ThemeExtension<XMetricsData> lerp(
-      ThemeExtension<XMetricsData>? other, double t) {
+  ThemeExtension<XMetricsData> lerp(ThemeExtension<XMetricsData>? other, double t) {
     if (other is! XMetricsData) {
       return this;
     } else {
@@ -138,8 +137,8 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       gaps: $gaps,
       borderRadii: $borderRadii,
       shapes: $borderShapes,
-      edgeInsetses: $edgeInsets,
-      paddings: $padding,
+      edgeInsets: $edgeInsets,
+      padding: $padding,
     )
   ''';
 }

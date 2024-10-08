@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/geometry/elevation.dart';
 import 'package:material_toolkit_example/geometry/radius.dart';
 import 'package:material_toolkit_example/notifiers/root_notifier.dart';
 import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
@@ -9,11 +8,11 @@ import 'package:material_toolkit_example/widgets/group_card.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const DemoApp());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class DemoApp extends StatelessWidget {
+  const DemoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +53,7 @@ class _RootState extends State<Root> {
 
     final metrics = theme.extension<XMetricsData>()!;
     final gaps = metrics.gaps;
+    final inputBorders = metrics.inputBorders;
     // final breakpoints = metrics.breakpoints;
 
     final themeNotifier = Provider.of<ThemeNotifier>(context);
@@ -91,12 +91,14 @@ class _RootState extends State<Root> {
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
+              controller: themeNotifier.primaryColorTextFieldController,
               decoration: InputDecoration(
                 labelText: 'Enter Primary Color (Hex, e.g. FF0000 for Red)',
+                labelStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
                 fillColor: colorScheme.primary,
                 filled: true,
-                labelStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
-                border: InputBorder.none,
+                isDense: true,
+                border: inputBorders.none,
               ),
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.white,
@@ -107,9 +109,7 @@ class _RootState extends State<Root> {
               onPressed: themeNotifier.resetMetricsData,
               child: Text(
                 'Reset MetricsData to default',
-                style: textTheme.bodyMedium?.copyWith(
-                  color: colorScheme.error,
-                ),
+                style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
               ),
             ),
             LayoutBuilder(
@@ -129,15 +129,17 @@ class _RootState extends State<Root> {
                           const RadiusGroup(),
                           gaps.large,
                           const BorderRadiusGroup(),
+                          gaps.large,
+                          // XBorderShapes
                         ],
                       ),
-                      gaps.extraSmall,
-                      const GroupCard(
-                        title: 'Shadows',
-                        children: [
-                          ElevationGroup(),
-                        ],
-                      ),
+                      // gaps.extraSmall,
+                      // const GroupCard(
+                      //   title: 'Shadows',
+                      //   children: [
+                      //     ElevationGroup(),
+                      //   ],
+                      // ),
                     ],
                   ),
                 );

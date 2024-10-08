@@ -12,6 +12,9 @@ const Color _m3Baseline = Color(0xFF6750A4);
 /// made, it notifies any listeners that are subscribed to this notifier.
 class ThemeNotifier extends ChangeNotifier {
   Color _primaryColor = _m3Baseline;
+
+  final primaryColorTextFieldController = TextEditingController();
+
   XBoxShadowsData boxShadows = const XBoxShadowsData();
   XBreakpointsData breakpoints = const XBreakpointsData();
   XDurationsData durations = const XDurationsData();
@@ -65,6 +68,8 @@ class ThemeNotifier extends ChangeNotifier {
   }
 
   void resetMetricsData() {
+    _primaryColor = _m3Baseline;
+    primaryColorTextFieldController.clear();
     boxShadows = const XBoxShadowsData();
     breakpoints = const XBreakpointsData();
     durations = const XDurationsData();

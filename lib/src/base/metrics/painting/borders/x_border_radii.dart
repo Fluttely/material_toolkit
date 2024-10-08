@@ -1,4 +1,4 @@
-part of '../x_metrics_data.dart';
+part of '../../x_metrics_data.dart';
 
 // TODO: NOW, enums and functions like XPadding class
 class XBorderRadii extends Equatable {

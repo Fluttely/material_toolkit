@@ -89,7 +89,7 @@ class XPadding extends Equatable {
 
   @override
   String toString() => '''
-    XPaddings(
+    XPadding(
       _edgeInsets: $_edgeInsets,
     )
   ''';

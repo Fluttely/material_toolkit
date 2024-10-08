@@ -7,8 +7,7 @@ class XEdgeInsets extends Equatable {
 
   EdgeInsets get none => EdgeInsets.all(_spaces.none);
 
-  EdgeInsets all(final XSpaces value) =>
-      EdgeInsets.all(value.toDouble(_spaces));
+  EdgeInsets all(final XSpaces value) => EdgeInsets.all(value.toDouble(_spaces));
 
   EdgeInsets symmetric({
     final XSpaces? vertical,
@@ -85,7 +84,7 @@ class XEdgeInsets extends Equatable {
 
   @override
   String toString() => '''
-    XEdgeInsetses(
+    XEdgeInsets(
       _spaces: $_spaces,
     )
   ''';

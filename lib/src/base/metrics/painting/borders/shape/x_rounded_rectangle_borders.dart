@@ -1,9 +1,9 @@
-part of '../x_metrics_data.dart';
+part of '../../../x_metrics_data.dart';
 
-class XBorderShapes extends Equatable {
+class XRoundedRectangleBorders extends Equatable {
   final XBorderRadii _borderRadii;
 
-  const XBorderShapes(this._borderRadii);
+  const XRoundedRectangleBorders(this._borderRadii);
 
   RoundedRectangleBorder get none => RoundedRectangleBorder(borderRadius: _borderRadii.none);
   RoundedRectangleBorder get extraSmall => RoundedRectangleBorder(borderRadius: _borderRadii.extraSmall);
