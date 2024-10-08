@@ -1,20 +1,62 @@
 part of '../../x_metrics_data.dart';
 
-// TODO: NOW, enums and functions like XPadding class
 class XBorderRadii extends Equatable {
   final XRadiiData _radii;
 
   const XBorderRadii(this._radii);
 
   BorderRadius get none => BorderRadius.all(_radii.none);
-  BorderRadius get extraSmall => BorderRadius.all(_radii.extraSmall);
-  BorderRadius get small => BorderRadius.all(_radii.small);
-  BorderRadius get semiSmall => BorderRadius.all(_radii.semiSmall);
-  BorderRadius get medium => BorderRadius.all(_radii.medium);
-  BorderRadius get semiLarge => BorderRadius.all(_radii.semiLarge);
-  BorderRadius get large => BorderRadius.all(_radii.large);
-  BorderRadius get extraLarge => BorderRadius.all(_radii.extraLarge);
-  BorderRadius get superLarge => BorderRadius.all(_radii.superLarge);
+
+  BorderRadius all(final XRadii value) => BorderRadius.all(value.toRadius(_radii));
+
+  BorderRadius circular(final XRadii value) => BorderRadius.circular(
+        value.toRadius(_radii).x,
+      );
+
+  BorderRadius vertical({
+    final XRadii? top,
+    final XRadii? bottom,
+  }) =>
+      BorderRadius.vertical(
+        top: (top ?? XRadii.none).toRadius(_radii),
+        bottom: (bottom ?? XRadii.none).toRadius(_radii),
+      );
+
+  BorderRadius horizontal({
+    final XRadii? left,
+    final XRadii? right,
+  }) =>
+      BorderRadius.horizontal(
+        left: (left ?? XRadii.none).toRadius(_radii),
+        right: (right ?? XRadii.none).toRadius(_radii),
+      );
+
+  BorderRadius only({
+    final XRadii? topLeft,
+    final XRadii? topRight,
+    final XRadii? bottomLeft,
+    final XRadii? bottomRight,
+  }) =>
+      BorderRadius.only(
+        topLeft: (topLeft ?? XRadii.none).toRadius(_radii),
+        topRight: (topRight ?? XRadii.none).toRadius(_radii),
+        bottomLeft: (bottomLeft ?? XRadii.none).toRadius(_radii),
+        bottomRight: (bottomRight ?? XRadii.none).toRadius(_radii),
+      );
+
+  BorderRadius copyWith({
+    final XRadii? topLeft,
+    final XRadii? topRight,
+    final XRadii? bottomLeft,
+    final XRadii? bottomRight,
+  }) {
+    return BorderRadius.only(
+      topLeft: (topLeft ?? XRadii.none).toRadius(_radii),
+      topRight: (topRight ?? XRadii.none).toRadius(_radii),
+      bottomLeft: (bottomLeft ?? XRadii.none).toRadius(_radii),
+      bottomRight: (bottomRight ?? XRadii.none).toRadius(_radii),
+    );
+  }
 
   @override
   List<Object?> get props => [
@@ -23,7 +65,7 @@ class XBorderRadii extends Equatable {
 
   @override
   String toString() => '''
-    XBorderRadii(
+    XBorderRadius(
       _radii: $_radii,
     )
   ''';

@@ -1,5 +1,33 @@
 part of '../x_metrics_data.dart';
 
+enum XRadii {
+  none,
+  extraSmall,
+  small,
+  semiSmall,
+  medium,
+  semiLarge,
+  large,
+  extraLarge,
+  superLarge,
+}
+
+extension XRadiiExtension on XRadii {
+  Radius toRadius(XRadiiData radii) {
+    return switch (this) {
+      XRadii.none => radii.none,
+      XRadii.extraSmall => radii.extraSmall,
+      XRadii.small => radii.small,
+      XRadii.semiSmall => radii.semiSmall,
+      XRadii.medium => radii.medium,
+      XRadii.semiLarge => radii.semiLarge,
+      XRadii.large => radii.large,
+      XRadii.extraLarge => radii.extraLarge,
+      XRadii.superLarge => radii.superLarge,
+    };
+  }
+}
+
 class XRadiiData extends Equatable {
   // final Radius? _extraSmall;
   // final Radius? _small;
