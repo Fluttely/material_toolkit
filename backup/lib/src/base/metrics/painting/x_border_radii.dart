@@ -2,29 +2,29 @@ part of '../x_metrics_data.dart';
 
 // TODO: NOW, enums and functions like XPadding class
 class XBorderRadii extends Equatable {
-  final XRadiiData _radius;
+  final XRadiiData _radii;
 
-  const XBorderRadii(this._radius);
+  const XBorderRadii(this._radii);
 
-  BorderRadius get none => BorderRadius.all(_radius.none);
-  BorderRadius get extraSmall => BorderRadius.all(_radius.extraSmall);
-  BorderRadius get small => BorderRadius.all(_radius.small);
-  BorderRadius get semiSmall => BorderRadius.all(_radius.semiSmall);
-  BorderRadius get medium => BorderRadius.all(_radius.medium);
-  BorderRadius get semiLarge => BorderRadius.all(_radius.semiLarge);
-  BorderRadius get large => BorderRadius.all(_radius.large);
-  BorderRadius get extraLarge => BorderRadius.all(_radius.extraLarge);
-  BorderRadius get superLarge => BorderRadius.all(_radius.superLarge);
+  BorderRadius get none => BorderRadius.all(_radii.none);
+  BorderRadius get extraSmall => BorderRadius.all(_radii.extraSmall);
+  BorderRadius get small => BorderRadius.all(_radii.small);
+  BorderRadius get semiSmall => BorderRadius.all(_radii.semiSmall);
+  BorderRadius get medium => BorderRadius.all(_radii.medium);
+  BorderRadius get semiLarge => BorderRadius.all(_radii.semiLarge);
+  BorderRadius get large => BorderRadius.all(_radii.large);
+  BorderRadius get extraLarge => BorderRadius.all(_radii.extraLarge);
+  BorderRadius get superLarge => BorderRadius.all(_radii.superLarge);
 
   @override
   List<Object?> get props => [
-        _radius.named('_radius'),
+        _radii.named('_radii'),
       ];
 
   @override
   String toString() => '''
     XBorderRadii(
-      _radius: $_radius,
+      _radii: $_radii,
     )
   ''';
 }

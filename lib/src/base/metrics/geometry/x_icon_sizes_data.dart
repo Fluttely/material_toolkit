@@ -89,7 +89,7 @@ class XIconSizesData extends Equatable {
 // }
 
 // extension XIconSizesExtension on XIconSizes {
-//   double toDouble(XIconSizesData iconSizes) => switch (this) {
+//   double toData(XIconSizesData iconSizes) => switch (this) {
 //         XIconSizes.extraSmall => iconSizes.extraSmall,
 //         XIconSizes.small => iconSizes.small,
 //         XIconSizes.semiSmall => iconSizes.semiSmall,

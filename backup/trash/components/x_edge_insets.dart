@@ -197,10 +197,10 @@
 
 //   EdgeInsets toEdgeInsets(XSpacesData spacings) {
 //     return EdgeInsets.only(
-//       left: left.toDouble(spacings),
-//       top: top.toDouble(spacings),
-//       right: right.toDouble(spacings),
-//       bottom: bottom.toDouble(spacings),
+//       left: left.toData(spacings),
+//       top: top.toData(spacings),
+//       right: right.toData(spacings),
+//       bottom: bottom.toData(spacings),
 //     );
 //   }
 

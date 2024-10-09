@@ -7,16 +7,15 @@ class XEdgeInsets extends Equatable {
 
   EdgeInsets get none => EdgeInsets.all(_spaces.none);
 
-  EdgeInsets all(final XSpaces value) =>
-      EdgeInsets.all(value.toDouble(_spaces));
+  EdgeInsets all(final XSpaces value) => EdgeInsets.all(value.toData(_spaces));
 
   EdgeInsets symmetric({
     final XSpaces? vertical,
     final XSpaces? horizontal,
   }) =>
       EdgeInsets.symmetric(
-        horizontal: (horizontal ?? XSpaces.none).toDouble(_spaces),
-        vertical: (vertical ?? XSpaces.none).toDouble(_spaces),
+        horizontal: (horizontal ?? XSpaces.none).toData(_spaces),
+        vertical: (vertical ?? XSpaces.none).toData(_spaces),
       );
 
   EdgeInsets only({
@@ -26,10 +25,10 @@ class XEdgeInsets extends Equatable {
     final XSpaces? bottom,
   }) =>
       EdgeInsets.only(
-        left: (left ?? XSpaces.none).toDouble(_spaces),
-        top: (top ?? XSpaces.none).toDouble(_spaces),
-        right: (right ?? XSpaces.none).toDouble(_spaces),
-        bottom: (bottom ?? XSpaces.none).toDouble(_spaces),
+        left: (left ?? XSpaces.none).toData(_spaces),
+        top: (top ?? XSpaces.none).toData(_spaces),
+        right: (right ?? XSpaces.none).toData(_spaces),
+        bottom: (bottom ?? XSpaces.none).toData(_spaces),
       );
 
   // EdgeInsets get allSuperSmall => EdgeInsets.all(_spaces.superSmall);
@@ -85,7 +84,7 @@ class XEdgeInsets extends Equatable {
 
   @override
   String toString() => '''
-    XEdgeInsetses(
+    XEdgeInsets(
       _spaces: $_spaces,
     )
   ''';

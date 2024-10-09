@@ -16,7 +16,7 @@ class XGaps extends Equatable {
   Gap get extraLarge => Gap(_spaces.extraLarge);
   Gap get superLarge => Gap(_spaces.superLarge);
 
-  Gap get x64 => Gap(_spaces.x64);
+  // Gap get x64 => Gap(_spaces.x64);
 
   @override
   List<Object?> get props => [

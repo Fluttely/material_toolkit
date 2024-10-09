@@ -1,38 +1,29 @@
 part of '../x_metrics_data.dart';
 
 class XBorderShapes extends Equatable {
-  final XBorderRadii _borderRadius;
+  final XBorderRadii _borderRadii;
 
-  const XBorderShapes(this._borderRadius);
+  const XBorderShapes(this._borderRadii);
 
-  RoundedRectangleBorder get none =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.none);
-  RoundedRectangleBorder get extraSmall =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.extraSmall);
-  RoundedRectangleBorder get small =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.small);
-  RoundedRectangleBorder get semiSmall =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.semiSmall);
-  RoundedRectangleBorder get medium =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.medium);
-  RoundedRectangleBorder get semiLarge =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.semiLarge);
-  RoundedRectangleBorder get large =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.large);
-  RoundedRectangleBorder get extraLarge =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.extraLarge);
-  RoundedRectangleBorder get superLarge =>
-      RoundedRectangleBorder(borderRadius: _borderRadius.superLarge);
+  RoundedRectangleBorder get none => RoundedRectangleBorder(borderRadius: _borderRadii.none);
+  RoundedRectangleBorder get extraSmall => RoundedRectangleBorder(borderRadius: _borderRadii.extraSmall);
+  RoundedRectangleBorder get small => RoundedRectangleBorder(borderRadius: _borderRadii.small);
+  RoundedRectangleBorder get semiSmall => RoundedRectangleBorder(borderRadius: _borderRadii.semiSmall);
+  RoundedRectangleBorder get medium => RoundedRectangleBorder(borderRadius: _borderRadii.medium);
+  RoundedRectangleBorder get semiLarge => RoundedRectangleBorder(borderRadius: _borderRadii.semiLarge);
+  RoundedRectangleBorder get large => RoundedRectangleBorder(borderRadius: _borderRadii.large);
+  RoundedRectangleBorder get extraLarge => RoundedRectangleBorder(borderRadius: _borderRadii.extraLarge);
+  RoundedRectangleBorder get superLarge => RoundedRectangleBorder(borderRadius: _borderRadii.superLarge);
 
   @override
   List<Object?> get props => [
-        _borderRadius.named('_borderRadius'),
+        _borderRadii.named('_borderRadii'),
       ];
 
   @override
   String toString() => '''
     XShapes(
-      _borderRadius: $_borderRadius,
+      _borderRadii: $_borderRadii,
     )
   ''';
 }

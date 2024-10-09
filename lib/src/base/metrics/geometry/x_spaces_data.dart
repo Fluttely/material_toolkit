@@ -14,7 +14,7 @@ enum XSpaces {
 }
 
 extension XSpacesExtension on XSpaces {
-  double toDouble(XSpacesData spaces) {
+  double toData(XSpacesData spaces) {
     return switch (this) {
       XSpaces.none => spaces.none,
       XSpaces.superSmall => spaces.superSmall,
@@ -149,6 +149,7 @@ class XSpacesData extends Equatable {
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'superLarge', location: 'spaces')));
 
+  double get none => XStandardSizes.zero;
   double get superSmall => _superSmall;
   double get extraSmall => _extraSmall;
   double get small => _small;
@@ -159,17 +160,16 @@ class XSpacesData extends Equatable {
   double get extraLarge => _extraLarge;
   double get superLarge => _superLarge;
 
-  double get none => XStandardSizes.zero;
-  double get x2 => XAuxiliarySizes.x2;
-  double get x4 => XStandardSizes.x4;
-  double get x8 => XStandardSizes.x8;
-  double get x12 => XStandardSizes.x12;
-  double get x16 => XStandardSizes.x16;
-  double get x20 => XStandardSizes.x20;
-  double get x24 => XStandardSizes.x24;
-  double get x32 => XStandardSizes.x32;
-  double get x48 => XStandardSizes.x48;
-  double get x64 => XStandardSizes.x64;
+  // double get x2 => XAuxiliarySizes.x2;
+  // double get x4 => XStandardSizes.x4;
+  // double get x8 => XStandardSizes.x8;
+  // double get x12 => XStandardSizes.x12;
+  // double get x16 => XStandardSizes.x16;
+  // double get x20 => XStandardSizes.x20;
+  // double get x24 => XStandardSizes.x24;
+  // double get x32 => XStandardSizes.x32;
+  // double get x48 => XStandardSizes.x48;
+  // double get x64 => XStandardSizes.x64;
 
   @override
   List<Object?> get props => [

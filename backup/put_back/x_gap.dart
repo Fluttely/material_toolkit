@@ -56,6 +56,6 @@
 //   Widget build(BuildContext context) {
 //     final XMetricsData? xMetrics = Theme.of(context).extension<XMetricsData>();
 
-//     return Gap(xspace?.toDouble(xMetrics?.xspaces) ?? space!);
+//     return Gap(xspace?.toData(xMetrics?.xspaces) ?? space!);
 //   }
 // }

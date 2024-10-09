@@ -165,7 +165,7 @@
 
 //     return Icon(
 //       icon,
-//       size: xSize?.toDouble(xIconSizes) ?? size,
+//       size: xSize?.toData(xIconSizes) ?? size,
 //       color: color,
 //       fill: fill,
 //       weight: weight,

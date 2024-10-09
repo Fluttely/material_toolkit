@@ -11,9 +11,17 @@ part 'geometry/x_elevations_data.dart';
 part 'geometry/x_form_factor.dart';
 part 'geometry/x_icon_sizes_data.dart';
 part 'geometry/x_radii_data.dart';
+part 'geometry/x_radius.dart';
 part 'geometry/x_spaces_data.dart';
-part 'painting/x_border_radii.dart';
-part 'painting/x_border_shapes.dart';
+// part 'painting/borders/input/x_input_borders.dart';
+// part 'painting/borders/input/x_outline_input_borders.dart';
+// part 'painting/borders/input/x_underline_input_borders.dart';
+// part 'painting/borders/shape/x_beveled_rectangle_borders.dart';
+// part 'painting/borders/shape/x_continuous_rectangle_borders.dart';
+part 'painting/borders/shape/x_rounded_rectangle_border.dart';
+part 'painting/borders/shape/x_shapes.dart';
+part 'painting/borders/x_border_radii.dart';
+part 'painting/borders/x_border_radius.dart';
 part 'painting/x_box_shadows_data.dart';
 part 'painting/x_edge_insets.dart';
 part 'painting/x_gaps.dart';
@@ -25,8 +33,7 @@ class XMetrics extends InheritedWidget {
   const XMetrics({required super.child, required this.data, super.key});
 
   static XMetricsData of(BuildContext context) {
-    final metricsData =
-        context.dependOnInheritedWidgetOfExactType<XMetrics>()?.data;
+    final metricsData = context.dependOnInheritedWidgetOfExactType<XMetrics>()?.data;
 
     assert(metricsData != null, 'No XMetrics found in context');
 
@@ -78,19 +85,25 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
         spaces = spaces ?? const XSpacesData(),
         textShadows = textShadows ?? const XTextShadowsData();
 
+  /// Spaces
   XGaps get gaps => XGaps(spaces);
 
   // GoogleFonts get googleFonts => GoogleFonts;
 
-  XBorderRadii get borderRadii => XBorderRadii(radii);
-  XBorderShapes get borderShapes => XBorderShapes(borderRadii);
+  /// borders
+  // XBorderRadius get borderRadii => XBorderRadius(radii);
+  // XShapes get shapes => XShapes(borderRadii);
+  XShapes get shape => XShapes(radii);
+  // XRadius get radius => XRadius(radii);
+  XBorderRadii get borderRadius => XBorderRadii(radii);
+  // XInputBorders get inputBorders => XInputBorders(borderRadii);
 
+  /// Edges
   XEdgeInsets get edgeInsets => XEdgeInsets(spaces);
   XPadding get padding => XPadding(edgeInsets);
 
   @override
-  ThemeExtension<XMetricsData> lerp(
-      ThemeExtension<XMetricsData>? other, double t) {
+  ThemeExtension<XMetricsData> lerp(ThemeExtension<XMetricsData>? other, double t) {
     if (other is! XMetricsData) {
       return this;
     } else {
@@ -151,9 +164,11 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
           spaces == other.spaces &&
           textShadows == other.textShadows &&
           gaps == other.gaps &&
+          // borderRadii == other.borderRadii &&
+          // shapes == other.shapes &&
+          // inputBorders == other.inputBorders &&
           edgeInsets == other.edgeInsets &&
           padding == other.padding &&
-          borderRadii == other.borderRadii &&
           runtimeType == other.runtimeType;
 
   @override
@@ -169,9 +184,11 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       spaces.hashCode ^
       textShadows.hashCode ^
       gaps.hashCode ^
+      // borderRadii.hashCode ^
+      // shapes.hashCode ^
+      // inputBorders.hashCode ^
       edgeInsets.hashCode ^
-      padding.hashCode ^
-      borderRadii.hashCode;
+      padding.hashCode;
 
   @override
   String toString() => '''
@@ -186,11 +203,12 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       spaces: $spaces,
       textShadows: $textShadows,
       gaps: $gaps,
-      borderRadii: $borderRadii,
-      shapes: $borderShapes,
-      edgeInsetses: $edgeInsets,
-      paddings: $padding,
+      edgeInsets: $edgeInsets,
+      padding: $padding,
     )
   ''';
+  // borderRadii: $borderRadii,
+  // shapes: $shapes,
+  // inputBorders: $inputBorders,
   // googleFonts: $googleFonts,
 }
