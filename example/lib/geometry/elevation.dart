@@ -12,7 +12,7 @@ class ElevationGroup extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     final metrics = theme.extension<XMetricsData>()!;
-    final borderRadii = metrics.borderRadii;
+    final borderRadius = metrics.borderRadius;
     final edgeInsets = metrics.edgeInsets;
     final elevations = metrics.elevations;
     final gaps = metrics.gaps;

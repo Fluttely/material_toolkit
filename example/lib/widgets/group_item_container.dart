@@ -15,7 +15,7 @@ class GroupItemContainer extends StatelessWidget {
     final colorScheme = theme.colorScheme;
 
     final metrics = theme.extension<XMetricsData>()!;
-    final borderRadii = metrics.borderRadii;
+    final borderRadius = metrics.borderRadius;
     final edgeInsets = metrics.edgeInsets;
 
     return Container(
@@ -29,7 +29,7 @@ class GroupItemContainer extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: colorScheme.surface,
-        borderRadius: borderRadii.semiSmall,
+        borderRadius: borderRadius.circular(XRadii.semiSmall),
         border: Border.all(color: colorScheme.outlineVariant),
       ),
       child: Column(

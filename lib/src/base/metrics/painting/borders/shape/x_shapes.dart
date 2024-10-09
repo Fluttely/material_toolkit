@@ -1,29 +1,33 @@
-// part of '../../../x_metrics_data.dart';
+part of '../../../x_metrics_data.dart';
 
-// class XShapes extends Equatable {
-//   final XBorderRadius _borderRadii;
+class XShapes extends Equatable {
+  final XRadiiData _radiiData;
 
-//   const XShapes(this._borderRadii);
+  const XShapes(this._radiiData);
 
-//   BoxShape get rectangle => BoxShape.rectangle;
-//   BoxShape get circle => BoxShape.circle;
+  BoxShape get rectangle => BoxShape.rectangle;
+  BoxShape get circle => BoxShape.circle;
 
-//   CircleBorder get circleBorder => const CircleBorder();
-//   StadiumBorder get stadiumBorder => const StadiumBorder();
+  CircleBorder get circleBorder => const CircleBorder();
+  StadiumBorder get stadiumBorder => const StadiumBorder();
 
-//   XRoundedRectangleBorders get roundedRectangle => XRoundedRectangleBorders(_borderRadii);
-//   XBeveledRectangleBorders get beveledRectangle => XBeveledRectangleBorders(_borderRadii);
-//   XContinuousRectangleBorders get continuousRectangle => XContinuousRectangleBorders(_borderRadii);
+  RoundedRectangleBorder roundedRectangle({
+    BorderSide borderSide = BorderSide.none,
+    XBorderRadius borderRadius = XBorderRadius.none,
+  }) =>
+      XRoundedRectangleBorder(borderSide: borderSide, borderRadius: borderRadius).toRoundedRectangleBorder(_radiiData);
+  // XBeveledRectangleBorders get beveledRectangle => XBeveledRectangleBorders(_radiiData);
+  // XContinuousRectangleBorders get continuousRectangle => XContinuousRectangleBorders(_radiiData);
 
-//   @override
-//   List<Object?> get props => [
-//         _borderRadii.named('_borderRadii'),
-//       ];
+  @override
+  List<Object?> get props => [
+        _radiiData.named('_radiiData'),
+      ];
 
-//   @override
-//   String toString() => '''
-//     XShapes(
-//       _borderRadii: $_borderRadii,
-//     )
-//   ''';
-// }
+  @override
+  String toString() => '''
+    XShapes(
+      _radiiData: $_radiiData,
+    )
+  ''';
+}

@@ -12,7 +12,9 @@ class BorderRadiusGroup extends StatelessWidget {
     final theme = Theme.of(context);
 
     final metrics = theme.extension<XMetricsData>()!;
-    final borderRadii = metrics.borderRadii;
+    final borderRadius = metrics.borderRadius;
+    // final border = metrics.borderRadius;
+
     final gaps = metrics.gaps;
 
     return Column(
@@ -24,18 +26,18 @@ class BorderRadiusGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  description: 'None',
-                  borderRadius: borderRadii.all(XRadii.none),
+                  description: 'borderRadius.none',
+                  borderRadius: borderRadius.none,
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  description: 'Extra Small',
-                  borderRadius: borderRadii.all(XRadii.extraSmall),
+                  description: 'borderRadius.all(const XRadius.circular(XRadii.extraSmall))',
+                  borderRadius: borderRadius.all(const XRadius.circular(XRadii.extraSmall)),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  description: 'Small',
-                  borderRadius: borderRadii.all(XRadii.small),
+                  description: 'borderRadius.circular(XRadii.small),',
+                  borderRadius: borderRadius.circular(XRadii.small),
                 ),
               ],
             ),
@@ -43,18 +45,27 @@ class BorderRadiusGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  description: 'Semi Small',
-                  borderRadius: borderRadii.all(XRadii.semiSmall),
+                  description:
+                      'borderRadius.vertical(top: const XRadius.circular(XRadii.semiSmall), bottom: const XRadius.circular(XRadii.semiSmall))',
+                  borderRadius: borderRadius.vertical(
+                      top: const XRadius.circular(XRadii.semiSmall), bottom: const XRadius.circular(XRadii.semiSmall)),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  description: 'Medium',
-                  borderRadius: borderRadii.all(XRadii.medium),
+                  description:
+                      'borderRadius.horizontal(left: const XRadius.circular(XRadii.medium), right: const XRadius.circular(XRadii.medium))',
+                  borderRadius: borderRadius.horizontal(
+                      left: const XRadius.circular(XRadii.medium), right: const XRadius.circular(XRadii.medium)),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  description: 'Semi Large',
-                  borderRadius: borderRadii.all(XRadii.semiLarge),
+                  description:
+                      'borderRadius.only(topLeft: const XRadius.circular(XRadii.semiLarge),topRight: const XRadius.circular(XRadii.semiLarge),bottomLeft: const XRadius.circular(XRadii.semiLarge),bottomRight: const XRadius.circular(XRadii.semiLarge))',
+                  borderRadius: borderRadius.only(
+                      topLeft: const XRadius.circular(XRadii.semiLarge),
+                      topRight: const XRadius.circular(XRadii.semiLarge),
+                      bottomLeft: const XRadius.circular(XRadii.semiLarge),
+                      bottomRight: const XRadius.circular(XRadii.semiLarge)),
                 ),
               ],
             ),
@@ -62,18 +73,18 @@ class BorderRadiusGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  description: 'Large',
-                  borderRadius: borderRadii.all(XRadii.large),
+                  description: 'borderRadius.circular(XRadii.large)',
+                  borderRadius: borderRadius.circular(XRadii.large),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  description: 'Extra Large',
-                  borderRadius: borderRadii.all(XRadii.extraLarge),
+                  description: 'borderRadius.circular(XRadii.extraLarge)',
+                  borderRadius: borderRadius.circular(XRadii.extraLarge),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  description: 'Super Large',
-                  borderRadius: borderRadii.all(XRadii.superLarge),
+                  description: 'borderRadius.circular(XRadii.superLarge)',
+                  borderRadius: borderRadius.circular(XRadii.superLarge),
                 ),
               ],
             ),

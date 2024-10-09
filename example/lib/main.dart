@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/geometry/radius.dart';
 import 'package:material_toolkit_example/notifiers/root_notifier.dart';
 import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
 import 'package:material_toolkit_example/paiting/border_radius.dart';
@@ -53,7 +52,7 @@ class _RootState extends State<Root> {
 
     final metrics = theme.extension<XMetricsData>()!;
     final gaps = metrics.gaps;
-    final inputBorders = metrics.inputBorders;
+    // final inputBorders = metrics.inputBorders;
     // final breakpoints = metrics.breakpoints;
 
     final themeNotifier = Provider.of<ThemeNotifier>(context);
@@ -98,7 +97,7 @@ class _RootState extends State<Root> {
                 fillColor: colorScheme.primary,
                 filled: true,
                 isDense: true,
-                border: inputBorders.none,
+                // border: inputBorders.none,
               ),
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.white,
@@ -126,8 +125,8 @@ class _RootState extends State<Root> {
                       GroupCard(
                         title: 'Shapes',
                         children: [
-                          const RadiusGroup(),
-                          gaps.large,
+                          // const RadiusGroup(),
+                          // gaps.large,
                           const BorderRadiusGroup(),
                           gaps.large,
                           // XBorderShapes

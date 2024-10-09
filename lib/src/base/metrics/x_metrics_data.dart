@@ -18,10 +18,10 @@ part 'geometry/x_spaces_data.dart';
 // part 'painting/borders/input/x_underline_input_borders.dart';
 // part 'painting/borders/shape/x_beveled_rectangle_borders.dart';
 // part 'painting/borders/shape/x_continuous_rectangle_borders.dart';
-// part 'painting/borders/shape/x_rounded_rectangle_border.dart';
-// part 'painting/borders/shape/x_shapes.dart';
-// part 'painting/borders/x_border.dart';
+part 'painting/borders/shape/x_rounded_rectangle_border.dart';
+part 'painting/borders/shape/x_shapes.dart';
 part 'painting/borders/x_border_radii.dart';
+part 'painting/borders/x_border_radius.dart';
 part 'painting/x_box_shadows_data.dart';
 part 'painting/x_edge_insets.dart';
 part 'painting/x_gaps.dart';
@@ -91,8 +91,11 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   // GoogleFonts get googleFonts => GoogleFonts;
 
   /// borders
-  XBorderRadius get borderRadii => XBorderRadius(radii);
+  // XBorderRadius get borderRadii => XBorderRadius(radii);
   // XShapes get shapes => XShapes(borderRadii);
+  XShapes get shape => XShapes(radii);
+  // XRadius get radius => XRadius(radii);
+  XBorderRadii get borderRadius => XBorderRadii(radii);
   // XInputBorders get inputBorders => XInputBorders(borderRadii);
 
   /// Edges
@@ -161,7 +164,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
           spaces == other.spaces &&
           textShadows == other.textShadows &&
           gaps == other.gaps &&
-          borderRadii == other.borderRadii &&
+          // borderRadii == other.borderRadii &&
           // shapes == other.shapes &&
           // inputBorders == other.inputBorders &&
           edgeInsets == other.edgeInsets &&
@@ -181,7 +184,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       spaces.hashCode ^
       textShadows.hashCode ^
       gaps.hashCode ^
-      borderRadii.hashCode ^
+      // borderRadii.hashCode ^
       // shapes.hashCode ^
       // inputBorders.hashCode ^
       edgeInsets.hashCode ^
@@ -200,11 +203,11 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       spaces: $spaces,
       textShadows: $textShadows,
       gaps: $gaps,
-      borderRadii: $borderRadii,
       edgeInsets: $edgeInsets,
       padding: $padding,
     )
   ''';
+  // borderRadii: $borderRadii,
   // shapes: $shapes,
   // inputBorders: $inputBorders,
   // googleFonts: $googleFonts,

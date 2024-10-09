@@ -13,7 +13,7 @@ class BorderRadiusGroup extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     final metrics = theme.extension<XMetricsData>()!;
-    final borderRadii = metrics.borderRadii;
+    final borderRadius = metrics.borderRadius;
     final gaps = metrics.gaps;
 
     return Column(
@@ -26,17 +26,17 @@ class BorderRadiusGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   description: 'None',
-                  borderRadius: borderRadii.all(XRadii.none),
+                  borderRadius: borderRadius.circular(XRadii.none),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Extra Small',
-                  borderRadius: borderRadii.all(XRadii.extraSmall),
+                  borderRadius: borderRadius.circular(XRadii.extraSmall),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Small',
-                  borderRadius: borderRadii.all(XRadii.small),
+                  borderRadius: borderRadius.circular(XRadii.small),
                 ),
               ],
             ),
@@ -45,17 +45,17 @@ class BorderRadiusGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   description: 'Semi Small',
-                  borderRadius: borderRadii.all(XRadii.semiSmall),
+                  borderRadius: borderRadius.circular(XRadii.semiSmall),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Medium',
-                  borderRadius: borderRadii.all(XRadii.medium),
+                  borderRadius: borderRadius.circular(XRadii.medium),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Semi Large',
-                  borderRadius: borderRadii.all(XRadii.semiLarge),
+                  borderRadius: borderRadius.circular(XRadii.semiLarge),
                 ),
               ],
             ),
@@ -64,17 +64,17 @@ class BorderRadiusGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   description: 'Large',
-                  borderRadius: borderRadii.all(XRadii.large),
+                  borderRadius: borderRadius.circular(XRadii.large),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Extra Large',
-                  borderRadius: borderRadii.all(XRadii.extraLarge),
+                  borderRadius: borderRadius.circular(XRadii.extraLarge),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Super Large',
-                  borderRadius: borderRadii.all(XRadii.superLarge),
+                  borderRadius: borderRadius.circular(XRadii.superLarge),
                 ),
               ],
             ),

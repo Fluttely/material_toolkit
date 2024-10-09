@@ -1,29 +1,54 @@
-// part of '../../../x_metrics_data.dart';
+part of '../../../x_metrics_data.dart';
 
-// class XRoundedRectangleBorders extends Equatable {
-//   final XBorderRadius _borderRadii;
+/// Extensão para a classe [XRoundedRectangleBorder] que adiciona um método
+/// para converter em um [RoundedRectangleBorder] do Flutter.
+extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
+  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
+  ///
+  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
+  /// e [borderRadius].
+  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiData radiiData) {
+    return RoundedRectangleBorder(
+      side: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiData), // Convertendo para XBorderRadius
+    );
+  }
+}
 
-//   const XRoundedRectangleBorders(this._borderRadii);
+/// A rectangular border with rounded corners.
+///
+/// Typically used with [ShapeDecoration] to draw a box with a rounded
+/// rectangle.
+///
+/// This shape can interpolate to and from [CircleBorder].
+///
+/// See also:
+///
+///  * [BorderSide], which is used to describe each side of the box.
+///  * [Border], which, when used with [BoxDecoration], can also
+///    describe a rounded rectangle.
+class XRoundedRectangleBorder {
+  /// Creates a rounded rectangle border.
+  const XRoundedRectangleBorder({
+    this.borderSide = BorderSide.none,
+    this.borderRadius = XBorderRadius.none,
+  });
 
-//   RoundedRectangleBorder get none => RoundedRectangleBorder(borderRadius: _borderRadii.none);
-//   RoundedRectangleBorder get extraSmall => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.extraSmall));
-//   RoundedRectangleBorder get small => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.small));
-//   RoundedRectangleBorder get semiSmall => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.semiSmall));
-//   RoundedRectangleBorder get medium => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.medium));
-//   RoundedRectangleBorder get semiLarge => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.semiLarge));
-//   RoundedRectangleBorder get large => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.large));
-//   RoundedRectangleBorder get extraLarge => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.extraLarge));
-//   RoundedRectangleBorder get superLarge => RoundedRectangleBorder(borderRadius: _borderRadii.all(XRadii.superLarge));
+  /// The border outline's color and weight.
+  ///
+  /// If [borderSide] is [BorderSide.none], which is the default, an outline is not drawn.
+  /// Otherwise the outline is centered over the shape's boundary.
+  final BorderSide borderSide;
 
-//   @override
-//   List<Object?> get props => [
-//         _borderRadii.named('_borderRadii'),
-//       ];
+  /// The radii for each corner.
+  final XBorderRadius borderRadius;
 
-//   @override
-//   String toString() => '''
-//     XShapes(
-//       _borderRadii: $_borderRadii,
-//     )
-//   ''';
-// }
+  /// Returns a copy of this XRoundedRectangleBorder with the given fields
+  /// replaced with the new values.
+  XRoundedRectangleBorder copyWith({BorderSide? side, XBorderRadius? borderRadius}) {
+    return XRoundedRectangleBorder(
+      borderSide: side ?? this.borderSide,
+      borderRadius: borderRadius ?? this.borderRadius,
+    );
+  }
+}
