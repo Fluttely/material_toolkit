@@ -13,17 +13,17 @@ enum XRadii {
 }
 
 extension XRadiiExtension on XRadii {
-  double toData(XRadiiData radii) {
+  double toData(XRadiiData radiiData) {
     return switch (this) {
-      XRadii.none => radii.none,
-      XRadii.extraSmall => radii.extraSmall,
-      XRadii.small => radii.small,
-      XRadii.semiSmall => radii.semiSmall,
-      XRadii.medium => radii.medium,
-      XRadii.semiLarge => radii.semiLarge,
-      XRadii.large => radii.large,
-      XRadii.extraLarge => radii.extraLarge,
-      XRadii.superLarge => radii.superLarge,
+      XRadii.none => radiiData.none,
+      XRadii.extraSmall => radiiData.extraSmall,
+      XRadii.small => radiiData.small,
+      XRadii.semiSmall => radiiData.semiSmall,
+      XRadii.medium => radiiData.medium,
+      XRadii.semiLarge => radiiData.semiLarge,
+      XRadii.large => radiiData.large,
+      XRadii.extraLarge => radiiData.extraLarge,
+      XRadii.superLarge => radiiData.superLarge,
     };
   }
 }
