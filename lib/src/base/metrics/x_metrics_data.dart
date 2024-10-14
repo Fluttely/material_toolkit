@@ -22,6 +22,7 @@ part 'painting/borders/shape/x_continuous_rectangle_border.dart';
 // part 'painting/borders/shape/x_continuous_rectangle_borders.dart';
 part 'painting/borders/shape/x_rounded_rectangle_border.dart';
 part 'painting/borders/shape/x_shapes.dart';
+// part 'painting/borders/x_border.dart';
 part 'painting/borders/x_border_radii.dart';
 part 'painting/borders/x_border_radius.dart';
 part 'painting/x_box_shadows_data.dart';
