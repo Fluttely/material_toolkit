@@ -13,6 +13,8 @@ part 'geometry/x_icon_sizes_data.dart';
 part 'geometry/x_radii_data.dart';
 part 'geometry/x_radius.dart';
 part 'geometry/x_spaces_data.dart';
+part 'painting/borders/shape/x_beveled_rectangle_border.dart';
+part 'painting/borders/shape/x_continuous_rectangle_border.dart';
 // part 'painting/borders/input/x_input_borders.dart';
 // part 'painting/borders/input/x_outline_input_borders.dart';
 // part 'painting/borders/input/x_underline_input_borders.dart';
@@ -93,7 +95,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   /// borders
   // XBorderRadius get borderRadii => XBorderRadius(radii);
   // XShapes get shapes => XShapes(borderRadii);
-  XShapes get shape => XShapes(radii);
+  XShapes get shapes => XShapes(radii);
   // XRadius get radius => XRadius(radii);
   XBorderRadii get borderRadius => XBorderRadii(radii);
   // XInputBorders get inputBorders => XInputBorders(borderRadii);
