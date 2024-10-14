@@ -1,16 +1,17 @@
 part of '../../../x_metrics_data.dart';
 
-/// Extensão para a classe [XRoundedRectangleBorder] que adiciona um método
-/// para converter em um [RoundedRectangleBorder] do Flutter.
-extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
-  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
+/// Extensão para a classe [XOutlineInputBorder] que adiciona um método
+/// para converter em um [OutlineInputBorder] do Flutter.
+extension XOutlineInputBorderExtension on XOutlineInputBorder {
+  /// Converte um [XOutlineInputBorder] para um [OutlineInputBorder].
   ///
-  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
+  /// Retorna um [OutlineInputBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiData radiiData) {
-    return RoundedRectangleBorder(
-      side: borderSide,
+  OutlineInputBorder toOutlineInputBorder(XRadiiData radiiData) {
+    return OutlineInputBorder(
+      borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
+      gapPadding: gapPadding,
     );
   }
 }
@@ -27,11 +28,12 @@ extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
 ///    describe a rounded rectangle.
-class XRoundedRectangleBorder {
+class XOutlineInputBorder {
   /// Creates a rounded rectangle border.
-  const XRoundedRectangleBorder({
+  const XOutlineInputBorder({
     this.borderSide = BorderSide.none,
     this.borderRadius = XBorderRadius.none,
+    this.gapPadding = 4.0,
   });
 
   /// The border outline's color and weight.
@@ -43,10 +45,13 @@ class XRoundedRectangleBorder {
   /// The radii for each corner.
   final XBorderRadius borderRadius;
 
-  /// Returns a copy of this XRoundedRectangleBorder with the given fields
+  // TODO: description
+  final double gapPadding;
+
+  /// Returns a copy of this XOutlineInputBorder with the given fields
   /// replaced with the new values.
-  XRoundedRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XRoundedRectangleBorder(
+  XOutlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+    return XOutlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );

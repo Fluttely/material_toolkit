@@ -8,12 +8,12 @@ class ElevationGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
+    // final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
     final metrics = theme.extension<XMetricsData>()!;
-    final borderRadius = metrics.borderRadius;
-    final edgeInsets = metrics.edgeInsets;
+    // final borderRadius = metrics.borderRadius;
+    // final edgeInsets = metrics.edgeInsets;
     final elevations = metrics.elevations;
     final gaps = metrics.gaps;
 

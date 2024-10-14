@@ -13,11 +13,11 @@ part 'geometry/x_icon_sizes_data.dart';
 part 'geometry/x_radii_data.dart';
 part 'geometry/x_radius.dart';
 part 'geometry/x_spaces_data.dart';
-// part 'painting/borders/input/x_input_borders.dart';
-// part 'painting/borders/input/x_outline_input_borders.dart';
-// part 'painting/borders/input/x_underline_input_borders.dart';
-// part 'painting/borders/shape/x_beveled_rectangle_borders.dart';
-// part 'painting/borders/shape/x_continuous_rectangle_borders.dart';
+part 'painting/borders/input/x_input_borders.dart';
+part 'painting/borders/input/x_outline_input_border.dart';
+part 'painting/borders/input/x_underline_input_border.dart';
+part 'painting/borders/shape/x_beveled_rectangle_border.dart';
+part 'painting/borders/shape/x_continuous_rectangle_border.dart';
 part 'painting/borders/shape/x_rounded_rectangle_border.dart';
 part 'painting/borders/shape/x_shapes.dart';
 part 'painting/borders/x_border_radii.dart';
@@ -87,20 +87,18 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
 
   /// Spaces
   XGaps get gaps => XGaps(spaces);
-
-  // GoogleFonts get googleFonts => GoogleFonts;
-
-  /// borders
-  // XBorderRadius get borderRadii => XBorderRadius(radii);
-  // XShapes get shapes => XShapes(borderRadii);
-  XShapes get shape => XShapes(radii);
-  // XRadius get radius => XRadius(radii);
-  XBorderRadii get borderRadius => XBorderRadii(radii);
-  // XInputBorders get inputBorders => XInputBorders(borderRadii);
-
-  /// Edges
   XEdgeInsets get edgeInsets => XEdgeInsets(spaces);
   XPadding get padding => XPadding(edgeInsets);
+
+  /// Radii
+  // XBorderRadius get borderRadii => XBorderRadius(radii);
+  // XShapes get shapes => XShapes(borderRadii);
+  XShapes get shapes => XShapes(radii);
+  XInputBorders get inputBorders => XInputBorders(radii);
+  // XRadius get radius => XRadius(radii);
+  XBorderRadii get borderRadius => XBorderRadii(radii);
+
+  // GoogleFonts get googleFonts => GoogleFonts;
 
   @override
   ThemeExtension<XMetricsData> lerp(ThemeExtension<XMetricsData>? other, double t) {

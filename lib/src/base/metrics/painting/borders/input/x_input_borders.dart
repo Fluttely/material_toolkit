@@ -1,23 +1,33 @@
-// part of '../../../x_metrics_data.dart';
+part of '../../../x_metrics_data.dart';
 
-// class XInputBorders extends Equatable {
-//   final XBorderRadius _borderRadii;
+class XInputBorders extends Equatable {
+  final XRadiiData _radiiData;
 
-//   const XInputBorders(this._borderRadii);
+  const XInputBorders(this._radiiData);
 
-//   InputBorder get none => InputBorder.none;
-//   XOutlineInputBorders get outline => XOutlineInputBorders(_borderRadii);
-//   XUnderlineInputBorders get underline => XUnderlineInputBorders(_borderRadii);
+  InputBorder get none => InputBorder.none;
 
-//   @override
-//   List<Object?> get props => [
-//         _borderRadii.named('_borderRadii'),
-//       ];
+  OutlineInputBorder outlineInputBorder({
+    BorderSide borderSide = BorderSide.none,
+    XBorderRadius borderRadius = XBorderRadius.none,
+  }) =>
+      XOutlineInputBorder(borderSide: borderSide, borderRadius: borderRadius).toOutlineInputBorder(_radiiData);
 
-//   @override
-//   String toString() => '''
-//     XShapes(
-//       _borderRadii: $_borderRadii,
-//     )
-//   ''';
-// }
+  UnderlineInputBorder underlineInputBorder({
+    BorderSide borderSide = BorderSide.none,
+    XBorderRadius borderRadius = XBorderRadius.none,
+  }) =>
+      XUnderlineInputBorder(borderSide: borderSide, borderRadius: borderRadius).toUnderlineInputBorder(_radiiData);
+
+  @override
+  List<Object?> get props => [
+        _radiiData.named('_radiiData'),
+      ];
+
+  @override
+  String toString() => '''
+    XShapes(
+      _radiiData: $_radiiData,
+    )
+  ''';
+}

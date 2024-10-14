@@ -5,19 +5,30 @@ class XShapes extends Equatable {
 
   const XShapes(this._radiiData);
 
-  BoxShape get rectangle => BoxShape.rectangle;
-  BoxShape get circle => BoxShape.circle;
+  BoxShape get rectangleBoxShape => BoxShape.rectangle;
+  BoxShape get circleBoxShape => BoxShape.circle;
 
   CircleBorder get circleBorder => const CircleBorder();
   StadiumBorder get stadiumBorder => const StadiumBorder();
 
-  RoundedRectangleBorder roundedRectangle({
+  RoundedRectangleBorder roundedRectangleBorder({
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
   }) =>
       XRoundedRectangleBorder(borderSide: borderSide, borderRadius: borderRadius).toRoundedRectangleBorder(_radiiData);
-  // XBeveledRectangleBorders get beveledRectangle => XBeveledRectangleBorders(_radiiData);
-  // XContinuousRectangleBorders get continuousRectangle => XContinuousRectangleBorders(_radiiData);
+
+  BeveledRectangleBorder beveledRectangleBorder({
+    BorderSide borderSide = BorderSide.none,
+    XBorderRadius borderRadius = XBorderRadius.none,
+  }) =>
+      XBeveledRectangleBorder(borderSide: borderSide, borderRadius: borderRadius).toBeveledRectangleBorder(_radiiData);
+
+  ContinuousRectangleBorder continuousRectangleBorder({
+    BorderSide borderSide = BorderSide.none,
+    XBorderRadius borderRadius = XBorderRadius.none,
+  }) =>
+      XContinuousRectangleBorder(borderSide: borderSide, borderRadius: borderRadius)
+          .toContinuousRectangleBorder(_radiiData);
 
   @override
   List<Object?> get props => [

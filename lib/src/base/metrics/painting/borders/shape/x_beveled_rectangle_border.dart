@@ -1,23 +1,23 @@
 part of '../../../x_metrics_data.dart';
 
-/// Extensão para a classe [XRoundedRectangleBorder] que adiciona um método
-/// para converter em um [RoundedRectangleBorder] do Flutter.
-extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
-  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
+/// Extensão para a classe [XBeveledRectangleBorder] que adiciona um método
+/// para converter em um [BeveledRectangleBorder] do Flutter.
+extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
+  /// Converte um [XBeveledRectangleBorder] para um [BeveledRectangleBorder].
   ///
-  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
+  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiData radiiData) {
-    return RoundedRectangleBorder(
+  BeveledRectangleBorder toBeveledRectangleBorder(XRadiiData radiiData) {
+    return BeveledRectangleBorder(
       side: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
     );
   }
 }
 
-/// A rectangular border with rounded corners.
+/// A rectangular border with beveled corners.
 ///
-/// Typically used with [ShapeDecoration] to draw a box with a rounded
+/// Typically used with [ShapeDecoration] to draw a box with a beveled
 /// rectangle.
 ///
 /// This shape can interpolate to and from [CircleBorder].
@@ -26,10 +26,10 @@ extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
 ///
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
-///    describe a rounded rectangle.
-class XRoundedRectangleBorder {
-  /// Creates a rounded rectangle border.
-  const XRoundedRectangleBorder({
+///    describe a beveled rectangle.
+class XBeveledRectangleBorder {
+  /// Creates a beveled rectangle border.
+  const XBeveledRectangleBorder({
     this.borderSide = BorderSide.none,
     this.borderRadius = XBorderRadius.none,
   });
@@ -43,10 +43,10 @@ class XRoundedRectangleBorder {
   /// The radii for each corner.
   final XBorderRadius borderRadius;
 
-  /// Returns a copy of this XRoundedRectangleBorder with the given fields
+  /// Returns a copy of this XBeveledRectangleBorder with the given fields
   /// replaced with the new values.
-  XRoundedRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XRoundedRectangleBorder(
+  XBeveledRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+    return XBeveledRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );
