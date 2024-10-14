@@ -5,12 +5,12 @@ part of '../../../x_metrics_data.dart';
 extension XContinuousRectangleBorderExtension on XContinuousRectangleBorder {
   /// Converte um [XContinuousRectangleBorder] para um [ContinuousRectangleBorder].
   ///
-  /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [side]
+  /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
   ContinuousRectangleBorder toContinuousRectangleBorder(XRadiiData radiiData) {
     return ContinuousRectangleBorder(
-      side: side,
-      borderRadius: borderRadius.toBorderRadius(radiiData), // Convertendo para XBorderRadius
+      side: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiData),
     );
   }
 }
@@ -30,24 +30,24 @@ extension XContinuousRectangleBorderExtension on XContinuousRectangleBorder {
 class XContinuousRectangleBorder {
   /// Creates a continuous rectangle border.
   const XContinuousRectangleBorder({
-    this.side = BorderSide.none,
+    this.borderSide = BorderSide.none,
     this.borderRadius = XBorderRadius.none,
   });
 
   /// The border outline's color and weight.
   ///
-  /// If [side] is [BorderSide.none], which is the default, an outline is not drawn.
+  /// If [borderSide] is [BorderSide.none], which is the default, an outline is not drawn.
   /// Otherwise the outline is centered over the shape's boundary.
-  final BorderSide side;
+  final BorderSide borderSide;
 
   /// The radii for each corner.
   final XBorderRadius borderRadius;
 
   /// Returns a copy of this XContinuousRectangleBorder with the given fields
   /// replaced with the new values.
-  XContinuousRectangleBorder copyWith({BorderSide? side, XBorderRadius? borderRadius}) {
+  XContinuousRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XContinuousRectangleBorder(
-      side: side ?? this.side,
+      borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );
   }

@@ -15,19 +15,20 @@ class XShapes extends Equatable {
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
   }) =>
-      XRoundedRectangleBorder(side: borderSide, borderRadius: borderRadius).toRoundedRectangleBorder(_radiiData);
+      XRoundedRectangleBorder(borderSide: borderSide, borderRadius: borderRadius).toRoundedRectangleBorder(_radiiData);
 
   BeveledRectangleBorder beveledRectangleBorder({
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
   }) =>
-      XBeveledRectangleBorder(side: borderSide, borderRadius: borderRadius).toBeveledRectangleBorder(_radiiData);
+      XBeveledRectangleBorder(borderSide: borderSide, borderRadius: borderRadius).toBeveledRectangleBorder(_radiiData);
 
   ContinuousRectangleBorder continuousRectangleBorder({
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
   }) =>
-      XContinuousRectangleBorder(side: borderSide, borderRadius: borderRadius).toContinuousRectangleBorder(_radiiData);
+      XContinuousRectangleBorder(borderSide: borderSide, borderRadius: borderRadius)
+          .toContinuousRectangleBorder(_radiiData);
 
   @override
   List<Object?> get props => [

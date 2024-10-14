@@ -5,12 +5,12 @@ part of '../../../x_metrics_data.dart';
 extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
   /// Converte um [XBeveledRectangleBorder] para um [BeveledRectangleBorder].
   ///
-  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [side]
+  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
   BeveledRectangleBorder toBeveledRectangleBorder(XRadiiData radiiData) {
     return BeveledRectangleBorder(
-      side: side,
-      borderRadius: borderRadius.toBorderRadius(radiiData), // Convertendo para XBorderRadius
+      side: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiData),
     );
   }
 }
@@ -30,24 +30,24 @@ extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
 class XBeveledRectangleBorder {
   /// Creates a beveled rectangle border.
   const XBeveledRectangleBorder({
-    this.side = BorderSide.none,
+    this.borderSide = BorderSide.none,
     this.borderRadius = XBorderRadius.none,
   });
 
   /// The border outline's color and weight.
   ///
-  /// If [side] is [BorderSide.none], which is the default, an outline is not drawn.
+  /// If [borderSide] is [BorderSide.none], which is the default, an outline is not drawn.
   /// Otherwise the outline is centered over the shape's boundary.
-  final BorderSide side;
+  final BorderSide borderSide;
 
   /// The radii for each corner.
   final XBorderRadius borderRadius;
 
   /// Returns a copy of this XBeveledRectangleBorder with the given fields
   /// replaced with the new values.
-  XBeveledRectangleBorder copyWith({BorderSide? side, XBorderRadius? borderRadius}) {
+  XBeveledRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XBeveledRectangleBorder(
-      side: side ?? this.side,
+      borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );
   }
