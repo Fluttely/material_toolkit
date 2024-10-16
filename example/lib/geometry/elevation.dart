@@ -15,7 +15,7 @@ class ElevationGroup extends StatelessWidget {
     // final borderRadius = metrics.borderRadius;
     // final edgeInsets = metrics.edgeInsets;
     final elevations = metrics.elevations;
-    final gaps = metrics.gaps;
+    final gaps = metrics.gap;
 
     return Column(
       children: [

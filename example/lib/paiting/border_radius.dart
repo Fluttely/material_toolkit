@@ -15,7 +15,7 @@ class BorderRadiusGroup extends StatelessWidget {
     final borderRadius = metrics.borderRadius;
     // final border = metrics.borderRadius;
 
-    final gaps = metrics.gaps;
+    final gaps = metrics.gap;
 
     return Column(
       children: [

@@ -19,7 +19,7 @@ class GroupCard extends StatelessWidget {
 
     final metrics = theme.extension<XMetricsData>()!;
     final padding = metrics.padding;
-    final gaps = metrics.gaps;
+    final gaps = metrics.gap;
 
     return Card(
       color: colorScheme.surfaceContainerLow,

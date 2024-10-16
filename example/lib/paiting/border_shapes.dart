@@ -14,7 +14,7 @@ class BorderRadiusGroup extends StatelessWidget {
 
     final metrics = theme.extension<XMetricsData>()!;
     final borderRadius = metrics.borderRadius;
-    final gaps = metrics.gaps;
+    final gaps = metrics.gap;
 
     return Column(
       children: [

@@ -22,6 +22,7 @@ part 'painting/borders/shape/x_rounded_rectangle_border.dart';
 part 'painting/borders/shape/x_shapes.dart';
 part 'painting/borders/x_border_radii.dart';
 part 'painting/borders/x_border_radius.dart';
+part 'painting/borders/x_radius_controller.dart';
 part 'painting/x_box_shadows_data.dart';
 part 'painting/x_edge_insets.dart';
 part 'painting/x_gaps.dart';
@@ -86,17 +87,16 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
         textShadows = textShadows ?? const XTextShadowsData();
 
   /// Spaces
-  XGaps get gaps => XGaps(spaces);
+  XGaps get gap => XGaps(spaces);
   XEdgeInsets get edgeInsets => XEdgeInsets(spaces);
   XPadding get padding => XPadding(edgeInsets);
 
   /// Radii
   // XBorderRadius get borderRadii => XBorderRadius(radii);
-  // XShapes get shapes => XShapes(borderRadii);
-  XShapes get shapes => XShapes(radii);
-  XInputBorders get inputBorders => XInputBorders(radii);
-  // XRadius get radius => XRadius(radii);
+  XRadiusController get radius => XRadiusController(radii);
   XBorderRadii get borderRadius => XBorderRadii(radii);
+  XShapes get shape => XShapes(radii);
+  XInputBorders get inputBorder => XInputBorders(radii);
 
   // GoogleFonts get googleFonts => GoogleFonts;
 
@@ -161,7 +161,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
           radii == other.radii &&
           spaces == other.spaces &&
           textShadows == other.textShadows &&
-          gaps == other.gaps &&
+          gap == other.gap &&
           // borderRadii == other.borderRadii &&
           // shapes == other.shapes &&
           // inputBorders == other.inputBorders &&
@@ -181,7 +181,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       radii.hashCode ^
       spaces.hashCode ^
       textShadows.hashCode ^
-      gaps.hashCode ^
+      gap.hashCode ^
       // borderRadii.hashCode ^
       // shapes.hashCode ^
       // inputBorders.hashCode ^
@@ -200,7 +200,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       radii: $radii,
       spaces: $spaces,
       textShadows: $textShadows,
-      gaps: $gaps,
+      gaps: $gap,
       edgeInsets: $edgeInsets,
       padding: $padding,
     )
