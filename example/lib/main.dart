@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit_example/geometry/elevation.dart';
 import 'package:material_toolkit_example/notifiers/root_notifier.dart';
 import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
-import 'package:material_toolkit_example/paiting/border_radius.dart';
+import 'package:material_toolkit_example/paiting/border_radius_circular_group.dart';
 import 'package:material_toolkit_example/widgets/group_card.dart';
 import 'package:provider/provider.dart';
 
@@ -127,18 +128,18 @@ class _RootState extends State<Root> {
                         children: [
                           // const RadiusGroup(),
                           // gaps.large,
-                          const BorderRadiusGroup(),
+                          const BorderRadiusCircularGroup(),
                           gaps.large,
                           // XBorderShapes
                         ],
                       ),
                       // gaps.extraSmall,
-                      // const GroupCard(
-                      //   title: 'Shadows',
-                      //   children: [
-                      //     ElevationGroup(),
-                      //   ],
-                      // ),
+                      const GroupCard(
+                        title: 'Shadows',
+                        children: [
+                          ElevationGroup(),
+                        ],
+                      ),
                     ],
                   ),
                 );
