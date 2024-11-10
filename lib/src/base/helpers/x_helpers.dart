@@ -9,7 +9,7 @@ part 'x_adaptive_widget.dart';
 // part 'x_attribute.dart';
 part 'x_auxiliary_milliseconds.dart';
 part 'x_auxiliary_sizes.dart';
-part 'x_metrics_error.dart';
+part 'x_metrics_attribute_errors.dart';
 part 'x_named.dart';
 part 'x_standard_milliseconds.dart';
 part 'x_standard_sizes.dart';

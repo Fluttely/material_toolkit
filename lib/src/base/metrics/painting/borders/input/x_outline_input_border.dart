@@ -50,7 +50,8 @@ class XOutlineInputBorder {
 
   /// Returns a copy of this XOutlineInputBorder with the given fields
   /// replaced with the new values.
-  XOutlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XOutlineInputBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XOutlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

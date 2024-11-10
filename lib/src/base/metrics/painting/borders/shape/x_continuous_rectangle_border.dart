@@ -45,7 +45,8 @@ class XContinuousRectangleBorder {
 
   /// Returns a copy of this XContinuousRectangleBorder with the given fields
   /// replaced with the new values.
-  XContinuousRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XContinuousRectangleBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XContinuousRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

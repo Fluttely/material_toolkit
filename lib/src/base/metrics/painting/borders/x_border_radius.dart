@@ -6,10 +6,14 @@ extension XBorderRadiusExtension on XBorderRadius {
   /// Otherwise, it returns a [BorderRadius.only] with the given radii for each corner.
   BorderRadius toBorderRadius(XRadiiData radiiData) {
     return BorderRadius.only(
-      topLeft: Radius.elliptical(topLeft.toRadius(radiiData).x, topLeft.toRadius(radiiData).y),
-      topRight: Radius.elliptical(topRight.toRadius(radiiData).x, topRight.toRadius(radiiData).y),
-      bottomLeft: Radius.elliptical(bottomLeft.toRadius(radiiData).x, bottomLeft.toRadius(radiiData).y),
-      bottomRight: Radius.elliptical(bottomRight.toRadius(radiiData).x, bottomRight.toRadius(radiiData).y),
+      topLeft: Radius.elliptical(
+          topLeft.toRadius(radiiData).x, topLeft.toRadius(radiiData).y),
+      topRight: Radius.elliptical(
+          topRight.toRadius(radiiData).x, topRight.toRadius(radiiData).y),
+      bottomLeft: Radius.elliptical(
+          bottomLeft.toRadius(radiiData).x, bottomLeft.toRadius(radiiData).y),
+      bottomRight: Radius.elliptical(
+          bottomRight.toRadius(radiiData).x, bottomRight.toRadius(radiiData).y),
     );
   }
 }

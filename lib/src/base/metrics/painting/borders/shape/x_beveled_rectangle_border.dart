@@ -45,7 +45,8 @@ class XBeveledRectangleBorder {
 
   /// Returns a copy of this XBeveledRectangleBorder with the given fields
   /// replaced with the new values.
-  XBeveledRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XBeveledRectangleBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XBeveledRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

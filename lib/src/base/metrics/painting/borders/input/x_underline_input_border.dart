@@ -45,7 +45,8 @@ class XUnderlineInputBorder {
 
   /// Returns a copy of this XUnderlineInputBorder with the given fields
   /// replaced with the new values.
-  XUnderlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XUnderlineInputBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XUnderlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

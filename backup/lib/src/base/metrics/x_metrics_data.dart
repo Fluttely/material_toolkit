@@ -56,7 +56,8 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   XPadding get padding => XPadding(edgeInsets);
 
   @override
-  ThemeExtension<XMetricsData> lerp(ThemeExtension<XMetricsData>? other, double t) {
+  ThemeExtension<XMetricsData> lerp(
+      ThemeExtension<XMetricsData>? other, double t) {
     if (other is! XMetricsData) {
       return this;
     } else {

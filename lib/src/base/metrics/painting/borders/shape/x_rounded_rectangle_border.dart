@@ -45,7 +45,8 @@ class XRoundedRectangleBorder {
 
   /// Returns a copy of this XRoundedRectangleBorder with the given fields
   /// replaced with the new values.
-  XRoundedRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XRoundedRectangleBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XRoundedRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

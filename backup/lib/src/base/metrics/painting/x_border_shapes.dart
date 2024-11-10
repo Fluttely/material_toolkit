@@ -5,15 +5,24 @@ class XBorderShapes extends Equatable {
 
   const XBorderShapes(this._borderRadii);
 
-  RoundedRectangleBorder get none => RoundedRectangleBorder(borderRadius: _borderRadii.none);
-  RoundedRectangleBorder get extraSmall => RoundedRectangleBorder(borderRadius: _borderRadii.extraSmall);
-  RoundedRectangleBorder get small => RoundedRectangleBorder(borderRadius: _borderRadii.small);
-  RoundedRectangleBorder get semiSmall => RoundedRectangleBorder(borderRadius: _borderRadii.semiSmall);
-  RoundedRectangleBorder get medium => RoundedRectangleBorder(borderRadius: _borderRadii.medium);
-  RoundedRectangleBorder get semiLarge => RoundedRectangleBorder(borderRadius: _borderRadii.semiLarge);
-  RoundedRectangleBorder get large => RoundedRectangleBorder(borderRadius: _borderRadii.large);
-  RoundedRectangleBorder get extraLarge => RoundedRectangleBorder(borderRadius: _borderRadii.extraLarge);
-  RoundedRectangleBorder get superLarge => RoundedRectangleBorder(borderRadius: _borderRadii.superLarge);
+  RoundedRectangleBorder get none =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.none);
+  RoundedRectangleBorder get extraSmall =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.extraSmall);
+  RoundedRectangleBorder get small =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.small);
+  RoundedRectangleBorder get semiSmall =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.semiSmall);
+  RoundedRectangleBorder get medium =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.medium);
+  RoundedRectangleBorder get semiLarge =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.semiLarge);
+  RoundedRectangleBorder get large =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.large);
+  RoundedRectangleBorder get extraLarge =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.extraLarge);
+  RoundedRectangleBorder get superLarge =>
+      RoundedRectangleBorder(borderRadius: _borderRadii.superLarge);
 
   @override
   List<Object?> get props => [

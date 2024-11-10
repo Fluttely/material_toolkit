@@ -7,8 +7,10 @@ class XRadiusController extends Equatable {
 
   Radius get none => XRadius.none.toRadius(_radiiData);
 
-  Radius circular(XRadii radius) => XRadius.circular(radius).toRadius(_radiiData);
-  Radius elliptical(XRadii x, XRadii y) => XRadius.elliptical(x, y).toRadius(_radiiData);
+  Radius circular(XRadii radius) =>
+      XRadius.circular(radius).toRadius(_radiiData);
+  Radius elliptical(XRadii x, XRadii y) =>
+      XRadius.elliptical(x, y).toRadius(_radiiData);
 
   @override
   List<Object?> get props => [
