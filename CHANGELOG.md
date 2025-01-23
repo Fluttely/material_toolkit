@@ -11,3 +11,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Light and dark themes available.
 - Easy integration with Flutter projects.
 - Support for multiple theme configurations to facilitate customization and scalability.
+
+
+## [0.0.2] - 2025-01-23
+### Added
+- Additional XStandardSizes properties to XSpacesData
