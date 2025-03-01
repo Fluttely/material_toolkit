@@ -160,16 +160,25 @@ class XSpacesData extends Equatable {
   double get extraLarge => _extraLarge;
   double get superLarge => _superLarge;
 
-  /// + 4
+  /// + 2
   double get x2 => XAuxiliarySizes.x2;
+
+  /// + 4
   double get x4 => XStandardSizes.x4;
   double get x8 => XStandardSizes.x8;
   double get x12 => XStandardSizes.x12;
   double get x16 => XStandardSizes.x16;
   double get x20 => XStandardSizes.x20;
   double get x24 => XStandardSizes.x24;
+  double get x28 => XStandardSizes.x28;
   double get x32 => XStandardSizes.x32;
+  double get x36 => XStandardSizes.x36;
+  double get x40 => XStandardSizes.x40;
+  double get x44 => XStandardSizes.x44;
   double get x48 => XStandardSizes.x48;
+  double get x52 => XStandardSizes.x52;
+  double get x56 => XStandardSizes.x56;
+  double get x60 => XStandardSizes.x60;
   double get x64 => XStandardSizes.x64;
   double get x68 => XStandardSizes.x68;
   double get x72 => XStandardSizes.x72;
@@ -209,7 +218,6 @@ class XSpacesData extends Equatable {
   double get x512 => XStandardSizes.x512;
   double get x1024 => XStandardSizes.x1024;
   double get x2048 => XStandardSizes.x2048;
-  
 
   @override
   List<Object?> get props => [

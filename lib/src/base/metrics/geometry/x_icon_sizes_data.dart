@@ -38,14 +38,23 @@ class XIconSizesData extends Equatable {
   double get extraLarge => _extraLarge;
   double get superLarge => _superLarge;
 
+  /// + 2
   double get x16 => XStandardSizes.x16;
   double get x18 => XAuxiliarySizes.x18;
   double get x20 => XStandardSizes.x20;
+
+  /// + 8
   double get x24 => XStandardSizes.x24;
   double get x32 => XStandardSizes.x32;
+  double get x40 => XStandardSizes.x40;
   double get x48 => XStandardSizes.x48;
+
+  /// * 2
   double get x96 => XStandardSizes.x96;
   double get x192 => XStandardSizes.x192;
+
+  /// * 2
+  double get x256 => XStandardSizes.x256;
   double get x512 => XStandardSizes.x512;
 
   @override

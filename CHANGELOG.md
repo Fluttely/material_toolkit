@@ -16,3 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [0.0.2] - 2025-01-23
 ### Added
 - Additional XStandardSizes properties to XSpacesData
+
+## [0.0.3] - 2025-03-01
+### Added
+- Additional size properties in XIconSizesData and XSpacesData
