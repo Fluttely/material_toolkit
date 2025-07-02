@@ -4,19 +4,70 @@ import 'package:provider/provider.dart';
 
 import '../notifiers/theme_notifier.dart';
 
-/// Widget that exposes simple setters for [XMetricsData] fields.
-class MetricsEditor extends StatelessWidget {
+/// Widget to edit [XMetricsData] values without losing the focus of the
+/// text fields while typing.
+class MetricsEditor extends StatefulWidget {
   const MetricsEditor({super.key});
+
+  @override
+  State<MetricsEditor> createState() => _MetricsEditorState();
+}
+
+class _MetricsEditorState extends State<MetricsEditor> {
+  late final TextEditingController spacesSmallController;
+  late final TextEditingController radiiExtraSmallController;
+  late final TextEditingController iconSmallController;
+  late final TextEditingController elevationOneController;
+  late final TextEditingController durationSlowController;
+  late final TextEditingController breakpointMobileMaxController;
+  late final TextEditingController boxShadowBlurController;
+  late final TextEditingController textShadowBlurController;
+
+  @override
+  void initState() {
+    super.initState();
+    final notifier = context.read<ThemeNotifier>();
+    spacesSmallController =
+        TextEditingController(text: notifier.spaces.small.toString());
+    radiiExtraSmallController =
+        TextEditingController(text: notifier.radiiData.extraSmall.toString());
+    iconSmallController =
+        TextEditingController(text: notifier.iconSizes.small.toString());
+    elevationOneController =
+        TextEditingController(text: notifier.elevations.level1.toString());
+    durationSlowController = TextEditingController(
+      text: notifier.durations.slow.inMilliseconds.toString(),
+    );
+    breakpointMobileMaxController = TextEditingController(
+      text: notifier.breakpoints.mobile.maxWidth.toString(),
+    );
+    boxShadowBlurController = TextEditingController(
+      text: notifier.boxShadows.small.blurRadius.toString(),
+    );
+    textShadowBlurController = TextEditingController(
+      text: notifier.textShadows.small.blurRadius.toString(),
+    );
+  }
+
+  @override
+  void dispose() {
+    spacesSmallController.dispose();
+    radiiExtraSmallController.dispose();
+    iconSmallController.dispose();
+    elevationOneController.dispose();
+    durationSlowController.dispose();
+    breakpointMobileMaxController.dispose();
+    boxShadowBlurController.dispose();
+    textShadowBlurController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-
     final metrics = theme.extension<XMetricsData>()!;
     final gaps = metrics.gaps;
-
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
 
     return Card(
       child: Padding(
@@ -24,11 +75,11 @@ class MetricsEditor extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text('Metrics Editor', style: textTheme.titleLarge),
+            Text('Metrics Editor', style: theme.textTheme.titleLarge),
             gaps.small,
             _NumberField(
               label: 'Spaces small',
-              initial: themeNotifier.spaces.small.toString(),
+              controller: spacesSmallController,
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
@@ -51,7 +102,7 @@ class MetricsEditor extends StatelessWidget {
             gaps.small,
             _NumberField(
               label: 'Radii extraSmall',
-              initial: themeNotifier.radiiData.extraSmall.toString(),
+              controller: radiiExtraSmallController,
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
@@ -64,7 +115,7 @@ class MetricsEditor extends StatelessWidget {
             gaps.small,
             _NumberField(
               label: 'IconSize small',
-              initial: themeNotifier.iconSizes.small.toString(),
+              controller: iconSmallController,
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
@@ -86,7 +137,7 @@ class MetricsEditor extends StatelessWidget {
             gaps.small,
             _NumberField(
               label: 'Elevation level1',
-              initial: themeNotifier.elevations.level1.toString(),
+              controller: elevationOneController,
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
@@ -105,7 +156,7 @@ class MetricsEditor extends StatelessWidget {
             gaps.small,
             _NumberField(
               label: 'Duration slow (ms)',
-              initial: themeNotifier.durations.slow.inMilliseconds.toString(),
+              controller: durationSlowController,
               onChanged: (value) {
                 final v = int.tryParse(value);
                 if (v != null) {
@@ -116,6 +167,63 @@ class MetricsEditor extends StatelessWidget {
                       slow: Duration(milliseconds: v),
                       regular: themeNotifier.durations.regular,
                       quick: themeNotifier.durations.quick,
+                    ),
+                  );
+                }
+              },
+            ),
+            gaps.small,
+            _NumberField(
+              label: 'Breakpoint mobile max',
+              controller: breakpointMobileMaxController,
+              onChanged: (value) {
+                final v = double.tryParse(value);
+                if (v != null) {
+                  themeNotifier.updateBreakpointsData(
+                    XBreakpointsData(
+                      mobile: XBreakpoint(
+                        minWidth: themeNotifier.breakpoints.mobile.minWidth,
+                        maxWidth: v,
+                      ),
+                      tablet: themeNotifier.breakpoints.tablet,
+                      desktop: themeNotifier.breakpoints.desktop,
+                      infinity: themeNotifier.breakpoints.infinity,
+                    ),
+                  );
+                }
+              },
+            ),
+            gaps.small,
+            _NumberField(
+              label: 'BoxShadow small blur',
+              controller: boxShadowBlurController,
+              onChanged: (value) {
+                final v = double.tryParse(value);
+                if (v != null) {
+                  final small = themeNotifier.boxShadows.small;
+                  themeNotifier.updateBoxShadowsData(
+                    XBoxShadowsData(
+                      small: small.copyWith(blurRadius: v),
+                      medium: themeNotifier.boxShadows.medium,
+                      large: themeNotifier.boxShadows.large,
+                    ),
+                  );
+                }
+              },
+            ),
+            gaps.small,
+            _NumberField(
+              label: 'TextShadow small blur',
+              controller: textShadowBlurController,
+              onChanged: (value) {
+                final v = double.tryParse(value);
+                if (v != null) {
+                  final small = themeNotifier.textShadows.small;
+                  themeNotifier.updateTextShadowsData(
+                    XTextShadowsData(
+                      small: small.copyWith(blurRadius: v),
+                      medium: themeNotifier.textShadows.medium,
+                      large: themeNotifier.textShadows.large,
                     ),
                   );
                 }
@@ -147,24 +255,22 @@ class MetricsEditor extends StatelessWidget {
 
 class _NumberField extends StatelessWidget {
   final String label;
-  final String initial;
+  final TextEditingController controller;
   final ValueChanged<String> onChanged;
 
   const _NumberField({
     required this.label,
-    required this.initial,
+    required this.controller,
     required this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
-    final controller = TextEditingController(text: initial);
     return TextField(
       decoration: InputDecoration(labelText: label),
       keyboardType: TextInputType.number,
-      onChanged: onChanged,
       controller: controller,
+      onChanged: onChanged,
     );
   }
 }
-
