@@ -67,6 +67,54 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Updates the spaces data and notifies listeners.
+  void updateSpacesData(XSpacesData newSpacesData) {
+    spaces = newSpacesData;
+    notifyListeners();
+  }
+
+  /// Updates the icon sizes data and notifies listeners.
+  void updateIconSizesData(XIconSizesData newIconSizesData) {
+    iconSizes = newIconSizesData;
+    notifyListeners();
+  }
+
+  /// Updates the elevations data and notifies listeners.
+  void updateElevationsData(XElevationsData newElevationsData) {
+    elevations = newElevationsData;
+    notifyListeners();
+  }
+
+  /// Updates the durations data and notifies listeners.
+  void updateDurationsData(XDurationsData newDurationsData) {
+    durations = newDurationsData;
+    notifyListeners();
+  }
+
+  /// Updates the breakpoints data and notifies listeners.
+  void updateBreakpointsData(XBreakpointsData newBreakpointsData) {
+    breakpoints = newBreakpointsData;
+    notifyListeners();
+  }
+
+  /// Updates the box shadows data and notifies listeners.
+  void updateBoxShadowsData(XBoxShadowsData newBoxShadowsData) {
+    boxShadows = newBoxShadowsData;
+    notifyListeners();
+  }
+
+  /// Updates the text shadows data and notifies listeners.
+  void updateTextShadowsData(XTextShadowsData newTextShadowsData) {
+    textShadows = newTextShadowsData;
+    notifyListeners();
+  }
+
+  /// Updates the form factor and notifies listeners.
+  void updateFormFactor(XFormFactor newFormFactor) {
+    formFactor = newFormFactor;
+    notifyListeners();
+  }
+
   void resetMetricsData() {
     _primaryColor = _m3Baseline;
     primaryColorTextFieldController.clear();

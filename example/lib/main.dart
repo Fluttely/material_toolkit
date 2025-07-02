@@ -5,6 +5,7 @@ import 'package:material_toolkit_example/notifiers/root_notifier.dart';
 import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
 import 'package:material_toolkit_example/paiting/border_radius_circular_group.dart';
 import 'package:material_toolkit_example/widgets/group_card.dart';
+import 'package:material_toolkit_example/widgets/metrics_editor.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -112,6 +113,8 @@ class _RootState extends State<Root> {
                 style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
               ),
             ),
+            gaps.large,
+            const MetricsEditor(),
             LayoutBuilder(
               builder: (context, constraints) {
                 return ConstrainedBox(
