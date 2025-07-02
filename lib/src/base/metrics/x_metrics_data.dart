@@ -87,16 +87,15 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
         textShadows = textShadows ?? const XTextShadowsData();
 
   /// Spaces
-  XGaps get gap => XGaps(spaces);
-  XEdgeInsets get edgeInsets => XEdgeInsets(spaces);
-  XPadding get padding => XPadding(edgeInsets);
+  late final XGaps gaps = XGaps(spaces);
+  late final XEdgeInsets edgeInsets = XEdgeInsets(spaces);
+  late final XPadding padding = XPadding(edgeInsets);
 
   /// Radii
-  // XBorderRadius get borderRadii => XBorderRadius(radii);
-  XRadiusController get radius => XRadiusController(radii);
-  XBorderRadii get borderRadius => XBorderRadii(radii);
-  XShapes get shape => XShapes(radii);
-  XInputBorders get inputBorder => XInputBorders(radii);
+  late final XRadiusController radius = XRadiusController(radii);
+  late final XBorderRadii borderRadius = XBorderRadii(radii);
+  late final XShapes shape = XShapes(radii);
+  late final XInputBorders inputBorder = XInputBorders(radii);
 
   // GoogleFonts get googleFonts => GoogleFonts;
 
@@ -156,18 +155,10 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
           durations == other.durations &&
           elevations == other.elevations &&
           formFactor == other.formFactor &&
-          // googleFonts == other.googleFonts &&
           iconSizes == other.iconSizes &&
           radii == other.radii &&
           spaces == other.spaces &&
-          textShadows == other.textShadows &&
-          gap == other.gap &&
-          // borderRadii == other.borderRadii &&
-          // shapes == other.shapes &&
-          // inputBorders == other.inputBorders &&
-          edgeInsets == other.edgeInsets &&
-          padding == other.padding &&
-          runtimeType == other.runtimeType;
+          textShadows == other.textShadows;
 
   @override
   int get hashCode =>
@@ -176,17 +167,10 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       durations.hashCode ^
       elevations.hashCode ^
       formFactor.hashCode ^
-      // googleFonts.hashCode ^
       iconSizes.hashCode ^
       radii.hashCode ^
       spaces.hashCode ^
-      textShadows.hashCode ^
-      gap.hashCode ^
-      // borderRadii.hashCode ^
-      // shapes.hashCode ^
-      // inputBorders.hashCode ^
-      edgeInsets.hashCode ^
-      padding.hashCode;
+      textShadows.hashCode;
 
   @override
   String toString() => '''
@@ -200,7 +184,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
       radii: $radii,
       spaces: $spaces,
       textShadows: $textShadows,
-      gap: $gap,
+      gaps: $gaps,
       edgeInsets: $edgeInsets,
       padding: $padding,
     )

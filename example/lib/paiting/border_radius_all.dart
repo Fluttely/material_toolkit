@@ -17,7 +17,7 @@ class BorderRadiusAllGroup extends StatelessWidget {
     final borderRadius = metrics.borderRadius;
     // final border = metrics.borderRadius;
 
-    final gaps = metrics.gap;
+    final gaps = metrics.gaps;
 
     return Column(
       children: [
@@ -34,8 +34,7 @@ class BorderRadiusAllGroup extends StatelessWidget {
                 BorderRadiusComponent(
                   type: XRadii.extraSmall,
                   info: 'borderRadius.all(XRadius.circular(XRadii.extraSmall))',
-                  borderRadius: borderRadius
-                      .all(const XRadius.circular(XRadii.extraSmall)),
+                  borderRadius: borderRadius.all(const XRadius.circular(XRadii.extraSmall)),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
@@ -53,8 +52,7 @@ class BorderRadiusAllGroup extends StatelessWidget {
                   info:
                       'borderRadius.vertical(top: XRadius.circular(XRadii.semiSmall), bottom: XRadius.circular(XRadii.semiSmall))',
                   borderRadius: borderRadius.vertical(
-                      top: const XRadius.circular(XRadii.semiSmall),
-                      bottom: const XRadius.circular(XRadii.semiSmall)),
+                      top: const XRadius.circular(XRadii.semiSmall), bottom: const XRadius.circular(XRadii.semiSmall)),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
@@ -62,8 +60,7 @@ class BorderRadiusAllGroup extends StatelessWidget {
                   info:
                       'borderRadius.horizontal(left: XRadius.circular(XRadii.medium), right: XRadius.circular(XRadii.medium))',
                   borderRadius: borderRadius.horizontal(
-                      left: const XRadius.circular(XRadii.medium),
-                      right: const XRadius.circular(XRadii.medium)),
+                      left: const XRadius.circular(XRadii.medium), right: const XRadius.circular(XRadii.medium)),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
@@ -151,7 +148,7 @@ class BorderRadiusComponent extends StatelessWidget {
     final metrics = theme.extension<XMetricsData>()!;
     // final border = metrics.borderRadius;
 
-    final gaps = metrics.gap;
+    final gaps = metrics.gaps;
 
     return Container(
       height: 96,

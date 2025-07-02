@@ -18,4 +18,4 @@ Add `material_toolkit` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  material_toolkit: ^0.0.3
+  material_toolkit: ^0.0.4

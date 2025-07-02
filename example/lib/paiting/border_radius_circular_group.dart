@@ -14,10 +14,9 @@ class BorderRadiusCircularGroup extends StatelessWidget {
     final theme = Theme.of(context);
 
     final metrics = theme.extension<XMetricsData>()!;
-    final borderRadius = metrics.borderRadius;
-    // final border = metrics.borderRadius;
+    // final borderRadius = metrics.borderRadius;
 
-    final gaps = metrics.gap;
+    final gaps = metrics.gaps;
 
     return Column(
       children: [
@@ -105,9 +104,9 @@ class BorderRadiusComponent extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     final metrics = theme.extension<XMetricsData>()!;
-    // final border = metrics.borderRadius;
+    // final borderRadius = metrics.borderRadius;
 
-    final gaps = metrics.gap;
+    final gaps = metrics.gaps;
 
     return Container(
       height: 96,

@@ -15,7 +15,7 @@ class GroupItemTitle extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     final metrics = theme.extension<XMetricsData>()!;
-    final gaps = metrics.gap;
+    final gaps = metrics.gaps;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

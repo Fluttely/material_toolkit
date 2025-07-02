@@ -20,3 +20,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [0.0.3] - 2025-03-01
 ### Added
 - Additional size properties in XIconSizesData and XSpacesData
+
+## [0.0.4] - ????-??-??
