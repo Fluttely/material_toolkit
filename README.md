@@ -19,3 +19,18 @@ Add `material_toolkit` to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   material_toolkit: ^0.0.4
+```
+
+### Material presets
+
+Use `DesignTokensData.material()` to obtain Material defaults. Override any
+value with a map or JSON string:
+
+```dart
+final tokens = XDesignTokensData.material(overrides: {
+  "spaces": {"medium": 20.0},
+});
+```
+
+JSON can be loaded with `XDesignTokensData.fromJson` for the same effect.
+

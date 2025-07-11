@@ -37,6 +37,29 @@ class XTextShadowsData extends Equatable {
               color: Color(0x44000000),
             );
 
+  factory XTextShadowsData.fromMap(Map<String, dynamic> map) {
+    Shadow? _s(String key) {
+      final value = map[key];
+      if (value is Map<String, dynamic>) {
+        return Shadow(
+          blurRadius: (value['blurRadius'] as num?)?.toDouble() ?? 0,
+          offset: Offset(
+            (value['offsetX'] as num?)?.toDouble() ?? 0,
+            (value['offsetY'] as num?)?.toDouble() ?? 0,
+          ),
+          color: Color((value['color'] as int?) ?? 0x44000000),
+        );
+      }
+      return null;
+    }
+
+    return XTextShadowsData(
+      small: _s('small'),
+      medium: _s('medium'),
+      large: _s('large'),
+    );
+  }
+
   // XTextShadowsData.x({
   //   final XAttribute<Shadow?>? small,
   //   final XAttribute<Shadow?>? medium,

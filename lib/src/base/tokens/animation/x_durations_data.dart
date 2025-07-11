@@ -31,6 +31,21 @@ class XDurationsData extends Equatable {
         _regular = regular ?? const Duration(milliseconds: XStandardMilliseconds.x300),
         _quick = quick ?? const Duration(milliseconds: XStandardMilliseconds.x100);
 
+  factory XDurationsData.fromMap(Map<String, dynamic> map) {
+    Duration? _d(String key) {
+      final value = map[key];
+      if (value is int) return Duration(milliseconds: value);
+      return null;
+    }
+
+    return XDurationsData(
+      areAnimationEnabled: map['areAnimationEnabled'] as bool?,
+      slow: _d('slow'),
+      regular: _d('regular'),
+      quick: _d('quick'),
+    );
+  }
+
   // XDurationsData.x({
   //   final XAttribute<bool?>? areAnimationEnabled,
   //   final XAttribute<Duration?>? slow,
