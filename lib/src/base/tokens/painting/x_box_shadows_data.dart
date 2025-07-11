@@ -40,6 +40,30 @@ class XBoxShadowsData extends Equatable {
               color: Color(0x44000000),
             );
 
+  factory XBoxShadowsData.fromMap(Map<String, dynamic> map) {
+    BoxShadow? _bs(String key) {
+      final value = map[key];
+      if (value is Map<String, dynamic>) {
+        return BoxShadow(
+          blurRadius: (value['blurRadius'] as num?)?.toDouble() ?? 0,
+          spreadRadius: (value['spreadRadius'] as num?)?.toDouble() ?? 0,
+          offset: Offset(
+            (value['offsetX'] as num?)?.toDouble() ?? 0,
+            (value['offsetY'] as num?)?.toDouble() ?? 0,
+          ),
+          color: Color((value['color'] as int?) ?? 0x44000000),
+        );
+      }
+      return null;
+    }
+
+    return XBoxShadowsData(
+      small: _bs('small'),
+      medium: _bs('medium'),
+      large: _bs('large'),
+    );
+  }
+
   // XBoxShadowsData.x({
   //   final XAttribute<BoxShadow?>? small,
   //   final XAttribute<BoxShadow?>? medium,

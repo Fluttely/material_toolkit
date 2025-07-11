@@ -37,6 +37,18 @@ class XElevationsData extends Equatable {
         _level4 = level4 ?? XStandardSizes.x8,
         _level5 = level5 ?? XStandardSizes.x12;
 
+  factory XElevationsData.fromMap(Map<String, dynamic> map) {
+    double? _d(String key) => (map[key] as num?)?.toDouble();
+
+    return XElevationsData(
+      level1: _d('level1'),
+      level2: _d('level2'),
+      level3: _d('level3'),
+      level4: _d('level4'),
+      level5: _d('level5'),
+    );
+  }
+
   // XElevationsData.x({
   //   final XAttribute<double?>? level1,
   //   final XAttribute<double?>? level2,

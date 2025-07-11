@@ -47,6 +47,26 @@ class XBreakpointsData extends Equatable {
               maxWidth: double.infinity,
             );
 
+  factory XBreakpointsData.fromMap(Map<String, dynamic> map) {
+    XBreakpoint? _b(String key) {
+      final value = map[key];
+      if (value is Map<String, dynamic>) {
+        return XBreakpoint(
+          minWidth: (value['minWidth'] as num?)?.toDouble() ?? 0,
+          maxWidth: (value['maxWidth'] as num?)?.toDouble() ?? double.infinity,
+        );
+      }
+      return null;
+    }
+
+    return XBreakpointsData(
+      mobile: _b('mobile'),
+      tablet: _b('tablet'),
+      desktop: _b('desktop'),
+      infinity: _b('infinity'),
+    );
+  }
+
   // XBreakpointsData.x({
   //   final XAttribute<Breakpoint?>? mobile,
   //   final XAttribute<Breakpoint?>? tablet,

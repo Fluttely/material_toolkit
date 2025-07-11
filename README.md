@@ -74,3 +74,16 @@ More advanced demo code lives under `example/lib/advanced`. Run it with:
 ```bash
 flutter run -t lib/advanced/advanced_app.dart
 ```
+### Material presets
+
+Use `DesignTokensData.material()` to obtain Material defaults. Override any
+value with a map or JSON string:
+
+```dart
+final tokens = XDesignTokensData.material(overrides: {
+  "spaces": {"medium": 20.0},
+});
+```
+
+JSON can be loaded with `XDesignTokensData.fromJson` for the same effect.
+

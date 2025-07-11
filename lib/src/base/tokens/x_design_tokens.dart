@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'dart:convert';
 
 part 'animation/x_durations_data.dart';
 part 'geometry/x_breakpoints_data.dart';
@@ -85,6 +86,53 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
         radii = radii ?? const XRadiiData(),
         spaces = spaces ?? const XSpacesData(),
         textShadows = textShadows ?? const XTextShadowsData();
+
+  factory XDesignTokensData.material({Map<String, dynamic>? overrides}) {
+    var data = XDesignTokensData();
+    if (overrides != null) {
+      data = data.copyWith(
+        boxShadows: overrides['boxShadows'] != null
+            ? XBoxShadowsData.fromMap(
+                overrides['boxShadows'] as Map<String, dynamic>)
+            : null,
+        breakpoints: overrides['breakpoints'] != null
+            ? XBreakpointsData.fromMap(
+                overrides['breakpoints'] as Map<String, dynamic>)
+            : null,
+        durations: overrides['durations'] != null
+            ? XDurationsData.fromMap(
+                overrides['durations'] as Map<String, dynamic>)
+            : null,
+        elevations: overrides['elevations'] != null
+            ? XElevationsData.fromMap(
+                overrides['elevations'] as Map<String, dynamic>)
+            : null,
+        iconSizes: overrides['iconSizes'] != null
+            ? XIconSizesData.fromMap(
+                overrides['iconSizes'] as Map<String, dynamic>)
+            : null,
+        radii: overrides['radii'] != null
+            ? XRadiiData.fromMap(overrides['radii'] as Map<String, dynamic>)
+            : null,
+        spaces: overrides['spaces'] != null
+            ? XSpacesData.fromMap(overrides['spaces'] as Map<String, dynamic>)
+            : null,
+        textShadows: overrides['textShadows'] != null
+            ? XTextShadowsData.fromMap(
+                overrides['textShadows'] as Map<String, dynamic>)
+            : null,
+      );
+    }
+    return data;
+  }
+
+  factory XDesignTokensData.fromMap(Map<String, dynamic> map) {
+    return XDesignTokensData.material(overrides: map);
+  }
+
+  factory XDesignTokensData.fromJson(String json) {
+    return XDesignTokensData.fromMap(jsonDecode(json) as Map<String, dynamic>);
+  }
 
   /// Spaces
   late final XGaps gaps = XGaps(spaces);
