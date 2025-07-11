@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/widgets/group_item_container.dart';
-import 'package:material_toolkit_example/widgets/group_item_row.dart';
-import 'package:material_toolkit_example/widgets/group_item_subtitle.dart';
-import 'package:material_toolkit_example/widgets/group_item_title.dart';
-import 'package:material_toolkit_example/widgets/info_component.dart';
+import 'package:material_toolkit_example/advanced/widgets/group_item_container.dart';
+import 'package:material_toolkit_example/advanced/widgets/group_item_row.dart';
+import 'package:material_toolkit_example/advanced/widgets/group_item_subtitle.dart';
+import 'package:material_toolkit_example/advanced/widgets/group_item_title.dart';
+import 'package:material_toolkit_example/advanced/widgets/info_component.dart';
 
 class BorderRadiusCircularGroup extends StatelessWidget {
   const BorderRadiusCircularGroup({super.key});

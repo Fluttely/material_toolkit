@@ -21,6 +21,59 @@ dependencies:
   material_toolkit: ^0.0.4
 ```
 
+### Minimal example
+
+```dart
+final tokens = XDesignTokensData();
+
+return XDesignTokens(
+  data: tokens,
+  child: MaterialApp(
+    theme: ThemeData(
+      extensions: [tokens],
+    ),
+    home: const DemoPage(),
+  ),
+);
+```
+
+```dart
+class DemoPage extends StatelessWidget {
+  const DemoPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = XDesignTokens.of(context);
+    return Scaffold(
+      body: tokens.padding.all(
+        XSpaces.medium,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [tokens.boxShadows.medium],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Hello Material Toolkit'),
+              tokens.gaps.small,
+              const Text('This container uses padding and a shadow.'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### Advanced demo
+
+More advanced demo code lives under `example/lib/advanced`. Run it with:
+
+```bash
+flutter run -t lib/advanced/advanced_app.dart
+```
 ### Material presets
 
 Use `DesignTokensData.material()` to obtain Material defaults. Override any
