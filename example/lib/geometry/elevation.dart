@@ -11,11 +11,11 @@ class ElevationGroup extends StatelessWidget {
     // final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final metrics = theme.extension<DesignTokensData>()!;
-    // final borderRadius = metrics.borderRadius;
-    // final edgeInsets = metrics.edgeInsets;
-    final elevations = metrics.elevations;
-    final gaps = metrics.gaps;
+    final tokens = theme.extension<DesignTokensData>()!;
+    // final borderRadius = tokens.borderRadius;
+    // final edgeInsets = tokens.edgeInsets;
+    final elevations = tokens.elevations;
+    final gaps = tokens.gaps;
 
     return Column(
       children: [

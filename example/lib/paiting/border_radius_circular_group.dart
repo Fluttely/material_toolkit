@@ -13,10 +13,10 @@ class BorderRadiusCircularGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final metrics = theme.extension<DesignTokensData>()!;
-    // final borderRadius = metrics.borderRadius;
+    final tokens = theme.extension<DesignTokensData>()!;
+    // final borderRadius = tokens.borderRadius;
 
-    final gaps = metrics.gaps;
+    final gaps = tokens.gaps;
 
     return Column(
       children: [
@@ -74,8 +74,8 @@ class BorderRadiusCircularComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final metrics = theme.extension<DesignTokensData>()!;
-    final borderRadius = metrics.borderRadius;
+    final tokens = theme.extension<DesignTokensData>()!;
+    final borderRadius = tokens.borderRadius;
 
     return BorderRadiusComponent(
       type: radius,
@@ -103,10 +103,10 @@ class BorderRadiusComponent extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final metrics = theme.extension<DesignTokensData>()!;
-    // final borderRadius = metrics.borderRadius;
+    final tokens = theme.extension<DesignTokensData>()!;
+    // final borderRadius = tokens.borderRadius;
 
-    final gaps = metrics.gaps;
+    final gaps = tokens.gaps;
 
     return Container(
       height: 96,

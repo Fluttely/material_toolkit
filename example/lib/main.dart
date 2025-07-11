@@ -28,7 +28,7 @@ class DemoApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
-              extensions: [themeNotifier.metrics],
+              extensions: [themeNotifier.tokens],
             ),
             home: const Root(),
           );
@@ -52,10 +52,10 @@ class _RootState extends State<Root> {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final metrics = theme.extension<DesignTokensData>()!;
-    final gaps = metrics.gaps;
-    // final inputBorders = metrics.inputBorders;
-    // final breakpoints = metrics.breakpoints;
+    final tokens = theme.extension<DesignTokensData>()!;
+    final gaps = tokens.gaps;
+    // final inputBorders = tokens.inputBorders;
+    // final breakpoints = tokens.breakpoints;
 
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     final rootNotifier = Provider.of<RootNotifier>(context);

@@ -31,7 +31,7 @@ class ThemeNotifier extends ChangeNotifier {
   /// Gets the current radii data used in the theme.
   XRadiiData get radiiData => _radiiData;
 
-  DesignTokensData get metrics => DesignTokensData(
+  DesignTokensData get tokens => DesignTokensData(
         boxShadows: boxShadows,
         breakpoints: breakpoints,
         durations: durations,

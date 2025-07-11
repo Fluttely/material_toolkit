@@ -61,13 +61,13 @@ class _MetricsEditorState extends State<MetricsEditor> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final metrics = theme.extension<XMetricsData>()!;
-    final gaps = metrics.gaps;
+    final tokens = theme.extension<DesignTokensData>()!;
+    final gaps = tokens.gaps;
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
 
     return Card(
       child: Padding(
-        padding: metrics.edgeInsets.all(XSpaces.medium),
+        padding: tokens.edgeInsets.all(XSpaces.medium),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

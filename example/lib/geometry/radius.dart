@@ -12,9 +12,9 @@
 //   Widget build(BuildContext context) {
 //     final theme = Theme.of(context);
 
-//     final metrics = theme.extension<DesignTokensData>()!;
-//     final gaps = metrics.gaps;
-//     final radii = metrics.radii;
+//     final tokens = theme.extension<DesignTokensData>()!;
+//     final gaps = tokens.gaps;
+//     final radii = tokens.radii;
 
 //     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
