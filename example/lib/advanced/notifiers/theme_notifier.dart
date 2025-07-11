@@ -15,30 +15,30 @@ class ThemeNotifier extends ChangeNotifier {
 
   final primaryColorTextFieldController = TextEditingController();
 
-  XBoxShadowsData boxShadows = const XBoxShadowsData();
-  XBreakpointsData breakpoints = const XBreakpointsData();
-  XDurationsData durations = const XDurationsData();
-  XElevationsData elevations = const XElevationsData();
+  XBoxShadowsTokens boxShadows = const XBoxShadowsTokens();
+  XBreakpointsTokens breakpoints = const XBreakpointsTokens();
+  XDurationsTokens durations = const XDurationsTokens();
+  XElevationsTokens elevations = const XElevationsTokens();
   XFormFactor formFactor = XFormFactor.medium;
-  XIconSizesData iconSizes = const XIconSizesData();
-  XRadiiData _radiiData = const XRadiiData();
-  XSpacingsData spacings = const XSpacingsData();
-  XTextShadowsData textShadows = const XTextShadowsData();
+  XIconSizesTokens iconSizes = const XIconSizesTokens();
+  XRadiiTokens _radiiTokens = const XRadiiTokens();
+  XSpacingsTokens spacings = const XSpacingsTokens();
+  XTextShadowsTokens textShadows = const XTextShadowsTokens();
 
   /// Gets the current primary color used in the theme.
   Color get primaryColor => _primaryColor;
 
   /// Gets the current radii data used in the theme.
-  XRadiiData get radiiData => _radiiData;
+  XRadiiTokens get radiiTokens => _radiiTokens;
 
-  XDesignTokensData get tokens => XDesignTokensData(
+  XDesignTokens get tokens => XDesignTokens(
         boxShadows: boxShadows,
         breakpoints: breakpoints,
         durations: durations,
         elevations: elevations,
         formFactor: formFactor,
         iconSizes: iconSizes,
-        radii: radiiData,
+        radii: radiiTokens,
         spacings: spacings,
         textShadows: textShadows,
       );
@@ -61,50 +61,50 @@ class ThemeNotifier extends ChangeNotifier {
 
   /// Updates the radii data and notifies listeners.
   ///
-  /// * [newRadiiData]: The new radii data to be used in the theme.
-  void updateRadiiData(XRadiiData newRadiiData) {
-    _radiiData = newRadiiData;
+  /// * [newRadiiTokens]: The new radii data to be used in the theme.
+  void updateRadiiTokens(XRadiiTokens newRadiiTokens) {
+    _radiiTokens = newRadiiTokens;
     notifyListeners();
   }
 
   /// Updates the spacings data and notifies listeners.
-  void updateSpacingsData(XSpacingsData newSpacingsData) {
+  void updateSpacingsData(XSpacingsTokens newSpacingsData) {
     spacings = newSpacingsData;
     notifyListeners();
   }
 
   /// Updates the icon sizes data and notifies listeners.
-  void updateIconSizesData(XIconSizesData newIconSizesData) {
+  void updateIconSizesData(XIconSizesTokens newIconSizesData) {
     iconSizes = newIconSizesData;
     notifyListeners();
   }
 
   /// Updates the elevations data and notifies listeners.
-  void updateElevationsData(XElevationsData newElevationsData) {
+  void updateElevationsData(XElevationsTokens newElevationsData) {
     elevations = newElevationsData;
     notifyListeners();
   }
 
   /// Updates the durations data and notifies listeners.
-  void updateDurationsData(XDurationsData newDurationsData) {
+  void updateDurationsData(XDurationsTokens newDurationsData) {
     durations = newDurationsData;
     notifyListeners();
   }
 
   /// Updates the breakpoints data and notifies listeners.
-  void updateBreakpointsData(XBreakpointsData newBreakpointsData) {
+  void updateBreakpointsData(XBreakpointsTokens newBreakpointsData) {
     breakpoints = newBreakpointsData;
     notifyListeners();
   }
 
   /// Updates the box shadows data and notifies listeners.
-  void updateBoxShadowsData(XBoxShadowsData newBoxShadowsData) {
+  void updateBoxShadowsData(XBoxShadowsTokens newBoxShadowsData) {
     boxShadows = newBoxShadowsData;
     notifyListeners();
   }
 
   /// Updates the text shadows data and notifies listeners.
-  void updateTextShadowsData(XTextShadowsData newTextShadowsData) {
+  void updateTextShadowsData(XTextShadowsTokens newTextShadowsData) {
     textShadows = newTextShadowsData;
     notifyListeners();
   }
@@ -115,18 +115,18 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void resetXDesignTokensData() {
+  void resetXDesignTokens() {
     _primaryColor = _m3Baseline;
     primaryColorTextFieldController.clear();
-    boxShadows = const XBoxShadowsData();
-    breakpoints = const XBreakpointsData();
-    durations = const XDurationsData();
-    elevations = const XElevationsData();
+    boxShadows = const XBoxShadowsTokens();
+    breakpoints = const XBreakpointsTokens();
+    durations = const XDurationsTokens();
+    elevations = const XElevationsTokens();
     formFactor = XFormFactor.medium;
-    iconSizes = const XIconSizesData();
-    _radiiData = const XRadiiData();
-    spacings = const XSpacingsData();
-    textShadows = const XTextShadowsData();
+    iconSizes = const XIconSizesTokens();
+    _radiiTokens = const XRadiiTokens();
+    spacings = const XSpacingsTokens();
+    textShadows = const XTextShadowsTokens();
     notifyListeners();
   }
 }

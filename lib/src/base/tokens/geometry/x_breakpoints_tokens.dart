@@ -1,6 +1,6 @@
 part of '../x_design_tokens.dart';
 
-class XBreakpointsData extends Equatable {
+class XBreakpointsTokens extends Equatable {
   // final Breakpoint? _mobile;
   // final Breakpoint? _tablet;
   // final Breakpoint? _desktop;
@@ -21,7 +21,7 @@ class XBreakpointsData extends Equatable {
   //       _desktop = desktop,
   //       _infinity = infinity;
 
-  const XBreakpointsData({
+  const XBreakpointsTokens({
     final XBreakpoint? mobile,
     final XBreakpoint? tablet,
     final XBreakpoint? desktop,
@@ -47,7 +47,7 @@ class XBreakpointsData extends Equatable {
               maxWidth: double.infinity,
             );
 
-  factory XBreakpointsData.fromMap(Map<String, dynamic> map) {
+  factory XBreakpointsTokens.fromMap(Map<String, dynamic> map) {
     XBreakpoint? _b(String key) {
       final value = map[key];
       if (value is Map<String, dynamic>) {
@@ -59,7 +59,7 @@ class XBreakpointsData extends Equatable {
       return null;
     }
 
-    return XBreakpointsData(
+    return XBreakpointsTokens(
       mobile: _b('mobile'),
       tablet: _b('tablet'),
       desktop: _b('desktop'),

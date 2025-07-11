@@ -36,8 +36,8 @@
 //               radius: radii.extraSmall,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(extraSmall: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(extraSmall: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -46,8 +46,8 @@
 //               radius: radii.small,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(small: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(small: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -56,8 +56,8 @@
 //               radius: radii.semiSmall,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(semiSmall: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(semiSmall: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -66,8 +66,8 @@
 //               radius: radii.medium,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(medium: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(medium: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -76,8 +76,8 @@
 //               radius: radii.semiLarge,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(semiLarge: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(semiLarge: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -86,8 +86,8 @@
 //               radius: radii.large,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(large: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(large: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -96,8 +96,8 @@
 //               radius: radii.extraLarge,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(extraLarge: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(extraLarge: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -106,8 +106,8 @@
 //               radius: radii.superLarge,
 //               onChanged: (newValue) {
 //                 // newValue
-//                 themeNotifier.updateRadiiData(
-//                   themeNotifier.radiiData.copyWith(superLarge: Radius.circular(newValue!)),
+//                 themeNotifier.updateRadiiTokens(
+//                   themeNotifier.radiiTokens.copyWith(superLarge: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),

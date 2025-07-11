@@ -4,10 +4,10 @@ extension XRadiusExtension on XRadius {
   /// Converts [XRadius] to a Flutter [Radius].
   ///
   /// Otherwise, it returns a [Radius.elliptical] with the given `x` and `y`.
-  Radius toRadius(XRadiiData radiiData) {
+  Radius toRadius(XRadiiTokens radiiTokens) {
     return Radius.elliptical(
-      x.toData(radiiData),
-      y.toData(radiiData),
+      x.toData(radiiTokens),
+      y.toData(radiiTokens),
     );
   }
 }

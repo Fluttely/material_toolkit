@@ -14,7 +14,7 @@ enum XSpacings {
 }
 
 extension XSpacingsExtension on XSpacings {
-  double toData(XSpacingsData spacings) {
+  double toData(XSpacingsTokens spacings) {
     return switch (this) {
       XSpacings.none => spacings.none,
       XSpacings.superSmall => spacings.superSmall,
@@ -30,7 +30,7 @@ extension XSpacingsExtension on XSpacings {
   }
 }
 
-class XSpacingsData extends Equatable {
+class XSpacingsTokens extends Equatable {
   // final double? _superSmall;
   // final double? _extraSmall;
   // final double? _small;
@@ -71,7 +71,7 @@ class XSpacingsData extends Equatable {
   //       _extraLarge = extraLarge,
   //       _superLarge = superLarge;
 
-  const XSpacingsData({
+  const XSpacingsTokens({
     final double? superSmall,
     final double? extraSmall,
     final double? small,
@@ -91,10 +91,10 @@ class XSpacingsData extends Equatable {
         _extraLarge = extraLarge ?? XStandardSizes.x32,
         _superLarge = superLarge ?? XStandardSizes.x48;
 
-  factory XSpacingsData.fromMap(Map<String, dynamic> map) {
+  factory XSpacingsTokens.fromMap(Map<String, dynamic> map) {
     double? d(String key) => (map[key] as num?)?.toDouble();
 
-    return XSpacingsData(
+    return XSpacingsTokens(
       superSmall: d('superSmall'),
       extraSmall: d('extraSmall'),
       small: d('small'),

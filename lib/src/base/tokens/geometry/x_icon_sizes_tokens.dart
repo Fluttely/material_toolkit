@@ -1,6 +1,6 @@
 part of '../x_design_tokens.dart';
 
-class XIconSizesData extends Equatable {
+class XIconSizesTokens extends Equatable {
   final double _extraSmall;
   final double _small;
   final double _semiSmall;
@@ -10,7 +10,7 @@ class XIconSizesData extends Equatable {
   final double _extraLarge;
   final double _superLarge;
 
-  const XIconSizesData({
+  const XIconSizesTokens({
     final double? extraSmall,
     final double? small,
     final double? semiSmall,
@@ -28,18 +28,18 @@ class XIconSizesData extends Equatable {
         _extraLarge = extraLarge ?? XStandardSizes.x96,
         _superLarge = superLarge ?? XStandardSizes.x192;
 
-  factory XIconSizesData.fromMap(Map<String, dynamic> map) {
-    double? _d(String key) => (map[key] as num?)?.toDouble();
+  factory XIconSizesTokens.fromMap(Map<String, dynamic> map) {
+    double? d(String key) => (map[key] as num?)?.toDouble();
 
-    return XIconSizesData(
-      extraSmall: _d('extraSmall'),
-      small: _d('small'),
-      semiSmall: _d('semiSmall'),
-      medium: _d('medium'),
-      semiLarge: _d('semiLarge'),
-      large: _d('large'),
-      extraLarge: _d('extraLarge'),
-      superLarge: _d('superLarge'),
+    return XIconSizesTokens(
+      extraSmall: d('extraSmall'),
+      small: d('small'),
+      semiSmall: d('semiSmall'),
+      medium: d('medium'),
+      semiLarge: d('semiLarge'),
+      large: d('large'),
+      extraLarge: d('extraLarge'),
+      superLarge: d('superLarge'),
     );
   }
 

@@ -1,7 +1,7 @@
 part of '../x_design_tokens.dart';
 
 class XGaps extends Equatable {
-  final XSpacingsData _spacings;
+  final XSpacingsTokens _spacings;
 
   const XGaps(this._spacings);
 

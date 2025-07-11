@@ -7,10 +7,10 @@ extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
   ///
   /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiData radiiData) {
+  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiTokens radiiTokens) {
     return RoundedRectangleBorder(
       side: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiData),
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

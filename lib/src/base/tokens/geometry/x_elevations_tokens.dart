@@ -1,6 +1,6 @@
 part of '../x_design_tokens.dart';
 
-class XElevationsData extends Equatable {
+class XElevationsTokens extends Equatable {
   // final double? _level1;
   // final double? _level2;
   // final double? _level3;
@@ -25,7 +25,7 @@ class XElevationsData extends Equatable {
   //       _level4 = level4,
   //       _level5 = level5;
 
-  const XElevationsData({
+  const XElevationsTokens({
     final double? level1,
     final double? level2,
     final double? level3,
@@ -37,15 +37,15 @@ class XElevationsData extends Equatable {
         _level4 = level4 ?? XStandardSizes.x8,
         _level5 = level5 ?? XStandardSizes.x12;
 
-  factory XElevationsData.fromMap(Map<String, dynamic> map) {
-    double? _d(String key) => (map[key] as num?)?.toDouble();
+  factory XElevationsTokens.fromMap(Map<String, dynamic> map) {
+    double? d(String key) => (map[key] as num?)?.toDouble();
 
-    return XElevationsData(
-      level1: _d('level1'),
-      level2: _d('level2'),
-      level3: _d('level3'),
-      level4: _d('level4'),
-      level5: _d('level5'),
+    return XElevationsTokens(
+      level1: d('level1'),
+      level2: d('level2'),
+      level3: d('level3'),
+      level4: d('level4'),
+      level5: d('level5'),
     );
   }
 

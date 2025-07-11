@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit_example/advanced/advanced_app.dart';
 
 void main() {
-  runApp(const MinimalApp());
+  // runApp(const MinimalApp());
+  runApp(const AdvancedApp());
 }
 
 class MinimalApp extends StatelessWidget {
@@ -10,8 +12,8 @@ class MinimalApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = XDesignTokensData();
-    return XDesignTokens(
+    final tokens = XDesignTokens();
+    return XDesign(
       data: tokens,
       child: MaterialApp(
         title: 'Material Toolkit Minimal',
@@ -30,7 +32,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = XDesignTokens.of(context);
+    final tokens = XDesign.of(context);
     return Scaffold(
       appBar: AppBar(title: const Text('Design Tokens Example')),
       body: tokens.padding.all(

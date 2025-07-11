@@ -13,22 +13,22 @@ enum XRadii {
 }
 
 extension XRadiiExtension on XRadii {
-  double toData(XRadiiData radiiData) {
+  double toData(XRadiiTokens radiiTokens) {
     return switch (this) {
-      XRadii.none => radiiData.none,
-      XRadii.extraSmall => radiiData.extraSmall,
-      XRadii.small => radiiData.small,
-      XRadii.semiSmall => radiiData.semiSmall,
-      XRadii.medium => radiiData.medium,
-      XRadii.semiLarge => radiiData.semiLarge,
-      XRadii.large => radiiData.large,
-      XRadii.extraLarge => radiiData.extraLarge,
-      XRadii.superLarge => radiiData.superLarge,
+      XRadii.none => radiiTokens.none,
+      XRadii.extraSmall => radiiTokens.extraSmall,
+      XRadii.small => radiiTokens.small,
+      XRadii.semiSmall => radiiTokens.semiSmall,
+      XRadii.medium => radiiTokens.medium,
+      XRadii.semiLarge => radiiTokens.semiLarge,
+      XRadii.large => radiiTokens.large,
+      XRadii.extraLarge => radiiTokens.extraLarge,
+      XRadii.superLarge => radiiTokens.superLarge,
     };
   }
 }
 
-class XRadiiData extends Equatable {
+class XRadiiTokens extends Equatable {
   // final double? _extraSmall;
   // final double? _small;
   // final double? _semiSmall;
@@ -47,7 +47,7 @@ class XRadiiData extends Equatable {
   final double _extraLarge;
   final double _superLarge;
 
-  // const XRadiiData({
+  // const XRadiiTokens({
   //   final double? extraSmall,
   //   final double? small,
   //   final double? semiSmall,
@@ -65,7 +65,7 @@ class XRadiiData extends Equatable {
   //       _extraLarge = extraLarge,
   //       _superLarge = superLarge;
 
-  const XRadiiData({
+  const XRadiiTokens({
     final double? extraSmall,
     final double? small,
     final double? semiSmall,
@@ -83,22 +83,22 @@ class XRadiiData extends Equatable {
         _extraLarge = extraLarge ?? XStandardSizes.x32,
         _superLarge = superLarge ?? XStandardSizes.x48;
 
-  factory XRadiiData.fromMap(Map<String, dynamic> map) {
-    double? _d(String key) => (map[key] as num?)?.toDouble();
+  factory XRadiiTokens.fromMap(Map<String, dynamic> map) {
+    double? d(String key) => (map[key] as num?)?.toDouble();
 
-    return XRadiiData(
-      extraSmall: _d('extraSmall'),
-      small: _d('small'),
-      semiSmall: _d('semiSmall'),
-      medium: _d('medium'),
-      semiLarge: _d('semiLarge'),
-      large: _d('large'),
-      extraLarge: _d('extraLarge'),
-      superLarge: _d('superLarge'),
+    return XRadiiTokens(
+      extraSmall: d('extraSmall'),
+      small: d('small'),
+      semiSmall: d('semiSmall'),
+      medium: d('medium'),
+      semiLarge: d('semiLarge'),
+      large: d('large'),
+      extraLarge: d('extraLarge'),
+      superLarge: d('superLarge'),
     );
   }
 
-  // XRadiiData.x({
+  // XRadiiTokens.x({
   //   final XAttribute<double?>? extraSmall,
   //   final XAttribute<double?>? small,
   //   final XAttribute<double?>? semiSmall,
@@ -160,7 +160,7 @@ class XRadiiData extends Equatable {
   double get extraLarge => _extraLarge;
   double get superLarge => _superLarge;
 
-  XRadiiData copyWith({
+  XRadiiTokens copyWith({
     double? extraSmall,
     double? small,
     double? semiSmall,
@@ -170,7 +170,7 @@ class XRadiiData extends Equatable {
     double? extraLarge,
     double? superLarge,
   }) {
-    return XRadiiData(
+    return XRadiiTokens(
       extraSmall: extraSmall ?? _extraSmall,
       small: small ?? _small,
       semiSmall: semiSmall ?? _semiSmall,
@@ -197,7 +197,7 @@ class XRadiiData extends Equatable {
 
   @override
   String toString() => '''
-    XRadiiData(
+    XRadiiTokens(
       none: $none,
       extraSmall: $extraSmall,
       small: $small,

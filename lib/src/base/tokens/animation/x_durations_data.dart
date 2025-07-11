@@ -1,6 +1,6 @@
 part of '../x_design_tokens.dart';
 
-class XDurationsData extends Equatable {
+class XDurationsTokens extends Equatable {
   // final bool? _areAnimationEnabled;
   // final Duration? _slow;
   // final Duration? _regular;
@@ -21,7 +21,7 @@ class XDurationsData extends Equatable {
   //       _regular = regular,
   //       _quick = quick;
 
-  const XDurationsData({
+  const XDurationsTokens({
     final bool? areAnimationEnabled,
     final Duration? slow,
     final Duration? regular,
@@ -31,18 +31,18 @@ class XDurationsData extends Equatable {
         _regular = regular ?? const Duration(milliseconds: XStandardMilliseconds.x300),
         _quick = quick ?? const Duration(milliseconds: XStandardMilliseconds.x100);
 
-  factory XDurationsData.fromMap(Map<String, dynamic> map) {
-    Duration? _d(String key) {
+  factory XDurationsTokens.fromMap(Map<String, dynamic> map) {
+    Duration? d(String key) {
       final value = map[key];
       if (value is int) return Duration(milliseconds: value);
       return null;
     }
 
-    return XDurationsData(
+    return XDurationsTokens(
       areAnimationEnabled: map['areAnimationEnabled'] as bool?,
-      slow: _d('slow'),
-      regular: _d('regular'),
-      quick: _d('quick'),
+      slow: d('slow'),
+      regular: d('regular'),
+      quick: d('quick'),
     );
   }
 

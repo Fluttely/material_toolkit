@@ -3,7 +3,7 @@ import 'package:material_toolkit/material_toolkit.dart';
 import 'package:material_toolkit_example/advanced/geometry/elevation.dart';
 import 'package:material_toolkit_example/advanced/notifiers/root_notifier.dart';
 import 'package:material_toolkit_example/advanced/notifiers/theme_notifier.dart';
-import 'package:material_toolkit_example/advanced/paiting/border_radius_circular_group.dart';
+import 'package:material_toolkit_example/advanced/painting/border_radius_circular_group.dart';
 import 'package:material_toolkit_example/advanced/widgets/group_card.dart';
 import 'package:material_toolkit_example/advanced/widgets/tokens_editor.dart';
 import 'package:provider/provider.dart';
@@ -52,7 +52,7 @@ class _RootPageState extends State<RootPage> {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final tokens = theme.extension<XDesignTokensData>()!;
+    final tokens = theme.extension<XDesignTokens>()!;
     final gaps = tokens.gaps;
     // final inputBorders = tokens.inputBorders;
     // final breakpoints = tokens.breakpoints;
@@ -107,9 +107,9 @@ class _RootPageState extends State<RootPage> {
             ),
             gaps.large,
             ElevatedButton(
-              onPressed: themeNotifier.resetXDesignTokensData,
+              onPressed: themeNotifier.resetXDesignTokens,
               child: Text(
-                'Reset XDesignTokensData to default',
+                'Reset XDesignTokens to default',
                 style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
               ),
             ),

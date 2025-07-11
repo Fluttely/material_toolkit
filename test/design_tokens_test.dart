@@ -4,13 +4,13 @@ import 'package:material_toolkit/material_toolkit.dart';
 
 void main() {
   testWidgets('DesignTokens.of returns provided data', (tester) async {
-    final data = XDesignTokensData();
+    final tokens = XDesignTokens();
     await tester.pumpWidget(
-      XDesignTokens(
-        data: data,
+      XDesign(
+        data: tokens,
         child: MaterialApp(
           theme: ThemeData(
-            extensions: [data],
+            extensions: [tokens],
           ),
           home: const SizedBox(),
         ),
@@ -18,7 +18,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(SizedBox));
-    expect(XDesignTokens.of(context), equals(data));
-    expect(Theme.of(context).extension<XDesignTokensData>(), equals(data));
+    expect(XDesign.of(context), equals(tokens));
+    expect(Theme.of(context).extension<XDesignTokens>(), equals(tokens));
   });
 }

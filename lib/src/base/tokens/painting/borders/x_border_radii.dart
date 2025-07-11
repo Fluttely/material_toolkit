@@ -1,21 +1,21 @@
 part of '../../x_design_tokens.dart';
 
 class XBorderRadii extends Equatable {
-  final XRadiiData _radiiData;
+  final XRadiiTokens _radiiTokens;
 
-  const XBorderRadii(this._radiiData);
+  const XBorderRadii(this._radiiTokens);
 
-  BorderRadius get none => XBorderRadius.none.toBorderRadius(_radiiData);
+  BorderRadius get none => XBorderRadius.none.toBorderRadius(_radiiTokens);
 
-  BorderRadius all(XRadius radius) => XBorderRadius.all(radius).toBorderRadius(_radiiData);
+  BorderRadius all(XRadius radius) => XBorderRadius.all(radius).toBorderRadius(_radiiTokens);
 
-  BorderRadius circular(XRadii radius) => XBorderRadius.circular(radius).toBorderRadius(_radiiData);
+  BorderRadius circular(XRadii radius) => XBorderRadius.circular(radius).toBorderRadius(_radiiTokens);
 
   BorderRadius vertical({XRadius top = XRadius.none, XRadius bottom = XRadius.none}) =>
-      XBorderRadius.vertical(top: top, bottom: bottom).toBorderRadius(_radiiData);
+      XBorderRadius.vertical(top: top, bottom: bottom).toBorderRadius(_radiiTokens);
 
   BorderRadius horizontal({XRadius left = XRadius.none, XRadius right = XRadius.none}) =>
-      XBorderRadius.horizontal(left: left, right: right).toBorderRadius(_radiiData);
+      XBorderRadius.horizontal(left: left, right: right).toBorderRadius(_radiiTokens);
 
   BorderRadius only({
     XRadius topLeft = XRadius.none,
@@ -28,17 +28,17 @@ class XBorderRadii extends Equatable {
         topRight: topRight,
         bottomLeft: bottomLeft,
         bottomRight: bottomRight,
-      ).toBorderRadius(_radiiData);
+      ).toBorderRadius(_radiiTokens);
 
   @override
   List<Object?> get props => [
-        _radiiData.named('_radiiData'),
+        _radiiTokens.named('_radiiTokens'),
       ];
 
   @override
   String toString() => '''
     XBorder(
-      _radiiData: $_radiiData,
+      _radiiTokens: $_radiiTokens,
     )
   ''';
 }

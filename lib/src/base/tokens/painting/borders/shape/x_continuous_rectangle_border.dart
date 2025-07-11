@@ -7,10 +7,10 @@ extension XContinuousRectangleBorderExtension on XContinuousRectangleBorder {
   ///
   /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  ContinuousRectangleBorder toContinuousRectangleBorder(XRadiiData radiiData) {
+  ContinuousRectangleBorder toContinuousRectangleBorder(XRadiiTokens radiiTokens) {
     return ContinuousRectangleBorder(
       side: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiData),
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

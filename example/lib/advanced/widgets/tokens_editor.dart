@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../notifiers/theme_notifier.dart';
 
-/// Widget to edit [XXDesignTokensData] values without losing the focus of the
+/// Widget to edit [XDesignTokens] values without losing the focus of the
 /// text fields while typing.
 class TokensEditor extends StatefulWidget {
   const TokensEditor({super.key});
@@ -28,7 +28,7 @@ class _TokensEditorState extends State<TokensEditor> {
     super.initState();
     final notifier = context.read<ThemeNotifier>();
     spacingsSmallController = TextEditingController(text: notifier.spacings.small.toString());
-    radiiExtraSmallController = TextEditingController(text: notifier.radiiData.extraSmall.toString());
+    radiiExtraSmallController = TextEditingController(text: notifier.radiiTokens.extraSmall.toString());
     iconSmallController = TextEditingController(text: notifier.iconSizes.small.toString());
     elevationOneController = TextEditingController(text: notifier.elevations.level1.toString());
     durationSlowController = TextEditingController(
@@ -61,7 +61,7 @@ class _TokensEditorState extends State<TokensEditor> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final tokens = theme.extension<XDesignTokensData>()!;
+    final tokens = theme.extension<XDesignTokens>()!;
     final gaps = tokens.gaps;
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
 
@@ -80,7 +80,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateSpacingsData(
-                    XSpacingsData(
+                    XSpacingsTokens(
                       superSmall: themeNotifier.spacings.superSmall,
                       extraSmall: themeNotifier.spacings.extraSmall,
                       small: v,
@@ -102,8 +102,8 @@ class _TokensEditorState extends State<TokensEditor> {
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
-                  themeNotifier.updateRadiiData(
-                    themeNotifier.radiiData.copyWith(extraSmall: v),
+                  themeNotifier.updateRadiiTokens(
+                    themeNotifier.radiiTokens.copyWith(extraSmall: v),
                   );
                 }
               },
@@ -116,7 +116,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateIconSizesData(
-                    XIconSizesData(
+                    XIconSizesTokens(
                       extraSmall: themeNotifier.iconSizes.extraSmall,
                       small: v,
                       semiSmall: themeNotifier.iconSizes.semiSmall,
@@ -138,7 +138,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateElevationsData(
-                    XElevationsData(
+                    XElevationsTokens(
                       level1: v,
                       level2: themeNotifier.elevations.level2,
                       level3: themeNotifier.elevations.level3,
@@ -157,7 +157,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = int.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateDurationsData(
-                    XDurationsData(
+                    XDurationsTokens(
                       areAnimationEnabled: themeNotifier.durations.areAnimationEnabled,
                       slow: Duration(milliseconds: v),
                       regular: themeNotifier.durations.regular,
@@ -175,7 +175,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateBreakpointsData(
-                    XBreakpointsData(
+                    XBreakpointsTokens(
                       mobile: XBreakpoint(
                         minWidth: themeNotifier.breakpoints.mobile.minWidth,
                         maxWidth: v,
@@ -197,7 +197,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   final small = themeNotifier.boxShadows.small;
                   themeNotifier.updateBoxShadowsData(
-                    XBoxShadowsData(
+                    XBoxShadowsTokens(
                       small: small.copyWith(blurRadius: v),
                       medium: themeNotifier.boxShadows.medium,
                       large: themeNotifier.boxShadows.large,
@@ -215,7 +215,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   final small = themeNotifier.textShadows.small;
                   themeNotifier.updateTextShadowsData(
-                    XTextShadowsData(
+                    XTextShadowsTokens(
                       small: small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
                       medium: themeNotifier.textShadows.medium,
                       large: themeNotifier.textShadows.large,

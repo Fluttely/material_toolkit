@@ -7,10 +7,10 @@ extension XUnderlineInputBorderExtension on XUnderlineInputBorder {
   ///
   /// Retorna um [UnderlineInputBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  UnderlineInputBorder toUnderlineInputBorder(XRadiiData radiiData) {
+  UnderlineInputBorder toUnderlineInputBorder(XRadiiTokens radiiTokens) {
     return UnderlineInputBorder(
       borderSide: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiData),
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

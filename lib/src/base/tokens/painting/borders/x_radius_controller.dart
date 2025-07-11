@@ -1,24 +1,24 @@
 part of '../../x_design_tokens.dart';
 
 class XRadiusController extends Equatable {
-  final XRadiiData _radiiData;
+  final XRadiiTokens _radiiTokens;
 
-  const XRadiusController(this._radiiData);
+  const XRadiusController(this._radiiTokens);
 
-  Radius get none => XRadius.none.toRadius(_radiiData);
+  Radius get none => XRadius.none.toRadius(_radiiTokens);
 
-  Radius circular(XRadii radius) => XRadius.circular(radius).toRadius(_radiiData);
-  Radius elliptical(XRadii x, XRadii y) => XRadius.elliptical(x, y).toRadius(_radiiData);
+  Radius circular(XRadii radius) => XRadius.circular(radius).toRadius(_radiiTokens);
+  Radius elliptical(XRadii x, XRadii y) => XRadius.elliptical(x, y).toRadius(_radiiTokens);
 
   @override
   List<Object?> get props => [
-        _radiiData.named('_radiiData'),
+        _radiiTokens.named('_radiiTokens'),
       ];
 
   @override
   String toString() => '''
     XRadiusController(
-      _radiiData: $_radiiData,
+      _radiiTokens: $_radiiTokens,
     )
   ''';
 }

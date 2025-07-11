@@ -7,10 +7,10 @@ extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
   ///
   /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  BeveledRectangleBorder toBeveledRectangleBorder(XRadiiData radiiData) {
+  BeveledRectangleBorder toBeveledRectangleBorder(XRadiiTokens radiiTokens) {
     return BeveledRectangleBorder(
       side: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiData),
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

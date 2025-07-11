@@ -7,10 +7,10 @@ extension XOutlineInputBorderExtension on XOutlineInputBorder {
   ///
   /// Retorna um [OutlineInputBorder] com a mesma configuração de [borderSide]
   /// e [borderRadius].
-  OutlineInputBorder toOutlineInputBorder(XRadiiData radiiData) {
+  OutlineInputBorder toOutlineInputBorder(XRadiiTokens radiiTokens) {
     return OutlineInputBorder(
       borderSide: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiData),
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
       gapPadding: gapPadding,
     );
   }

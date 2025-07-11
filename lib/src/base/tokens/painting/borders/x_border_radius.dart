@@ -4,12 +4,12 @@ extension XBorderRadiusExtension on XBorderRadius {
   /// Converts [XBorderRadius] to a Flutter [BorderRadius].
   ///
   /// Otherwise, it returns a [BorderRadius.only] with the given radii for each corner.
-  BorderRadius toBorderRadius(XRadiiData radiiData) {
+  BorderRadius toBorderRadius(XRadiiTokens radiiTokens) {
     return BorderRadius.only(
-      topLeft: Radius.elliptical(topLeft.toRadius(radiiData).x, topLeft.toRadius(radiiData).y),
-      topRight: Radius.elliptical(topRight.toRadius(radiiData).x, topRight.toRadius(radiiData).y),
-      bottomLeft: Radius.elliptical(bottomLeft.toRadius(radiiData).x, bottomLeft.toRadius(radiiData).y),
-      bottomRight: Radius.elliptical(bottomRight.toRadius(radiiData).x, bottomRight.toRadius(radiiData).y),
+      topLeft: Radius.elliptical(topLeft.toRadius(radiiTokens).x, topLeft.toRadius(radiiTokens).y),
+      topRight: Radius.elliptical(topRight.toRadius(radiiTokens).x, topRight.toRadius(radiiTokens).y),
+      bottomLeft: Radius.elliptical(bottomLeft.toRadius(radiiTokens).x, bottomLeft.toRadius(radiiTokens).y),
+      bottomRight: Radius.elliptical(bottomRight.toRadius(radiiTokens).x, bottomRight.toRadius(radiiTokens).y),
     );
   }
 }
