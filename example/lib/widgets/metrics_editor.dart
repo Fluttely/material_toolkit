@@ -27,14 +27,10 @@ class _MetricsEditorState extends State<MetricsEditor> {
   void initState() {
     super.initState();
     final notifier = context.read<ThemeNotifier>();
-    spacesSmallController =
-        TextEditingController(text: notifier.spaces.small.toString());
-    radiiExtraSmallController =
-        TextEditingController(text: notifier.radiiData.extraSmall.toString());
-    iconSmallController =
-        TextEditingController(text: notifier.iconSizes.small.toString());
-    elevationOneController =
-        TextEditingController(text: notifier.elevations.level1.toString());
+    spacesSmallController = TextEditingController(text: notifier.spaces.small.toString());
+    radiiExtraSmallController = TextEditingController(text: notifier.radiiData.extraSmall.toString());
+    iconSmallController = TextEditingController(text: notifier.iconSizes.small.toString());
+    elevationOneController = TextEditingController(text: notifier.elevations.level1.toString());
     durationSlowController = TextEditingController(
       text: notifier.durations.slow.inMilliseconds.toString(),
     );
@@ -71,7 +67,7 @@ class _MetricsEditorState extends State<MetricsEditor> {
 
     return Card(
       child: Padding(
-        padding: metrics.padding.all(XSpaces.medium),
+        padding: metrics.edgeInsets.all(XSpaces.medium),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -162,8 +158,7 @@ class _MetricsEditorState extends State<MetricsEditor> {
                 if (v != null) {
                   themeNotifier.updateDurationsData(
                     XDurationsData(
-                      areAnimationEnabled:
-                          themeNotifier.durations.areAnimationEnabled,
+                      areAnimationEnabled: themeNotifier.durations.areAnimationEnabled,
                       slow: Duration(milliseconds: v),
                       regular: themeNotifier.durations.regular,
                       quick: themeNotifier.durations.quick,
@@ -221,7 +216,7 @@ class _MetricsEditorState extends State<MetricsEditor> {
                   final small = themeNotifier.textShadows.small;
                   themeNotifier.updateTextShadowsData(
                     XTextShadowsData(
-                      small: small.copyWith(blurRadius: v),
+                      small: small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
                       medium: themeNotifier.textShadows.medium,
                       large: themeNotifier.textShadows.large,
                     ),
