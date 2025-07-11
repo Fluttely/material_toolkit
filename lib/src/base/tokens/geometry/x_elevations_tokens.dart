@@ -1,12 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XElevationsTokens extends Equatable {
-  final double level1;
-  final double level2;
-  final double level3;
-  final double level4;
-  final double level5;
-
   const XElevationsTokens({
     double? level1,
     double? level2,
@@ -30,6 +24,11 @@ class XElevationsTokens extends Equatable {
       level5: d('level5'),
     );
   }
+  final double level1;
+  final double level2;
+  final double level3;
+  final double level4;
+  final double level5;
 
   static const double zero = XStandardSizes.zero;
   static const double x1 = XAuxiliarySizes.x1;

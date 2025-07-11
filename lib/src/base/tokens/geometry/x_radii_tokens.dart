@@ -9,10 +9,8 @@ enum XRadii {
   semiLarge,
   large,
   extraLarge,
-  superLarge,
-}
+  superLarge;
 
-extension XRadiiExtension on XRadii {
   double toDouble(XRadiiTokens tokens) {
     return switch (this) {
       XRadii.none => tokens.none,
@@ -29,15 +27,6 @@ extension XRadiiExtension on XRadii {
 }
 
 class XRadiiTokens extends Equatable {
-  final double extraSmall;
-  final double small;
-  final double semiSmall;
-  final double medium;
-  final double semiLarge;
-  final double large;
-  final double extraLarge;
-  final double superLarge;
-
   const XRadiiTokens({
     double? extraSmall,
     double? small,
@@ -56,8 +45,6 @@ class XRadiiTokens extends Equatable {
         extraLarge = extraLarge ?? XStandardSizes.x32,
         superLarge = superLarge ?? XStandardSizes.x48;
 
-  double get none => XStandardSizes.zero;
-
   factory XRadiiTokens.fromMap(Map<String, dynamic> map) {
     double? parse(String key) => (map[key] as num?)?.toDouble();
 
@@ -72,6 +59,16 @@ class XRadiiTokens extends Equatable {
       superLarge: parse('superLarge'),
     );
   }
+  final double extraSmall;
+  final double small;
+  final double semiSmall;
+  final double medium;
+  final double semiLarge;
+  final double large;
+  final double extraLarge;
+  final double superLarge;
+
+  double get none => XStandardSizes.zero;
 
   XRadiiTokens copyWith({
     double? extraSmall,

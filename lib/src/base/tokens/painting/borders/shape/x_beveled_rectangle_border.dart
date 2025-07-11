@@ -1,20 +1,5 @@
 part of '../../../x_design_tokens.dart';
 
-/// Extensão para a classe [XBeveledRectangleBorder] que adiciona um método
-/// para converter em um [BeveledRectangleBorder] do Flutter.
-extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
-  /// Converte um [XBeveledRectangleBorder] para um [BeveledRectangleBorder].
-  ///
-  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  BeveledRectangleBorder toBeveledRectangleBorder(XRadiiTokens radiiTokens) {
-    return BeveledRectangleBorder(
-      side: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiTokens),
-    );
-  }
-}
-
 /// A rectangular border with beveled corners.
 ///
 /// Typically used with [ShapeDecoration] to draw a box with a beveled
@@ -45,10 +30,22 @@ class XBeveledRectangleBorder {
 
   /// Returns a copy of this XBeveledRectangleBorder with the given fields
   /// replaced with the new values.
-  XBeveledRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XBeveledRectangleBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XBeveledRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
+    );
+  }
+
+  /// Converte um [XBeveledRectangleBorder] para um [BeveledRectangleBorder].
+  ///
+  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
+  /// e [borderRadius].
+  BeveledRectangleBorder toBeveledRectangleBorder(XRadiiTokens radiiTokens) {
+    return BeveledRectangleBorder(
+      side: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

@@ -1,13 +1,13 @@
 part of '../../x_design_tokens.dart';
 
 class XEdgeInsetsResolver extends Equatable {
-  final XSpacingsTokens _spacings;
-
   const XEdgeInsetsResolver(this._spacings);
+  final XSpacingsTokens _spacings;
 
   EdgeInsets get none => EdgeInsets.all(_spacings.none);
 
-  EdgeInsets all(final XSpacings value) => EdgeInsets.all(value.toDouble(_spacings));
+  EdgeInsets all(final XSpacings value) =>
+      EdgeInsets.all(value.toDouble(_spacings));
 
   EdgeInsets symmetric({
     final XSpacings? vertical,

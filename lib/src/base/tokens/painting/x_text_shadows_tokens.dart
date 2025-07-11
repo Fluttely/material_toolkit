@@ -1,10 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XTextShadowsTokens extends Equatable {
-  final Shadow small;
-  final Shadow medium;
-  final Shadow large;
-
   const XTextShadowsTokens({
     Shadow? small,
     Shadow? medium,
@@ -28,11 +24,6 @@ class XTextShadowsTokens extends Equatable {
               color: Color(0x44000000),
             );
 
-  Shadow get none => const Shadow(
-        blurRadius: XStandardSizes.zero,
-        color: Color(0x00000000),
-      );
-
   factory XTextShadowsTokens.fromMap(Map<String, dynamic> map) {
     Shadow? parseShadow(String key) {
       final value = map[key];
@@ -55,6 +46,13 @@ class XTextShadowsTokens extends Equatable {
       large: parseShadow('large'),
     );
   }
+  final Shadow small;
+  final Shadow medium;
+  final Shadow large;
+
+  Shadow get none => const Shadow(
+        color: Color(0x00000000),
+      );
 
   @override
   List<Object?> get props => [none, small, medium, large];

@@ -1,11 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XBreakpointsTokens extends Equatable {
-  final XBreakpoint mobile;
-  final XBreakpoint tablet;
-  final XBreakpoint desktop;
-  final XBreakpoint infinity;
-
   const XBreakpointsTokens({
     XBreakpoint? mobile,
     XBreakpoint? tablet,
@@ -13,7 +8,6 @@ class XBreakpointsTokens extends Equatable {
     XBreakpoint? infinity,
   })  : mobile = mobile ??
             const XBreakpoint(
-              minWidth: XStandardSizes.zero,
               maxWidth: XAuxiliarySizes.x599,
             ),
         tablet = tablet ??
@@ -29,9 +23,7 @@ class XBreakpointsTokens extends Equatable {
         infinity = infinity ??
             const XBreakpoint(
               minWidth: XAuxiliarySizes.x1440,
-              maxWidth: double.infinity,
             );
-
   factory XBreakpointsTokens.fromMap(Map<String, dynamic> map) {
     XBreakpoint? parseBreakpoint(String key) {
       final value = map[key];
@@ -51,6 +43,10 @@ class XBreakpointsTokens extends Equatable {
       infinity: parseBreakpoint('infinity'),
     );
   }
+  final XBreakpoint mobile;
+  final XBreakpoint tablet;
+  final XBreakpoint desktop;
+  final XBreakpoint infinity;
 
   @override
   List<Object?> get props => [mobile, tablet, desktop, infinity];
@@ -66,10 +62,9 @@ XBreakpointsTokens(
 }
 
 class XBreakpoint {
+  const XBreakpoint({this.minWidth = 0, this.maxWidth = double.infinity});
   final double minWidth;
   final double maxWidth;
-
-  const XBreakpoint({this.minWidth = 0, this.maxWidth = double.infinity});
 
   bool matches(Size size) => size.width >= minWidth && size.width <= maxWidth;
 

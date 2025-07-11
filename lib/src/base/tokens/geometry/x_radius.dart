@@ -1,17 +1,5 @@
 part of '../x_design_tokens.dart';
 
-extension XRadiusExtension on XRadius {
-  /// Converts [XRadius] to a Flutter [Radius].
-  ///
-  /// Otherwise, it returns a [Radius.elliptical] with the given `x` and `y`.
-  Radius toRadius(XRadiiTokens radiiTokens) {
-    return Radius.elliptical(
-      x.toDouble(radiiTokens),
-      y.toDouble(radiiTokens),
-    );
-  }
-}
-
 /// A radius for either circular or elliptical shapes.
 class XRadius {
   /// Constructs a circular radius. [x] and [y] will have the same radius value.
@@ -43,4 +31,14 @@ class XRadius {
   ///
   /// You can use [XRadius.none] with [RRect] to have right-angle corners.
   static const XRadius none = XRadius.circular(XRadii.none);
+
+  /// Converts [XRadius] to a Flutter [Radius].
+  ///
+  /// Otherwise, it returns a [Radius.elliptical] with the given `x` and `y`.
+  Radius toRadius(XRadiiTokens radiiTokens) {
+    return Radius.elliptical(
+      x.toDouble(radiiTokens),
+      y.toDouble(radiiTokens),
+    );
+  }
 }

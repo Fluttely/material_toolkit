@@ -1,13 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XOpacitiesTokens extends Equatable {
-  final double disabled;
-  final double hover;
-  final double focus;
-  final double pressed;
-  final double backdrop;
-  final double divider;
-
   const XOpacitiesTokens({
     double? disabled,
     double? hover,
@@ -21,6 +14,12 @@ class XOpacitiesTokens extends Equatable {
         pressed = pressed ?? XAuxiliarySizes.x016,
         backdrop = backdrop ?? XAuxiliarySizes.x05,
         divider = divider ?? XAuxiliarySizes.x012;
+  final double disabled;
+  final double hover;
+  final double focus;
+  final double pressed;
+  final double backdrop;
+  final double divider;
 
   @override
   List<Object?> get props => [

@@ -92,9 +92,12 @@ void main() {
     test('XDurationsData', () {
       const tokens = XDurationsTokens();
       expect(tokens.areAnimationEnabled, isTrue);
-      expect(tokens.slow, const Duration(milliseconds: XStandardMilliseconds.x500));
-      expect(tokens.regular, const Duration(milliseconds: XStandardMilliseconds.x300));
-      expect(tokens.quick, const Duration(milliseconds: XStandardMilliseconds.x100));
+      expect(tokens.slow,
+          const Duration(milliseconds: XStandardMilliseconds.x500));
+      expect(tokens.regular,
+          const Duration(milliseconds: XStandardMilliseconds.x300));
+      expect(tokens.quick,
+          const Duration(milliseconds: XStandardMilliseconds.x100));
     });
 
     test('XBoxShadowsData', () {
@@ -160,7 +163,8 @@ void main() {
       expect(edgeInsets.none, EdgeInsets.zero);
       expect(edgeInsets.all(XSpacings.small), EdgeInsets.all(spacings.small));
       expect(
-        edgeInsets.symmetric(vertical: XSpacings.superSmall, horizontal: XSpacings.large),
+        edgeInsets.symmetric(
+            vertical: XSpacings.superSmall, horizontal: XSpacings.large),
         EdgeInsets.symmetric(
           vertical: spacings.superSmall,
           horizontal: spacings.large,

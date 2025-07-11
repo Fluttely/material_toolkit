@@ -1,7 +1,6 @@
 part of 'x_helpers.dart';
 
 abstract final class XAuxiliarySizes {
-  /// "dp"(density-independent pixels)
   /// Random
   static const double x008 = 0.08;
   static const double x012 = 0.12;

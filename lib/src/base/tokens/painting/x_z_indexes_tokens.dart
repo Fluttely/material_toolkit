@@ -1,13 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XZIndexesTokens extends Equatable {
-  final int background;
-  final int content;
-  final int dropdown;
-  final int modal;
-  final int tooltip;
-  final int overlay;
-
   const XZIndexesTokens({
     int? background,
     int? content,
@@ -21,6 +14,12 @@ class XZIndexesTokens extends Equatable {
         modal = modal ?? XAuxiliarySizes.x100Int,
         tooltip = tooltip ?? XAuxiliarySizes.x1000Int,
         overlay = overlay ?? XAuxiliarySizes.x9999Int;
+  final int background;
+  final int content;
+  final int dropdown;
+  final int modal;
+  final int tooltip;
+  final int overlay;
 
   @override
   List<Object?> get props => [

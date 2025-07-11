@@ -10,10 +10,8 @@ enum XSpacings {
   semiLarge,
   large,
   extraLarge,
-  superLarge,
-}
+  superLarge;
 
-extension XSpacingsExtension on XSpacings {
   double toDouble(XSpacingsTokens spacings) {
     return switch (this) {
       XSpacings.none => spacings.none,
@@ -31,16 +29,6 @@ extension XSpacingsExtension on XSpacings {
 }
 
 class XSpacingsTokens extends Equatable {
-  final double superSmall;
-  final double extraSmall;
-  final double small;
-  final double semiSmall;
-  final double medium;
-  final double semiLarge;
-  final double large;
-  final double extraLarge;
-  final double superLarge;
-
   const XSpacingsTokens({
     double? superSmall,
     double? extraSmall,
@@ -60,6 +48,31 @@ class XSpacingsTokens extends Equatable {
         large = large ?? XStandardSizes.x24,
         extraLarge = extraLarge ?? XStandardSizes.x32,
         superLarge = superLarge ?? XStandardSizes.x48;
+
+  factory XSpacingsTokens.fromMap(Map<String, dynamic> map) {
+    double? d(String key) => (map[key] as num?)?.toDouble();
+
+    return XSpacingsTokens(
+      superSmall: d('superSmall'),
+      extraSmall: d('extraSmall'),
+      small: d('small'),
+      semiSmall: d('semiSmall'),
+      medium: d('medium'),
+      semiLarge: d('semiLarge'),
+      large: d('large'),
+      extraLarge: d('extraLarge'),
+      superLarge: d('superLarge'),
+    );
+  }
+  final double superSmall;
+  final double extraSmall;
+  final double small;
+  final double semiSmall;
+  final double medium;
+  final double semiLarge;
+  final double large;
+  final double extraLarge;
+  final double superLarge;
 
   double get none => XStandardSizes.zero;
 
@@ -121,22 +134,6 @@ class XSpacingsTokens extends Equatable {
   double get x512 => XStandardSizes.x512;
   double get x1024 => XStandardSizes.x1024;
   double get x2048 => XStandardSizes.x2048;
-
-  factory XSpacingsTokens.fromMap(Map<String, dynamic> map) {
-    double? d(String key) => (map[key] as num?)?.toDouble();
-
-    return XSpacingsTokens(
-      superSmall: d('superSmall'),
-      extraSmall: d('extraSmall'),
-      small: d('small'),
-      semiSmall: d('semiSmall'),
-      medium: d('medium'),
-      semiLarge: d('semiLarge'),
-      large: d('large'),
-      extraLarge: d('extraLarge'),
-      superLarge: d('superLarge'),
-    );
-  }
 
   @override
   List<Object?> get props => [

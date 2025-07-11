@@ -1,21 +1,5 @@
 part of '../../../x_design_tokens.dart';
 
-/// Extensão para a classe [XOutlineInputBorder] que adiciona um método
-/// para converter em um [OutlineInputBorder] do Flutter.
-extension XOutlineInputBorderExtension on XOutlineInputBorder {
-  /// Converte um [XOutlineInputBorder] para um [OutlineInputBorder].
-  ///
-  /// Retorna um [OutlineInputBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  OutlineInputBorder toOutlineInputBorder(XRadiiTokens radiiTokens) {
-    return OutlineInputBorder(
-      borderSide: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiTokens),
-      gapPadding: gapPadding,
-    );
-  }
-}
-
 /// A rectangular border with rounded corners.
 ///
 /// Typically used with [ShapeDecoration] to draw a box with a rounded
@@ -50,10 +34,23 @@ class XOutlineInputBorder {
 
   /// Returns a copy of this XOutlineInputBorder with the given fields
   /// replaced with the new values.
-  XOutlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XOutlineInputBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XOutlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
+    );
+  }
+
+  /// Converte um [XOutlineInputBorder] para um [OutlineInputBorder].
+  ///
+  /// Retorna um [OutlineInputBorder] com a mesma configuração de [borderSide]
+  /// e [borderRadius].
+  OutlineInputBorder toOutlineInputBorder(XRadiiTokens radiiTokens) {
+    return OutlineInputBorder(
+      borderSide: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
+      gapPadding: gapPadding,
     );
   }
 }

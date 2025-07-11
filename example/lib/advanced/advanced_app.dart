@@ -27,7 +27,8 @@ class AdvancedApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
+              colorScheme:
+                  ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
               // extensions: [themeNotifier.tokens],
               extensions: [XDesignTokens()],
             ),

@@ -1,19 +1,5 @@
 part of '../../../x_design_tokens.dart';
 
-extension XBorderRadiusExtension on XBorderRadius {
-  /// Converts [XBorderRadius] to a Flutter [BorderRadius].
-  ///
-  /// Otherwise, it returns a [BorderRadius.only] with the given radii for each corner.
-  BorderRadius toBorderRadius(XRadiiTokens radiiTokens) {
-    return BorderRadius.only(
-      topLeft: Radius.elliptical(topLeft.toRadius(radiiTokens).x, topLeft.toRadius(radiiTokens).y),
-      topRight: Radius.elliptical(topRight.toRadius(radiiTokens).x, topRight.toRadius(radiiTokens).y),
-      bottomLeft: Radius.elliptical(bottomLeft.toRadius(radiiTokens).x, bottomLeft.toRadius(radiiTokens).y),
-      bottomRight: Radius.elliptical(bottomRight.toRadius(radiiTokens).x, bottomRight.toRadius(radiiTokens).y),
-    );
-  }
-}
-
 /// An immutable set of radii for each corner of a rectangle.
 ///
 /// Used by [BoxDecoration] when the shape is a [BoxShape.rectangle].
@@ -72,6 +58,21 @@ class XBorderRadius {
     this.bottomRight = XRadius.none,
   });
 
+  /// The top-left [XRadius].
+  final XRadius topLeft;
+
+  /// The top-right [XRadius].
+  final XRadius topRight;
+
+  /// The bottom-left [XRadius].
+  final XRadius bottomLeft;
+
+  /// The bottom-right [XRadius].
+  final XRadius bottomRight;
+
+  /// A border radius with all none radii.
+  static const XBorderRadius none = XBorderRadius.all(XRadius.none);
+
   /// Returns a copy of this XBorderRadius with the given fields replaced with
   /// the new values.
   XBorderRadius copyWith({
@@ -88,18 +89,19 @@ class XBorderRadius {
     );
   }
 
-  /// A border radius with all none radii.
-  static const XBorderRadius none = XBorderRadius.all(XRadius.none);
-
-  /// The top-left [XRadius].
-  final XRadius topLeft;
-
-  /// The top-right [XRadius].
-  final XRadius topRight;
-
-  /// The bottom-left [XRadius].
-  final XRadius bottomLeft;
-
-  /// The bottom-right [XRadius].
-  final XRadius bottomRight;
+  /// Converts [XBorderRadius] to a Flutter [BorderRadius].
+  ///
+  /// Otherwise, it returns a [BorderRadius.only] with the given radii for each corner.
+  BorderRadius toBorderRadius(XRadiiTokens radiiTokens) {
+    return BorderRadius.only(
+      topLeft: Radius.elliptical(
+          topLeft.toRadius(radiiTokens).x, topLeft.toRadius(radiiTokens).y),
+      topRight: Radius.elliptical(
+          topRight.toRadius(radiiTokens).x, topRight.toRadius(radiiTokens).y),
+      bottomLeft: Radius.elliptical(bottomLeft.toRadius(radiiTokens).x,
+          bottomLeft.toRadius(radiiTokens).y),
+      bottomRight: Radius.elliptical(bottomRight.toRadius(radiiTokens).x,
+          bottomRight.toRadius(radiiTokens).y),
+    );
+  }
 }

@@ -1,11 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XBorderWidthsTokens extends Equatable {
-  final double hairline;
-  final double thin;
-  final double regular;
-  final double thick;
-
   const XBorderWidthsTokens({
     double? hairline,
     double? thin,
@@ -15,6 +10,10 @@ class XBorderWidthsTokens extends Equatable {
         thin = thin ?? XAuxiliarySizes.x1,
         regular = regular ?? XAuxiliarySizes.x2,
         thick = thick ?? XStandardSizes.x4;
+  final double hairline;
+  final double thin;
+  final double regular;
+  final double thick;
 
   double get none => XStandardSizes.zero;
 

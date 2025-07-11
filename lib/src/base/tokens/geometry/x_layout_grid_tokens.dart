@@ -1,10 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XLayoutGridTokens extends Equatable {
-  final int columns;
-  final double gutter;
-  final double margin;
-
   const XLayoutGridTokens({
     int? columns,
     double? gutter,
@@ -12,6 +8,9 @@ class XLayoutGridTokens extends Equatable {
   })  : columns = columns ?? XStandardSizes.x12Int,
         gutter = gutter ?? XStandardSizes.x16,
         margin = margin ?? XStandardSizes.x16;
+  final int columns;
+  final double gutter;
+  final double margin;
 
   @override
   List<Object?> get props => [

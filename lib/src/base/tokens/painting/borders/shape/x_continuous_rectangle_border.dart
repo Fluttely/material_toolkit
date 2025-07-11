@@ -1,20 +1,5 @@
 part of '../../../x_design_tokens.dart';
 
-/// Extensão para a classe [XContinuousRectangleBorder] que adiciona um método
-/// para converter em um [ContinuousRectangleBorder] do Flutter.
-extension XContinuousRectangleBorderExtension on XContinuousRectangleBorder {
-  /// Converte um [XContinuousRectangleBorder] para um [ContinuousRectangleBorder].
-  ///
-  /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  ContinuousRectangleBorder toContinuousRectangleBorder(XRadiiTokens radiiTokens) {
-    return ContinuousRectangleBorder(
-      side: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiTokens),
-    );
-  }
-}
-
 /// A rectangular border with continuous corners.
 ///
 /// Typically used with [ShapeDecoration] to draw a box with a continuous
@@ -45,10 +30,23 @@ class XContinuousRectangleBorder {
 
   /// Returns a copy of this XContinuousRectangleBorder with the given fields
   /// replaced with the new values.
-  XContinuousRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XContinuousRectangleBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XContinuousRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
+    );
+  }
+
+  /// Converte um [XContinuousRectangleBorder] para um [ContinuousRectangleBorder].
+  ///
+  /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [borderSide]
+  /// e [borderRadius].
+  ContinuousRectangleBorder toContinuousRectangleBorder(
+      XRadiiTokens radiiTokens) {
+    return ContinuousRectangleBorder(
+      side: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

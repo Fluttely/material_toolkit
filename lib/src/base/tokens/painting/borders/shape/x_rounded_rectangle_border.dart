@@ -1,20 +1,5 @@
 part of '../../../x_design_tokens.dart';
 
-/// Extensão para a classe [XRoundedRectangleBorder] que adiciona um método
-/// para converter em um [RoundedRectangleBorder] do Flutter.
-extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
-  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
-  ///
-  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiTokens radiiTokens) {
-    return RoundedRectangleBorder(
-      side: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiTokens),
-    );
-  }
-}
-
 /// A rectangular border with rounded corners.
 ///
 /// Typically used with [ShapeDecoration] to draw a box with a rounded
@@ -45,10 +30,22 @@ class XRoundedRectangleBorder {
 
   /// Returns a copy of this XRoundedRectangleBorder with the given fields
   /// replaced with the new values.
-  XRoundedRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XRoundedRectangleBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XRoundedRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
+    );
+  }
+
+  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
+  ///
+  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
+  /// e [borderRadius].
+  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiTokens radiiTokens) {
+    return RoundedRectangleBorder(
+      side: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

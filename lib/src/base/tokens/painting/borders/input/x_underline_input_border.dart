@@ -1,20 +1,5 @@
 part of '../../../x_design_tokens.dart';
 
-/// Extensão para a classe [XUnderlineInputBorder] que adiciona um método
-/// para converter em um [UnderlineInputBorder] do Flutter.
-extension XUnderlineInputBorderExtension on XUnderlineInputBorder {
-  /// Converte um [XUnderlineInputBorder] para um [UnderlineInputBorder].
-  ///
-  /// Retorna um [UnderlineInputBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  UnderlineInputBorder toUnderlineInputBorder(XRadiiTokens radiiTokens) {
-    return UnderlineInputBorder(
-      borderSide: borderSide,
-      borderRadius: borderRadius.toBorderRadius(radiiTokens),
-    );
-  }
-}
-
 /// A rectangular border with rounded corners.
 ///
 /// Typically used with [ShapeDecoration] to draw a box with a rounded
@@ -45,10 +30,22 @@ class XUnderlineInputBorder {
 
   /// Returns a copy of this XUnderlineInputBorder with the given fields
   /// replaced with the new values.
-  XUnderlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XUnderlineInputBorder copyWith(
+      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XUnderlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
+    );
+  }
+
+  /// Converte um [XUnderlineInputBorder] para um [UnderlineInputBorder].
+  ///
+  /// Retorna um [UnderlineInputBorder] com a mesma configuração de [borderSide]
+  /// e [borderRadius].
+  UnderlineInputBorder toUnderlineInputBorder(XRadiiTokens radiiTokens) {
+    return UnderlineInputBorder(
+      borderSide: borderSide,
+      borderRadius: borderRadius.toBorderRadius(radiiTokens),
     );
   }
 }

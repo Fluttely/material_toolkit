@@ -1,4 +1,4 @@
-library design_tokens;
+library;
 
 import 'dart:convert';
 
@@ -41,7 +41,8 @@ class XDesign extends InheritedWidget {
   const XDesign({required super.child, required this.tokens, super.key});
 
   static XDesignTokens of(BuildContext context) {
-    final tokens = context.dependOnInheritedWidgetOfExactType<XDesign>()?.tokens;
+    final tokens =
+        context.dependOnInheritedWidgetOfExactType<XDesign>()?.tokens;
 
     assert(tokens != null, 'No DesignTokens found in context');
 
@@ -59,21 +60,6 @@ class XDesign extends InheritedWidget {
 }
 
 class XDesignTokens extends ThemeExtension<XDesignTokens> {
-  final XBoxShadowsTokens boxShadows;
-  final XBorderWidthsTokens borderWidths;
-  final XBreakpointsTokens breakpoints;
-  final XDurationsTokens durations;
-  final XElevationsTokens elevations;
-  final XFormFactor formFactor;
-  final XIconSizesTokens iconSizes;
-  final XLayoutGridTokens layoutGrid;
-  final XOpacitiesTokens opacities;
-  final XRadiiTokens radii;
-  final XSpacingsTokens spacings;
-  final XTextShadowsTokens textShadows;
-  final XZIndexesTokens zIndexes;
-  final XGoogleFontsTokens googleFonts;
-
   XDesignTokens({
     this.boxShadows = const XBoxShadowsTokens(),
     this.borderWidths = const XBorderWidthsTokens(),
@@ -91,30 +77,39 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
   }) : googleFonts = const XGoogleFontsTokens();
 
   factory XDesignTokens.material({Map<String, dynamic>? overrides}) {
-    XDesignTokens tokens = XDesignTokens();
+    var tokens = XDesignTokens();
     if (overrides != null) {
       tokens = tokens.copyWith(
         boxShadows: overrides['boxShadows'] != null
-            ? XBoxShadowsTokens.fromMap(overrides['boxShadows'] as Map<String, dynamic>)
+            ? XBoxShadowsTokens.fromMap(
+                overrides['boxShadows'] as Map<String, dynamic>)
             : null,
         breakpoints: overrides['breakpoints'] != null
-            ? XBreakpointsTokens.fromMap(overrides['breakpoints'] as Map<String, dynamic>)
+            ? XBreakpointsTokens.fromMap(
+                overrides['breakpoints'] as Map<String, dynamic>)
             : null,
         durations: overrides['durations'] != null
-            ? XDurationsTokens.fromMap(overrides['durations'] as Map<String, dynamic>)
+            ? XDurationsTokens.fromMap(
+                overrides['durations'] as Map<String, dynamic>)
             : null,
         elevations: overrides['elevations'] != null
-            ? XElevationsTokens.fromMap(overrides['elevations'] as Map<String, dynamic>)
+            ? XElevationsTokens.fromMap(
+                overrides['elevations'] as Map<String, dynamic>)
             : null,
         iconSizes: overrides['iconSizes'] != null
-            ? XIconSizesTokens.fromMap(overrides['iconSizes'] as Map<String, dynamic>)
+            ? XIconSizesTokens.fromMap(
+                overrides['iconSizes'] as Map<String, dynamic>)
             : null,
-        radii: overrides['radii'] != null ? XRadiiTokens.fromMap(overrides['radii'] as Map<String, dynamic>) : null,
+        radii: overrides['radii'] != null
+            ? XRadiiTokens.fromMap(overrides['radii'] as Map<String, dynamic>)
+            : null,
         spacings: overrides['spacings'] != null
-            ? XSpacingsTokens.fromMap(overrides['spacings'] as Map<String, dynamic>)
+            ? XSpacingsTokens.fromMap(
+                overrides['spacings'] as Map<String, dynamic>)
             : null,
         textShadows: overrides['textShadows'] != null
-            ? XTextShadowsTokens.fromMap(overrides['textShadows'] as Map<String, dynamic>)
+            ? XTextShadowsTokens.fromMap(
+                overrides['textShadows'] as Map<String, dynamic>)
             : null,
       );
     }
@@ -128,6 +123,20 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
   factory XDesignTokens.fromJson(String json) {
     return XDesignTokens.fromMap(jsonDecode(json) as Map<String, dynamic>);
   }
+  final XBoxShadowsTokens boxShadows;
+  final XBorderWidthsTokens borderWidths;
+  final XBreakpointsTokens breakpoints;
+  final XDurationsTokens durations;
+  final XElevationsTokens elevations;
+  final XFormFactor formFactor;
+  final XIconSizesTokens iconSizes;
+  final XLayoutGridTokens layoutGrid;
+  final XOpacitiesTokens opacities;
+  final XRadiiTokens radii;
+  final XSpacingsTokens spacings;
+  final XTextShadowsTokens textShadows;
+  final XZIndexesTokens zIndexes;
+  final XGoogleFontsTokens googleFonts;
 
   /// Spacings
   late final gaps = XGapsResolver(spacings);
@@ -141,7 +150,8 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
   late final inputBorder = XInputBorderResolver(radii);
 
   @override
-  ThemeExtension<XDesignTokens> lerp(ThemeExtension<XDesignTokens>? other, double t) {
+  ThemeExtension<XDesignTokens> lerp(
+      ThemeExtension<XDesignTokens>? other, double t) {
     if (other is! XDesignTokens) {
       return this;
     } else {

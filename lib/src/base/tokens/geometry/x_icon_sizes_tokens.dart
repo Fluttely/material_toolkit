@@ -1,15 +1,6 @@
 part of '../x_design_tokens.dart';
 
 class XIconSizesTokens extends Equatable {
-  final double extraSmall;
-  final double small;
-  final double semiSmall;
-  final double medium;
-  final double semiLarge;
-  final double large;
-  final double extraLarge;
-  final double superLarge;
-
   const XIconSizesTokens({
     double? extraSmall,
     double? small,
@@ -28,8 +19,6 @@ class XIconSizesTokens extends Equatable {
         extraLarge = extraLarge ?? XStandardSizes.x96,
         superLarge = superLarge ?? XStandardSizes.x192;
 
-  double get zero => XStandardSizes.zero;
-
   factory XIconSizesTokens.fromMap(Map<String, dynamic> map) {
     double? d(String key) => (map[key] as num?)?.toDouble();
 
@@ -44,6 +33,16 @@ class XIconSizesTokens extends Equatable {
       superLarge: d('superLarge'),
     );
   }
+  final double extraSmall;
+  final double small;
+  final double semiSmall;
+  final double medium;
+  final double semiLarge;
+  final double large;
+  final double extraLarge;
+  final double superLarge;
+
+  double get zero => XStandardSizes.zero;
 
   @override
   List<Object?> get props => [

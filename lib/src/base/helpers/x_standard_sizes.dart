@@ -1,7 +1,6 @@
 part of 'x_helpers.dart';
 
 abstract final class XStandardSizes {
-  /// "dp"(density-independent pixels)
   /// + 4
   static const double zero = 0;
   static const int zeroInt = 0;

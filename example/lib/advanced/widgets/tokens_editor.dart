@@ -27,10 +27,14 @@ class _TokensEditorState extends State<TokensEditor> {
   void initState() {
     super.initState();
     final notifier = context.read<ThemeNotifier>();
-    spacingsSmallController = TextEditingController(text: notifier.spacings.small.toString());
-    radiiExtraSmallController = TextEditingController(text: notifier.radiiTokens.extraSmall.toString());
-    iconSmallController = TextEditingController(text: notifier.iconSizes.small.toString());
-    elevationOneController = TextEditingController(text: notifier.elevations.level1.toString());
+    spacingsSmallController =
+        TextEditingController(text: notifier.spacings.small.toString());
+    radiiExtraSmallController =
+        TextEditingController(text: notifier.radiiTokens.extraSmall.toString());
+    iconSmallController =
+        TextEditingController(text: notifier.iconSizes.small.toString());
+    elevationOneController =
+        TextEditingController(text: notifier.elevations.level1.toString());
     durationSlowController = TextEditingController(
       text: notifier.durations.slow.inMilliseconds.toString(),
     );
@@ -158,7 +162,8 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   themeNotifier.updateDurationsTokens(
                     XDurationsTokens(
-                      areAnimationEnabled: themeNotifier.durations.areAnimationEnabled,
+                      areAnimationEnabled:
+                          themeNotifier.durations.areAnimationEnabled,
                       slow: Duration(milliseconds: v),
                       regular: themeNotifier.durations.regular,
                       quick: themeNotifier.durations.quick,
@@ -216,7 +221,8 @@ class _TokensEditorState extends State<TokensEditor> {
                   final small = themeNotifier.textShadows.small;
                   themeNotifier.updateTextShadowsTokens(
                     XTextShadowsTokens(
-                      small: small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
+                      small:
+                          small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
                       medium: themeNotifier.textShadows.medium,
                       large: themeNotifier.textShadows.large,
                     ),

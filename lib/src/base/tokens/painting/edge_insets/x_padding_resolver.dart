@@ -1,9 +1,8 @@
 part of '../../x_design_tokens.dart';
 
 class XPaddingResolver extends Equatable {
-  final XEdgeInsetsResolver _edgeInsets;
-
   const XPaddingResolver(this._edgeInsets);
+  final XEdgeInsetsResolver _edgeInsets;
 
   Padding none({
     Widget? child,
