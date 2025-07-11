@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Standard icon sizes used across the toolkit.
+
+/// Size presets for icons.
 class XIconSizesTokens extends Equatable {
   const XIconSizesTokens({
     double? extraSmall,

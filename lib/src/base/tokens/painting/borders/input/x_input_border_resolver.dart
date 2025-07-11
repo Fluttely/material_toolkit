@@ -1,5 +1,9 @@
 part of '../../../x_design_tokens.dart';
 
+/// Creates input borders based on tokenized radii values.
+
+/// Helper that builds [OutlineInputBorder] and [UnderlineInputBorder] using
+/// [XBorderRadius] tokens.
 class XInputBorderResolver extends Equatable {
   const XInputBorderResolver(this._radiiTokens);
   final XRadiiTokens _radiiTokens;

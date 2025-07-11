@@ -1,5 +1,7 @@
 part of 'x_helpers.dart';
 
+/// Error messages used when accessing unsupported design token attributes.
+
 enum XDesignTokensAttributeErrors {
   unsupportedError;
 

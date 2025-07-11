@@ -1,3 +1,4 @@
+/// Core design token definitions for the Material Toolkit package.
 library;
 
 import 'dart:convert';
@@ -37,6 +38,7 @@ part 'painting/x_opacities_tokens.dart';
 part 'painting/x_text_shadows_tokens.dart';
 part 'painting/x_z_indexes_tokens.dart';
 
+/// Provides [XDesignTokens] to the widget tree via an [InheritedWidget].
 class XDesign extends InheritedWidget {
   const XDesign({required super.child, required this.tokens, super.key});
 
@@ -59,6 +61,11 @@ class XDesign extends InheritedWidget {
   bool updateShouldNotify(XDesign oldWidget) => tokens != oldWidget.tokens;
 }
 
+/// Collection of design tokens used throughout the application.
+///
+/// Each group of tokens holds values for a specific aspect of the UI, such as
+/// spacing or typography. These tokens can be overridden using [copyWith] or
+/// [XDesignTokens.material].
 class XDesignTokens extends ThemeExtension<XDesignTokens> {
   XDesignTokens({
     this.boxShadows = const XBoxShadowsTokens(),

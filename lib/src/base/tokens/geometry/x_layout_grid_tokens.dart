@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Grid configuration used for layout metrics.
+
+/// Defines the default layout grid for the application.
 class XLayoutGridTokens extends Equatable {
   const XLayoutGridTokens({
     int? columns,

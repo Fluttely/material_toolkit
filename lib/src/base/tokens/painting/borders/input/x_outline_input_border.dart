@@ -29,7 +29,7 @@ class XOutlineInputBorder {
   /// The radii for each corner.
   final XBorderRadius borderRadius;
 
-  // TODO: description
+  /// Additional padding inserted at the gap of a floating label.
   final double gapPadding;
 
   /// Returns a copy of this XOutlineInputBorder with the given fields
@@ -42,10 +42,10 @@ class XOutlineInputBorder {
     );
   }
 
-  /// Converte um [XOutlineInputBorder] para um [OutlineInputBorder].
+  /// Converts an [XOutlineInputBorder] into an [OutlineInputBorder].
   ///
-  /// Retorna um [OutlineInputBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
+  /// Returns an [OutlineInputBorder] with the same [borderSide] and
+  /// [borderRadius] configuration.
   OutlineInputBorder toOutlineInputBorder(XRadiiTokens radiiTokens) {
     return OutlineInputBorder(
       borderSide: borderSide,

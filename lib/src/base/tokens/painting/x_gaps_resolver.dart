@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Creates [Gap] widgets based on spacing tokens.
+
+/// Utility for generating consistent gaps between widgets.
 class XGapsResolver extends Equatable {
   const XGapsResolver(this._spacings);
   final XSpacingsTokens _spacings;

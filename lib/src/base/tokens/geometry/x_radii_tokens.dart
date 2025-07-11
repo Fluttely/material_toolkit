@@ -1,5 +1,7 @@
 part of '../x_design_tokens.dart';
 
+/// Defines radius values and helpers to resolve them.
+
 enum XRadii {
   none,
   extraSmall,
@@ -26,6 +28,7 @@ enum XRadii {
   }
 }
 
+/// Radius presets used to build shapes and borders.
 class XRadiiTokens extends Equatable {
   const XRadiiTokens({
     double? extraSmall,

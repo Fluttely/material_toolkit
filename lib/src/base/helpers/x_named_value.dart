@@ -1,6 +1,6 @@
 part of 'x_helpers.dart';
 
-/// This class associated a [name] to a given [value].
+/// Associates a [name] to a given [value].
 class XNamedValue<T> extends Equatable {
   const XNamedValue(this.name, this.value);
 

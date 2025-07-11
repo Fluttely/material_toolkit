@@ -38,10 +38,10 @@ class XBeveledRectangleBorder {
     );
   }
 
-  /// Converte um [XBeveledRectangleBorder] para um [BeveledRectangleBorder].
+  /// Converts an [XBeveledRectangleBorder] into a [BeveledRectangleBorder].
   ///
-  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
+  /// Returns a [BeveledRectangleBorder] with the same [borderSide] and
+  /// [borderRadius] configuration.
   BeveledRectangleBorder toBeveledRectangleBorder(XRadiiTokens radiiTokens) {
     return BeveledRectangleBorder(
       side: borderSide,

@@ -1,5 +1,8 @@
 part of '../../x_design_tokens.dart';
 
+/// Convenience builder for [Padding] widgets based on spacing tokens.
+
+/// Generates [Padding] widgets using [XEdgeInsetsResolver].
 class XPaddingResolver extends Equatable {
   const XPaddingResolver(this._edgeInsets);
   final XEdgeInsetsResolver _edgeInsets;

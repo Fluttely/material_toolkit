@@ -1,5 +1,8 @@
 part of '../../x_design_tokens.dart';
 
+/// Converts [XSpacings] values into Flutter [EdgeInsets].
+
+/// Helper that maps spacing tokens to [EdgeInsets] instances.
 class XEdgeInsetsResolver extends Equatable {
   const XEdgeInsetsResolver(this._spacings);
   final XSpacingsTokens _spacings;

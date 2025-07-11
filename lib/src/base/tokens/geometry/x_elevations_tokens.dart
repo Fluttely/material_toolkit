@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Elevation values used for Material surfaces.
+
+/// Collection of elevation constants for visual hierarchy.
 class XElevationsTokens extends Equatable {
   const XElevationsTokens({
     double? level1,

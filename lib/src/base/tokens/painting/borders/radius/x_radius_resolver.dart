@@ -1,5 +1,8 @@
 part of '../../../x_design_tokens.dart';
 
+/// Utility class for converting [XRadius] values to Flutter [Radius] objects.
+
+/// Resolves [XRadius] values using the provided [XRadiiTokens].
 class XRadiusResolver extends Equatable {
   const XRadiusResolver(this._radiiTokens);
   final XRadiiTokens _radiiTokens;
