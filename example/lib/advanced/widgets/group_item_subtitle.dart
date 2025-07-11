@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/widgets/info_component.dart';
+import 'package:material_toolkit_example/advanced/widgets/info_component.dart';
 
 class GroupItemSubtitle extends StatelessWidget {
   final String subtitle;

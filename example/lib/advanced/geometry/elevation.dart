@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/widgets/group_item_container.dart';
+import 'package:material_toolkit_example/advanced/widgets/group_item_container.dart';
 
 class ElevationGroup extends StatelessWidget {
   const ElevationGroup({super.key});

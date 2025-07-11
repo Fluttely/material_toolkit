@@ -1,154 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/geometry/elevation.dart';
-import 'package:material_toolkit_example/notifiers/root_notifier.dart';
-import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
-import 'package:material_toolkit_example/paiting/border_radius_circular_group.dart';
-import 'package:material_toolkit_example/widgets/group_card.dart';
-import 'package:material_toolkit_example/widgets/tokens_editor.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const DemoApp());
+  runApp(const MinimalApp());
 }
 
-class DemoApp extends StatelessWidget {
-  const DemoApp({super.key});
+class MinimalApp extends StatelessWidget {
+  const MinimalApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<ThemeNotifier>(create: (_) => ThemeNotifier()),
-        ChangeNotifierProvider<RootNotifier>(create: (_) => RootNotifier()),
-      ],
-      child: Consumer<ThemeNotifier>(
-        builder: (_, themeNotifier, __) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
-              extensions: [themeNotifier.tokens],
-            ),
-            home: const Root(),
-          );
-        },
+    final tokens = XDesignTokensData();
+    return XDesignTokens(
+      data: tokens,
+      child: MaterialApp(
+        title: 'Material Toolkit Minimal',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          extensions: [tokens],
+        ),
+        home: const DemoPage(),
       ),
     );
   }
 }
 
-class Root extends StatefulWidget {
-  const Root({super.key});
+class DemoPage extends StatelessWidget {
+  const DemoPage({super.key});
 
-  @override
-  State<Root> createState() => _RootState();
-}
-
-class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final textTheme = theme.textTheme;
-
-    final tokens = theme.extension<XDesignTokensData>()!;
-    final gaps = tokens.gaps;
-    // final inputBorders = tokens.inputBorders;
-    // final breakpoints = tokens.breakpoints;
-
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
-    final rootNotifier = Provider.of<RootNotifier>(context);
-
+    final tokens = XDesignTokens.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Material Toolkit'),
-        centerTitle: false,
-      ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: rootNotifier.selectedIndex,
-        onDestinationSelected: rootNotifier.onItemTapped,
-        destinations: const <NavigationDestination>[
-          NavigationDestination(
-            icon: Icon(Icons.brush),
-            label: 'Paiting',
+      appBar: AppBar(title: const Text('Design Tokens Example')),
+      body: tokens.padding.all(
+        XSpaces.medium,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [tokens.boxShadows.medium],
           ),
-          NavigationDestination(
-            icon: Icon(Icons.category),
-            label: 'Geometry',
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Hello Material Toolkit'),
+              tokens.gaps.small,
+              const Text('This container uses padding and a shadow.'),
+            ],
           ),
-          NavigationDestination(
-            icon: Icon(Icons.text_fields),
-            label: 'Text',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.motion_photos_on),
-            label: 'Animation',
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: themeNotifier.primaryColorTextFieldController,
-              decoration: InputDecoration(
-                labelText: 'Enter Primary Color (Hex, e.g. FF0000 for Red)',
-                labelStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
-                fillColor: colorScheme.primary,
-                filled: true,
-                isDense: true,
-                // border: inputBorders.none,
-              ),
-              style: const TextStyle(color: Colors.white),
-              cursorColor: Colors.white,
-              onChanged: themeNotifier.updatePrimaryColor,
-            ),
-            gaps.large,
-            ElevatedButton(
-              onPressed: themeNotifier.resetXDesignTokensData,
-              child: Text(
-                'Reset XDesignTokensData to default',
-                style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
-              ),
-            ),
-            gaps.large,
-            const TokensEditor(),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                return ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 480),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    // child: ListView(
-                    // shrinkWrap: true,
-                    // scrollDirection:
-                    //     constraints.maxWidth < breakpoints.mobile.maxWidth ? Axis.vertical : Axis.horizontal,
-                    children: [
-                      GroupCard(
-                        title: 'Shapes',
-                        children: [
-                          // const RadiusGroup(),
-                          // gaps.large,
-                          const BorderRadiusCircularGroup(),
-                          gaps.large,
-                          // XBorderShapes
-                        ],
-                      ),
-                      // gaps.extraSmall,
-                      const GroupCard(
-                        title: 'Shadows',
-                        children: [
-                          ElevationGroup(),
-                        ],
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ],
         ),
       ),
     );
