@@ -1,4 +1,4 @@
-// part of '../x_metrics_data.dart';
+// part of '../design_tokens.dart';
 
 // /// A utility class that provides various shape styles and borders, based on
 // /// the [_borderRadii] provided by [XBorderRadii].

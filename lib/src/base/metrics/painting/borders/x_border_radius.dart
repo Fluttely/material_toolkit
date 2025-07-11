@@ -1,4 +1,4 @@
-part of '../../x_metrics_data.dart';
+part of '../../design_tokens.dart';
 
 extension XBorderRadiusExtension on XBorderRadius {
   /// Converts [XBorderRadius] to a Flutter [BorderRadius].

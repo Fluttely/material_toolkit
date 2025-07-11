@@ -1,4 +1,4 @@
-part of '../../../x_metrics_data.dart';
+part of '../../../design_tokens.dart';
 
 class XShapes extends Equatable {
   final XRadiiData _radiiData;

@@ -1,4 +1,4 @@
-part of '../../../x_metrics_data.dart';
+part of '../../../design_tokens.dart';
 
 /// Extensão para a classe [XContinuousRectangleBorder] que adiciona um método
 /// para converter em um [ContinuousRectangleBorder] do Flutter.

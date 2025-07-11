@@ -14,7 +14,7 @@ class GroupItemContainer extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
 
-    final metrics = theme.extension<XMetricsData>()!;
+    final metrics = theme.extension<DesignTokensData>()!;
     final borderRadius = metrics.borderRadius;
     final edgeInsets = metrics.edgeInsets;
 

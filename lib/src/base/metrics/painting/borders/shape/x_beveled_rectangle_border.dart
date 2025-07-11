@@ -1,4 +1,4 @@
-part of '../../../x_metrics_data.dart';
+part of '../../../design_tokens.dart';
 
 /// Extensão para a classe [XBeveledRectangleBorder] que adiciona um método
 /// para converter em um [BeveledRectangleBorder] do Flutter.

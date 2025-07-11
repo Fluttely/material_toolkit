@@ -9,7 +9,7 @@
 //   double get level7 => 16;
 // }
 
-// XMetricsData metrics({required XRadiiData radii}) => XMetricsData(
+// DesignTokensData metrics({required XRadiiData radii}) => DesignTokensData(
 //       elevations: const CustomElevationsData(),
 //       radii: radii,
 //     );
