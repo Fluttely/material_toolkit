@@ -7,7 +7,7 @@ void main() {
     final tokens = XDesignTokens();
     await tester.pumpWidget(
       XDesign(
-        data: tokens,
+        tokens: tokens,
         child: MaterialApp(
           theme: ThemeData(
             extensions: [tokens],

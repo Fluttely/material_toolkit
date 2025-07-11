@@ -44,7 +44,7 @@ void main() {
     });
   });
 
-  group('XDesignTokensData.copyWith', () {
+  group('XDesignTokens.copyWith', () {
     test('overrides selected fields', () {
       final tokens = XDesignTokens();
       const customSpaces = XSpacingsTokens(extraSmall: 99);

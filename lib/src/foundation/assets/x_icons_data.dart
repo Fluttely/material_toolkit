@@ -1,18 +1,18 @@
 // part of '../x_assets_data.dart';
 
-// class XIconsData extends Equatable {
+// class XIconsTokens extends Equatable {
 //   final String? fontFamily;
 //   final String? fontPackage;
-//   final XIconCharactersData characters;
-//   final XIconSizesData sizes;
+//   final XIconCharactersTokens characters;
+//   final XIconSizesTokens sizes;
 
-//   XIconsData({
+//   XIconsTokens({
 //     this.fontFamily,
 //     this.fontPackage,
-//     final XIconCharactersData? characters,
-//     final XIconSizesData? sizes,
-//   })  : characters = characters ?? XIconCharactersData(),
-//         sizes = sizes ?? const XIconSizesData();
+//     final XIconCharactersTokens? characters,
+//     final XIconSizesTokens? sizes,
+//   })  : characters = characters ?? XIconCharactersTokens(),
+//         sizes = sizes ?? const XIconSizesTokens();
 
 //   @override
 //   List<Object?> get props => [
@@ -38,10 +38,10 @@
 //   ''';
 // }
 
-// class XIconCharactersData extends Equatable {
+// class XIconCharactersTokens extends Equatable {
 //   final Map<XIconCharacterKey, String> _characters;
 
-//   XIconCharactersData({
+//   XIconCharactersTokens({
 //     Map<XIconCharacterKey, String>? characters,
 //   }) : _characters = Map.from(characters ?? {});
 
@@ -54,7 +54,7 @@
 
 //   @override
 //   String toString() => '''
-//     XIconCharactersData(
+//     XIconCharactersTokens(
 //       _characters: $_characters,
 //     )
 //   ''';

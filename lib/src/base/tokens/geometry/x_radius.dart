@@ -6,8 +6,8 @@ extension XRadiusExtension on XRadius {
   /// Otherwise, it returns a [Radius.elliptical] with the given `x` and `y`.
   Radius toRadius(XRadiiTokens radiiTokens) {
     return Radius.elliptical(
-      x.toData(radiiTokens),
-      y.toData(radiiTokens),
+      x.toDouble(radiiTokens),
+      y.toDouble(radiiTokens),
     );
   }
 }

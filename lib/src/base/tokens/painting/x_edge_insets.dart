@@ -7,15 +7,15 @@ class XEdgeInsets extends Equatable {
 
   EdgeInsets get none => EdgeInsets.all(_spacings.none);
 
-  EdgeInsets all(final XSpacings value) => EdgeInsets.all(value.toData(_spacings));
+  EdgeInsets all(final XSpacings value) => EdgeInsets.all(value.toDouble(_spacings));
 
   EdgeInsets symmetric({
     final XSpacings? vertical,
     final XSpacings? horizontal,
   }) =>
       EdgeInsets.symmetric(
-        horizontal: (horizontal ?? XSpacings.none).toData(_spacings),
-        vertical: (vertical ?? XSpacings.none).toData(_spacings),
+        horizontal: (horizontal ?? XSpacings.none).toDouble(_spacings),
+        vertical: (vertical ?? XSpacings.none).toDouble(_spacings),
       );
 
   EdgeInsets only({
@@ -25,10 +25,10 @@ class XEdgeInsets extends Equatable {
     final XSpacings? bottom,
   }) =>
       EdgeInsets.only(
-        left: (left ?? XSpacings.none).toData(_spacings),
-        top: (top ?? XSpacings.none).toData(_spacings),
-        right: (right ?? XSpacings.none).toData(_spacings),
-        bottom: (bottom ?? XSpacings.none).toData(_spacings),
+        left: (left ?? XSpacings.none).toDouble(_spacings),
+        top: (top ?? XSpacings.none).toDouble(_spacings),
+        right: (right ?? XSpacings.none).toDouble(_spacings),
+        bottom: (bottom ?? XSpacings.none).toDouble(_spacings),
       );
 
   // EdgeInsets get allSuperSmall => EdgeInsets.all(_spacings.superSmall);

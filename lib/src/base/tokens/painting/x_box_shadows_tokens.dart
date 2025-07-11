@@ -1,47 +1,45 @@
 part of '../x_design_tokens.dart';
 
 class XBoxShadowsTokens extends Equatable {
-  // final BoxShadow? _small;
-  // final BoxShadow? _medium;
-  // final BoxShadow? _large;
-
-  final BoxShadow _small;
-  final BoxShadow _medium;
-  final BoxShadow _large;
-
-  // const XBoxShadowsData({
-  //   final BoxShadow? small,
-  //   final BoxShadow? medium,
-  //   final BoxShadow? large,
-  // })  : _small = small,
-  //       _medium = medium,
-  //       _large = large;
+  final BoxShadow small;
+  final BoxShadow medium;
+  final BoxShadow large;
 
   const XBoxShadowsTokens({
-    final BoxShadow? small,
-    final BoxShadow? medium,
-    final BoxShadow? large,
-  })  : _small = small ??
+    BoxShadow? small,
+    BoxShadow? medium,
+    BoxShadow? large,
+  })  : small = small ??
             const BoxShadow(
               blurRadius: XAuxiliarySizes.x2,
               spreadRadius: XAuxiliarySizes.x1,
+              offset: Offset(0, 2),
               color: Color(0x44000000),
             ),
-        _medium = medium ??
+        medium = medium ??
             const BoxShadow(
               blurRadius: XStandardSizes.x4,
               spreadRadius: XAuxiliarySizes.x1,
+              offset: Offset(0, 4),
               color: Color(0x44000000),
             ),
-        _large = large ??
+        large = large ??
             const BoxShadow(
               blurRadius: XStandardSizes.x8,
               spreadRadius: XAuxiliarySizes.x2,
+              offset: Offset(0, 8),
               color: Color(0x44000000),
             );
 
+  BoxShadow get none => const BoxShadow(
+        blurRadius: XStandardSizes.zero,
+        spreadRadius: XStandardSizes.zero,
+        offset: Offset.zero,
+        color: Color(0x00000000),
+      );
+
   factory XBoxShadowsTokens.fromMap(Map<String, dynamic> map) {
-    BoxShadow? _bs(String key) {
+    BoxShadow? parseShadow(String key) {
       final value = map[key];
       if (value is Map<String, dynamic>) {
         return BoxShadow(
@@ -58,72 +56,24 @@ class XBoxShadowsTokens extends Equatable {
     }
 
     return XBoxShadowsTokens(
-      small: _bs('small'),
-      medium: _bs('medium'),
-      large: _bs('large'),
+      small: parseShadow('small'),
+      medium: parseShadow('medium'),
+      large: parseShadow('large'),
     );
   }
 
-  // XBoxShadowsData.x({
-  //   final XAttribute<BoxShadow?>? small,
-  //   final XAttribute<BoxShadow?>? medium,
-  //   final XAttribute<BoxShadow?>? large,
-  // })  : _small = small == null
-  //           ? const BoxShadow(
-  //               blurRadius: XAuxiliarySizes.x2,
-  //               spreadRadius: XAuxiliarySizes.x1,
-  //               color: Color(0x44000000),
-  //             )
-  //           : small.value,
-  //       _medium = medium == null
-  //           ? const BoxShadow(
-  //               blurRadius: XStandardSizes.x4,
-  //               spreadRadius: XAuxiliarySizes.x1,
-  //               color: Color(0x44000000),
-  //             )
-  //           : medium.value,
-  //       _large = large == null
-  //           ? const BoxShadow(
-  //               blurRadius: XStandardSizes.x8,
-  //               spreadRadius: XAuxiliarySizes.x2,
-  //               color: Color(0x44000000),
-  //             )
-  //           : large.value;
-
-  // BoxShadow get small =>
-  //     _small ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
-  // BoxShadow get medium =>
-  //     _medium ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
-  // BoxShadow get large =>
-  //     _large ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
-
-  BoxShadow get none => const BoxShadow(
-        blurRadius: XStandardSizes.zero,
-        spreadRadius: XStandardSizes.zero,
-        color: Color(0x00000000),
-      );
-  BoxShadow get small => _small;
-  BoxShadow get medium => _medium;
-  BoxShadow get large => _large;
+  @override
+  List<Object?> get props => [none, small, medium, large];
 
   @override
-  List<Object?> get props => [
-        none.named('none'),
-        small.named('small'),
-        medium.named('medium'),
-        large.named('large'),
-      ];
-
-  @override
-  String toString() => '''
-    XBoxShadowsData(
-      none: $none,
-      small: $small,
-      medium: $medium,
-      large: $large,
-    )
-  ''';
+  String toString() {
+    return '''
+XBoxShadowsTokens(
+  none: $none,
+  small: $small,
+  medium: $medium,
+  large: $large,
+)
+''';
+  }
 }

@@ -12,7 +12,7 @@
 //   Widget build(BuildContext context) {
 //     final theme = Theme.of(context);
 
-//     final tokens = theme.extension<DesignTokensData>()!;
+//     final tokens = theme.extension<DesignTokensTokens>()!;
 //     final gaps = tokens.gaps;
 //     final radii = tokens.radii;
 

@@ -1,7 +1,7 @@
 // import 'package:material_toolkit/material_toolkit.dart';
 
-// class CustomElevationsData extends XElevationsData {
-//   const CustomElevationsData() : super();
+// class CustomElevationsTokens extends XElevationsTokens {
+//   const CustomElevationsTokens() : super();
 //   @override
 //   double get level4 =>
 //       throw UnimplementedError('The elevation level 4 has been removed and cannot be used in this design system.');
@@ -9,7 +9,7 @@
 //   double get level7 => 16;
 // }
 
-// DesignTokensData tokens({required XRadiiTokens radii}) => DesignTokensData(
-//       elevations: const CustomElevationsData(),
+// DesignTokensTokens tokens({required XRadiiTokens radii}) => DesignTokensTokens(
+//       elevations: const CustomElevationsTokens(),
 //       radii: radii,
 //     );

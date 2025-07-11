@@ -14,7 +14,7 @@ enum XSpacings {
 }
 
 extension XSpacingsExtension on XSpacings {
-  double toData(XSpacingsTokens spacings) {
+  double toDouble(XSpacingsTokens spacings) {
     return switch (this) {
       XSpacings.none => spacings.none,
       XSpacings.superSmall => spacings.superSmall,
@@ -31,150 +31,37 @@ extension XSpacingsExtension on XSpacings {
 }
 
 class XSpacingsTokens extends Equatable {
-  // final double? _superSmall;
-  // final double? _extraSmall;
-  // final double? _small;
-  // final double? _semiSmall;
-  // final double? _medium;
-  // final double? _semiLarge;
-  // final double? _large;
-  // final double? _extraLarge;
-  // final double? _superLarge;
-
-  final double _superSmall;
-  final double _extraSmall;
-  final double _small;
-  final double _semiSmall;
-  final double _medium;
-  final double _semiLarge;
-  final double _large;
-  final double _extraLarge;
-  final double _superLarge;
-
-  // const XSpacingsData({
-  //   final double? superSmall,
-  //   final double? extraSmall,
-  //   final double? small,
-  //   final double? semiSmall,
-  //   final double? medium,
-  //   final double? semiLarge,
-  //   final double? large,
-  //   final double? extraLarge,
-  //   final double? superLarge,
-  // })  : _superSmall = superSmall,
-  //       _extraSmall = extraSmall,
-  //       _small = small,
-  //       _semiSmall = semiSmall,
-  //       _medium = medium,
-  //       _semiLarge = semiLarge,
-  //       _large = large,
-  //       _extraLarge = extraLarge,
-  //       _superLarge = superLarge;
+  final double superSmall;
+  final double extraSmall;
+  final double small;
+  final double semiSmall;
+  final double medium;
+  final double semiLarge;
+  final double large;
+  final double extraLarge;
+  final double superLarge;
 
   const XSpacingsTokens({
-    final double? superSmall,
-    final double? extraSmall,
-    final double? small,
-    final double? semiSmall,
-    final double? medium,
-    final double? semiLarge,
-    final double? large,
-    final double? extraLarge,
-    final double? superLarge,
-  })  : _superSmall = superSmall ?? XAuxiliarySizes.x2,
-        _extraSmall = extraSmall ?? XStandardSizes.x4,
-        _small = small ?? XStandardSizes.x8,
-        _semiSmall = semiSmall ?? XStandardSizes.x12,
-        _medium = medium ?? XStandardSizes.x16,
-        _semiLarge = semiLarge ?? XStandardSizes.x20,
-        _large = large ?? XStandardSizes.x24,
-        _extraLarge = extraLarge ?? XStandardSizes.x32,
-        _superLarge = superLarge ?? XStandardSizes.x48;
-
-  factory XSpacingsTokens.fromMap(Map<String, dynamic> map) {
-    double? d(String key) => (map[key] as num?)?.toDouble();
-
-    return XSpacingsTokens(
-      superSmall: d('superSmall'),
-      extraSmall: d('extraSmall'),
-      small: d('small'),
-      semiSmall: d('semiSmall'),
-      medium: d('medium'),
-      semiLarge: d('semiLarge'),
-      large: d('large'),
-      extraLarge: d('extraLarge'),
-      superLarge: d('superLarge'),
-    );
-  }
-
-  // XSpacingsData.x({
-  //   final XAttribute<double?>? superSmall,
-  //   final XAttribute<double?>? extraSmall,
-  //   final XAttribute<double?>? small,
-  //   final XAttribute<double?>? semiSmall,
-  //   final XAttribute<double?>? medium,
-  //   final XAttribute<double?>? semiLarge,
-  //   final XAttribute<double?>? large,
-  //   final XAttribute<double?>? extraLarge,
-  //   final XAttribute<double?>? superLarge,
-  // })  : _superSmall = superSmall == null ? XAuxiliarySizes.x2 : superSmall.value,
-  //       _extraSmall = extraSmall == null ? XStandardSizes.x4 : extraSmall.value,
-  //       _small = small == null ? XStandardSizes.x8 : small.value,
-  //       _semiSmall = semiSmall == null ? XStandardSizes.x12 : semiSmall.value,
-  //       _medium = medium == null ? XStandardSizes.x16 : medium.value,
-  //       _semiLarge = semiLarge == null ? XStandardSizes.x20 : semiLarge.value,
-  //       _large = large == null ? XStandardSizes.x24 : large.value,
-  //       _extraLarge = extraLarge == null ? XStandardSizes.x32 : extraLarge.value,
-  //       _superLarge = superLarge == null ? XStandardSizes.x48 : superLarge.value;
-
-  // double get none => XStandardSizes.zero;
-  // double get superSmall =>
-  //     _superSmall ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'superSmall', location: 'spacings')));
-  // double get extraSmall =>
-  //     _extraSmall ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'extraSmall', location: 'spacings')));
-  // double get small =>
-  //     _small ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'small', location: 'spacings')));
-  // double get semiSmall =>
-  //     _semiSmall ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'semiSmall', location: 'spacings')));
-  // double get medium =>
-  //     _medium ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'medium', location: 'spacings')));
-  // double get semiLarge =>
-  //     _semiLarge ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'semiLarge', location: 'spacings')));
-  // double get large =>
-  //     _large ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'large', location: 'spacings')));
-  // double get extraLarge =>
-  //     _extraLarge ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'extraLarge', location: 'spacings')));
-  // double get superLarge =>
-  //     _superLarge ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'superLarge', location: 'spacings')));
+    double? superSmall,
+    double? extraSmall,
+    double? small,
+    double? semiSmall,
+    double? medium,
+    double? semiLarge,
+    double? large,
+    double? extraLarge,
+    double? superLarge,
+  })  : superSmall = superSmall ?? XAuxiliarySizes.x2,
+        extraSmall = extraSmall ?? XStandardSizes.x4,
+        small = small ?? XStandardSizes.x8,
+        semiSmall = semiSmall ?? XStandardSizes.x12,
+        medium = medium ?? XStandardSizes.x16,
+        semiLarge = semiLarge ?? XStandardSizes.x20,
+        large = large ?? XStandardSizes.x24,
+        extraLarge = extraLarge ?? XStandardSizes.x32,
+        superLarge = superLarge ?? XStandardSizes.x48;
 
   double get none => XStandardSizes.zero;
-  double get superSmall => _superSmall;
-  double get extraSmall => _extraSmall;
-  double get small => _small;
-  double get semiSmall => _semiSmall;
-  double get medium => _medium;
-  double get semiLarge => _semiLarge;
-  double get large => _large;
-  double get extraLarge => _extraLarge;
-  double get superLarge => _superLarge;
 
   /// + 2
   double get x2 => XAuxiliarySizes.x2;
@@ -235,32 +122,49 @@ class XSpacingsTokens extends Equatable {
   double get x1024 => XStandardSizes.x1024;
   double get x2048 => XStandardSizes.x2048;
 
+  factory XSpacingsTokens.fromMap(Map<String, dynamic> map) {
+    double? d(String key) => (map[key] as num?)?.toDouble();
+
+    return XSpacingsTokens(
+      superSmall: d('superSmall'),
+      extraSmall: d('extraSmall'),
+      small: d('small'),
+      semiSmall: d('semiSmall'),
+      medium: d('medium'),
+      semiLarge: d('semiLarge'),
+      large: d('large'),
+      extraLarge: d('extraLarge'),
+      superLarge: d('superLarge'),
+    );
+  }
+
   @override
   List<Object?> get props => [
-        none.named('none'),
-        superSmall.named('superSmall'),
-        extraSmall.named('extraSmall'),
-        small.named('small'),
-        semiSmall.named('semiSmall'),
-        medium.named('medium'),
-        semiLarge.named('semiLarge'),
-        large.named('large'),
-        extraLarge.named('extraLarge'),
-        superLarge.named('superLarge'),
+        none,
+        superSmall,
+        extraSmall,
+        small,
+        semiSmall,
+        medium,
+        semiLarge,
+        large,
+        extraLarge,
+        superLarge,
       ];
 
   @override
   String toString() => '''
-    XSpacingsData(
-      none: $none,
-      extraSmall: $extraSmall,
-      small: $small,
-      semiSmall: $semiSmall,
-      medium: $medium,
-      semiLarge: $semiLarge,
-      large: $large,
-      extraLarge: $extraLarge,
-      superLarge: $superLarge,
-    )
-  ''';
+XSpacingsTokens(
+  none: $none,
+  superSmall: $superSmall,
+  extraSmall: $extraSmall,
+  small: $small,
+  semiSmall: $semiSmall,
+  medium: $medium,
+  semiLarge: $semiLarge,
+  large: $large,
+  extraLarge: $extraLarge,
+  superLarge: $superLarge,
+)
+''';
 }

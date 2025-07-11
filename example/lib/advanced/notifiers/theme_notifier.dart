@@ -68,44 +68,44 @@ class ThemeNotifier extends ChangeNotifier {
   }
 
   /// Updates the spacings data and notifies listeners.
-  void updateSpacingsData(XSpacingsTokens newSpacingsData) {
-    spacings = newSpacingsData;
+  void updateSpacingsTokens(XSpacingsTokens newSpacingsTokens) {
+    spacings = newSpacingsTokens;
     notifyListeners();
   }
 
   /// Updates the icon sizes data and notifies listeners.
-  void updateIconSizesData(XIconSizesTokens newIconSizesData) {
-    iconSizes = newIconSizesData;
+  void updateIconSizesTokens(XIconSizesTokens newIconSizesTokens) {
+    iconSizes = newIconSizesTokens;
     notifyListeners();
   }
 
   /// Updates the elevations data and notifies listeners.
-  void updateElevationsData(XElevationsTokens newElevationsData) {
-    elevations = newElevationsData;
+  void updateElevationsTokens(XElevationsTokens newElevationsTokens) {
+    elevations = newElevationsTokens;
     notifyListeners();
   }
 
   /// Updates the durations data and notifies listeners.
-  void updateDurationsData(XDurationsTokens newDurationsData) {
-    durations = newDurationsData;
+  void updateDurationsTokens(XDurationsTokens newDurationsTokens) {
+    durations = newDurationsTokens;
     notifyListeners();
   }
 
   /// Updates the breakpoints data and notifies listeners.
-  void updateBreakpointsData(XBreakpointsTokens newBreakpointsData) {
-    breakpoints = newBreakpointsData;
+  void updateBreakpointsTokens(XBreakpointsTokens newBreakpointsTokens) {
+    breakpoints = newBreakpointsTokens;
     notifyListeners();
   }
 
   /// Updates the box shadows data and notifies listeners.
-  void updateBoxShadowsData(XBoxShadowsTokens newBoxShadowsData) {
-    boxShadows = newBoxShadowsData;
+  void updateBoxShadowsTokens(XBoxShadowsTokens newBoxShadowsTokens) {
+    boxShadows = newBoxShadowsTokens;
     notifyListeners();
   }
 
   /// Updates the text shadows data and notifies listeners.
-  void updateTextShadowsData(XTextShadowsTokens newTextShadowsData) {
-    textShadows = newTextShadowsData;
+  void updateTextShadowsTokens(XTextShadowsTokens newTextShadowsTokens) {
+    textShadows = newTextShadowsTokens;
     notifyListeners();
   }
 

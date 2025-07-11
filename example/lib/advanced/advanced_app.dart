@@ -28,7 +28,8 @@ class AdvancedApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
-              extensions: [themeNotifier.tokens],
+              // extensions: [themeNotifier.tokens],
+              extensions: [XDesignTokens()],
             ),
             home: const RootPage(),
           );

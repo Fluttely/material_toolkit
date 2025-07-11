@@ -24,9 +24,9 @@ dependencies:
 ### Minimal example
 
 ```dart
-final tokens = XDesignTokensData();
+final tokens = XDesignTokens();
 
-return XDesignTokens(
+return XDesign(
   data: tokens,
   child: MaterialApp(
     theme: ThemeData(
@@ -43,7 +43,7 @@ class DemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = XDesignTokens.of(context);
+    final tokens = XDesign.of(context);
     return Scaffold(
       body: tokens.padding.all(
         XSpacings.medium,
@@ -80,10 +80,10 @@ Use `DesignTokensData.material()` to obtain Material defaults. Override any
 value with a map or JSON string:
 
 ```dart
-final tokens = XDesignTokensData.material(overrides: {
+final tokens = XDesignTokens.material(overrides: {
   "spacings": {"medium": 20.0},
 });
 ```
 
-JSON can be loaded with `XDesignTokensData.fromJson` for the same effect.
+JSON can be loaded with `XDesignTokens.fromJson` for the same effect.
 

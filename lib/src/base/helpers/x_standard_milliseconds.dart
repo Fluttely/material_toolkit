@@ -1,6 +1,7 @@
 part of 'x_helpers.dart';
 
 abstract final class XStandardMilliseconds {
+  static const int zero = 0;
   static const int x100 = 100;
   static const int x200 = 200;
   static const int x300 = 300;

@@ -1,4 +1,29 @@
-design_system_generator: ^5.1.0
-design_tokens_builder: ^0.2.0+1
-senior_design_tokens: ^3.0.1
-figma_importer: ^0.1.3
+// blurs:
+  // Typography:
+  // - Font family mapping (from Figma font name to Flutter name)
+  // - Font weight
+  // - Line height
+  // - Font size
+  // - Letter spacing
+  // - Text decoration
+  // Colors / palettes:
+  // shadows:
+  // border widths:
+  // - Border radius:
+  // - opacity:
+
+  // Theme extension
+  // - Borders
+  // - Border radii
+  // - Box Shadows
+  // - Colors
+  // - Dimensions (also with px)
+  // - Font families
+  // - Font weights
+  // - Line height (only %)
+  // - Numbers
+  // - Opacity (also with %)
+  // - Edge insets
+  // - Text cases
+  // - Text decorations
+  // - Text styles

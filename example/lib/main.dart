@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/advanced/advanced_app.dart';
 
 void main() {
-  // runApp(const MinimalApp());
-  runApp(const AdvancedApp());
+  runApp(const MinimalApp());
+  // runApp(const AdvancedApp());
 }
 
 class MinimalApp extends StatelessWidget {
@@ -13,16 +12,18 @@ class MinimalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = XDesignTokens();
-    return XDesign(
-      data: tokens,
-      child: MaterialApp(
-        title: 'Material Toolkit Minimal',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          extensions: [tokens],
-        ),
-        home: const HomePage(),
+    return
+        // XDesign(
+        //   data: tokens,
+        //   child:
+        MaterialApp(
+      title: 'Material Toolkit Minimal',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        extensions: [tokens],
       ),
+      home: const HomePage(),
+      // ),
     );
   }
 }
@@ -32,7 +33,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = XDesign.of(context);
+    // final tokens = XDesign.of(context);
+    final tokens = Theme.of(context).extension<XDesignTokens>()!;
     return Scaffold(
       appBar: AppBar(title: const Text('Design Tokens Example')),
       body: tokens.padding.all(

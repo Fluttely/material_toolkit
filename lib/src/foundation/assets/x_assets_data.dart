@@ -8,22 +8,22 @@
 
 // part 'x_images_data.dart';
 
-// class XAssetsData extends ThemeExtension<XAssetsData> {
-//   final XIconsData icons;
-//   final XImagesData images;
+// class XAssetsTokens extends ThemeExtension<XAssetsTokens> {
+//   final XIconsTokens icons;
+//   final XImagesTokens images;
 
-//   XAssetsData({
-//     final XIconsData? icons,
-//     final XImagesData? images,
-//   })  : icons = icons ?? XIconsData(),
-//         images = images ?? XImagesData();
+//   XAssetsTokens({
+//     final XIconsTokens? icons,
+//     final XImagesTokens? images,
+//   })  : icons = icons ?? XIconsTokens(),
+//         images = images ?? XImagesTokens();
 
 //   @override
-//   ThemeExtension<XAssetsData> lerp(ThemeExtension<XAssetsData>? other, double t) {
-//     if (other is! XAssetsData) {
+//   ThemeExtension<XAssetsTokens> lerp(ThemeExtension<XAssetsTokens>? other, double t) {
+//     if (other is! XAssetsTokens) {
 //       return this;
 //     } else {
-//       return XAssetsData(
+//       return XAssetsTokens(
 //         icons: icons,
 //         images: images,
 //       );
@@ -31,11 +31,11 @@
 //   }
 
 //   @override
-//   XAssetsData copyWith({
-//     XIconsData? icons,
-//     XImagesData? images,
+//   XAssetsTokens copyWith({
+//     XIconsTokens? icons,
+//     XImagesTokens? images,
 //   }) {
-//     return XAssetsData(
+//     return XAssetsTokens(
 //       icons: icons ?? this.icons,
 //       images: images ?? this.images,
 //     );
@@ -44,14 +44,14 @@
 //   @override
 //   bool operator ==(Object other) =>
 //       identical(this, other) ||
-//       other is XAssetsData && icons == other.icons && images == other.images && runtimeType == other.runtimeType;
+//       other is XAssetsTokens && icons == other.icons && images == other.images && runtimeType == other.runtimeType;
 
 //   @override
 //   int get hashCode => icons.hashCode ^ images.hashCode;
 
 //   @override
 //   String toString() => '''
-//     XAssetsData(
+//     XAssetsTokens(
 //       icons: $icons,
 //       images: $images,
 //     )
