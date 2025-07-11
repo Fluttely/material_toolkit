@@ -38,10 +38,10 @@ class XRoundedRectangleBorder {
     );
   }
 
-  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
+  /// Converts an [XRoundedRectangleBorder] into a [RoundedRectangleBorder].
   ///
-  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
+  /// Returns a [RoundedRectangleBorder] with the same [borderSide] and
+  /// [borderRadius] configuration.
   RoundedRectangleBorder toRoundedRectangleBorder(XRadiiTokens radiiTokens) {
     return RoundedRectangleBorder(
       side: borderSide,

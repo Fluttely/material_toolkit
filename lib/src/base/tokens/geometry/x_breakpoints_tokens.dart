@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Breakpoints defining responsive layout ranges.
+
+/// Contains screen size ranges for responsive layouts.
 class XBreakpointsTokens extends Equatable {
   const XBreakpointsTokens({
     XBreakpoint? mobile,

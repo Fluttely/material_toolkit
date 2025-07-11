@@ -1,5 +1,8 @@
 part of '../../../x_design_tokens.dart';
 
+/// Resolves [XBorderRadius] into Flutter [BorderRadius] values.
+
+/// Converts [XBorderRadius] definitions to concrete [BorderRadius] objects.
 class XBorderRadiusResolver extends Equatable {
   const XBorderRadiusResolver(this._radiiTokens);
   final XRadiiTokens _radiiTokens;

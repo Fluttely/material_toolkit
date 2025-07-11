@@ -38,10 +38,10 @@ class XContinuousRectangleBorder {
     );
   }
 
-  /// Converte um [XContinuousRectangleBorder] para um [ContinuousRectangleBorder].
+  /// Converts an [XContinuousRectangleBorder] into a [ContinuousRectangleBorder].
   ///
-  /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
+  /// Returns a [ContinuousRectangleBorder] with the same [borderSide] and
+  /// [borderRadius] configuration.
   ContinuousRectangleBorder toContinuousRectangleBorder(
       XRadiiTokens radiiTokens) {
     return ContinuousRectangleBorder(

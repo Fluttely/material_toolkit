@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Opacity values used for interactive states.
+
+/// Defines opacity values for different component states.
 class XOpacitiesTokens extends Equatable {
   const XOpacitiesTokens({
     double? disabled,

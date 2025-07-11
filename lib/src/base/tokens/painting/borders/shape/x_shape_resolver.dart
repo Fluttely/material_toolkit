@@ -1,5 +1,8 @@
 part of '../../../x_design_tokens.dart';
 
+/// Provides convenience methods for creating border shapes using [XRadiiTokens].
+
+/// Builds Flutter shapes from [XBorderRadius] definitions.
 class XShapeResolver extends Equatable {
   const XShapeResolver(this._radiiTokens);
   final XRadiiTokens _radiiTokens;

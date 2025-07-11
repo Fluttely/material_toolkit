@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Z-index values defining the stacking order of components.
+
+/// Defines the stacking order for widgets using integer z-indexes.
 class XZIndexesTokens extends Equatable {
   const XZIndexesTokens({
     int? background,
