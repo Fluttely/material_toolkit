@@ -1,4 +1,4 @@
-library x_helpers;
+library helpers;
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';

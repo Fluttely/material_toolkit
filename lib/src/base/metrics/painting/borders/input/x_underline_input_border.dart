@@ -1,13 +1,11 @@
 part of '../../../design_tokens.dart';
 
-/// Extensão para a classe [XUnderlineInputBorder] que adiciona um método
-/// para converter em um [UnderlineInputBorder] do Flutter.
-extension XUnderlineInputBorderExtension on XUnderlineInputBorder {
-  /// Converte um [XUnderlineInputBorder] para um [UnderlineInputBorder].
-  ///
-  /// Retorna um [UnderlineInputBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  UnderlineInputBorder toUnderlineInputBorder(XRadiiData radiiData) {
+/// Extension on [UnderlineInputBorderData] to convert it into Flutter's
+/// [UnderlineInputBorder].
+extension UnderlineInputBorderDataExtension on UnderlineInputBorderData {
+  /// Returns a Flutter [UnderlineInputBorder] using the provided [borderSide]
+  /// and [borderRadius].
+  UnderlineInputBorder toUnderlineInputBorder(Radii radiiData) {
     return UnderlineInputBorder(
       borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
@@ -27,11 +25,11 @@ extension XUnderlineInputBorderExtension on XUnderlineInputBorder {
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
 ///    describe a rounded rectangle.
-class XUnderlineInputBorder {
+class UnderlineInputBorderData {
   /// Creates a rounded rectangle border.
-  const XUnderlineInputBorder({
+  const UnderlineInputBorderData({
     this.borderSide = BorderSide.none,
-    this.borderRadius = XBorderRadius.none,
+    this.borderRadius = DesignBorderRadius.none,
   });
 
   /// The border underline's color and weight.
@@ -41,13 +39,12 @@ class XUnderlineInputBorder {
   final BorderSide borderSide;
 
   /// The radii for each corner.
-  final XBorderRadius borderRadius;
+  final DesignBorderRadius borderRadius;
 
-  /// Returns a copy of this XUnderlineInputBorder with the given fields
-  /// replaced with the new values.
-  XUnderlineInputBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XUnderlineInputBorder(
+  /// Returns a copy of this object with the given fields replaced.
+  UnderlineInputBorderData copyWith(
+      {BorderSide? borderSide, DesignBorderRadius? borderRadius}) {
+    return UnderlineInputBorderData(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );

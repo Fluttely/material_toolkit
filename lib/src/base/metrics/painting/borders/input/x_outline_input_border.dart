@@ -1,13 +1,11 @@
 part of '../../../design_tokens.dart';
 
-/// Extensão para a classe [XOutlineInputBorder] que adiciona um método
-/// para converter em um [OutlineInputBorder] do Flutter.
-extension XOutlineInputBorderExtension on XOutlineInputBorder {
-  /// Converte um [XOutlineInputBorder] para um [OutlineInputBorder].
-  ///
-  /// Retorna um [OutlineInputBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  OutlineInputBorder toOutlineInputBorder(XRadiiData radiiData) {
+/// Extension on [OutlineInputBorderData] to convert it into Flutter's
+/// [OutlineInputBorder].
+extension OutlineInputBorderDataExtension on OutlineInputBorderData {
+  /// Returns a Flutter [OutlineInputBorder] using the provided [borderSide]
+  /// and [borderRadius].
+  OutlineInputBorder toOutlineInputBorder(Radii radiiData) {
     return OutlineInputBorder(
       borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
@@ -28,11 +26,11 @@ extension XOutlineInputBorderExtension on XOutlineInputBorder {
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
 ///    describe a rounded rectangle.
-class XOutlineInputBorder {
+class OutlineInputBorderData {
   /// Creates a rounded rectangle border.
-  const XOutlineInputBorder({
+  const OutlineInputBorderData({
     this.borderSide = BorderSide.none,
-    this.borderRadius = XBorderRadius.none,
+    this.borderRadius = DesignBorderRadius.none,
     this.gapPadding = 4.0,
   });
 
@@ -43,16 +41,15 @@ class XOutlineInputBorder {
   final BorderSide borderSide;
 
   /// The radii for each corner.
-  final XBorderRadius borderRadius;
+  final DesignBorderRadius borderRadius;
 
   // TODO: description
   final double gapPadding;
 
-  /// Returns a copy of this XOutlineInputBorder with the given fields
-  /// replaced with the new values.
-  XOutlineInputBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XOutlineInputBorder(
+  /// Returns a copy of this object with the given fields replaced.
+  OutlineInputBorderData copyWith(
+      {BorderSide? borderSide, DesignBorderRadius? borderRadius}) {
+    return OutlineInputBorderData(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );

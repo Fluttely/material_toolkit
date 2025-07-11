@@ -1,13 +1,11 @@
 part of '../../../design_tokens.dart';
 
-/// Extensão para a classe [XRoundedRectangleBorder] que adiciona um método
-/// para converter em um [RoundedRectangleBorder] do Flutter.
-extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
-  /// Converte um [XRoundedRectangleBorder] para um [RoundedRectangleBorder].
-  ///
-  /// Retorna um [RoundedRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  RoundedRectangleBorder toRoundedRectangleBorder(XRadiiData radiiData) {
+/// Extension on [RoundedRectangleBorderData] to convert it into Flutter's
+/// [RoundedRectangleBorder].
+extension RoundedRectangleBorderDataExtension on RoundedRectangleBorderData {
+  /// Returns a Flutter [RoundedRectangleBorder] using the provided [borderSide]
+  /// and [borderRadius].
+  RoundedRectangleBorder toRoundedRectangleBorder(Radii radiiData) {
     return RoundedRectangleBorder(
       side: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
@@ -27,11 +25,11 @@ extension XRoundedRectangleBorderExtension on XRoundedRectangleBorder {
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
 ///    describe a rounded rectangle.
-class XRoundedRectangleBorder {
+class RoundedRectangleBorderData {
   /// Creates a rounded rectangle border.
-  const XRoundedRectangleBorder({
+  const RoundedRectangleBorderData({
     this.borderSide = BorderSide.none,
-    this.borderRadius = XBorderRadius.none,
+    this.borderRadius = DesignBorderRadius.none,
   });
 
   /// The border outline's color and weight.
@@ -41,13 +39,12 @@ class XRoundedRectangleBorder {
   final BorderSide borderSide;
 
   /// The radii for each corner.
-  final XBorderRadius borderRadius;
+  final DesignBorderRadius borderRadius;
 
-  /// Returns a copy of this XRoundedRectangleBorder with the given fields
-  /// replaced with the new values.
-  XRoundedRectangleBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XRoundedRectangleBorder(
+  /// Returns a copy of this object with the given fields replaced.
+  RoundedRectangleBorderData copyWith(
+      {BorderSide? borderSide, DesignBorderRadius? borderRadius}) {
+    return RoundedRectangleBorderData(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );

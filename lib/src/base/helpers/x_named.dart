@@ -1,8 +1,8 @@
 part of 'x_helpers.dart';
 
 /// This class associated a [name] to a given [value].
-class XNamed<T> extends Equatable {
-  const XNamed(this.name, this.value);
+class NamedValue<T> extends Equatable {
+  const NamedValue(this.name, this.value);
 
   final String name;
   final T value;
@@ -16,6 +16,6 @@ class XNamed<T> extends Equatable {
   String toString() => '<$name>($value)';
 }
 
-extension NamedExtension<T> on T {
-  XNamed<T> named(String name) => XNamed<T>(name, this);
+extension NamedValueExtension<T> on T {
+  NamedValue<T> named(String name) => NamedValue<T>(name, this);
 }

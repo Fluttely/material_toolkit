@@ -1,6 +1,6 @@
 part of '../design_tokens.dart';
 
-class XBoxShadowsData extends Equatable {
+class BoxShadows extends Equatable {
   // final BoxShadow? _small;
   // final BoxShadow? _medium;
   // final BoxShadow? _large;
@@ -9,7 +9,7 @@ class XBoxShadowsData extends Equatable {
   final BoxShadow _medium;
   final BoxShadow _large;
 
-  // const XBoxShadowsData({
+  // const BoxShadows({
   //   final BoxShadow? small,
   //   final BoxShadow? medium,
   //   final BoxShadow? large,
@@ -17,51 +17,51 @@ class XBoxShadowsData extends Equatable {
   //       _medium = medium,
   //       _large = large;
 
-  const XBoxShadowsData({
+  const BoxShadows({
     final BoxShadow? small,
     final BoxShadow? medium,
     final BoxShadow? large,
   })  : _small = small ??
             const BoxShadow(
-              blurRadius: XAuxiliarySizes.x2,
-              spreadRadius: XAuxiliarySizes.x1,
+              blurRadius: AuxiliarySizes.x2,
+              spreadRadius: AuxiliarySizes.x1,
               color: Color(0x44000000),
             ),
         _medium = medium ??
             const BoxShadow(
-              blurRadius: XStandardSizes.x4,
-              spreadRadius: XAuxiliarySizes.x1,
+              blurRadius: StandardSizes.x4,
+              spreadRadius: AuxiliarySizes.x1,
               color: Color(0x44000000),
             ),
         _large = large ??
             const BoxShadow(
-              blurRadius: XStandardSizes.x8,
-              spreadRadius: XAuxiliarySizes.x2,
+              blurRadius: StandardSizes.x8,
+              spreadRadius: AuxiliarySizes.x2,
               color: Color(0x44000000),
             );
 
-  // XBoxShadowsData.x({
+  // BoxShadows.x({
   //   final XAttribute<BoxShadow?>? small,
   //   final XAttribute<BoxShadow?>? medium,
   //   final XAttribute<BoxShadow?>? large,
   // })  : _small = small == null
   //           ? const BoxShadow(
-  //               blurRadius: XAuxiliarySizes.x2,
-  //               spreadRadius: XAuxiliarySizes.x1,
+  //               blurRadius: AuxiliarySizes.x2,
+  //               spreadRadius: AuxiliarySizes.x1,
   //               color: Color(0x44000000),
   //             )
   //           : small.value,
   //       _medium = medium == null
   //           ? const BoxShadow(
-  //               blurRadius: XStandardSizes.x4,
-  //               spreadRadius: XAuxiliarySizes.x1,
+  //               blurRadius: StandardSizes.x4,
+  //               spreadRadius: AuxiliarySizes.x1,
   //               color: Color(0x44000000),
   //             )
   //           : medium.value,
   //       _large = large == null
   //           ? const BoxShadow(
-  //               blurRadius: XStandardSizes.x8,
-  //               spreadRadius: XAuxiliarySizes.x2,
+  //               blurRadius: StandardSizes.x8,
+  //               spreadRadius: AuxiliarySizes.x2,
   //               color: Color(0x44000000),
   //             )
   //           : large.value;
@@ -77,8 +77,8 @@ class XBoxShadowsData extends Equatable {
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
   BoxShadow get none => const BoxShadow(
-        blurRadius: XStandardSizes.zero,
-        spreadRadius: XStandardSizes.zero,
+        blurRadius: StandardSizes.zero,
+        spreadRadius: StandardSizes.zero,
         color: Color(0x00000000),
       );
   BoxShadow get small => _small;
@@ -95,7 +95,7 @@ class XBoxShadowsData extends Equatable {
 
   @override
   String toString() => '''
-    XBoxShadowsData(
+    BoxShadows(
       none: $none,
       small: $small,
       medium: $medium,

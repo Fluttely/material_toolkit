@@ -1,9 +1,9 @@
 part of '../../../design_tokens.dart';
 
-class XShapes extends Equatable {
-  final XRadiiData _radiiData;
+class Shapes extends Equatable {
+  final Radii _radiiData;
 
-  const XShapes(this._radiiData);
+  const Shapes(this._radiiData);
 
   BoxShape get rectangleBoxShape => BoxShape.rectangle;
   BoxShape get circleBoxShape => BoxShape.circle;
@@ -13,25 +13,25 @@ class XShapes extends Equatable {
 
   RoundedRectangleBorder roundedRectangleBorder({
     BorderSide borderSide = BorderSide.none,
-    XBorderRadius borderRadius = XBorderRadius.none,
+    DesignBorderRadius borderRadius = DesignBorderRadius.none,
   }) =>
-      XRoundedRectangleBorder(
+      RoundedRectangleBorderData(
               borderSide: borderSide, borderRadius: borderRadius)
           .toRoundedRectangleBorder(_radiiData);
 
   BeveledRectangleBorder beveledRectangleBorder({
     BorderSide borderSide = BorderSide.none,
-    XBorderRadius borderRadius = XBorderRadius.none,
+    DesignBorderRadius borderRadius = DesignBorderRadius.none,
   }) =>
-      XBeveledRectangleBorder(
+      BeveledRectangleBorderData(
               borderSide: borderSide, borderRadius: borderRadius)
           .toBeveledRectangleBorder(_radiiData);
 
   ContinuousRectangleBorder continuousRectangleBorder({
     BorderSide borderSide = BorderSide.none,
-    XBorderRadius borderRadius = XBorderRadius.none,
+    DesignBorderRadius borderRadius = DesignBorderRadius.none,
   }) =>
-      XContinuousRectangleBorder(
+      ContinuousRectangleBorderData(
               borderSide: borderSide, borderRadius: borderRadius)
           .toContinuousRectangleBorder(_radiiData);
 
@@ -42,7 +42,7 @@ class XShapes extends Equatable {
 
   @override
   String toString() => '''
-    XShapes(
+    Shapes(
       _radiiData: $_radiiData,
     )
   ''';

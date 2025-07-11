@@ -1,6 +1,6 @@
 part of '../design_tokens.dart';
 
-enum XFormFactor {
+enum FormFactor {
   small,
   medium,
   // large,

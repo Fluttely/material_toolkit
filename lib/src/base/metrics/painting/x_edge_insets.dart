@@ -1,34 +1,34 @@
 part of '../design_tokens.dart';
 
-class XEdgeInsets extends Equatable {
-  final XSpacesData _spaces;
+class SpacingInsets extends Equatable {
+  final Spaces _spaces;
 
-  const XEdgeInsets(this._spaces);
+  const SpacingInsets(this._spaces);
 
   EdgeInsets get none => EdgeInsets.all(_spaces.none);
 
-  EdgeInsets all(final XSpaces value) => EdgeInsets.all(value.toData(_spaces));
+  EdgeInsets all(final Space value) => EdgeInsets.all(value.toData(_spaces));
 
   EdgeInsets symmetric({
-    final XSpaces? vertical,
-    final XSpaces? horizontal,
+    final Space? vertical,
+    final Space? horizontal,
   }) =>
       EdgeInsets.symmetric(
-        horizontal: (horizontal ?? XSpaces.none).toData(_spaces),
-        vertical: (vertical ?? XSpaces.none).toData(_spaces),
+        horizontal: (horizontal ?? Space.none).toData(_spaces),
+        vertical: (vertical ?? Space.none).toData(_spaces),
       );
 
   EdgeInsets only({
-    final XSpaces? left,
-    final XSpaces? top,
-    final XSpaces? right,
-    final XSpaces? bottom,
+    final Space? left,
+    final Space? top,
+    final Space? right,
+    final Space? bottom,
   }) =>
       EdgeInsets.only(
-        left: (left ?? XSpaces.none).toData(_spaces),
-        top: (top ?? XSpaces.none).toData(_spaces),
-        right: (right ?? XSpaces.none).toData(_spaces),
-        bottom: (bottom ?? XSpaces.none).toData(_spaces),
+        left: (left ?? Space.none).toData(_spaces),
+        top: (top ?? Space.none).toData(_spaces),
+        right: (right ?? Space.none).toData(_spaces),
+        bottom: (bottom ?? Space.none).toData(_spaces),
       );
 
   // EdgeInsets get allSuperSmall => EdgeInsets.all(_spaces.superSmall);
@@ -84,7 +84,7 @@ class XEdgeInsets extends Equatable {
 
   @override
   String toString() => '''
-    XEdgeInsets(
+    SpacingInsets(
       _spaces: $_spaces,
     )
   ''';

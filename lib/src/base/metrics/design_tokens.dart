@@ -52,50 +52,50 @@ class DesignTokens extends InheritedWidget {
 }
 
 class DesignTokensData extends ThemeExtension<DesignTokensData> {
-  final XBoxShadowsData boxShadows;
-  final XBreakpointsData breakpoints;
-  final XDurationsData durations;
-  final XElevationsData elevations;
-  final XFormFactor formFactor;
+  final BoxShadows boxShadows;
+  final Breakpoints breakpoints;
+  final Durations durations;
+  final Elevations elevations;
+  final FormFactor formFactor;
   // final XGoogleFontsData googleFonts;
-  final XIconSizesData iconSizes;
-  final XRadiiData radii;
-  final XSpacesData spaces;
-  final XTextShadowsData textShadows;
+  final IconSizes iconSizes;
+  final Radii radii;
+  final Spaces spaces;
+  final TextShadows textShadows;
   // blurs
 
   DesignTokensData({
-    final XBoxShadowsData? boxShadows,
-    final XBreakpointsData? breakpoints,
-    final XDurationsData? durations,
-    final XElevationsData? elevations,
-    final XFormFactor? formFactor,
+    final BoxShadows? boxShadows,
+    final Breakpoints? breakpoints,
+    final Durations? durations,
+    final Elevations? elevations,
+    final FormFactor? formFactor,
     // final XGoogleFontsData? googleFonts,
-    final XIconSizesData? iconSizes,
-    final XRadiiData? radii,
-    final XSpacesData? spaces,
-    final XTextShadowsData? textShadows,
-  })  : boxShadows = boxShadows ?? const XBoxShadowsData(),
-        breakpoints = breakpoints ?? const XBreakpointsData(),
-        durations = durations ?? const XDurationsData(),
-        elevations = elevations ?? const XElevationsData(),
-        formFactor = formFactor ?? XFormFactor.medium,
+    final IconSizes? iconSizes,
+    final Radii? radii,
+    final Spaces? spaces,
+    final TextShadows? textShadows,
+  })  : boxShadows = boxShadows ?? const BoxShadows(),
+        breakpoints = breakpoints ?? const Breakpoints(),
+        durations = durations ?? const Durations(),
+        elevations = elevations ?? const Elevations(),
+        formFactor = formFactor ?? FormFactor.medium,
         // googleFonts = googleFonts ?? const XGoogleFontsData(),
-        iconSizes = iconSizes ?? const XIconSizesData(),
-        radii = radii ?? const XRadiiData(),
-        spaces = spaces ?? const XSpacesData(),
-        textShadows = textShadows ?? const XTextShadowsData();
+        iconSizes = iconSizes ?? const IconSizes(),
+        radii = radii ?? const Radii(),
+        spaces = spaces ?? const Spaces(),
+        textShadows = textShadows ?? const TextShadows();
 
   /// Spaces
-  late final XGaps gaps = XGaps(spaces);
-  late final XEdgeInsets edgeInsets = XEdgeInsets(spaces);
-  late final XPadding padding = XPadding(edgeInsets);
+  late final Gaps gaps = Gaps(spaces);
+  late final SpacingInsets edgeInsets = SpacingInsets(spaces);
+  late final SpacingPadding padding = SpacingPadding(edgeInsets);
 
   /// Radii
-  late final XRadiusController radius = XRadiusController(radii);
-  late final XBorderRadii borderRadius = XBorderRadii(radii);
-  late final XShapes shape = XShapes(radii);
-  late final XInputBorders inputBorder = XInputBorders(radii);
+  late final CornerRadiusController radius = CornerRadiusController(radii);
+  late final BorderRadii borderRadius = BorderRadii(radii);
+  late final Shapes shape = Shapes(radii);
+  late final InputBorders inputBorder = InputBorders(radii);
 
   // GoogleFonts get googleFonts => GoogleFonts;
 
@@ -121,16 +121,16 @@ class DesignTokensData extends ThemeExtension<DesignTokensData> {
 
   @override
   DesignTokensData copyWith({
-    XBoxShadowsData? boxShadows,
-    XBreakpointsData? breakpoints,
-    XDurationsData? durations,
-    XElevationsData? elevations,
-    XFormFactor? formFactor,
+    BoxShadows? boxShadows,
+    Breakpoints? breakpoints,
+    Durations? durations,
+    Elevations? elevations,
+    FormFactor? formFactor,
     // XGoogleFontsData? googleFonts,
-    XIconSizesData? iconSizes,
-    XRadiiData? radii,
-    XSpacesData? spaces,
-    XTextShadowsData? textShadows,
+    IconSizes? iconSizes,
+    Radii? radii,
+    Spaces? spaces,
+    TextShadows? textShadows,
   }) {
     return DesignTokensData(
       boxShadows: boxShadows ?? this.boxShadows,

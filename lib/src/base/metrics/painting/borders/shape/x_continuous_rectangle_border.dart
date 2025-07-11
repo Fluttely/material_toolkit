@@ -1,13 +1,11 @@
 part of '../../../design_tokens.dart';
 
-/// Extensão para a classe [XContinuousRectangleBorder] que adiciona um método
-/// para converter em um [ContinuousRectangleBorder] do Flutter.
-extension XContinuousRectangleBorderExtension on XContinuousRectangleBorder {
-  /// Converte um [XContinuousRectangleBorder] para um [ContinuousRectangleBorder].
-  ///
-  /// Retorna um [ContinuousRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  ContinuousRectangleBorder toContinuousRectangleBorder(XRadiiData radiiData) {
+/// Extension on [ContinuousRectangleBorderData] to convert it into Flutter's
+/// [ContinuousRectangleBorder].
+extension ContinuousRectangleBorderDataExtension on ContinuousRectangleBorderData {
+  /// Returns a Flutter [ContinuousRectangleBorder] using the provided [borderSide]
+  /// and [borderRadius].
+  ContinuousRectangleBorder toContinuousRectangleBorder(Radii radiiData) {
     return ContinuousRectangleBorder(
       side: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
@@ -27,11 +25,11 @@ extension XContinuousRectangleBorderExtension on XContinuousRectangleBorder {
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
 ///    describe a continuous rectangle.
-class XContinuousRectangleBorder {
+class ContinuousRectangleBorderData {
   /// Creates a continuous rectangle border.
-  const XContinuousRectangleBorder({
+  const ContinuousRectangleBorderData({
     this.borderSide = BorderSide.none,
-    this.borderRadius = XBorderRadius.none,
+    this.borderRadius = DesignBorderRadius.none,
   });
 
   /// The border outline's color and weight.
@@ -41,13 +39,12 @@ class XContinuousRectangleBorder {
   final BorderSide borderSide;
 
   /// The radii for each corner.
-  final XBorderRadius borderRadius;
+  final DesignBorderRadius borderRadius;
 
-  /// Returns a copy of this XContinuousRectangleBorder with the given fields
-  /// replaced with the new values.
-  XContinuousRectangleBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XContinuousRectangleBorder(
+  /// Returns a copy of this object with the given fields replaced.
+  ContinuousRectangleBorderData copyWith(
+      {BorderSide? borderSide, DesignBorderRadius? borderRadius}) {
+    return ContinuousRectangleBorderData(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );

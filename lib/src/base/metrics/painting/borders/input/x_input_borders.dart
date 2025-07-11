@@ -1,24 +1,24 @@
 part of '../../../design_tokens.dart';
 
-class XInputBorders extends Equatable {
-  final XRadiiData _radiiData;
+class InputBorders extends Equatable {
+  final Radii _radiiData;
 
-  const XInputBorders(this._radiiData);
+  const InputBorders(this._radiiData);
 
   InputBorder get none => InputBorder.none;
 
   OutlineInputBorder outlineInputBorder({
     BorderSide borderSide = BorderSide.none,
-    XBorderRadius borderRadius = XBorderRadius.none,
+    DesignBorderRadius borderRadius = DesignBorderRadius.none,
   }) =>
-      XOutlineInputBorder(borderSide: borderSide, borderRadius: borderRadius)
+      OutlineInputBorderData(borderSide: borderSide, borderRadius: borderRadius)
           .toOutlineInputBorder(_radiiData);
 
   UnderlineInputBorder underlineInputBorder({
     BorderSide borderSide = BorderSide.none,
-    XBorderRadius borderRadius = XBorderRadius.none,
+    DesignBorderRadius borderRadius = DesignBorderRadius.none,
   }) =>
-      XUnderlineInputBorder(borderSide: borderSide, borderRadius: borderRadius)
+      UnderlineInputBorderData(borderSide: borderSide, borderRadius: borderRadius)
           .toUnderlineInputBorder(_radiiData);
 
   @override
@@ -28,7 +28,7 @@ class XInputBorders extends Equatable {
 
   @override
   String toString() => '''
-    XShapes(
+    InputBorders(
       _radiiData: $_radiiData,
     )
   ''';

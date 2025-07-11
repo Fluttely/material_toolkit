@@ -1,13 +1,11 @@
 part of '../../../design_tokens.dart';
 
-/// Extensão para a classe [XBeveledRectangleBorder] que adiciona um método
-/// para converter em um [BeveledRectangleBorder] do Flutter.
-extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
-  /// Converte um [XBeveledRectangleBorder] para um [BeveledRectangleBorder].
-  ///
-  /// Retorna um [BeveledRectangleBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
-  BeveledRectangleBorder toBeveledRectangleBorder(XRadiiData radiiData) {
+/// Extension on [BeveledRectangleBorderData] to convert it into Flutter's
+/// [BeveledRectangleBorder].
+extension BeveledRectangleBorderDataExtension on BeveledRectangleBorderData {
+  /// Returns a Flutter [BeveledRectangleBorder] using the provided [borderSide]
+  /// and [borderRadius].
+  BeveledRectangleBorder toBeveledRectangleBorder(Radii radiiData) {
     return BeveledRectangleBorder(
       side: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiData),
@@ -27,11 +25,11 @@ extension XBeveledRectangleBorderExtension on XBeveledRectangleBorder {
 ///  * [BorderSide], which is used to describe each side of the box.
 ///  * [Border], which, when used with [BoxDecoration], can also
 ///    describe a beveled rectangle.
-class XBeveledRectangleBorder {
+class BeveledRectangleBorderData {
   /// Creates a beveled rectangle border.
-  const XBeveledRectangleBorder({
+  const BeveledRectangleBorderData({
     this.borderSide = BorderSide.none,
-    this.borderRadius = XBorderRadius.none,
+    this.borderRadius = DesignBorderRadius.none,
   });
 
   /// The border outline's color and weight.
@@ -41,13 +39,13 @@ class XBeveledRectangleBorder {
   final BorderSide borderSide;
 
   /// The radii for each corner.
-  final XBorderRadius borderRadius;
+  final DesignBorderRadius borderRadius;
 
-  /// Returns a copy of this XBeveledRectangleBorder with the given fields
+  /// Returns a copy of this object with the given fields
   /// replaced with the new values.
-  XBeveledRectangleBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
-    return XBeveledRectangleBorder(
+  BeveledRectangleBorderData copyWith(
+      {BorderSide? borderSide, DesignBorderRadius? borderRadius}) {
+    return BeveledRectangleBorderData(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
     );

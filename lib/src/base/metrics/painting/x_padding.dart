@@ -1,9 +1,9 @@
 part of '../design_tokens.dart';
 
-class XPadding extends Equatable {
-  final XEdgeInsets _edgeInsets;
+class SpacingPadding extends Equatable {
+  final SpacingInsets _edgeInsets;
 
-  const XPadding(this._edgeInsets);
+  const SpacingPadding(this._edgeInsets);
 
   Padding none({
     Widget? child,
@@ -14,7 +14,7 @@ class XPadding extends Equatable {
       );
 
   Padding all(
-    final XSpaces value, {
+    final Space value, {
     final Widget? child,
   }) =>
       Padding(
@@ -23,8 +23,8 @@ class XPadding extends Equatable {
       );
 
   Padding symmetric({
-    final XSpaces? vertical,
-    final XSpaces? horizontal,
+    final Space? vertical,
+    final Space? horizontal,
     final Widget? child,
   }) =>
       Padding(
@@ -36,10 +36,10 @@ class XPadding extends Equatable {
       );
 
   Padding only({
-    final XSpaces? left,
-    final XSpaces? top,
-    final XSpaces? right,
-    final XSpaces? bottom,
+    final Space? left,
+    final Space? top,
+    final Space? right,
+    final Space? bottom,
     final Widget? child,
   }) =>
       Padding(
@@ -89,7 +89,7 @@ class XPadding extends Equatable {
 
   @override
   String toString() => '''
-    XPadding(
+    SpacingPadding(
       _edgeInsets: $_edgeInsets,
     )
   ''';

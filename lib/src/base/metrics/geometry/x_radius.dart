@@ -1,10 +1,10 @@
 part of '../design_tokens.dart';
 
-extension XRadiusExtension on XRadius {
-  /// Converts [XRadius] to a Flutter [Radius].
+extension CornerRadiusExtension on CornerRadius {
+  /// Converts [CornerRadius] to a Flutter [Radius].
   ///
   /// Otherwise, it returns a [Radius.elliptical] with the given `x` and `y`.
-  Radius toRadius(XRadiiData radiiData) {
+  Radius toRadius(Radii radiiData) {
     return Radius.elliptical(
       x.toData(radiiData),
       y.toData(radiiData),
@@ -13,12 +13,12 @@ extension XRadiusExtension on XRadius {
 }
 
 /// A radius for either circular or elliptical shapes.
-class XRadius {
+class CornerRadius {
   /// Constructs a circular radius. [x] and [y] will have the same radius value.
   ///
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/radius_circular.png#gh-light-mode-only)
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/radius_circular_dark.png#gh-dark-mode-only)
-  const XRadius.circular(XRadii radius)
+  const CornerRadius.circular(RadiusLevel radius)
       : this.elliptical(
           radius,
           radius,
@@ -28,19 +28,19 @@ class XRadius {
   ///
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/radius_elliptical.png#gh-light-mode-only)
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/radius_elliptical_dark.png#gh-dark-mode-only)
-  const XRadius.elliptical(
+  const CornerRadius.elliptical(
     this.x,
     this.y,
   );
 
   /// The radius value on the horizontal axis.
-  final XRadii x;
+  final RadiusLevel x;
 
   /// The radius value on the vertical axis.
-  final XRadii y;
+  final RadiusLevel y;
 
   /// A radius with [x] and [y] values set to none.
   ///
-  /// You can use [XRadius.none] with [RRect] to have right-angle corners.
-  static const XRadius none = XRadius.circular(XRadii.none);
+  /// You can use [CornerRadius.none] with [RRect] to have right-angle corners.
+  static const CornerRadius none = CornerRadius.circular(RadiusLevel.none);
 }

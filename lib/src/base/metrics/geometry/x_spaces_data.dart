@@ -1,6 +1,6 @@
 part of '../design_tokens.dart';
 
-enum XSpaces {
+enum Space {
   none,
   superSmall,
   extraSmall,
@@ -13,24 +13,24 @@ enum XSpaces {
   superLarge,
 }
 
-extension XSpacesExtension on XSpaces {
-  double toData(XSpacesData spaces) {
+extension SpaceExtension on Space {
+  double toData(Spaces spaces) {
     return switch (this) {
-      XSpaces.none => spaces.none,
-      XSpaces.superSmall => spaces.superSmall,
-      XSpaces.extraSmall => spaces.extraSmall,
-      XSpaces.small => spaces.small,
-      XSpaces.semiSmall => spaces.semiSmall,
-      XSpaces.medium => spaces.medium,
-      XSpaces.semiLarge => spaces.semiLarge,
-      XSpaces.large => spaces.large,
-      XSpaces.extraLarge => spaces.extraLarge,
-      XSpaces.superLarge => spaces.superLarge,
+      Space.none => spaces.none,
+      Space.superSmall => spaces.superSmall,
+      Space.extraSmall => spaces.extraSmall,
+      Space.small => spaces.small,
+      Space.semiSmall => spaces.semiSmall,
+      Space.medium => spaces.medium,
+      Space.semiLarge => spaces.semiLarge,
+      Space.large => spaces.large,
+      Space.extraLarge => spaces.extraLarge,
+      Space.superLarge => spaces.superLarge,
     };
   }
 }
 
-class XSpacesData extends Equatable {
+class Spaces extends Equatable {
   // final double? _superSmall;
   // final double? _extraSmall;
   // final double? _small;
@@ -51,7 +51,7 @@ class XSpacesData extends Equatable {
   final double _extraLarge;
   final double _superLarge;
 
-  // const XSpacesData({
+  // const Spaces({
   //   final double? superSmall,
   //   final double? extraSmall,
   //   final double? small,
@@ -71,7 +71,7 @@ class XSpacesData extends Equatable {
   //       _extraLarge = extraLarge,
   //       _superLarge = superLarge;
 
-  const XSpacesData({
+  const Spaces({
     final double? superSmall,
     final double? extraSmall,
     final double? small,
@@ -81,17 +81,17 @@ class XSpacesData extends Equatable {
     final double? large,
     final double? extraLarge,
     final double? superLarge,
-  })  : _superSmall = superSmall ?? XAuxiliarySizes.x2,
-        _extraSmall = extraSmall ?? XStandardSizes.x4,
-        _small = small ?? XStandardSizes.x8,
-        _semiSmall = semiSmall ?? XStandardSizes.x12,
-        _medium = medium ?? XStandardSizes.x16,
-        _semiLarge = semiLarge ?? XStandardSizes.x20,
-        _large = large ?? XStandardSizes.x24,
-        _extraLarge = extraLarge ?? XStandardSizes.x32,
-        _superLarge = superLarge ?? XStandardSizes.x48;
+  })  : _superSmall = superSmall ?? AuxiliarySizes.x2,
+        _extraSmall = extraSmall ?? StandardSizes.x4,
+        _small = small ?? StandardSizes.x8,
+        _semiSmall = semiSmall ?? StandardSizes.x12,
+        _medium = medium ?? StandardSizes.x16,
+        _semiLarge = semiLarge ?? StandardSizes.x20,
+        _large = large ?? StandardSizes.x24,
+        _extraLarge = extraLarge ?? StandardSizes.x32,
+        _superLarge = superLarge ?? StandardSizes.x48;
 
-  // XSpacesData.x({
+  // Spaces.x({
   //   final XAttribute<double?>? superSmall,
   //   final XAttribute<double?>? extraSmall,
   //   final XAttribute<double?>? small,
@@ -101,17 +101,17 @@ class XSpacesData extends Equatable {
   //   final XAttribute<double?>? large,
   //   final XAttribute<double?>? extraLarge,
   //   final XAttribute<double?>? superLarge,
-  // })  : _superSmall = superSmall == null ? XAuxiliarySizes.x2 : superSmall.value,
-  //       _extraSmall = extraSmall == null ? XStandardSizes.x4 : extraSmall.value,
-  //       _small = small == null ? XStandardSizes.x8 : small.value,
-  //       _semiSmall = semiSmall == null ? XStandardSizes.x12 : semiSmall.value,
-  //       _medium = medium == null ? XStandardSizes.x16 : medium.value,
-  //       _semiLarge = semiLarge == null ? XStandardSizes.x20 : semiLarge.value,
-  //       _large = large == null ? XStandardSizes.x24 : large.value,
-  //       _extraLarge = extraLarge == null ? XStandardSizes.x32 : extraLarge.value,
-  //       _superLarge = superLarge == null ? XStandardSizes.x48 : superLarge.value;
+  // })  : _superSmall = superSmall == null ? AuxiliarySizes.x2 : superSmall.value,
+  //       _extraSmall = extraSmall == null ? StandardSizes.x4 : extraSmall.value,
+  //       _small = small == null ? StandardSizes.x8 : small.value,
+  //       _semiSmall = semiSmall == null ? StandardSizes.x12 : semiSmall.value,
+  //       _medium = medium == null ? StandardSizes.x16 : medium.value,
+  //       _semiLarge = semiLarge == null ? StandardSizes.x20 : semiLarge.value,
+  //       _large = large == null ? StandardSizes.x24 : large.value,
+  //       _extraLarge = extraLarge == null ? StandardSizes.x32 : extraLarge.value,
+  //       _superLarge = superLarge == null ? StandardSizes.x48 : superLarge.value;
 
-  // double get none => XStandardSizes.zero;
+  // double get none => StandardSizes.zero;
   // double get superSmall =>
   //     _superSmall ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
@@ -149,7 +149,7 @@ class XSpacesData extends Equatable {
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'superLarge', location: 'spaces')));
 
-  double get none => XStandardSizes.zero;
+  double get none => StandardSizes.zero;
   double get superSmall => _superSmall;
   double get extraSmall => _extraSmall;
   double get small => _small;
@@ -161,63 +161,63 @@ class XSpacesData extends Equatable {
   double get superLarge => _superLarge;
 
   /// + 2
-  double get x2 => XAuxiliarySizes.x2;
+  double get x2 => AuxiliarySizes.x2;
 
   /// + 4
-  double get x4 => XStandardSizes.x4;
-  double get x8 => XStandardSizes.x8;
-  double get x12 => XStandardSizes.x12;
-  double get x16 => XStandardSizes.x16;
-  double get x20 => XStandardSizes.x20;
-  double get x24 => XStandardSizes.x24;
-  double get x28 => XStandardSizes.x28;
-  double get x32 => XStandardSizes.x32;
-  double get x36 => XStandardSizes.x36;
-  double get x40 => XStandardSizes.x40;
-  double get x44 => XStandardSizes.x44;
-  double get x48 => XStandardSizes.x48;
-  double get x52 => XStandardSizes.x52;
-  double get x56 => XStandardSizes.x56;
-  double get x60 => XStandardSizes.x60;
-  double get x64 => XStandardSizes.x64;
-  double get x68 => XStandardSizes.x68;
-  double get x72 => XStandardSizes.x72;
-  double get x76 => XStandardSizes.x76;
-  double get x80 => XStandardSizes.x80;
-  double get x84 => XStandardSizes.x84;
-  double get x88 => XStandardSizes.x88;
-  double get x92 => XStandardSizes.x92;
-  double get x96 => XStandardSizes.x96;
-  double get x100 => XStandardSizes.x100;
-  double get x104 => XStandardSizes.x104;
-  double get x108 => XStandardSizes.x108;
-  double get x112 => XStandardSizes.x112;
-  double get x116 => XStandardSizes.x116;
-  double get x120 => XStandardSizes.x120;
-  double get x128 => XStandardSizes.x128;
+  double get x4 => StandardSizes.x4;
+  double get x8 => StandardSizes.x8;
+  double get x12 => StandardSizes.x12;
+  double get x16 => StandardSizes.x16;
+  double get x20 => StandardSizes.x20;
+  double get x24 => StandardSizes.x24;
+  double get x28 => StandardSizes.x28;
+  double get x32 => StandardSizes.x32;
+  double get x36 => StandardSizes.x36;
+  double get x40 => StandardSizes.x40;
+  double get x44 => StandardSizes.x44;
+  double get x48 => StandardSizes.x48;
+  double get x52 => StandardSizes.x52;
+  double get x56 => StandardSizes.x56;
+  double get x60 => StandardSizes.x60;
+  double get x64 => StandardSizes.x64;
+  double get x68 => StandardSizes.x68;
+  double get x72 => StandardSizes.x72;
+  double get x76 => StandardSizes.x76;
+  double get x80 => StandardSizes.x80;
+  double get x84 => StandardSizes.x84;
+  double get x88 => StandardSizes.x88;
+  double get x92 => StandardSizes.x92;
+  double get x96 => StandardSizes.x96;
+  double get x100 => StandardSizes.x100;
+  double get x104 => StandardSizes.x104;
+  double get x108 => StandardSizes.x108;
+  double get x112 => StandardSizes.x112;
+  double get x116 => StandardSizes.x116;
+  double get x120 => StandardSizes.x120;
+  double get x128 => StandardSizes.x128;
 
   /// + 8
-  double get x136 => XStandardSizes.x136;
-  double get x144 => XStandardSizes.x144;
-  double get x152 => XStandardSizes.x152;
-  double get x160 => XStandardSizes.x160;
-  double get x168 => XStandardSizes.x168;
-  double get x176 => XStandardSizes.x176;
-  double get x184 => XStandardSizes.x184;
-  double get x192 => XStandardSizes.x192;
-  double get x200 => XStandardSizes.x200;
-  double get x208 => XStandardSizes.x208;
-  double get x216 => XStandardSizes.x216;
-  double get x224 => XStandardSizes.x224;
-  double get x232 => XStandardSizes.x232;
-  double get x240 => XStandardSizes.x240;
-  double get x248 => XStandardSizes.x248;
-  double get x256 => XStandardSizes.x256;
+  double get x136 => StandardSizes.x136;
+  double get x144 => StandardSizes.x144;
+  double get x152 => StandardSizes.x152;
+  double get x160 => StandardSizes.x160;
+  double get x168 => StandardSizes.x168;
+  double get x176 => StandardSizes.x176;
+  double get x184 => StandardSizes.x184;
+  double get x192 => StandardSizes.x192;
+  double get x200 => StandardSizes.x200;
+  double get x208 => StandardSizes.x208;
+  double get x216 => StandardSizes.x216;
+  double get x224 => StandardSizes.x224;
+  double get x232 => StandardSizes.x232;
+  double get x240 => StandardSizes.x240;
+  double get x248 => StandardSizes.x248;
+  double get x256 => StandardSizes.x256;
 
   /// * 2
-  double get x512 => XStandardSizes.x512;
-  double get x1024 => XStandardSizes.x1024;
-  double get x2048 => XStandardSizes.x2048;
+  double get x512 => StandardSizes.x512;
+  double get x1024 => StandardSizes.x1024;
+  double get x2048 => StandardSizes.x2048;
 
   @override
   List<Object?> get props => [
@@ -235,7 +235,7 @@ class XSpacesData extends Equatable {
 
   @override
   String toString() => '''
-    XSpacesData(
+    Spaces(
       none: $none,
       extraSmall: $extraSmall,
       small: $small,

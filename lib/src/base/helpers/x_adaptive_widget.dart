@@ -1,7 +1,7 @@
 part of 'x_helpers.dart';
 
-abstract class XAdaptiveWidget extends StatelessWidget {
-  const XAdaptiveWidget({super.key});
+abstract class AdaptiveWidget extends StatelessWidget {
+  const AdaptiveWidget({super.key});
 
   Widget? android(BuildContext context) => null;
   Widget? ios(BuildContext context) => null;

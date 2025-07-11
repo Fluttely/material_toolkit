@@ -1,9 +1,9 @@
 part of '../design_tokens.dart';
 
-class XGaps extends Equatable {
-  final XSpacesData _spaces;
+class Gaps extends Equatable {
+  final Spaces _spaces;
 
-  const XGaps(this._spaces);
+  const Gaps(this._spaces);
 
   Gap get none => Gap(_spaces.none);
   Gap get superSmall => Gap(_spaces.superSmall);
@@ -25,7 +25,7 @@ class XGaps extends Equatable {
 
   @override
   String toString() => '''
-    XGaps(
+    Gaps(
       _spaces: $_spaces,
     )
   ''';

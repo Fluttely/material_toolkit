@@ -1,6 +1,6 @@
 part of '../design_tokens.dart';
 
-enum XRadii {
+enum RadiusLevel {
   none,
   extraSmall,
   small,
@@ -12,23 +12,23 @@ enum XRadii {
   superLarge,
 }
 
-extension XRadiiExtension on XRadii {
-  double toData(XRadiiData radiiData) {
+extension RadiusLevelExtension on RadiusLevel {
+  double toData(Radii radiiData) {
     return switch (this) {
-      XRadii.none => radiiData.none,
-      XRadii.extraSmall => radiiData.extraSmall,
-      XRadii.small => radiiData.small,
-      XRadii.semiSmall => radiiData.semiSmall,
-      XRadii.medium => radiiData.medium,
-      XRadii.semiLarge => radiiData.semiLarge,
-      XRadii.large => radiiData.large,
-      XRadii.extraLarge => radiiData.extraLarge,
-      XRadii.superLarge => radiiData.superLarge,
+      RadiusLevel.none => radiiData.none,
+      RadiusLevel.extraSmall => radiiData.extraSmall,
+      RadiusLevel.small => radiiData.small,
+      RadiusLevel.semiSmall => radiiData.semiSmall,
+      RadiusLevel.medium => radiiData.medium,
+      RadiusLevel.semiLarge => radiiData.semiLarge,
+      RadiusLevel.large => radiiData.large,
+      RadiusLevel.extraLarge => radiiData.extraLarge,
+      RadiusLevel.superLarge => radiiData.superLarge,
     };
   }
 }
 
-class XRadiiData extends Equatable {
+class Radii extends Equatable {
   // final double? _extraSmall;
   // final double? _small;
   // final double? _semiSmall;
@@ -47,7 +47,7 @@ class XRadiiData extends Equatable {
   final double _extraLarge;
   final double _superLarge;
 
-  // const XRadiiData({
+  // const Radii({
   //   final double? extraSmall,
   //   final double? small,
   //   final double? semiSmall,
@@ -65,7 +65,7 @@ class XRadiiData extends Equatable {
   //       _extraLarge = extraLarge,
   //       _superLarge = superLarge;
 
-  const XRadiiData({
+  const Radii({
     final double? extraSmall,
     final double? small,
     final double? semiSmall,
@@ -74,16 +74,16 @@ class XRadiiData extends Equatable {
     final double? large,
     final double? extraLarge,
     final double? superLarge,
-  })  : _extraSmall = extraSmall ?? XStandardSizes.x4,
-        _small = small ?? XStandardSizes.x8,
-        _semiSmall = semiSmall ?? XStandardSizes.x12,
-        _medium = medium ?? XStandardSizes.x16,
-        _semiLarge = semiLarge ?? XStandardSizes.x20,
-        _large = large ?? XStandardSizes.x24,
-        _extraLarge = extraLarge ?? XStandardSizes.x32,
-        _superLarge = superLarge ?? XStandardSizes.x48;
+  })  : _extraSmall = extraSmall ?? StandardSizes.x4,
+        _small = small ?? StandardSizes.x8,
+        _semiSmall = semiSmall ?? StandardSizes.x12,
+        _medium = medium ?? StandardSizes.x16,
+        _semiLarge = semiLarge ?? StandardSizes.x20,
+        _large = large ?? StandardSizes.x24,
+        _extraLarge = extraLarge ?? StandardSizes.x32,
+        _superLarge = superLarge ?? StandardSizes.x48;
 
-  // XRadiiData.x({
+  // Radii.x({
   //   final XAttribute<double?>? extraSmall,
   //   final XAttribute<double?>? small,
   //   final XAttribute<double?>? semiSmall,
@@ -92,14 +92,14 @@ class XRadiiData extends Equatable {
   //   final XAttribute<double?>? large,
   //   final XAttribute<double?>? extraLarge,
   //   final XAttribute<double?>? superLarge,
-  // })  : _extraSmall = extraSmall == null ? const double.circular(XStandardSizes.x4) : extraSmall.value,
-  //       _small = small == null ? const double.circular(XStandardSizes.x8) : small.value,
-  //       _semiSmall = semiSmall == null ? const double.circular(XStandardSizes.x12) : semiSmall.value,
-  //       _medium = medium == null ? const double.circular(XStandardSizes.x16) : medium.value,
-  //       _semiLarge = semiLarge == null ? const double.circular(XStandardSizes.x20) : semiLarge.value,
-  //       _large = large == null ? const double.circular(XStandardSizes.x24) : large.value,
-  //       _extraLarge = extraLarge == null ? const double.circular(XStandardSizes.x32) : extraLarge.value,
-  //       _superLarge = superLarge == null ? const double.circular(XStandardSizes.x48) : superLarge.value;
+  // })  : _extraSmall = extraSmall == null ? const double.circular(StandardSizes.x4) : extraSmall.value,
+  //       _small = small == null ? const double.circular(StandardSizes.x8) : small.value,
+  //       _semiSmall = semiSmall == null ? const double.circular(StandardSizes.x12) : semiSmall.value,
+  //       _medium = medium == null ? const double.circular(StandardSizes.x16) : medium.value,
+  //       _semiLarge = semiLarge == null ? const double.circular(StandardSizes.x20) : semiLarge.value,
+  //       _large = large == null ? const double.circular(StandardSizes.x24) : large.value,
+  //       _extraLarge = extraLarge == null ? const double.circular(StandardSizes.x32) : extraLarge.value,
+  //       _superLarge = superLarge == null ? const double.circular(StandardSizes.x48) : superLarge.value;
 
   // double get none => double.zero;
   // double get extraSmall =>
@@ -135,7 +135,7 @@ class XRadiiData extends Equatable {
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
   //         attribute: 'superLarge', location: 'radii')));
 
-  double get none => XStandardSizes.zero;
+  double get none => StandardSizes.zero;
   double get extraSmall => _extraSmall;
   double get small => _small;
   double get semiSmall => _semiSmall;
@@ -145,7 +145,7 @@ class XRadiiData extends Equatable {
   double get extraLarge => _extraLarge;
   double get superLarge => _superLarge;
 
-  XRadiiData copyWith({
+  Radii copyWith({
     double? extraSmall,
     double? small,
     double? semiSmall,
@@ -155,7 +155,7 @@ class XRadiiData extends Equatable {
     double? extraLarge,
     double? superLarge,
   }) {
-    return XRadiiData(
+    return Radii(
       extraSmall: extraSmall ?? _extraSmall,
       small: small ?? _small,
       semiSmall: semiSmall ?? _semiSmall,
@@ -182,7 +182,7 @@ class XRadiiData extends Equatable {
 
   @override
   String toString() => '''
-    XRadiiData(
+    Radii(
       none: $none,
       extraSmall: $extraSmall,
       small: $small,

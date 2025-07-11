@@ -1,6 +1,6 @@
 part of '../design_tokens.dart';
 
-class XTextShadowsData extends Equatable {
+class TextShadows extends Equatable {
   // final Shadow? _small;
   // final Shadow? _medium;
   // final Shadow? _large;
@@ -9,7 +9,7 @@ class XTextShadowsData extends Equatable {
   final Shadow _medium;
   final Shadow _large;
 
-  // const XTextShadowsData({
+  // const TextShadows({
   //   final Shadow? small,
   //   final Shadow? medium,
   //   final Shadow? large,
@@ -17,45 +17,45 @@ class XTextShadowsData extends Equatable {
   //       _medium = medium,
   //       _large = large;
 
-  const XTextShadowsData({
+  const TextShadows({
     final Shadow? small,
     final Shadow? medium,
     final Shadow? large,
   })  : _small = small ??
             const Shadow(
-              blurRadius: XAuxiliarySizes.x2,
+              blurRadius: AuxiliarySizes.x2,
               color: Color(0x44000000),
             ),
         _medium = medium ??
             const Shadow(
-              blurRadius: XStandardSizes.x4,
+              blurRadius: StandardSizes.x4,
               color: Color(0x44000000),
             ),
         _large = large ??
             const Shadow(
-              blurRadius: XStandardSizes.x8,
+              blurRadius: StandardSizes.x8,
               color: Color(0x44000000),
             );
 
-  // XTextShadowsData.x({
+  // TextShadows.x({
   //   final XAttribute<Shadow?>? small,
   //   final XAttribute<Shadow?>? medium,
   //   final XAttribute<Shadow?>? large,
   // })  : _small = small == null
   //           ? const Shadow(
-  //               blurRadius: XAuxiliarySizes.x2,
+  //               blurRadius: AuxiliarySizes.x2,
   //               color: Color(0x44000000),
   //             )
   //           : small.value,
   //       _medium = medium == null
   //           ? const Shadow(
-  //               blurRadius: XStandardSizes.x4,
+  //               blurRadius: StandardSizes.x4,
   //               color: Color(0x44000000),
   //             )
   //           : medium.value,
   //       _large = large == null
   //           ? const Shadow(
-  //               blurRadius: XStandardSizes.x8,
+  //               blurRadius: StandardSizes.x8,
   //               color: Color(0x44000000),
   //             )
   //           : large.value;
@@ -71,7 +71,7 @@ class XTextShadowsData extends Equatable {
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
   Shadow get none => const Shadow(
-        blurRadius: XStandardSizes.zero,
+        blurRadius: StandardSizes.zero,
         color: Color(0x00000000),
       );
   Shadow get small => _small;
@@ -88,7 +88,7 @@ class XTextShadowsData extends Equatable {
 
   @override
   String toString() => '''
-    XTextShadowsData(
+    TextShadows(
       none: $none,
       small: $small,
       medium: $medium,

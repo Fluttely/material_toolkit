@@ -1,17 +1,17 @@
 part of '../design_tokens.dart';
 
-class XBreakpointsData extends Equatable {
+class Breakpoints extends Equatable {
   // final Breakpoint? _mobile;
   // final Breakpoint? _tablet;
   // final Breakpoint? _desktop;
   // final Breakpoint? _infinity;
 
-  final XBreakpoint _mobile;
-  final XBreakpoint _tablet;
-  final XBreakpoint _desktop;
-  final XBreakpoint _infinity;
+  final Breakpoint _mobile;
+  final Breakpoint _tablet;
+  final Breakpoint _desktop;
+  final Breakpoint _infinity;
 
-  // const XBreakpointsData({
+  // const Breakpoints({
   //   final Breakpoint? mobile,
   //   final Breakpoint? tablet,
   //   final Breakpoint? desktop,
@@ -21,58 +21,58 @@ class XBreakpointsData extends Equatable {
   //       _desktop = desktop,
   //       _infinity = infinity;
 
-  const XBreakpointsData({
-    final XBreakpoint? mobile,
-    final XBreakpoint? tablet,
-    final XBreakpoint? desktop,
-    final XBreakpoint? infinity,
+  const Breakpoints({
+    final Breakpoint? mobile,
+    final Breakpoint? tablet,
+    final Breakpoint? desktop,
+    final Breakpoint? infinity,
   })  : _mobile = mobile ??
-            const XBreakpoint(
-              minWidth: XStandardSizes.zero,
-              maxWidth: XAuxiliarySizes.x599,
+            const Breakpoint(
+              minWidth: StandardSizes.zero,
+              maxWidth: AuxiliarySizes.x599,
             ),
         _tablet = tablet ??
-            const XBreakpoint(
-              minWidth: XAuxiliarySizes.x600,
-              maxWidth: XAuxiliarySizes.x1023,
+            const Breakpoint(
+              minWidth: AuxiliarySizes.x600,
+              maxWidth: AuxiliarySizes.x1023,
             ),
         _desktop = desktop ??
-            const XBreakpoint(
-              minWidth: XStandardSizes.x1024,
-              maxWidth: XAuxiliarySizes.x1439,
+            const Breakpoint(
+              minWidth: StandardSizes.x1024,
+              maxWidth: AuxiliarySizes.x1439,
             ),
         _infinity = infinity ??
-            const XBreakpoint(
-              minWidth: XAuxiliarySizes.x1440,
+            const Breakpoint(
+              minWidth: AuxiliarySizes.x1440,
               maxWidth: double.infinity,
             );
 
-  // XBreakpointsData.x({
+  // Breakpoints.x({
   //   final XAttribute<Breakpoint?>? mobile,
   //   final XAttribute<Breakpoint?>? tablet,
   //   final XAttribute<Breakpoint?>? desktop,
   //   final XAttribute<Breakpoint?>? infinity,
   // })  : _mobile = mobile == null
   //           ? const Breakpoint(
-  //               minWidth: XStandardSizes.zero,
-  //               maxWidth: XAuxiliarySizes.x599,
+  //               minWidth: StandardSizes.zero,
+  //               maxWidth: AuxiliarySizes.x599,
   //             )
   //           : mobile.value,
   //       _tablet = tablet == null
   //           ? const Breakpoint(
-  //               minWidth: XAuxiliarySizes.x600,
-  //               maxWidth: XAuxiliarySizes.x1023,
+  //               minWidth: AuxiliarySizes.x600,
+  //               maxWidth: AuxiliarySizes.x1023,
   //             )
   //           : tablet.value,
   //       _desktop = desktop == null
   //           ? const Breakpoint(
-  //               minWidth: XStandardSizes.x1024,
-  //               maxWidth: XAuxiliarySizes.x1439,
+  //               minWidth: StandardSizes.x1024,
+  //               maxWidth: AuxiliarySizes.x1439,
   //             )
   //           : desktop.value,
   //       _infinity = infinity == null
   //           ? const Breakpoint(
-  //               minWidth: XAuxiliarySizes.x1440,
+  //               minWidth: AuxiliarySizes.x1440,
   //               maxWidth: double.infinity,
   //             )
   //           : infinity.value;
@@ -91,10 +91,10 @@ class XBreakpointsData extends Equatable {
   //     _infinity ??
   //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'infinity', location: 'breakpoints')));
 
-  XBreakpoint get mobile => _mobile;
-  XBreakpoint get tablet => _tablet;
-  XBreakpoint get desktop => _desktop;
-  XBreakpoint get infinity => _infinity;
+  Breakpoint get mobile => _mobile;
+  Breakpoint get tablet => _tablet;
+  Breakpoint get desktop => _desktop;
+  Breakpoint get infinity => _infinity;
 
   @override
   List<Object?> get props => [
@@ -106,7 +106,7 @@ class XBreakpointsData extends Equatable {
 
   @override
   String toString() => '''
-    XBreakpointsData(
+    Breakpoints(
       mobile: $mobile,
       tablet: $tablet,
       desktop: $desktop,
@@ -115,7 +115,7 @@ class XBreakpointsData extends Equatable {
   ''';
 }
 
-class XBreakpoint {
+class Breakpoint {
   /// The minimum width for this breakpoint.
   final double minWidth;
 
@@ -125,7 +125,7 @@ class XBreakpoint {
   /// Creates a new breakpoint with the given [minWidth] and [maxWidth].
   ///
   /// Default values are 0 for [minWidth] and [double.infinity] for [maxWidth].
-  const XBreakpoint({this.minWidth = 0, this.maxWidth = double.infinity});
+  const Breakpoint({this.minWidth = 0, this.maxWidth = double.infinity});
 
   /// Checks whether the given [size] matches this breakpoint.
   ///

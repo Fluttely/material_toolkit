@@ -1,6 +1,6 @@
 part of '../design_tokens.dart';
 
-class XIconSizesData extends Equatable {
+class IconSizes extends Equatable {
   final double _extraSmall;
   final double _small;
   final double _semiSmall;
@@ -10,7 +10,7 @@ class XIconSizesData extends Equatable {
   final double _extraLarge;
   final double _superLarge;
 
-  const XIconSizesData({
+  const IconSizes({
     final double? extraSmall,
     final double? small,
     final double? semiSmall,
@@ -19,16 +19,16 @@ class XIconSizesData extends Equatable {
     final double? large,
     final double? extraLarge,
     final double? superLarge,
-  })  : _extraSmall = extraSmall ?? XStandardSizes.x16,
-        _small = small ?? XAuxiliarySizes.x18,
-        _semiSmall = semiSmall ?? XStandardSizes.x20,
-        _medium = medium ?? XStandardSizes.x24,
-        _semiLarge = semiLarge ?? XStandardSizes.x32,
-        _large = large ?? XStandardSizes.x48,
-        _extraLarge = extraLarge ?? XStandardSizes.x96,
-        _superLarge = superLarge ?? XStandardSizes.x192;
+  })  : _extraSmall = extraSmall ?? StandardSizes.x16,
+        _small = small ?? AuxiliarySizes.x18,
+        _semiSmall = semiSmall ?? StandardSizes.x20,
+        _medium = medium ?? StandardSizes.x24,
+        _semiLarge = semiLarge ?? StandardSizes.x32,
+        _large = large ?? StandardSizes.x48,
+        _extraLarge = extraLarge ?? StandardSizes.x96,
+        _superLarge = superLarge ?? StandardSizes.x192;
 
-  double get none => XStandardSizes.zero;
+  double get none => StandardSizes.zero;
   double get extraSmall => _extraSmall;
   double get small => _small;
   double get semiSmall => _semiSmall;
@@ -39,23 +39,23 @@ class XIconSizesData extends Equatable {
   double get superLarge => _superLarge;
 
   /// + 2
-  double get x16 => XStandardSizes.x16;
-  double get x18 => XAuxiliarySizes.x18;
-  double get x20 => XStandardSizes.x20;
+  double get x16 => StandardSizes.x16;
+  double get x18 => AuxiliarySizes.x18;
+  double get x20 => StandardSizes.x20;
 
   /// + 8
-  double get x24 => XStandardSizes.x24;
-  double get x32 => XStandardSizes.x32;
-  double get x40 => XStandardSizes.x40;
-  double get x48 => XStandardSizes.x48;
+  double get x24 => StandardSizes.x24;
+  double get x32 => StandardSizes.x32;
+  double get x40 => StandardSizes.x40;
+  double get x48 => StandardSizes.x48;
 
   /// * 2
-  double get x96 => XStandardSizes.x96;
-  double get x192 => XStandardSizes.x192;
+  double get x96 => StandardSizes.x96;
+  double get x192 => StandardSizes.x192;
 
   /// * 2
-  double get x256 => XStandardSizes.x256;
-  double get x512 => XStandardSizes.x512;
+  double get x256 => StandardSizes.x256;
+  double get x512 => StandardSizes.x512;
 
   @override
   List<Object?> get props => [
@@ -72,7 +72,7 @@ class XIconSizesData extends Equatable {
 
   @override
   String toString() => '''
-    XIconSizesData(
+    IconSizes(
       none: $none,
       extraSmall: $extraSmall,
       small: $small,
@@ -98,7 +98,7 @@ class XIconSizesData extends Equatable {
 // }
 
 // extension XIconSizesExtension on XIconSizes {
-//   double toData(XIconSizesData iconSizes) => switch (this) {
+//   double toData(IconSizes iconSizes) => switch (this) {
 //         XIconSizes.extraSmall => iconSizes.extraSmall,
 //         XIconSizes.small => iconSizes.small,
 //         XIconSizes.semiSmall => iconSizes.semiSmall,

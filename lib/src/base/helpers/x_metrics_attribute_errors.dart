@@ -1,6 +1,6 @@
 part of 'x_helpers.dart';
 
-enum XMetricsAttributeErrors {
+enum MetricsAttributeErrors {
   unsupportedError;
 
   String message({
@@ -8,7 +8,7 @@ enum XMetricsAttributeErrors {
     required String location,
   }) {
     switch (this) {
-      case XMetricsAttributeErrors.unsupportedError:
+      case MetricsAttributeErrors.unsupportedError:
         return '''
         Access to $attribute has been intentionally blocked in metrics.$location. 
         This property should not be used or accessed directly, as its usage has been deprecated or is reserved for internal purposes only. 
