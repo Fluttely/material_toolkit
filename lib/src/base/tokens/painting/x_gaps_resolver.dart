@@ -1,9 +1,9 @@
 part of '../x_design_tokens.dart';
 
-class XGaps extends Equatable {
+class XGapsResolver extends Equatable {
   final XSpacingsTokens _spacings;
 
-  const XGaps(this._spacings);
+  const XGapsResolver(this._spacings);
 
   Gap get none => Gap(_spacings.none);
   Gap get superSmall => Gap(_spacings.superSmall);

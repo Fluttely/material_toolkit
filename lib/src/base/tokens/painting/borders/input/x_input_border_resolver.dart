@@ -1,9 +1,9 @@
 part of '../../../x_design_tokens.dart';
 
-class XInputBorders extends Equatable {
+class XInputBorderResolver extends Equatable {
   final XRadiiTokens _radiiTokens;
 
-  const XInputBorders(this._radiiTokens);
+  const XInputBorderResolver(this._radiiTokens);
 
   InputBorder get none => InputBorder.none;
 

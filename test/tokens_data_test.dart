@@ -153,8 +153,8 @@ void main() {
 
   group('EdgeInsets and Padding', () {
     const spacings = XSpacingsTokens();
-    const edgeInsets = XEdgeInsets(spacings);
-    const padding = XPadding(edgeInsets);
+    const edgeInsets = XEdgeInsetsResolver(spacings);
+    const padding = XPaddingResolver(edgeInsets);
 
     test('EdgeInsets conversions', () {
       expect(edgeInsets.none, EdgeInsets.zero);

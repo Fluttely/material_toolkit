@@ -1,9 +1,9 @@
-part of '../../x_design_tokens.dart';
+part of '../../../x_design_tokens.dart';
 
-class XRadiusController extends Equatable {
+class XRadiusResolver extends Equatable {
   final XRadiiTokens _radiiTokens;
 
-  const XRadiusController(this._radiiTokens);
+  const XRadiusResolver(this._radiiTokens);
 
   Radius get none => XRadius.none.toRadius(_radiiTokens);
 

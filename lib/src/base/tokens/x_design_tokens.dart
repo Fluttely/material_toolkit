@@ -18,22 +18,22 @@ part 'geometry/x_layout_grid_tokens.dart';
 part 'geometry/x_radii_tokens.dart';
 part 'geometry/x_radius.dart';
 part 'geometry/x_spacings_tokens.dart';
-part 'painting/borders/input/x_input_borders.dart';
+part 'painting/borders/border_radius/x_border_radius.dart';
+part 'painting/borders/border_radius/x_border_radius_resolver.dart';
+part 'painting/borders/input/x_input_border_resolver.dart';
 part 'painting/borders/input/x_outline_input_border.dart';
 part 'painting/borders/input/x_underline_input_border.dart';
+part 'painting/borders/radius/x_radius_resolver.dart';
 part 'painting/borders/shape/x_beveled_rectangle_border.dart';
 part 'painting/borders/shape/x_continuous_rectangle_border.dart';
 part 'painting/borders/shape/x_rounded_rectangle_border.dart';
-part 'painting/borders/shape/x_shapes.dart';
-part 'painting/borders/x_border_radii.dart';
-part 'painting/borders/x_border_radius.dart';
-part 'painting/borders/x_radius_controller.dart';
+part 'painting/borders/shape/x_shape_resolver.dart';
+part 'painting/edge_insets/x_edge_insets_resolver.dart';
+part 'painting/edge_insets/x_padding_resolver.dart';
 part 'painting/x_box_shadows_tokens.dart';
-part 'painting/x_edge_insets.dart';
-part 'painting/x_gaps.dart';
+part 'painting/x_gaps_resolver.dart';
 part 'painting/x_google_fonts_tokens.dart';
 part 'painting/x_opacities_tokens.dart';
-part 'painting/x_padding.dart';
 part 'painting/x_text_shadows_tokens.dart';
 part 'painting/x_z_indexes_tokens.dart';
 
@@ -130,15 +130,15 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
   }
 
   /// Spacings
-  late final XGaps gaps = XGaps(spacings);
-  late final XEdgeInsets edgeInsets = XEdgeInsets(spacings);
-  late final XPadding padding = XPadding(edgeInsets);
+  late final gaps = XGapsResolver(spacings);
+  late final edgeInsets = XEdgeInsetsResolver(spacings);
+  late final padding = XPaddingResolver(edgeInsets);
 
   /// Radii
-  late final XRadiusController radius = XRadiusController(radii);
-  late final XBorderRadii borderRadius = XBorderRadii(radii);
-  late final XShapes shape = XShapes(radii);
-  late final XInputBorders inputBorder = XInputBorders(radii);
+  late final radius = XRadiusResolver(radii);
+  late final borderRadius = XBorderRadiusResolver(radii);
+  late final shape = XShapeResolver(radii);
+  late final inputBorder = XInputBorderResolver(radii);
 
   @override
   ThemeExtension<XDesignTokens> lerp(ThemeExtension<XDesignTokens>? other, double t) {
@@ -197,6 +197,13 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
           radii == other.radii &&
           spacings == other.spacings &&
           textShadows == other.textShadows &&
+          gaps == other.gaps &&
+          edgeInsets == other.edgeInsets &&
+          padding == other.padding &&
+          radius == other.radius &&
+          borderRadius == other.borderRadius &&
+          shape == other.shape &&
+          inputBorder == other.inputBorder &&
           googleFonts == other.googleFonts;
 
   @override
@@ -210,6 +217,13 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
       radii.hashCode ^
       spacings.hashCode ^
       textShadows.hashCode ^
+      gaps.hashCode ^
+      edgeInsets.hashCode ^
+      padding.hashCode ^
+      radius.hashCode ^
+      borderRadius.hashCode ^
+      shape.hashCode ^
+      inputBorder.hashCode ^
       googleFonts.hashCode;
 
   @override
@@ -227,10 +241,11 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
       gaps: $gaps,
       edgeInsets: $edgeInsets,
       padding: $padding,
+      radius: $radius,
+      borderRadius: $borderRadius,
+      shape: $shape,
+      inputBorder: $inputBorder,
       googleFonts: $googleFonts,
     )
   ''';
-  // borderRadii: $borderRadii,
-  // shapes: $shapes,
-  // inputBorders: $inputBorders,
 }

@@ -1,9 +1,9 @@
-part of '../../x_design_tokens.dart';
+part of '../../../x_design_tokens.dart';
 
-class XBorderRadii extends Equatable {
+class XBorderRadiusResolver extends Equatable {
   final XRadiiTokens _radiiTokens;
 
-  const XBorderRadii(this._radiiTokens);
+  const XBorderRadiusResolver(this._radiiTokens);
 
   BorderRadius get none => XBorderRadius.none.toBorderRadius(_radiiTokens);
 

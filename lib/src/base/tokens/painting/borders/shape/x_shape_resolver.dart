@@ -1,9 +1,9 @@
 part of '../../../x_design_tokens.dart';
 
-class XShapes extends Equatable {
+class XShapeResolver extends Equatable {
   final XRadiiTokens _radiiTokens;
 
-  const XShapes(this._radiiTokens);
+  const XShapeResolver(this._radiiTokens);
 
   BoxShape get rectangleBoxShape => BoxShape.rectangle;
   BoxShape get circleBoxShape => BoxShape.circle;

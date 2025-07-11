@@ -1,9 +1,9 @@
-part of '../x_design_tokens.dart';
+part of '../../x_design_tokens.dart';
 
-class XEdgeInsets extends Equatable {
+class XEdgeInsetsResolver extends Equatable {
   final XSpacingsTokens _spacings;
 
-  const XEdgeInsets(this._spacings);
+  const XEdgeInsetsResolver(this._spacings);
 
   EdgeInsets get none => EdgeInsets.all(_spacings.none);
 
