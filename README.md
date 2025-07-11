@@ -46,7 +46,7 @@ class DemoPage extends StatelessWidget {
     final tokens = XDesignTokens.of(context);
     return Scaffold(
       body: tokens.padding.all(
-        XSpaces.medium,
+        XSpacings.medium,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -81,7 +81,7 @@ value with a map or JSON string:
 
 ```dart
 final tokens = XDesignTokensData.material(overrides: {
-  "spaces": {"medium": 20.0},
+  "spacings": {"medium": 20.0},
 });
 ```
 

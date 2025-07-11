@@ -1,10 +1,11 @@
 library design_tokens;
 
+import 'dart:convert';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'dart:convert';
 
 part 'animation/x_durations_data.dart';
 part 'geometry/x_breakpoints_data.dart';
@@ -13,7 +14,7 @@ part 'geometry/x_form_factor.dart';
 part 'geometry/x_icon_sizes_data.dart';
 part 'geometry/x_radii_data.dart';
 part 'geometry/x_radius.dart';
-part 'geometry/x_spaces_data.dart';
+part 'geometry/x_spacings_data.dart';
 part 'painting/borders/input/x_input_borders.dart';
 part 'painting/borders/input/x_outline_input_border.dart';
 part 'painting/borders/input/x_underline_input_border.dart';
@@ -61,7 +62,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
   // final XGoogleFontsData googleFonts;
   final XIconSizesData iconSizes;
   final XRadiiData radii;
-  final XSpacesData spaces;
+  final XSpacingsData spacings;
   final XTextShadowsData textShadows;
   // blurs
 
@@ -74,7 +75,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
     // final XGoogleFontsData? googleFonts,
     final XIconSizesData? iconSizes,
     final XRadiiData? radii,
-    final XSpacesData? spaces,
+    final XSpacingsData? spacings,
     final XTextShadowsData? textShadows,
   })  : boxShadows = boxShadows ?? const XBoxShadowsData(),
         breakpoints = breakpoints ?? const XBreakpointsData(),
@@ -84,7 +85,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
         // googleFonts = googleFonts ?? const XGoogleFontsData(),
         iconSizes = iconSizes ?? const XIconSizesData(),
         radii = radii ?? const XRadiiData(),
-        spaces = spaces ?? const XSpacesData(),
+        spacings = spacings ?? const XSpacingsData(),
         textShadows = textShadows ?? const XTextShadowsData();
 
   factory XDesignTokensData.material({Map<String, dynamic>? overrides}) {
@@ -92,34 +93,25 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
     if (overrides != null) {
       data = data.copyWith(
         boxShadows: overrides['boxShadows'] != null
-            ? XBoxShadowsData.fromMap(
-                overrides['boxShadows'] as Map<String, dynamic>)
+            ? XBoxShadowsData.fromMap(overrides['boxShadows'] as Map<String, dynamic>)
             : null,
         breakpoints: overrides['breakpoints'] != null
-            ? XBreakpointsData.fromMap(
-                overrides['breakpoints'] as Map<String, dynamic>)
+            ? XBreakpointsData.fromMap(overrides['breakpoints'] as Map<String, dynamic>)
             : null,
         durations: overrides['durations'] != null
-            ? XDurationsData.fromMap(
-                overrides['durations'] as Map<String, dynamic>)
+            ? XDurationsData.fromMap(overrides['durations'] as Map<String, dynamic>)
             : null,
         elevations: overrides['elevations'] != null
-            ? XElevationsData.fromMap(
-                overrides['elevations'] as Map<String, dynamic>)
+            ? XElevationsData.fromMap(overrides['elevations'] as Map<String, dynamic>)
             : null,
         iconSizes: overrides['iconSizes'] != null
-            ? XIconSizesData.fromMap(
-                overrides['iconSizes'] as Map<String, dynamic>)
+            ? XIconSizesData.fromMap(overrides['iconSizes'] as Map<String, dynamic>)
             : null,
-        radii: overrides['radii'] != null
-            ? XRadiiData.fromMap(overrides['radii'] as Map<String, dynamic>)
-            : null,
-        spaces: overrides['spaces'] != null
-            ? XSpacesData.fromMap(overrides['spaces'] as Map<String, dynamic>)
-            : null,
+        radii: overrides['radii'] != null ? XRadiiData.fromMap(overrides['radii'] as Map<String, dynamic>) : null,
+        spacings:
+            overrides['spacings'] != null ? XSpacingsData.fromMap(overrides['spacings'] as Map<String, dynamic>) : null,
         textShadows: overrides['textShadows'] != null
-            ? XTextShadowsData.fromMap(
-                overrides['textShadows'] as Map<String, dynamic>)
+            ? XTextShadowsData.fromMap(overrides['textShadows'] as Map<String, dynamic>)
             : null,
       );
     }
@@ -134,9 +126,9 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
     return XDesignTokensData.fromMap(jsonDecode(json) as Map<String, dynamic>);
   }
 
-  /// Spaces
-  late final XGaps gaps = XGaps(spaces);
-  late final XEdgeInsets edgeInsets = XEdgeInsets(spaces);
+  /// Spacings
+  late final XGaps gaps = XGaps(spacings);
+  late final XEdgeInsets edgeInsets = XEdgeInsets(spacings);
   late final XPadding padding = XPadding(edgeInsets);
 
   /// Radii
@@ -161,7 +153,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
         // googleFonts: googleFonts,
         iconSizes: iconSizes,
         radii: radii,
-        spaces: spaces,
+        spacings: spacings,
         textShadows: textShadows,
       );
     }
@@ -177,7 +169,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
     // XGoogleFontsData? googleFonts,
     XIconSizesData? iconSizes,
     XRadiiData? radii,
-    XSpacesData? spaces,
+    XSpacingsData? spacings,
     XTextShadowsData? textShadows,
   }) {
     return XDesignTokensData(
@@ -189,7 +181,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
       // googleFonts: googleFonts ?? this.googleFonts,
       iconSizes: iconSizes ?? this.iconSizes,
       radii: radii ?? this.radii,
-      spaces: spaces ?? this.spaces,
+      spacings: spacings ?? this.spacings,
       textShadows: textShadows ?? this.textShadows,
     );
   }
@@ -205,7 +197,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
           formFactor == other.formFactor &&
           iconSizes == other.iconSizes &&
           radii == other.radii &&
-          spaces == other.spaces &&
+          spacings == other.spacings &&
           textShadows == other.textShadows;
 
   @override
@@ -217,7 +209,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
       formFactor.hashCode ^
       iconSizes.hashCode ^
       radii.hashCode ^
-      spaces.hashCode ^
+      spacings.hashCode ^
       textShadows.hashCode;
 
   @override
@@ -230,7 +222,7 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
       formFactor: $formFactor,
       iconSizes: $iconSizes,
       radii: $radii,
-      spaces: $spaces,
+      spacings: $spacings,
       textShadows: $textShadows,
       gaps: $gaps,
       edgeInsets: $edgeInsets,

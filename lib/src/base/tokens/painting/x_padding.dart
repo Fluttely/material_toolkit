@@ -14,7 +14,7 @@ class XPadding extends Equatable {
       );
 
   Padding all(
-    final XSpaces value, {
+    final XSpacings value, {
     final Widget? child,
   }) =>
       Padding(
@@ -23,8 +23,8 @@ class XPadding extends Equatable {
       );
 
   Padding symmetric({
-    final XSpaces? vertical,
-    final XSpaces? horizontal,
+    final XSpacings? vertical,
+    final XSpacings? horizontal,
     final Widget? child,
   }) =>
       Padding(
@@ -36,10 +36,10 @@ class XPadding extends Equatable {
       );
 
   Padding only({
-    final XSpaces? left,
-    final XSpaces? top,
-    final XSpaces? right,
-    final XSpaces? bottom,
+    final XSpacings? left,
+    final XSpacings? top,
+    final XSpacings? right,
+    final XSpacings? bottom,
     final Widget? child,
   }) =>
       Padding(

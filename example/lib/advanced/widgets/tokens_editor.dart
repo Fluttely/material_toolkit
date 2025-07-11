@@ -14,7 +14,7 @@ class TokensEditor extends StatefulWidget {
 }
 
 class _TokensEditorState extends State<TokensEditor> {
-  late final TextEditingController spacesSmallController;
+  late final TextEditingController spacingsSmallController;
   late final TextEditingController radiiExtraSmallController;
   late final TextEditingController iconSmallController;
   late final TextEditingController elevationOneController;
@@ -27,7 +27,7 @@ class _TokensEditorState extends State<TokensEditor> {
   void initState() {
     super.initState();
     final notifier = context.read<ThemeNotifier>();
-    spacesSmallController = TextEditingController(text: notifier.spaces.small.toString());
+    spacingsSmallController = TextEditingController(text: notifier.spacings.small.toString());
     radiiExtraSmallController = TextEditingController(text: notifier.radiiData.extraSmall.toString());
     iconSmallController = TextEditingController(text: notifier.iconSizes.small.toString());
     elevationOneController = TextEditingController(text: notifier.elevations.level1.toString());
@@ -47,7 +47,7 @@ class _TokensEditorState extends State<TokensEditor> {
 
   @override
   void dispose() {
-    spacesSmallController.dispose();
+    spacingsSmallController.dispose();
     radiiExtraSmallController.dispose();
     iconSmallController.dispose();
     elevationOneController.dispose();
@@ -67,29 +67,29 @@ class _TokensEditorState extends State<TokensEditor> {
 
     return Card(
       child: Padding(
-        padding: tokens.edgeInsets.all(XSpaces.medium),
+        padding: tokens.edgeInsets.all(XSpacings.medium),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text('Tokens Editor', style: theme.textTheme.titleLarge),
             gaps.small,
             _NumberField(
-              label: 'Spaces small',
-              controller: spacesSmallController,
+              label: 'Spacings small',
+              controller: spacingsSmallController,
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
-                  themeNotifier.updateSpacesData(
-                    XSpacesData(
-                      superSmall: themeNotifier.spaces.superSmall,
-                      extraSmall: themeNotifier.spaces.extraSmall,
+                  themeNotifier.updateSpacingsData(
+                    XSpacingsData(
+                      superSmall: themeNotifier.spacings.superSmall,
+                      extraSmall: themeNotifier.spacings.extraSmall,
                       small: v,
-                      semiSmall: themeNotifier.spaces.semiSmall,
-                      medium: themeNotifier.spaces.medium,
-                      semiLarge: themeNotifier.spaces.semiLarge,
-                      large: themeNotifier.spaces.large,
-                      extraLarge: themeNotifier.spaces.extraLarge,
-                      superLarge: themeNotifier.spaces.superLarge,
+                      semiSmall: themeNotifier.spacings.semiSmall,
+                      medium: themeNotifier.spacings.medium,
+                      semiLarge: themeNotifier.spacings.semiLarge,
+                      large: themeNotifier.spacings.large,
+                      extraLarge: themeNotifier.spacings.extraLarge,
+                      superLarge: themeNotifier.spacings.superLarge,
                     ),
                   );
                 }

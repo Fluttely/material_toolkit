@@ -1,91 +1,91 @@
 part of '../x_design_tokens.dart';
 
 class XEdgeInsets extends Equatable {
-  final XSpacesData _spaces;
+  final XSpacingsData _spacings;
 
-  const XEdgeInsets(this._spaces);
+  const XEdgeInsets(this._spacings);
 
-  EdgeInsets get none => EdgeInsets.all(_spaces.none);
+  EdgeInsets get none => EdgeInsets.all(_spacings.none);
 
-  EdgeInsets all(final XSpaces value) => EdgeInsets.all(value.toData(_spaces));
+  EdgeInsets all(final XSpacings value) => EdgeInsets.all(value.toData(_spacings));
 
   EdgeInsets symmetric({
-    final XSpaces? vertical,
-    final XSpaces? horizontal,
+    final XSpacings? vertical,
+    final XSpacings? horizontal,
   }) =>
       EdgeInsets.symmetric(
-        horizontal: (horizontal ?? XSpaces.none).toData(_spaces),
-        vertical: (vertical ?? XSpaces.none).toData(_spaces),
+        horizontal: (horizontal ?? XSpacings.none).toData(_spacings),
+        vertical: (vertical ?? XSpacings.none).toData(_spacings),
       );
 
   EdgeInsets only({
-    final XSpaces? left,
-    final XSpaces? top,
-    final XSpaces? right,
-    final XSpaces? bottom,
+    final XSpacings? left,
+    final XSpacings? top,
+    final XSpacings? right,
+    final XSpacings? bottom,
   }) =>
       EdgeInsets.only(
-        left: (left ?? XSpaces.none).toData(_spaces),
-        top: (top ?? XSpaces.none).toData(_spaces),
-        right: (right ?? XSpaces.none).toData(_spaces),
-        bottom: (bottom ?? XSpaces.none).toData(_spaces),
+        left: (left ?? XSpacings.none).toData(_spacings),
+        top: (top ?? XSpacings.none).toData(_spacings),
+        right: (right ?? XSpacings.none).toData(_spacings),
+        bottom: (bottom ?? XSpacings.none).toData(_spacings),
       );
 
-  // EdgeInsets get allSuperSmall => EdgeInsets.all(_spaces.superSmall);
-  // EdgeInsets get allExtraSmall => EdgeInsets.all(_spaces.extraSmall);
-  // EdgeInsets get allSmall => EdgeInsets.all(_spaces.small);
-  // EdgeInsets get allSemiSmall => EdgeInsets.all(_spaces.semiSmall);
-  // EdgeInsets get allMedium => EdgeInsets.all(_spaces.medium);
-  // EdgeInsets get allSemiLarge => EdgeInsets.all(_spaces.semiLarge);
-  // EdgeInsets get allLarge => EdgeInsets.all(_spaces.large);
-  // EdgeInsets get allExtraLarge => EdgeInsets.all(_spaces.extraLarge);
-  // EdgeInsets get allSuperLarge => EdgeInsets.all(_spaces.superLarge);
+  // EdgeInsets get allSuperSmall => EdgeInsets.all(_spacings.superSmall);
+  // EdgeInsets get allExtraSmall => EdgeInsets.all(_spacings.extraSmall);
+  // EdgeInsets get allSmall => EdgeInsets.all(_spacings.small);
+  // EdgeInsets get allSemiSmall => EdgeInsets.all(_spacings.semiSmall);
+  // EdgeInsets get allMedium => EdgeInsets.all(_spacings.medium);
+  // EdgeInsets get allSemiLarge => EdgeInsets.all(_spacings.semiLarge);
+  // EdgeInsets get allLarge => EdgeInsets.all(_spacings.large);
+  // EdgeInsets get allExtraLarge => EdgeInsets.all(_spacings.extraLarge);
+  // EdgeInsets get allSuperLarge => EdgeInsets.all(_spacings.superLarge);
 
   // EdgeInsets get verticalSuperSmall =>
-  //     EdgeInsets.symmetric(vertical: _spaces.superSmall);
+  //     EdgeInsets.symmetric(vertical: _spacings.superSmall);
   // EdgeInsets get verticalExtraSmall =>
-  //     EdgeInsets.symmetric(vertical: _spaces.extraSmall);
-  // EdgeInsets get verticalSmall => EdgeInsets.symmetric(vertical: _spaces.small);
+  //     EdgeInsets.symmetric(vertical: _spacings.extraSmall);
+  // EdgeInsets get verticalSmall => EdgeInsets.symmetric(vertical: _spacings.small);
   // EdgeInsets get verticalSemiSmall =>
-  //     EdgeInsets.symmetric(vertical: _spaces.semiSmall);
+  //     EdgeInsets.symmetric(vertical: _spacings.semiSmall);
   // EdgeInsets get verticalMedium =>
-  //     EdgeInsets.symmetric(vertical: _spaces.medium);
+  //     EdgeInsets.symmetric(vertical: _spacings.medium);
   // EdgeInsets get verticalSemiLarge =>
-  //     EdgeInsets.symmetric(vertical: _spaces.semiLarge);
-  // EdgeInsets get verticalLarge => EdgeInsets.symmetric(vertical: _spaces.large);
+  //     EdgeInsets.symmetric(vertical: _spacings.semiLarge);
+  // EdgeInsets get verticalLarge => EdgeInsets.symmetric(vertical: _spacings.large);
   // EdgeInsets get verticalExtraLarge =>
-  //     EdgeInsets.symmetric(vertical: _spaces.extraLarge);
+  //     EdgeInsets.symmetric(vertical: _spacings.extraLarge);
   // EdgeInsets get verticalSuperLarge =>
-  //     EdgeInsets.symmetric(vertical: _spaces.superLarge);
+  //     EdgeInsets.symmetric(vertical: _spacings.superLarge);
 
   // EdgeInsets get horizontalSuperSmall =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.superSmall);
+  //     EdgeInsets.symmetric(horizontal: _spacings.superSmall);
   // EdgeInsets get horizontalExtraSmall =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.extraSmall);
+  //     EdgeInsets.symmetric(horizontal: _spacings.extraSmall);
   // EdgeInsets get horizontalSmall =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.small);
+  //     EdgeInsets.symmetric(horizontal: _spacings.small);
   // EdgeInsets get horizontalSemiSmall =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.semiSmall);
+  //     EdgeInsets.symmetric(horizontal: _spacings.semiSmall);
   // EdgeInsets get horizontalMedium =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.medium);
+  //     EdgeInsets.symmetric(horizontal: _spacings.medium);
   // EdgeInsets get horizontalSemiLarge =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.semiLarge);
+  //     EdgeInsets.symmetric(horizontal: _spacings.semiLarge);
   // EdgeInsets get horizontalLarge =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.large);
+  //     EdgeInsets.symmetric(horizontal: _spacings.large);
   // EdgeInsets get horizontalExtraLarge =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.extraLarge);
+  //     EdgeInsets.symmetric(horizontal: _spacings.extraLarge);
   // EdgeInsets get horizontalSuperLarge =>
-  //     EdgeInsets.symmetric(horizontal: _spaces.superLarge);
+  //     EdgeInsets.symmetric(horizontal: _spacings.superLarge);
 
   @override
   List<Object?> get props => [
-        _spaces.named('_spaces'),
+        _spacings.named('_spacings'),
       ];
 
   @override
   String toString() => '''
     XEdgeInsets(
-      _spaces: $_spaces,
+      _spacings: $_spacings,
     )
   ''';
 }

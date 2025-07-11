@@ -1,6 +1,6 @@
 part of '../x_design_tokens.dart';
 
-enum XSpaces {
+enum XSpacings {
   none,
   superSmall,
   extraSmall,
@@ -13,24 +13,24 @@ enum XSpaces {
   superLarge,
 }
 
-extension XSpacesExtension on XSpaces {
-  double toData(XSpacesData spaces) {
+extension XSpacingsExtension on XSpacings {
+  double toData(XSpacingsData spacings) {
     return switch (this) {
-      XSpaces.none => spaces.none,
-      XSpaces.superSmall => spaces.superSmall,
-      XSpaces.extraSmall => spaces.extraSmall,
-      XSpaces.small => spaces.small,
-      XSpaces.semiSmall => spaces.semiSmall,
-      XSpaces.medium => spaces.medium,
-      XSpaces.semiLarge => spaces.semiLarge,
-      XSpaces.large => spaces.large,
-      XSpaces.extraLarge => spaces.extraLarge,
-      XSpaces.superLarge => spaces.superLarge,
+      XSpacings.none => spacings.none,
+      XSpacings.superSmall => spacings.superSmall,
+      XSpacings.extraSmall => spacings.extraSmall,
+      XSpacings.small => spacings.small,
+      XSpacings.semiSmall => spacings.semiSmall,
+      XSpacings.medium => spacings.medium,
+      XSpacings.semiLarge => spacings.semiLarge,
+      XSpacings.large => spacings.large,
+      XSpacings.extraLarge => spacings.extraLarge,
+      XSpacings.superLarge => spacings.superLarge,
     };
   }
 }
 
-class XSpacesData extends Equatable {
+class XSpacingsData extends Equatable {
   // final double? _superSmall;
   // final double? _extraSmall;
   // final double? _small;
@@ -51,7 +51,7 @@ class XSpacesData extends Equatable {
   final double _extraLarge;
   final double _superLarge;
 
-  // const XSpacesData({
+  // const XSpacingsData({
   //   final double? superSmall,
   //   final double? extraSmall,
   //   final double? small,
@@ -71,7 +71,7 @@ class XSpacesData extends Equatable {
   //       _extraLarge = extraLarge,
   //       _superLarge = superLarge;
 
-  const XSpacesData({
+  const XSpacingsData({
     final double? superSmall,
     final double? extraSmall,
     final double? small,
@@ -91,23 +91,23 @@ class XSpacesData extends Equatable {
         _extraLarge = extraLarge ?? XStandardSizes.x32,
         _superLarge = superLarge ?? XStandardSizes.x48;
 
-  factory XSpacesData.fromMap(Map<String, dynamic> map) {
-    double? _d(String key) => (map[key] as num?)?.toDouble();
+  factory XSpacingsData.fromMap(Map<String, dynamic> map) {
+    double? d(String key) => (map[key] as num?)?.toDouble();
 
-    return XSpacesData(
-      superSmall: _d('superSmall'),
-      extraSmall: _d('extraSmall'),
-      small: _d('small'),
-      semiSmall: _d('semiSmall'),
-      medium: _d('medium'),
-      semiLarge: _d('semiLarge'),
-      large: _d('large'),
-      extraLarge: _d('extraLarge'),
-      superLarge: _d('superLarge'),
+    return XSpacingsData(
+      superSmall: d('superSmall'),
+      extraSmall: d('extraSmall'),
+      small: d('small'),
+      semiSmall: d('semiSmall'),
+      medium: d('medium'),
+      semiLarge: d('semiLarge'),
+      large: d('large'),
+      extraLarge: d('extraLarge'),
+      superLarge: d('superLarge'),
     );
   }
 
-  // XSpacesData.x({
+  // XSpacingsData.x({
   //   final XAttribute<double?>? superSmall,
   //   final XAttribute<double?>? extraSmall,
   //   final XAttribute<double?>? small,
@@ -131,39 +131,39 @@ class XSpacesData extends Equatable {
   // double get superSmall =>
   //     _superSmall ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'superSmall', location: 'spaces')));
+  //         attribute: 'superSmall', location: 'spacings')));
   // double get extraSmall =>
   //     _extraSmall ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'extraSmall', location: 'spaces')));
+  //         attribute: 'extraSmall', location: 'spacings')));
   // double get small =>
   //     _small ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'small', location: 'spaces')));
+  //         attribute: 'small', location: 'spacings')));
   // double get semiSmall =>
   //     _semiSmall ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'semiSmall', location: 'spaces')));
+  //         attribute: 'semiSmall', location: 'spacings')));
   // double get medium =>
   //     _medium ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'medium', location: 'spaces')));
+  //         attribute: 'medium', location: 'spacings')));
   // double get semiLarge =>
   //     _semiLarge ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'semiLarge', location: 'spaces')));
+  //         attribute: 'semiLarge', location: 'spacings')));
   // double get large =>
   //     _large ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'large', location: 'spaces')));
+  //         attribute: 'large', location: 'spacings')));
   // double get extraLarge =>
   //     _extraLarge ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'extraLarge', location: 'spaces')));
+  //         attribute: 'extraLarge', location: 'spacings')));
   // double get superLarge =>
   //     _superLarge ??
   //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'superLarge', location: 'spaces')));
+  //         attribute: 'superLarge', location: 'spacings')));
 
   double get none => XStandardSizes.zero;
   double get superSmall => _superSmall;
@@ -251,7 +251,7 @@ class XSpacesData extends Equatable {
 
   @override
   String toString() => '''
-    XSpacesData(
+    XSpacingsData(
       none: $none,
       extraSmall: $extraSmall,
       small: $small,

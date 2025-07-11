@@ -1,32 +1,32 @@
 part of '../x_design_tokens.dart';
 
 class XGaps extends Equatable {
-  final XSpacesData _spaces;
+  final XSpacingsData _spacings;
 
-  const XGaps(this._spaces);
+  const XGaps(this._spacings);
 
-  Gap get none => Gap(_spaces.none);
-  Gap get superSmall => Gap(_spaces.superSmall);
-  Gap get extraSmall => Gap(_spaces.extraSmall);
-  Gap get small => Gap(_spaces.small);
-  Gap get semiSmall => Gap(_spaces.semiSmall);
-  Gap get medium => Gap(_spaces.medium);
-  Gap get semiLarge => Gap(_spaces.semiLarge);
-  Gap get large => Gap(_spaces.large);
-  Gap get extraLarge => Gap(_spaces.extraLarge);
-  Gap get superLarge => Gap(_spaces.superLarge);
+  Gap get none => Gap(_spacings.none);
+  Gap get superSmall => Gap(_spacings.superSmall);
+  Gap get extraSmall => Gap(_spacings.extraSmall);
+  Gap get small => Gap(_spacings.small);
+  Gap get semiSmall => Gap(_spacings.semiSmall);
+  Gap get medium => Gap(_spacings.medium);
+  Gap get semiLarge => Gap(_spacings.semiLarge);
+  Gap get large => Gap(_spacings.large);
+  Gap get extraLarge => Gap(_spacings.extraLarge);
+  Gap get superLarge => Gap(_spacings.superLarge);
 
-  // Gap get x64 => Gap(_spaces.x64);
+  // Gap get x64 => Gap(_spacings.x64);
 
   @override
   List<Object?> get props => [
-        _spaces.named('_spaces'),
+        _spacings.named('_spacings'),
       ];
 
   @override
   String toString() => '''
     XGaps(
-      _spaces: $_spaces,
+      _spacings: $_spacings,
     )
   ''';
 }

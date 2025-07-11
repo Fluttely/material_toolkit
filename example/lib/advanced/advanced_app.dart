@@ -9,11 +9,11 @@ import 'package:material_toolkit_example/advanced/widgets/tokens_editor.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const DemoApp());
+  runApp(const AdvancedApp());
 }
 
-class DemoApp extends StatelessWidget {
-  const DemoApp({super.key});
+class AdvancedApp extends StatelessWidget {
+  const AdvancedApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class DemoApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
               extensions: [themeNotifier.tokens],
             ),
-            home: const Root(),
+            home: const RootPage(),
           );
         },
       ),
@@ -38,14 +38,14 @@ class DemoApp extends StatelessWidget {
   }
 }
 
-class Root extends StatefulWidget {
-  const Root({super.key});
+class RootPage extends StatefulWidget {
+  const RootPage({super.key});
 
   @override
-  State<Root> createState() => _RootState();
+  State<RootPage> createState() => _RootPageState();
 }
 
-class _RootState extends State<Root> {
+class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

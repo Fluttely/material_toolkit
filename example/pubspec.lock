@@ -145,7 +145,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.3"
+    version: "0.0.4"
   meta:
     dependency: transitive
     description:
@@ -178,6 +178,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
+  senior_design_tokens:
+    dependency: "direct main"
+    description:
+      name: senior_design_tokens
+      sha256: "0333d19ccbc84cc8b564967f00c3c178fd204989d82f28198c3b4ed197e09dea"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   sky_engine:
     dependency: transitive
     description: flutter

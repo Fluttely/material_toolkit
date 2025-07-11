@@ -19,14 +19,14 @@ class MinimalApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           extensions: [tokens],
         ),
-        home: const DemoPage(),
+        home: const HomePage(),
       ),
     );
   }
 }
 
-class DemoPage extends StatelessWidget {
-  const DemoPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class DemoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Design Tokens Example')),
       body: tokens.padding.all(
-        XSpaces.medium,
+        XSpacings.medium,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,

@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 void main() {
-  group('XSpacesData defaults', () {
-    const data = XSpacesData();
+  group('XSpacingsData defaults', () {
+    const data = XSpacingsData();
 
     test('values are correct', () {
       expect(data.none, XStandardSizes.zero);
@@ -47,10 +47,10 @@ void main() {
   group('XDesignTokensData.copyWith', () {
     test('overrides selected fields', () {
       final tokens = XDesignTokensData();
-      const customSpaces = XSpacesData(extraSmall: 99);
-      final copy = tokens.copyWith(spaces: customSpaces);
+      const customSpaces = XSpacingsData(extraSmall: 99);
+      final copy = tokens.copyWith(spacings: customSpaces);
 
-      expect(copy.spaces, customSpaces);
+      expect(copy.spacings, customSpaces);
       expect(copy.radii, tokens.radii);
     });
   });
@@ -93,10 +93,8 @@ void main() {
       const data = XDurationsData();
       expect(data.areAnimationEnabled, isTrue);
       expect(data.slow, const Duration(milliseconds: XStandardMilliseconds.x500));
-      expect(data.regular,
-          const Duration(milliseconds: XStandardMilliseconds.x300));
-      expect(data.quick,
-          const Duration(milliseconds: XStandardMilliseconds.x100));
+      expect(data.regular, const Duration(milliseconds: XStandardMilliseconds.x300));
+      expect(data.quick, const Duration(milliseconds: XStandardMilliseconds.x100));
     });
 
     test('XBoxShadowsData', () {
@@ -154,29 +152,29 @@ void main() {
   });
 
   group('EdgeInsets and Padding', () {
-    const spaces = XSpacesData();
-    final edgeInsets = XEdgeInsets(spaces);
-    final padding = XPadding(edgeInsets);
+    const spacings = XSpacingsData();
+    const edgeInsets = XEdgeInsets(spacings);
+    const padding = XPadding(edgeInsets);
 
     test('EdgeInsets conversions', () {
       expect(edgeInsets.none, EdgeInsets.zero);
-      expect(edgeInsets.all(XSpaces.small), EdgeInsets.all(spaces.small));
+      expect(edgeInsets.all(XSpacings.small), EdgeInsets.all(spacings.small));
       expect(
-        edgeInsets.symmetric(vertical: XSpaces.superSmall, horizontal: XSpaces.large),
+        edgeInsets.symmetric(vertical: XSpacings.superSmall, horizontal: XSpacings.large),
         EdgeInsets.symmetric(
-          vertical: spaces.superSmall,
-          horizontal: spaces.large,
+          vertical: spacings.superSmall,
+          horizontal: spacings.large,
         ),
       );
       expect(
-        edgeInsets.only(left: XSpaces.medium),
-        EdgeInsets.only(left: spaces.medium),
+        edgeInsets.only(left: XSpacings.medium),
+        EdgeInsets.only(left: spacings.medium),
       );
     });
 
     test('Padding conversions', () {
-      final widget = padding.all(XSpaces.medium, child: const Text('data'));
-      expect(widget.padding, EdgeInsets.all(spaces.medium));
+      final widget = padding.all(XSpacings.medium, child: const Text('data'));
+      expect(widget.padding, EdgeInsets.all(spacings.medium));
       expect(widget.child, const Text('data'));
     });
   });

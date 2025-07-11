@@ -24,8 +24,8 @@ class GroupItemContainer extends StatelessWidget {
 
       // width: 300,
       padding: edgeInsets.symmetric(
-        vertical: XSpaces.medium,
-        horizontal: XSpaces.extraLarge,
+        vertical: XSpacings.medium,
+        horizontal: XSpacings.extraLarge,
       ),
       decoration: BoxDecoration(
         color: colorScheme.surface,

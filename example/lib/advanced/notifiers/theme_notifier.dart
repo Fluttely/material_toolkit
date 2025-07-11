@@ -22,7 +22,7 @@ class ThemeNotifier extends ChangeNotifier {
   XFormFactor formFactor = XFormFactor.medium;
   XIconSizesData iconSizes = const XIconSizesData();
   XRadiiData _radiiData = const XRadiiData();
-  XSpacesData spaces = const XSpacesData();
+  XSpacingsData spacings = const XSpacingsData();
   XTextShadowsData textShadows = const XTextShadowsData();
 
   /// Gets the current primary color used in the theme.
@@ -39,7 +39,7 @@ class ThemeNotifier extends ChangeNotifier {
         formFactor: formFactor,
         iconSizes: iconSizes,
         radii: radiiData,
-        spaces: spaces,
+        spacings: spacings,
         textShadows: textShadows,
       );
 
@@ -67,9 +67,9 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Updates the spaces data and notifies listeners.
-  void updateSpacesData(XSpacesData newSpacesData) {
-    spaces = newSpacesData;
+  /// Updates the spacings data and notifies listeners.
+  void updateSpacingsData(XSpacingsData newSpacingsData) {
+    spacings = newSpacingsData;
     notifyListeners();
   }
 
@@ -125,7 +125,7 @@ class ThemeNotifier extends ChangeNotifier {
     formFactor = XFormFactor.medium;
     iconSizes = const XIconSizesData();
     _radiiData = const XRadiiData();
-    spaces = const XSpacesData();
+    spacings = const XSpacingsData();
     textShadows = const XTextShadowsData();
     notifyListeners();
   }
