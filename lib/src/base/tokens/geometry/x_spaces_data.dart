@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 enum XSpaces {
   none,
@@ -114,39 +114,39 @@ class XSpacesData extends Equatable {
   // double get none => XStandardSizes.zero;
   // double get superSmall =>
   //     _superSmall ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'superSmall', location: 'spaces')));
   // double get extraSmall =>
   //     _extraSmall ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'extraSmall', location: 'spaces')));
   // double get small =>
   //     _small ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'small', location: 'spaces')));
   // double get semiSmall =>
   //     _semiSmall ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'semiSmall', location: 'spaces')));
   // double get medium =>
   //     _medium ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'medium', location: 'spaces')));
   // double get semiLarge =>
   //     _semiLarge ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'semiLarge', location: 'spaces')));
   // double get large =>
   //     _large ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'large', location: 'spaces')));
   // double get extraLarge =>
   //     _extraLarge ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'extraLarge', location: 'spaces')));
   // double get superLarge =>
   //     _superLarge ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'superLarge', location: 'spaces')));
 
   double get none => XStandardSizes.zero;

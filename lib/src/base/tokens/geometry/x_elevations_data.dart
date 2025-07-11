@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 class XElevationsData extends Equatable {
   // final double? _level1;
@@ -52,23 +52,23 @@ class XElevationsData extends Equatable {
   // double get none => XStandardSizes.zero;
   // double get level1 =>
   //     _level1 ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'level1', location: 'elevations')));
   // double get level2 =>
   //     _level2 ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'level2', location: 'elevations')));
   // double get level3 =>
   //     _level3 ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'level3', location: 'elevations')));
   // double get level4 =>
   //     _level4 ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'level4', location: 'elevations')));
   // double get level5 =>
   //     _level5 ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'level5', location: 'elevations')));
 
   double get none => XStandardSizes.zero;

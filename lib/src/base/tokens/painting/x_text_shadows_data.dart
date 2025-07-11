@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 class XTextShadowsData extends Equatable {
   // final Shadow? _small;
@@ -62,13 +62,13 @@ class XTextShadowsData extends Equatable {
 
   // Shadow get small =>
   //     _small ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
   // Shadow get medium =>
   //     _medium ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
   // Shadow get large =>
   //     _large ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
   Shadow get none => const Shadow(
         blurRadius: XStandardSizes.zero,

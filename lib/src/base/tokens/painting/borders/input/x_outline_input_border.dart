@@ -1,4 +1,4 @@
-part of '../../../design_tokens.dart';
+part of '../../../x_design_tokens.dart';
 
 /// Extensão para a classe [XOutlineInputBorder] que adiciona um método
 /// para converter em um [OutlineInputBorder] do Flutter.
@@ -50,8 +50,7 @@ class XOutlineInputBorder {
 
   /// Returns a copy of this XOutlineInputBorder with the given fields
   /// replaced with the new values.
-  XOutlineInputBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XOutlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XOutlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

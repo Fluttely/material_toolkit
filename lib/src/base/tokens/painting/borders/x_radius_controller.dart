@@ -1,4 +1,4 @@
-part of '../../design_tokens.dart';
+part of '../../x_design_tokens.dart';
 
 class XRadiusController extends Equatable {
   final XRadiiData _radiiData;
@@ -7,10 +7,8 @@ class XRadiusController extends Equatable {
 
   Radius get none => XRadius.none.toRadius(_radiiData);
 
-  Radius circular(XRadii radius) =>
-      XRadius.circular(radius).toRadius(_radiiData);
-  Radius elliptical(XRadii x, XRadii y) =>
-      XRadius.elliptical(x, y).toRadius(_radiiData);
+  Radius circular(XRadii radius) => XRadius.circular(radius).toRadius(_radiiData);
+  Radius elliptical(XRadii x, XRadii y) => XRadius.elliptical(x, y).toRadius(_radiiData);
 
   @override
   List<Object?> get props => [

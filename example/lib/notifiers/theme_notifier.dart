@@ -31,7 +31,7 @@ class ThemeNotifier extends ChangeNotifier {
   /// Gets the current radii data used in the theme.
   XRadiiData get radiiData => _radiiData;
 
-  DesignTokensData get tokens => DesignTokensData(
+  XDesignTokensData get tokens => XDesignTokensData(
         boxShadows: boxShadows,
         breakpoints: breakpoints,
         durations: durations,
@@ -115,7 +115,7 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void resetMetricsData() {
+  void resetXDesignTokensData() {
     _primaryColor = _m3Baseline;
     primaryColorTextFieldController.clear();
     boxShadows = const XBoxShadowsData();

@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 class XDurationsData extends Equatable {
   // final bool? _areAnimationEnabled;
@@ -27,12 +27,9 @@ class XDurationsData extends Equatable {
     final Duration? regular,
     final Duration? quick,
   })  : _areAnimationEnabled = areAnimationEnabled ?? true,
-        _slow =
-            slow ?? const Duration(milliseconds: XStandardMilliseconds.x500),
-        _regular =
-            regular ?? const Duration(milliseconds: XStandardMilliseconds.x300),
-        _quick =
-            quick ?? const Duration(milliseconds: XStandardMilliseconds.x100);
+        _slow = slow ?? const Duration(milliseconds: XStandardMilliseconds.x500),
+        _regular = regular ?? const Duration(milliseconds: XStandardMilliseconds.x300),
+        _quick = quick ?? const Duration(milliseconds: XStandardMilliseconds.x100);
 
   // XDurationsData.x({
   //   final XAttribute<bool?>? areAnimationEnabled,
@@ -46,19 +43,19 @@ class XDurationsData extends Equatable {
 
   // bool get areAnimationEnabled =>
   //     _areAnimationEnabled ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'areAnimationEnabled', location: 'durations')));
   // Duration get slow =>
   //     _slow ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'slow', location: 'durations')));
   // Duration get regular =>
   //     _regular ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'regular', location: 'durations')));
   // Duration get quick =>
   //     _quick ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'quick', location: 'durations')));
 
   bool get areAnimationEnabled => _areAnimationEnabled;
@@ -69,12 +66,9 @@ class XDurationsData extends Equatable {
   Duration get x100 => const Duration(milliseconds: XStandardMilliseconds.x100);
   Duration get x300 => const Duration(milliseconds: XStandardMilliseconds.x300);
   Duration get x500 => const Duration(milliseconds: XStandardMilliseconds.x500);
-  Duration get x1500 =>
-      const Duration(milliseconds: XStandardMilliseconds.x1500);
-  Duration get x2000 =>
-      const Duration(milliseconds: XStandardMilliseconds.x2000);
-  Duration get x3000 =>
-      const Duration(milliseconds: XStandardMilliseconds.x3000);
+  Duration get x1500 => const Duration(milliseconds: XStandardMilliseconds.x1500);
+  Duration get x2000 => const Duration(milliseconds: XStandardMilliseconds.x2000);
+  Duration get x3000 => const Duration(milliseconds: XStandardMilliseconds.x3000);
 
   @override
   List<Object?> get props => [

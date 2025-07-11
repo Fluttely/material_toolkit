@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 class XBoxShadowsData extends Equatable {
   // final BoxShadow? _small;
@@ -68,13 +68,13 @@ class XBoxShadowsData extends Equatable {
 
   // BoxShadow get small =>
   //     _small ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'small', location: 'boxShadows')));
   // BoxShadow get medium =>
   //     _medium ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'medium', location: 'boxShadows')));
   // BoxShadow get large =>
   //     _large ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'large', location: 'boxShadows')));
 
   BoxShadow get none => const BoxShadow(
         blurRadius: XStandardSizes.zero,

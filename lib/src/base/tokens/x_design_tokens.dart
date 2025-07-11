@@ -30,28 +30,28 @@ part 'painting/x_gaps.dart';
 part 'painting/x_padding.dart';
 part 'painting/x_text_shadows_data.dart';
 
-class DesignTokens extends InheritedWidget {
-  const DesignTokens({required super.child, required this.data, super.key});
+class XDesignTokens extends InheritedWidget {
+  const XDesignTokens({required super.child, required this.data, super.key});
 
-  static DesignTokensData of(BuildContext context) {
-    final metricsData = context.dependOnInheritedWidgetOfExactType<DesignTokens>()?.data;
+  static XDesignTokensData of(BuildContext context) {
+    final tokens = context.dependOnInheritedWidgetOfExactType<XDesignTokens>()?.data;
 
-    assert(metricsData != null, 'No DesignTokens found in context');
+    assert(tokens != null, 'No DesignTokens found in context');
 
-    return metricsData!;
+    return tokens!;
   }
 
-  static DesignTokensData? maybeOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<DesignTokens>()?.data;
+  static XDesignTokensData? maybeOf(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<XDesignTokens>()?.data;
   }
 
-  final DesignTokensData data;
+  final XDesignTokensData data;
 
   @override
-  bool updateShouldNotify(DesignTokens oldWidget) => data != oldWidget.data;
+  bool updateShouldNotify(XDesignTokens oldWidget) => data != oldWidget.data;
 }
 
-class DesignTokensData extends ThemeExtension<DesignTokensData> {
+class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
   final XBoxShadowsData boxShadows;
   final XBreakpointsData breakpoints;
   final XDurationsData durations;
@@ -64,7 +64,7 @@ class DesignTokensData extends ThemeExtension<DesignTokensData> {
   final XTextShadowsData textShadows;
   // blurs
 
-  DesignTokensData({
+  XDesignTokensData({
     final XBoxShadowsData? boxShadows,
     final XBreakpointsData? breakpoints,
     final XDurationsData? durations,
@@ -100,11 +100,11 @@ class DesignTokensData extends ThemeExtension<DesignTokensData> {
   // GoogleFonts get googleFonts => GoogleFonts;
 
   @override
-  ThemeExtension<DesignTokensData> lerp(ThemeExtension<DesignTokensData>? other, double t) {
-    if (other is! DesignTokensData) {
+  ThemeExtension<XDesignTokensData> lerp(ThemeExtension<XDesignTokensData>? other, double t) {
+    if (other is! XDesignTokensData) {
       return this;
     } else {
-      return DesignTokensData(
+      return XDesignTokensData(
         boxShadows: boxShadows,
         breakpoints: breakpoints,
         durations: durations,
@@ -120,7 +120,7 @@ class DesignTokensData extends ThemeExtension<DesignTokensData> {
   }
 
   @override
-  DesignTokensData copyWith({
+  XDesignTokensData copyWith({
     XBoxShadowsData? boxShadows,
     XBreakpointsData? breakpoints,
     XDurationsData? durations,
@@ -132,7 +132,7 @@ class DesignTokensData extends ThemeExtension<DesignTokensData> {
     XSpacesData? spaces,
     XTextShadowsData? textShadows,
   }) {
-    return DesignTokensData(
+    return XDesignTokensData(
       boxShadows: boxShadows ?? this.boxShadows,
       breakpoints: breakpoints ?? this.breakpoints,
       durations: durations ?? this.durations,
@@ -149,7 +149,7 @@ class DesignTokensData extends ThemeExtension<DesignTokensData> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is DesignTokensData &&
+      other is XDesignTokensData &&
           boxShadows == other.boxShadows &&
           breakpoints == other.breakpoints &&
           durations == other.durations &&

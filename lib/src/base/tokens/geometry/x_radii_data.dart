@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 enum XRadii {
   none,
@@ -104,35 +104,35 @@ class XRadiiData extends Equatable {
   // double get none => double.zero;
   // double get extraSmall =>
   //     _extraSmall ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'extraSmall', location: 'radii')));
   // double get small =>
   //     _small ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'small', location: 'radii')));
   // double get semiSmall =>
   //     _semiSmall ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'semiSmall', location: 'radii')));
   // double get medium =>
   //     _medium ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'medium', location: 'radii')));
   // double get semiLarge =>
   //     _semiLarge ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'semiLarge', location: 'radii')));
   // double get large =>
   //     _large ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'large', location: 'radii')));
   // double get extraLarge =>
   //     _extraLarge ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'extraLarge', location: 'radii')));
   // double get superLarge =>
   //     _superLarge ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
   //         attribute: 'superLarge', location: 'radii')));
 
   double get none => XStandardSizes.zero;

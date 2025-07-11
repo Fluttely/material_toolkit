@@ -1,4 +1,4 @@
-part of '../../../design_tokens.dart';
+part of '../../../x_design_tokens.dart';
 
 /// Extensão para a classe [XUnderlineInputBorder] que adiciona um método
 /// para converter em um [UnderlineInputBorder] do Flutter.
@@ -45,8 +45,7 @@ class XUnderlineInputBorder {
 
   /// Returns a copy of this XUnderlineInputBorder with the given fields
   /// replaced with the new values.
-  XUnderlineInputBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XUnderlineInputBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XUnderlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

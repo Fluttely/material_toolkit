@@ -1,4 +1,4 @@
-part of '../../../design_tokens.dart';
+part of '../../../x_design_tokens.dart';
 
 /// Extensão para a classe [XContinuousRectangleBorder] que adiciona um método
 /// para converter em um [ContinuousRectangleBorder] do Flutter.
@@ -45,8 +45,7 @@ class XContinuousRectangleBorder {
 
   /// Returns a copy of this XContinuousRectangleBorder with the given fields
   /// replaced with the new values.
-  XContinuousRectangleBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XContinuousRectangleBorder copyWith({BorderSide? borderSide, XBorderRadius? borderRadius}) {
     return XContinuousRectangleBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,

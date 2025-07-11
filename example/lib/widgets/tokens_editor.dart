@@ -4,16 +4,16 @@ import 'package:provider/provider.dart';
 
 import '../notifiers/theme_notifier.dart';
 
-/// Widget to edit [XMetricsData] values without losing the focus of the
+/// Widget to edit [XXDesignTokensData] values without losing the focus of the
 /// text fields while typing.
-class MetricsEditor extends StatefulWidget {
-  const MetricsEditor({super.key});
+class TokensEditor extends StatefulWidget {
+  const TokensEditor({super.key});
 
   @override
-  State<MetricsEditor> createState() => _MetricsEditorState();
+  State<TokensEditor> createState() => _TokensEditorState();
 }
 
-class _MetricsEditorState extends State<MetricsEditor> {
+class _TokensEditorState extends State<TokensEditor> {
   late final TextEditingController spacesSmallController;
   late final TextEditingController radiiExtraSmallController;
   late final TextEditingController iconSmallController;
@@ -61,7 +61,7 @@ class _MetricsEditorState extends State<MetricsEditor> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final tokens = theme.extension<DesignTokensData>()!;
+    final tokens = theme.extension<XDesignTokensData>()!;
     final gaps = tokens.gaps;
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
 
@@ -71,7 +71,7 @@ class _MetricsEditorState extends State<MetricsEditor> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text('Metrics Editor', style: theme.textTheme.titleLarge),
+            Text('Tokens Editor', style: theme.textTheme.titleLarge),
             gaps.small,
             _NumberField(
               label: 'Spaces small',

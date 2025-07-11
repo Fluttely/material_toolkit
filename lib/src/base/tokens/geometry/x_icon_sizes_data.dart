@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 class XIconSizesData extends Equatable {
   final double _extraSmall;

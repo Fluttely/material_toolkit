@@ -1,4 +1,4 @@
-part of '../design_tokens.dart';
+part of '../x_design_tokens.dart';
 
 class XBreakpointsData extends Equatable {
   // final Breakpoint? _mobile;
@@ -80,16 +80,16 @@ class XBreakpointsData extends Equatable {
   // Breakpoint get mobile =>
   //     _mobile ??
   //     (throw UnsupportedError(
-  //         XMetricsError.getUnsupportedErrorMessage(attribute: 'mobile', location: 'breakpoints')));
+  //         XDesignTokensError.getUnsupportedErrorMessage(attribute: 'mobile', location: 'breakpoints')));
   // Breakpoint get tablet =>
   //     _tablet ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'tablet', location: 'breakpoints')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'tablet', location: 'breakpoints')));
   // Breakpoint get desktop =>
   //     _desktop ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'desktop', location: 'breakpoints')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'desktop', location: 'breakpoints')));
   // Breakpoint get infinity =>
   //     _infinity ??
-  //     (throw UnsupportedError(XMetricsError.getUnsupportedErrorMessage(attribute: 'infinity', location: 'breakpoints')));
+  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'infinity', location: 'breakpoints')));
 
   XBreakpoint get mobile => _mobile;
   XBreakpoint get tablet => _tablet;

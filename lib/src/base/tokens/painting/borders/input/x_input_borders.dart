@@ -1,4 +1,4 @@
-part of '../../../design_tokens.dart';
+part of '../../../x_design_tokens.dart';
 
 class XInputBorders extends Equatable {
   final XRadiiData _radiiData;
@@ -11,15 +11,13 @@ class XInputBorders extends Equatable {
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
   }) =>
-      XOutlineInputBorder(borderSide: borderSide, borderRadius: borderRadius)
-          .toOutlineInputBorder(_radiiData);
+      XOutlineInputBorder(borderSide: borderSide, borderRadius: borderRadius).toOutlineInputBorder(_radiiData);
 
   UnderlineInputBorder underlineInputBorder({
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
   }) =>
-      XUnderlineInputBorder(borderSide: borderSide, borderRadius: borderRadius)
-          .toUnderlineInputBorder(_radiiData);
+      XUnderlineInputBorder(borderSide: borderSide, borderRadius: borderRadius).toUnderlineInputBorder(_radiiData);
 
   @override
   List<Object?> get props => [

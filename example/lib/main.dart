@@ -5,7 +5,7 @@ import 'package:material_toolkit_example/notifiers/root_notifier.dart';
 import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
 import 'package:material_toolkit_example/paiting/border_radius_circular_group.dart';
 import 'package:material_toolkit_example/widgets/group_card.dart';
-import 'package:material_toolkit_example/widgets/metrics_editor.dart';
+import 'package:material_toolkit_example/widgets/tokens_editor.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -52,7 +52,7 @@ class _RootState extends State<Root> {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final tokens = theme.extension<DesignTokensData>()!;
+    final tokens = theme.extension<XDesignTokensData>()!;
     final gaps = tokens.gaps;
     // final inputBorders = tokens.inputBorders;
     // final breakpoints = tokens.breakpoints;
@@ -107,14 +107,14 @@ class _RootState extends State<Root> {
             ),
             gaps.large,
             ElevatedButton(
-              onPressed: themeNotifier.resetMetricsData,
+              onPressed: themeNotifier.resetXDesignTokensData,
               child: Text(
-                'Reset MetricsData to default',
+                'Reset XDesignTokensData to default',
                 style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
               ),
             ),
             gaps.large,
-            const MetricsEditor(),
+            const TokensEditor(),
             LayoutBuilder(
               builder: (context, constraints) {
                 return ConstrainedBox(
