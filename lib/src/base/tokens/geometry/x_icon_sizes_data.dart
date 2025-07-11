@@ -28,6 +28,21 @@ class XIconSizesData extends Equatable {
         _extraLarge = extraLarge ?? XStandardSizes.x96,
         _superLarge = superLarge ?? XStandardSizes.x192;
 
+  factory XIconSizesData.fromMap(Map<String, dynamic> map) {
+    double? _d(String key) => (map[key] as num?)?.toDouble();
+
+    return XIconSizesData(
+      extraSmall: _d('extraSmall'),
+      small: _d('small'),
+      semiSmall: _d('semiSmall'),
+      medium: _d('medium'),
+      semiLarge: _d('semiLarge'),
+      large: _d('large'),
+      extraLarge: _d('extraLarge'),
+      superLarge: _d('superLarge'),
+    );
+  }
+
   double get none => XStandardSizes.zero;
   double get extraSmall => _extraSmall;
   double get small => _small;

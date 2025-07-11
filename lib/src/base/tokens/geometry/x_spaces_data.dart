@@ -91,6 +91,22 @@ class XSpacesData extends Equatable {
         _extraLarge = extraLarge ?? XStandardSizes.x32,
         _superLarge = superLarge ?? XStandardSizes.x48;
 
+  factory XSpacesData.fromMap(Map<String, dynamic> map) {
+    double? _d(String key) => (map[key] as num?)?.toDouble();
+
+    return XSpacesData(
+      superSmall: _d('superSmall'),
+      extraSmall: _d('extraSmall'),
+      small: _d('small'),
+      semiSmall: _d('semiSmall'),
+      medium: _d('medium'),
+      semiLarge: _d('semiLarge'),
+      large: _d('large'),
+      extraLarge: _d('extraLarge'),
+      superLarge: _d('superLarge'),
+    );
+  }
+
   // XSpacesData.x({
   //   final XAttribute<double?>? superSmall,
   //   final XAttribute<double?>? extraSmall,
