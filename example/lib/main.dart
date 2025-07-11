@@ -51,7 +51,7 @@ class _RootState extends State<Root> {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final metrics = theme.extension<XMetricsData>()!;
+    final metrics = theme.extension<DesignTokensData>()!;
     final gaps = metrics.gaps;
     // final inputBorders = metrics.inputBorders;
     // final breakpoints = metrics.breakpoints;

@@ -1,4 +1,4 @@
-// part of '../x_metrics_data.dart';
+// part of '../design_tokens.dart';
 
 // /// A radius for either circular or elliptical shapes.
 // class XRadius {

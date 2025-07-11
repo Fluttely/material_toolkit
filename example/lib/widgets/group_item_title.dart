@@ -14,7 +14,7 @@ class GroupItemTitle extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    final metrics = theme.extension<XMetricsData>()!;
+    final metrics = theme.extension<DesignTokensData>()!;
     final gaps = metrics.gaps;
 
     return Row(

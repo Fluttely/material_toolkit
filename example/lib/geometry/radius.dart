@@ -12,7 +12,7 @@
 //   Widget build(BuildContext context) {
 //     final theme = Theme.of(context);
 
-//     final metrics = theme.extension<XMetricsData>()!;
+//     final metrics = theme.extension<DesignTokensData>()!;
 //     final gaps = metrics.gaps;
 //     final radii = metrics.radii;
 

@@ -11,7 +11,7 @@ class ElevationGroup extends StatelessWidget {
     // final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final metrics = theme.extension<XMetricsData>()!;
+    final metrics = theme.extension<DesignTokensData>()!;
     // final borderRadius = metrics.borderRadius;
     // final edgeInsets = metrics.edgeInsets;
     final elevations = metrics.elevations;

@@ -1,4 +1,4 @@
-library x_metrics_data;
+library design_tokens;
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -30,28 +30,28 @@ part 'painting/x_gaps.dart';
 part 'painting/x_padding.dart';
 part 'painting/x_text_shadows_data.dart';
 
-class XMetrics extends InheritedWidget {
-  const XMetrics({required super.child, required this.data, super.key});
+class DesignTokens extends InheritedWidget {
+  const DesignTokens({required super.child, required this.data, super.key});
 
-  static XMetricsData of(BuildContext context) {
-    final metricsData = context.dependOnInheritedWidgetOfExactType<XMetrics>()?.data;
+  static DesignTokensData of(BuildContext context) {
+    final metricsData = context.dependOnInheritedWidgetOfExactType<DesignTokens>()?.data;
 
-    assert(metricsData != null, 'No XMetrics found in context');
+    assert(metricsData != null, 'No DesignTokens found in context');
 
     return metricsData!;
   }
 
-  static XMetricsData? maybeOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<XMetrics>()?.data;
+  static DesignTokensData? maybeOf(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<DesignTokens>()?.data;
   }
 
-  final XMetricsData data;
+  final DesignTokensData data;
 
   @override
-  bool updateShouldNotify(XMetrics oldWidget) => data != oldWidget.data;
+  bool updateShouldNotify(DesignTokens oldWidget) => data != oldWidget.data;
 }
 
-class XMetricsData extends ThemeExtension<XMetricsData> {
+class DesignTokensData extends ThemeExtension<DesignTokensData> {
   final XBoxShadowsData boxShadows;
   final XBreakpointsData breakpoints;
   final XDurationsData durations;
@@ -64,7 +64,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   final XTextShadowsData textShadows;
   // blurs
 
-  XMetricsData({
+  DesignTokensData({
     final XBoxShadowsData? boxShadows,
     final XBreakpointsData? breakpoints,
     final XDurationsData? durations,
@@ -100,11 +100,11 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   // GoogleFonts get googleFonts => GoogleFonts;
 
   @override
-  ThemeExtension<XMetricsData> lerp(ThemeExtension<XMetricsData>? other, double t) {
-    if (other is! XMetricsData) {
+  ThemeExtension<DesignTokensData> lerp(ThemeExtension<DesignTokensData>? other, double t) {
+    if (other is! DesignTokensData) {
       return this;
     } else {
-      return XMetricsData(
+      return DesignTokensData(
         boxShadows: boxShadows,
         breakpoints: breakpoints,
         durations: durations,
@@ -120,7 +120,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   }
 
   @override
-  XMetricsData copyWith({
+  DesignTokensData copyWith({
     XBoxShadowsData? boxShadows,
     XBreakpointsData? breakpoints,
     XDurationsData? durations,
@@ -132,7 +132,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
     XSpacesData? spaces,
     XTextShadowsData? textShadows,
   }) {
-    return XMetricsData(
+    return DesignTokensData(
       boxShadows: boxShadows ?? this.boxShadows,
       breakpoints: breakpoints ?? this.breakpoints,
       durations: durations ?? this.durations,
@@ -149,7 +149,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is XMetricsData &&
+      other is DesignTokensData &&
           boxShadows == other.boxShadows &&
           breakpoints == other.breakpoints &&
           durations == other.durations &&
@@ -174,7 +174,7 @@ class XMetricsData extends ThemeExtension<XMetricsData> {
 
   @override
   String toString() => '''
-    XMetricsData(
+    DesignTokensData(
       boxShadows: $boxShadows,
       breakpoints: $breakpoints,
       durations: $durations,

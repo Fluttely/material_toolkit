@@ -1,4 +1,4 @@
-part of '../x_metrics_data.dart';
+part of '../design_tokens.dart';
 
 class XBreakpointsData extends Equatable {
   // final Breakpoint? _mobile;
