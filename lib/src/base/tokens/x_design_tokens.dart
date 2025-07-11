@@ -27,7 +27,6 @@ part 'painting/borders/x_radius_controller.dart';
 part 'painting/x_box_shadows_data.dart';
 part 'painting/x_edge_insets.dart';
 part 'painting/x_gaps.dart';
-// part 'painting/x_google_fonts_data.dart';
 part 'painting/x_padding.dart';
 part 'painting/x_text_shadows_data.dart';
 
@@ -237,8 +236,4 @@ class XDesignTokensData extends ThemeExtension<XDesignTokensData> {
       padding: $padding,
     )
   ''';
-  // borderRadii: $borderRadii,
-  // shapes: $shapes,
-  // inputBorders: $inputBorders,
-  // googleFonts: $googleFonts,
 }

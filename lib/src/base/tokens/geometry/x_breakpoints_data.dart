@@ -67,49 +67,6 @@ class XBreakpointsData extends Equatable {
     );
   }
 
-  // XBreakpointsData.x({
-  //   final XAttribute<Breakpoint?>? mobile,
-  //   final XAttribute<Breakpoint?>? tablet,
-  //   final XAttribute<Breakpoint?>? desktop,
-  //   final XAttribute<Breakpoint?>? infinity,
-  // })  : _mobile = mobile == null
-  //           ? const Breakpoint(
-  //               minWidth: XStandardSizes.zero,
-  //               maxWidth: XAuxiliarySizes.x599,
-  //             )
-  //           : mobile.value,
-  //       _tablet = tablet == null
-  //           ? const Breakpoint(
-  //               minWidth: XAuxiliarySizes.x600,
-  //               maxWidth: XAuxiliarySizes.x1023,
-  //             )
-  //           : tablet.value,
-  //       _desktop = desktop == null
-  //           ? const Breakpoint(
-  //               minWidth: XStandardSizes.x1024,
-  //               maxWidth: XAuxiliarySizes.x1439,
-  //             )
-  //           : desktop.value,
-  //       _infinity = infinity == null
-  //           ? const Breakpoint(
-  //               minWidth: XAuxiliarySizes.x1440,
-  //               maxWidth: double.infinity,
-  //             )
-  //           : infinity.value;
-
-  // Breakpoint get mobile =>
-  //     _mobile ??
-  //     (throw UnsupportedError(
-  //         XDesignTokensError.getUnsupportedErrorMessage(attribute: 'mobile', location: 'breakpoints')));
-  // Breakpoint get tablet =>
-  //     _tablet ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'tablet', location: 'breakpoints')));
-  // Breakpoint get desktop =>
-  //     _desktop ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'desktop', location: 'breakpoints')));
-  // Breakpoint get infinity =>
-  //     _infinity ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(attribute: 'infinity', location: 'breakpoints')));
 
   XBreakpoint get mobile => _mobile;
   XBreakpoint get tablet => _tablet;

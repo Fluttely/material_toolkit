@@ -1,25 +1,11 @@
 part of '../x_design_tokens.dart';
 
 class XDurationsData extends Equatable {
-  // final bool? _areAnimationEnabled;
-  // final Duration? _slow;
-  // final Duration? _regular;
-  // final Duration? _quick;
-
   final bool _areAnimationEnabled;
   final Duration _slow;
   final Duration _regular;
   final Duration _quick;
 
-  // const XDurationsData({
-  //   final bool? areAnimationEnabled,
-  //   final Duration? slow,
-  //   final Duration? regular,
-  //   final Duration? quick,
-  // })  : _areAnimationEnabled = areAnimationEnabled,
-  //       _slow = slow,
-  //       _regular = regular,
-  //       _quick = quick;
 
   const XDurationsData({
     final bool? areAnimationEnabled,
@@ -46,32 +32,6 @@ class XDurationsData extends Equatable {
     );
   }
 
-  // XDurationsData.x({
-  //   final XAttribute<bool?>? areAnimationEnabled,
-  //   final XAttribute<Duration?>? slow,
-  //   final XAttribute<Duration?>? regular,
-  //   final XAttribute<Duration?>? quick,
-  // })  : _areAnimationEnabled = areAnimationEnabled == null ? true : areAnimationEnabled.value,
-  //       _slow = slow == null ? const Duration(milliseconds: XStandardMilliseconds.x500) : slow.value,
-  //       _regular = regular == null ? const Duration(milliseconds: XStandardMilliseconds.x300) : regular.value,
-  //       _quick = quick == null ? const Duration(milliseconds: XStandardMilliseconds.x100) : quick.value;
-
-  // bool get areAnimationEnabled =>
-  //     _areAnimationEnabled ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'areAnimationEnabled', location: 'durations')));
-  // Duration get slow =>
-  //     _slow ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'slow', location: 'durations')));
-  // Duration get regular =>
-  //     _regular ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'regular', location: 'durations')));
-  // Duration get quick =>
-  //     _quick ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'quick', location: 'durations')));
 
   bool get areAnimationEnabled => _areAnimationEnabled;
   Duration get slow => _slow;

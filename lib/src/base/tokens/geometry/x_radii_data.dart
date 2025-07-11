@@ -107,48 +107,6 @@ class XRadiiData extends Equatable {
   //   final XAttribute<double?>? large,
   //   final XAttribute<double?>? extraLarge,
   //   final XAttribute<double?>? superLarge,
-  // })  : _extraSmall = extraSmall == null ? const double.circular(XStandardSizes.x4) : extraSmall.value,
-  //       _small = small == null ? const double.circular(XStandardSizes.x8) : small.value,
-  //       _semiSmall = semiSmall == null ? const double.circular(XStandardSizes.x12) : semiSmall.value,
-  //       _medium = medium == null ? const double.circular(XStandardSizes.x16) : medium.value,
-  //       _semiLarge = semiLarge == null ? const double.circular(XStandardSizes.x20) : semiLarge.value,
-  //       _large = large == null ? const double.circular(XStandardSizes.x24) : large.value,
-  //       _extraLarge = extraLarge == null ? const double.circular(XStandardSizes.x32) : extraLarge.value,
-  //       _superLarge = superLarge == null ? const double.circular(XStandardSizes.x48) : superLarge.value;
-
-  // double get none => double.zero;
-  // double get extraSmall =>
-  //     _extraSmall ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'extraSmall', location: 'radii')));
-  // double get small =>
-  //     _small ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'small', location: 'radii')));
-  // double get semiSmall =>
-  //     _semiSmall ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'semiSmall', location: 'radii')));
-  // double get medium =>
-  //     _medium ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'medium', location: 'radii')));
-  // double get semiLarge =>
-  //     _semiLarge ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'semiLarge', location: 'radii')));
-  // double get large =>
-  //     _large ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'large', location: 'radii')));
-  // double get extraLarge =>
-  //     _extraLarge ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'extraLarge', location: 'radii')));
-  // double get superLarge =>
-  //     _superLarge ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'superLarge', location: 'radii')));
 
   double get none => XStandardSizes.zero;
   double get extraSmall => _extraSmall;

@@ -45,7 +45,6 @@ class XOutlineInputBorder {
   /// The radii for each corner.
   final XBorderRadius borderRadius;
 
-  // TODO: description
   final double gapPadding;
 
   /// Returns a copy of this XOutlineInputBorder with the given fields

@@ -49,39 +49,6 @@ class XElevationsData extends Equatable {
     );
   }
 
-  // XElevationsData.x({
-  //   final XAttribute<double?>? level1,
-  //   final XAttribute<double?>? level2,
-  //   final XAttribute<double?>? level3,
-  //   final XAttribute<double?>? level4,
-  //   final XAttribute<double?>? level5,
-  // })  : _level1 = level1 == null ? XAuxiliarySizes.x1 : level1.value,
-  //       _level2 = level2 == null ? XAuxiliarySizes.x3 : level2.value,
-  //       _level3 = level3 == null ? XAuxiliarySizes.x6 : level3.value,
-  //       _level4 = level4 == null ? XStandardSizes.x8 : level4.value,
-  //       _level5 = level5 == null ? XStandardSizes.x12 : level5.value;
-
-  // double get none => XStandardSizes.zero;
-  // double get level1 =>
-  //     _level1 ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'level1', location: 'elevations')));
-  // double get level2 =>
-  //     _level2 ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'level2', location: 'elevations')));
-  // double get level3 =>
-  //     _level3 ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'level3', location: 'elevations')));
-  // double get level4 =>
-  //     _level4 ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'level4', location: 'elevations')));
-  // double get level5 =>
-  //     _level5 ??
-  //     (throw UnsupportedError(XDesignTokensError.getUnsupportedErrorMessage(
-  //         attribute: 'level5', location: 'elevations')));
 
   double get none => XStandardSizes.zero;
   double get level1 => _level1;
