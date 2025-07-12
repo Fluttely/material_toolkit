@@ -10,7 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = XDesignTokens();
+    final tokens = DesignTokens();
     return MaterialApp(
       title: 'Material Toolkit Complete Example',
       theme: ThemeData(
@@ -28,23 +28,23 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).tokens;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Design Tokens Example'),
-        elevation: tokens.elevations.level3,
+        title: const Text('Material Design Tokens Example'),
+        elevation: ElevationTokens.level3,
       ),
       body: SingleChildScrollView(
         child: tokens.padding.all(
-          XSpacings.medium,
+          MaterialSpacings.medium,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Animation
               _buildSection(
                 context,
-                'Durations Tokens',
+                'Duration Tokens',
                 Column(
                   children: [
                     _buildAnimationDemo(
@@ -74,7 +74,7 @@ class Page extends StatelessWidget {
                 context,
                 'Breakpoint Tokens',
                 Container(
-                  padding: tokens.edgeInsets.all(XSpacings.medium),
+                  padding: tokens.edgeInsets.all(MaterialSpacings.medium),
                   color: Colors.grey.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,24 +94,59 @@ class Page extends StatelessWidget {
               gaps.extraLarge,
               _buildSection(
                 context,
-                'Elevations Tokens',
+                'Elevation Tokens',
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _buildElevatedCard(
                       tokens,
+                      'Small',
+                      tokens.elevations.small,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
+                      'Medium',
+                      tokens.elevations.medium,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
+                      'Large',
+                      tokens.elevations.large,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
+                      'Extra Large',
+                      tokens.elevations.extraLarge,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
+                      'Maximum',
+                      tokens.elevations.maximum,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
                       'Level 1',
-                      tokens.elevations.level1,
+                      ElevationTokens.level1,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 2',
-                      tokens.elevations.level2,
+                      ElevationTokens.level2,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 3',
-                      tokens.elevations.level3,
+                      ElevationTokens.level3,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
+                      'Level 4',
+                      ElevationTokens.level4,
+                    ),
+                    _buildElevatedCard(
+                      tokens,
+                      'Level 5',
+                      ElevationTokens.level5,
                     ),
                   ],
                 ),
@@ -119,17 +154,17 @@ class Page extends StatelessWidget {
               gaps.extraLarge,
               _buildSection(
                 context,
-                'Form Factors Tokens',
+                'Form Factor Tokens',
                 Container(
-                  padding: tokens.edgeInsets.all(XSpacings.medium),
+                  padding: tokens.edgeInsets.all(MaterialSpacings.medium),
                   color: Colors.grey.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Text('Form Factor: ${tokens.formFactor.name}'),
-                      Text('Form Factor: ${XFormFactor.small.name}'),
-                      Text('Form Factor: ${XFormFactor.medium.name}'),
-                      Text('Form Factor: ${XFormFactor.large.name}'),
+                      Text('Form Factor: ${FormFactor.small.name}'),
+                      Text('Form Factor: ${FormFactor.medium.name}'),
+                      Text('Form Factor: ${FormFactor.large.name}'),
                     ],
                   ),
                 ),
@@ -137,24 +172,14 @@ class Page extends StatelessWidget {
               gaps.extraLarge,
               _buildSection(
                 context,
-                'Icon Sizes Tokens',
+                'Icon Size Tokens',
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _buildIconDemo(
                       tokens,
-                      'extraSmall',
-                      tokens.iconSizes.extraSmall,
-                    ),
-                    _buildIconDemo(
-                      tokens,
                       'small',
                       tokens.iconSizes.small,
-                    ),
-                    _buildIconDemo(
-                      tokens,
-                      'semiSmall',
-                      tokens.iconSizes.semiSmall,
                     ),
                     _buildIconDemo(
                       tokens,
@@ -163,13 +188,8 @@ class Page extends StatelessWidget {
                     ),
                     _buildIconDemo(
                       tokens,
-                      'semiLarge',
-                      tokens.iconSizes.semiLarge,
-                    ),
-                    _buildIconDemo(
-                      tokens,
-                      'large',
-                      tokens.iconSizes.large,
+                      'standard',
+                      tokens.iconSizes.standard,
                     ),
                     _buildIconDemo(
                       tokens,
@@ -178,8 +198,18 @@ class Page extends StatelessWidget {
                     ),
                     _buildIconDemo(
                       tokens,
-                      'superLarge',
-                      tokens.iconSizes.superLarge,
+                      'hero',
+                      tokens.iconSizes.hero,
+                    ),
+                    _buildIconDemo(
+                      tokens,
+                      'jumbo',
+                      tokens.iconSizes.jumbo,
+                    ),
+                    _buildIconDemo(
+                      tokens,
+                      'giant',
+                      tokens.iconSizes.giant,
                     ),
                   ],
                 ),
@@ -192,9 +222,9 @@ class Page extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildRadiusCard(tokens, 'Small', XRadii.small),
-                    _buildRadiusCard(tokens, 'Medium', XRadii.medium),
-                    _buildRadiusCard(tokens, 'Large', XRadii.large),
+                    _buildRadiusCard(tokens, 'Small', MaterialRadius.small),
+                    _buildRadiusCard(tokens, 'Medium', MaterialRadius.medium),
+                    _buildRadiusCard(tokens, 'Large', MaterialRadius.large),
                   ],
                 ),
               ),
@@ -204,11 +234,11 @@ class Page extends StatelessWidget {
               //   'Spacing Tokens + Gaps Resolver',
               //   Column(
               //     children: [
-              //       _buildSpacingDemo(tokens, 'Small', XSpacings.small),
+              //       _buildSpacingDemo(tokens, 'Small', MaterialSpacings.small),
               //       gaps.medium,
-              //       _buildSpacingDemo(tokens, 'Medium', XSpacings.medium),
+              //       _buildSpacingDemo(tokens, 'Medium', MaterialSpacings.medium),
               //       gaps.medium,
-              //       _buildSpacingDemo(tokens, 'Large', XSpacings.large),
+              //       _buildSpacingDemo(tokens, 'Large', MaterialSpacings.large),
               //     ],
               //   ),
               // ),
@@ -217,7 +247,7 @@ class Page extends StatelessWidget {
               /// Painting
               _buildSection(
                 context,
-                'Box Shadows Tokens',
+                'Box Shadow Tokens',
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -237,11 +267,15 @@ class Page extends StatelessWidget {
                 'Gaps Resolver + Spacing Tokens',
                 Column(
                   children: [
-                    _buildSpacingDemo(tokens, 'Small', XSpacings.small),
+                    _buildSpacingDemo(tokens, 'Small', MaterialSpacings.small),
                     gaps.medium,
-                    _buildSpacingDemo(tokens, 'Medium', XSpacings.medium),
+                    _buildSpacingDemo(
+                      tokens,
+                      'Medium',
+                      MaterialSpacings.medium,
+                    ),
                     gaps.medium,
-                    _buildSpacingDemo(tokens, 'Large', XSpacings.large),
+                    _buildSpacingDemo(tokens, 'Large', MaterialSpacings.large),
                   ],
                 ),
               ),
@@ -249,7 +283,7 @@ class Page extends StatelessWidget {
               // TODO(Kevin): x_google_fonts_tokens, rename to x_google_fonts_resolver?
               _buildSection(
                 context,
-                'Opacities Tokens',
+                'Opacity Tokens',
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -274,7 +308,7 @@ class Page extends StatelessWidget {
               gaps.extraLarge,
               _buildSection(
                 context,
-                'Text Shadows Tokens',
+                'Text Shadow Tokens',
                 Column(
                   children: [
                     Text(
@@ -343,7 +377,7 @@ class Page extends StatelessWidget {
 
   Widget _buildSection(BuildContext context, String title, Widget child) {
     final tokens = Theme.of(context).tokens;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -362,9 +396,9 @@ class Page extends StatelessWidget {
   }
 
   Widget _buildSpacingDemo(
-    XDesignTokens tokens,
+    DesignTokens tokens,
     String label,
-    XSpacings spacing,
+    MaterialSpacings spacing,
   ) {
     final spacings = tokens.spacings;
     return Row(
@@ -382,7 +416,7 @@ class Page extends StatelessWidget {
   }
 
   Widget _buildShadowCard(
-    XDesignTokens tokens,
+    DesignTokens tokens,
     String label,
     BoxShadow shadow,
   ) {
@@ -396,7 +430,11 @@ class Page extends StatelessWidget {
     );
   }
 
-  Widget _buildRadiusCard(XDesignTokens tokens, String label, XRadii radius) {
+  Widget _buildRadiusCard(
+    DesignTokens tokens,
+    String label,
+    MaterialRadius radius,
+  ) {
     return Container(
       width: 80,
       height: 80,
@@ -412,7 +450,7 @@ class Page extends StatelessWidget {
   }
 
   Widget _buildAnimationDemo(
-    XDesignTokens tokens,
+    DesignTokens tokens,
     String label,
     Duration duration,
   ) {
@@ -423,7 +461,7 @@ class Page extends StatelessWidget {
     );
   }
 
-  Widget _buildIconDemo(XDesignTokens tokens, String label, double size) {
+  Widget _buildIconDemo(DesignTokens tokens, String label, double size) {
     return Column(
       children: [
         Icon(Icons.star, size: size, color: Colors.orange),
@@ -434,7 +472,7 @@ class Page extends StatelessWidget {
   }
 
   Widget _buildElevatedCard(
-    XDesignTokens tokens,
+    DesignTokens tokens,
     String label,
     double elevation,
   ) {
@@ -443,7 +481,7 @@ class Page extends StatelessWidget {
       child: Container(
         width: 80,
         height: 80,
-        padding: tokens.edgeInsets.all(XSpacings.small),
+        padding: tokens.edgeInsets.all(MaterialSpacings.small),
         child: Center(
           child: Text(
             label,
@@ -455,7 +493,7 @@ class Page extends StatelessWidget {
     );
   }
 
-  Widget _buildOpacityDemo(XDesignTokens tokens, String label, double opacity) {
+  Widget _buildOpacityDemo(DesignTokens tokens, String label, double opacity) {
     return Column(
       children: [
         Container(
@@ -485,7 +523,7 @@ class AnimatedContainerDemo extends StatefulWidget {
 
   final String label;
   final Duration duration;
-  final XDesignTokens tokens;
+  final DesignTokens tokens;
 
   @override
   State<AnimatedContainerDemo> createState() => _AnimatedContainerDemoState();

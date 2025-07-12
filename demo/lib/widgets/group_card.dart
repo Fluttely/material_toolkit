@@ -19,13 +19,13 @@ class GroupCard extends StatelessWidget {
 
     final tokens = theme.tokens;
     final padding = tokens.padding;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Card(
       color: colorScheme.surfaceContainerLow,
       elevation: 0,
       child: padding.all(
-        XSpacings.semiLarge,
+        MaterialSpacings.semiLarge,
         child: Align(
           alignment: Alignment.center,
           child: Column(

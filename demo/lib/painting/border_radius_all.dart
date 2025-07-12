@@ -17,7 +17,7 @@ class BorderRadiusAllGroup extends StatelessWidget {
     final borderRadius = tokens.borderRadius;
     // final border = tokens.borderRadius;
 
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Column(
       children: [
@@ -29,20 +29,23 @@ class BorderRadiusAllGroup extends StatelessWidget {
           children: [
             GroupItemRow(
               children: [
-                const BorderRadiusCircularComponent(radius: XRadii.none),
+                const BorderRadiusCircularComponent(
+                  radius: MaterialRadius.none,
+                ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: XRadii.extraSmall,
-                  info: 'borderRadius.all(XRadius.circular(XRadii.extraSmall))',
+                  type: MaterialRadius.extraSmall,
+                  info:
+                      'borderRadius.all(DesignRadius.circular(MaterialRadius.extraSmall))',
                   borderRadius: borderRadius.all(
-                    const XRadius.circular(XRadii.extraSmall),
+                    const DesignRadius.circular(MaterialRadius.extraSmall),
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: XRadii.small,
-                  info: 'borderRadius.circular(XRadii.small)',
-                  borderRadius: borderRadius.circular(XRadii.small),
+                  type: MaterialRadius.small,
+                  info: 'borderRadius.circular(MaterialRadius.small)',
+                  borderRadius: borderRadius.circular(MaterialRadius.small),
                 ),
               ],
             ),
@@ -50,34 +53,44 @@ class BorderRadiusAllGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  type: XRadii.semiSmall,
+                  type: MaterialRadius.semiSmall,
                   info:
-                      'borderRadius.vertical(top: XRadius.circular(XRadii.semiSmall), bottom: XRadius.circular(XRadii.semiSmall))',
+                      'borderRadius.vertical(top: DesignRadius.circular(MaterialRadius.semiSmall), bottom: DesignRadius.circular(MaterialRadius.semiSmall))',
                   borderRadius: borderRadius.vertical(
-                    top: const XRadius.circular(XRadii.semiSmall),
-                    bottom: const XRadius.circular(XRadii.semiSmall),
+                    top: const DesignRadius.circular(MaterialRadius.semiSmall),
+                    bottom: const DesignRadius.circular(
+                      MaterialRadius.semiSmall,
+                    ),
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: XRadii.medium,
+                  type: MaterialRadius.medium,
                   info:
-                      'borderRadius.horizontal(left: XRadius.circular(XRadii.medium), right: XRadius.circular(XRadii.medium))',
+                      'borderRadius.horizontal(left: DesignRadius.circular(MaterialRadius.medium), right: DesignRadius.circular(MaterialRadius.medium))',
                   borderRadius: borderRadius.horizontal(
-                    left: const XRadius.circular(XRadii.medium),
-                    right: const XRadius.circular(XRadii.medium),
+                    left: const DesignRadius.circular(MaterialRadius.medium),
+                    right: const DesignRadius.circular(MaterialRadius.medium),
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: XRadii.semiLarge,
+                  type: MaterialRadius.semiLarge,
                   info:
-                      'onlborderRadiusy(topLeft: XRadius.circular(XRadii.semiLarge),topRight: XRadius.circular(XRadii.semiLarge),bottomLeft: XRadius.circular(XRadii.semiLarge),bottomRight: XRadius.circular(XRadii.semiLarge))',
+                      'onlborderRadiusy(topLeft: DesignRadius.circular(MaterialRadius.semiLarge),topRight: DesignRadius.circular(MaterialRadius.semiLarge),bottomLeft: DesignRadius.circular(MaterialRadius.semiLarge),bottomRight: DesignRadius.circular(MaterialRadius.semiLarge))',
                   borderRadius: borderRadius.only(
-                    topLeft: const XRadius.circular(XRadii.semiLarge),
-                    topRight: const XRadius.circular(XRadii.semiLarge),
-                    bottomLeft: const XRadius.circular(XRadii.semiLarge),
-                    bottomRight: const XRadius.circular(XRadii.semiLarge),
+                    topLeft: const DesignRadius.circular(
+                      MaterialRadius.semiLarge,
+                    ),
+                    topRight: const DesignRadius.circular(
+                      MaterialRadius.semiLarge,
+                    ),
+                    bottomLeft: const DesignRadius.circular(
+                      MaterialRadius.semiLarge,
+                    ),
+                    bottomRight: const DesignRadius.circular(
+                      MaterialRadius.semiLarge,
+                    ),
                   ),
                 ),
               ],
@@ -86,21 +99,25 @@ class BorderRadiusAllGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  type: XRadii.large,
-                  info: 'borderRadius.circular(XRadii.large)',
-                  borderRadius: borderRadius.circular(XRadii.large),
+                  type: MaterialRadius.large,
+                  info: 'borderRadius.circular(MaterialRadius.large)',
+                  borderRadius: borderRadius.circular(MaterialRadius.large),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: XRadii.extraLarge,
-                  info: 'borderRadius.circular(XRadii.extraLarge)',
-                  borderRadius: borderRadius.circular(XRadii.extraLarge),
+                  type: MaterialRadius.extraLarge,
+                  info: 'borderRadius.circular(MaterialRadius.extraLarge)',
+                  borderRadius: borderRadius.circular(
+                    MaterialRadius.extraLarge,
+                  ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: XRadii.superLarge,
-                  info: 'borderRadius.circular(XRadii.superLarge)',
-                  borderRadius: borderRadius.circular(XRadii.superLarge),
+                  type: MaterialRadius.superLarge,
+                  info: 'borderRadius.circular(MaterialRadius.superLarge)',
+                  borderRadius: borderRadius.circular(
+                    MaterialRadius.superLarge,
+                  ),
                 ),
               ],
             ),
@@ -112,9 +129,9 @@ class BorderRadiusAllGroup extends StatelessWidget {
 }
 
 class BorderRadiusCircularComponent extends StatelessWidget {
-  const BorderRadiusCircularComponent({super.key, required this.radius});
+  const BorderRadiusCircularComponent({required this.radius, super.key});
 
-  final XRadii radius;
+  final MaterialRadius radius;
 
   @override
   Widget build(BuildContext context) {
@@ -132,16 +149,15 @@ class BorderRadiusCircularComponent extends StatelessWidget {
 }
 
 class BorderRadiusComponent extends StatelessWidget {
-  final XRadii type;
-  final String info;
-  final BorderRadius borderRadius;
-
   const BorderRadiusComponent({
-    super.key,
     required this.type,
     required this.info,
     required this.borderRadius,
+    super.key,
   });
+  final MaterialRadius type;
+  final String info;
+  final BorderRadius borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +168,7 @@ class BorderRadiusComponent extends StatelessWidget {
     final tokens = theme.tokens;
     // final border = tokens.borderRadius;
 
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Container(
       height: 96,
@@ -166,7 +182,7 @@ class BorderRadiusComponent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            type.toString().replaceAll("XRadii.", ""),
+            type.toString().replaceAll('MaterialRadius.', ''),
             style: textTheme.bodySmall?.copyWith(color: Colors.red),
           ),
           gaps.extraSmall,

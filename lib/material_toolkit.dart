@@ -2,5 +2,9 @@
 ///
 /// This file exposes the helper utilities and design tokens used to build
 /// custom design systems on top of Flutter's `MaterialApp`.
-export 'src/base/helpers/x_helpers.dart';
-export 'src/base/tokens/x_design_tokens.dart';
+library;
+
+export 'src/base/helpers/helpers.dart';
+export 'src/base/resolvers/resolvers.dart';
+export 'src/base/tokens/design_tokens.dart';
+export 'src/base/widgets/widgets.dart';

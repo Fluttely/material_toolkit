@@ -1,18 +1,18 @@
-/// Tests related to [XDesign] and [XDesignTokens].
+/// Tests related to [DesignProvider] and [DesignTokens].
 ///
-/// This file verifies that the design tokens provided to [XDesign]
+/// This file verifies that the design tokens provided to [DesignProvider]
 /// are accessible through the widget tree and the [Theme] extension.
+library;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 void main() {
-  // Ensures that the inherited widget exposes the same token instance
-  // both through the [XDesign.of] helper and as a [Theme] extension.
   testWidgets('DesignTokens.of returns provided data', (tester) async {
-    final tokens = XDesignTokens();
+    final tokens = DesignTokens();
     await tester.pumpWidget(
-      XDesign(
+      DesignProvider(
         tokens: tokens,
         child: MaterialApp(
           theme: ThemeData(
@@ -24,7 +24,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(SizedBox));
-    expect(XDesign.of(context), equals(tokens));
-    expect(Theme.of(context).extension<XDesignTokens>(), equals(tokens));
+    expect(DesignProvider.of(context), equals(tokens));
+    expect(Theme.of(context).extension<DesignTokens>(), equals(tokens));
   });
 }

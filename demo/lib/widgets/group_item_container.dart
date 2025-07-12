@@ -24,12 +24,12 @@ class GroupItemContainer extends StatelessWidget {
 
       // width: 300,
       padding: edgeInsets.symmetric(
-        vertical: XSpacings.medium,
-        horizontal: XSpacings.small,
+        vertical: MaterialSpacings.medium,
+        horizontal: MaterialSpacings.small,
       ),
       decoration: BoxDecoration(
         color: colorScheme.surface,
-        borderRadius: borderRadius.circular(XRadii.semiSmall),
+        borderRadius: borderRadius.circular(MaterialRadius.semiSmall),
         border: Border.all(color: colorScheme.outlineVariant),
       ),
       child: Column(

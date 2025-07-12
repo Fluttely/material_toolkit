@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit_demo/notifiers/theme_notifier.dart';
 import 'package:material_toolkit_demo/widgets/number_field.dart';
 import 'package:provider/provider.dart';
 
-import '../notifiers/theme_notifier.dart';
-
-/// Widget to edit [XDesignTokens] values without losing the focus of the
+/// Widget to edit [DesignTokens] values without losing the focus of the
 /// text fields while typing.
 class TokensEditor extends StatefulWidget {
   const TokensEditor({super.key});
@@ -34,7 +33,7 @@ class _TokensEditorState extends State<TokensEditor> {
       text: notifier.iconSizes.small.toString(),
     );
     elevationOneController = TextEditingController(
-      text: notifier.elevations.level1.toString(),
+      text: notifier.elevations.small.toString(),
     );
     durationSlowController = TextEditingController(
       text: notifier.durations.slow.inMilliseconds.toString(),
@@ -66,12 +65,12 @@ class _TokensEditorState extends State<TokensEditor> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final tokens = theme.tokens;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
 
     return Card(
       child: Padding(
-        padding: tokens.edgeInsets.all(XSpacings.medium),
+        padding: tokens.edgeInsets.all(MaterialSpacings.medium),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -84,8 +83,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateSpacingsTokens(
-                    XSpacingsTokens(
-                      superSmall: themeNotifier.spacings.superSmall,
+                    SpacingTokens(
                       extraSmall: themeNotifier.spacings.extraSmall,
                       small: v,
                       semiSmall: themeNotifier.spacings.semiSmall,
@@ -107,35 +105,20 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateIconSizesTokens(
-                    XIconSizesTokens(
-                      extraSmall: themeNotifier.iconSizes.extraSmall,
-                      small: v,
-                      semiSmall: themeNotifier.iconSizes.semiSmall,
-                      medium: themeNotifier.iconSizes.medium,
-                      semiLarge: themeNotifier.iconSizes.semiLarge,
-                      large: themeNotifier.iconSizes.large,
-                      extraLarge: themeNotifier.iconSizes.extraLarge,
-                      superLarge: themeNotifier.iconSizes.superLarge,
-                    ),
+                    themeNotifier.iconSizes.copyWith(small: v),
                   );
                 }
               },
             ),
             gaps.small,
             NumberField(
-              label: 'Elevation level1',
+              label: 'Elevation small',
               controller: elevationOneController,
               onChanged: (value) {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateElevationsTokens(
-                    XElevationsTokens(
-                      level1: v,
-                      level2: themeNotifier.elevations.level2,
-                      level3: themeNotifier.elevations.level3,
-                      level4: themeNotifier.elevations.level4,
-                      level5: themeNotifier.elevations.level5,
-                    ),
+                    themeNotifier.elevations.copyWith(small: v),
                   );
                 }
               },
@@ -148,7 +131,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = int.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateDurationsTokens(
-                    XDurationsTokens(
+                    DurationTokens(
                       areAnimationEnabled:
                           themeNotifier.durations.areAnimationEnabled,
                       slow: Duration(milliseconds: v),
@@ -167,8 +150,8 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateBreakpointsTokens(
-                    XBreakpointsTokens(
-                      mobile: XBreakpoint(
+                    BreakpointTokens(
+                      mobile: DesignBreakpoint(
                         minWidth: themeNotifier.breakpoints.mobile.minWidth,
                         maxWidth: v,
                       ),
@@ -189,7 +172,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   final small = themeNotifier.boxShadows.small;
                   themeNotifier.updateBoxShadowsTokens(
-                    XBoxShadowsTokens(
+                    BoxShadowTokens(
                       small: small.copyWith(blurRadius: v),
                       medium: themeNotifier.boxShadows.medium,
                       large: themeNotifier.boxShadows.large,
@@ -207,7 +190,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   final small = themeNotifier.textShadows.small;
                   themeNotifier.updateTextShadowsTokens(
-                    XTextShadowsTokens(
+                    TextShadowTokens(
                       small:
                           small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
                       medium: themeNotifier.textShadows.medium,
@@ -218,14 +201,14 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            DropdownButton<XFormFactor>(
+            DropdownButton<FormFactor>(
               value: themeNotifier.formFactor,
               onChanged: (value) {
                 if (value != null) {
                   themeNotifier.updateFormFactor(value);
                 }
               },
-              items: XFormFactor.values
+              items: FormFactor.values
                   .map(
                     (e) => DropdownMenuItem(
                       value: e,

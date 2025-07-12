@@ -15,7 +15,7 @@ class ElevationGroup extends StatelessWidget {
     // final borderRadius = tokens.borderRadius;
     // final edgeInsets = tokens.edgeInsets;
     final elevations = tokens.elevations;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Column(
       children: [
@@ -28,28 +28,63 @@ class ElevationGroup extends StatelessWidget {
             Row(
               children: [
                 ElevationComponent(
+                  description: 'None\ndp',
+                  elevation: elevations.none,
+                  isSurface: true,
+                ),
+                ElevationComponent(
+                  description: 'Small\ndp',
+                  elevation: elevations.small,
+                  isSurface: true,
+                ),
+                ElevationComponent(
+                  description: 'Medium\ndp',
+                  elevation: elevations.medium,
+                  isSurface: true,
+                ),
+                ElevationComponent(
+                  description: 'Large\ndp',
+                  elevation: elevations.large,
+                  isSurface: true,
+                ),
+                ElevationComponent(
+                  description: 'ExtraLarge\ndp',
+                  elevation: elevations.extraLarge,
+                  isSurface: true,
+                ),
+                ElevationComponent(
+                  description: 'Maximum\ndp',
+                  elevation: elevations.maximum,
+                  isSurface: true,
+                ),
+                const ElevationComponent(
+                  description: 'Level 0\ndp',
+                  elevation: ElevationTokens.level0,
+                  isSurface: true,
+                ),
+                const ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: elevations.level1,
+                  elevation: ElevationTokens.level1,
                   isSurface: true,
                 ),
-                ElevationComponent(
+                const ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: elevations.level2,
+                  elevation: ElevationTokens.level2,
                   isSurface: true,
                 ),
-                ElevationComponent(
+                const ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: elevations.level3,
+                  elevation: ElevationTokens.level3,
                   isSurface: true,
                 ),
-                // ElevationComponent(
-                //   description: 'Level 4\ndp',
-                //   elevation: elevations.level4,
-                //   isSurface: true,
-                // ),
-                ElevationComponent(
+                const ElevationComponent(
+                  description: 'Level 4\ndp',
+                  elevation: ElevationTokens.level4,
+                  isSurface: true,
+                ),
+                const ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: elevations.level5,
+                  elevation: ElevationTokens.level5,
                   isSurface: true,
                 ),
               ],
@@ -60,35 +95,35 @@ class ElevationGroup extends StatelessWidget {
               style: textTheme.titleSmall,
             ),
             gaps.small,
-            Row(
+            const Row(
               children: [
                 ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: elevations.level1,
+                  elevation: ElevationTokens.level1,
                   isSurface: true,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: elevations.level2,
+                  elevation: ElevationTokens.level2,
                   isSurface: true,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: elevations.level3,
+                  elevation: ElevationTokens.level3,
                   isSurface: true,
                   isShadow: true,
                 ),
                 // ElevationComponent(
                 //   description: 'Level 4\ndp',
-                //   elevation: elevations.level4,
+                //   elevation: ElevationTokens.level4,
                 //   isSurface: true,
                 //   isShadow: true,
                 // ),
                 ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: elevations.level5,
+                  elevation: ElevationTokens.level5,
                   isSurface: true,
                   isShadow: true,
                 ),
@@ -97,31 +132,31 @@ class ElevationGroup extends StatelessWidget {
             gaps.large,
             Text('Shadow Color Only', style: textTheme.titleSmall),
             gaps.small,
-            Row(
+            const Row(
               children: [
                 ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: elevations.level1,
+                  elevation: ElevationTokens.level1,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: elevations.level2,
+                  elevation: ElevationTokens.level2,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: elevations.level3,
+                  elevation: ElevationTokens.level3,
                   isShadow: true,
                 ),
                 // ElevationComponent(
                 //   description: 'Level 4\ndp',
-                //   elevation: elevations.level4,
+                //   elevation: ElevationTokens.level4,
                 //   isShadow: true,
                 // ),
                 ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: elevations.level5,
+                  elevation: ElevationTokens.level5,
                   isShadow: true,
                 ),
               ],
@@ -134,18 +169,17 @@ class ElevationGroup extends StatelessWidget {
 }
 
 class ElevationComponent extends StatelessWidget {
+  const ElevationComponent({
+    required this.description,
+    required this.elevation,
+    super.key,
+    this.isSurface = false,
+    this.isShadow = false,
+  });
   final String description;
   final double elevation;
   final bool isSurface;
   final bool isShadow;
-
-  const ElevationComponent({
-    super.key,
-    required this.description,
-    required this.elevation,
-    this.isSurface = false,
-    this.isShadow = false,
-  });
 
   @override
   Widget build(BuildContext context) {

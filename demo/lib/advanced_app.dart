@@ -50,7 +50,7 @@ class _RootPageState extends State<RootPage> {
     final textTheme = theme.textTheme;
 
     final tokens = theme.tokens;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
     // final inputBorder = tokens.inputBorder;
     // final breakpoints = tokens.breakpoints;
 
@@ -77,9 +77,9 @@ class _RootPageState extends State<RootPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ElevatedButton(
-              onPressed: themeNotifier.resetXDesignTokens,
+              onPressed: themeNotifier.resetDesignTokens,
               child: Text(
-                'Reset XDesignTokens to default',
+                'Reset DesignTokens to default',
                 style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
               ),
             ),

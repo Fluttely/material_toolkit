@@ -1,6 +1,6 @@
 // import 'package:material_toolkit/material_toolkit.dart';
 
-// class CustomElevationsTokens extends XElevationsTokens {
+// class CustomElevationsTokens extends ElevationTokens {
 //   const CustomElevationsTokens() : super();
 //   @override
 //   double get level4 =>
@@ -9,7 +9,7 @@
 //   double get level7 => 16;
 // }
 
-// DesignTokensTokens tokens({required XRadiiTokens radii}) => DesignTokensTokens(
+// DesignTokensTokens tokens({required RadiusTokens radii}) => DesignTokensTokens(
 //       elevations: const CustomElevationsTokens(),
 //       radii: radii,
 //     );

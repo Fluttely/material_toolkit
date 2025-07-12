@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 class ThemeNotifier extends ChangeNotifier {
-  XBoxShadowsTokens boxShadows = const XBoxShadowsTokens();
-  XBorderWidthsTokens borderWidths = const XBorderWidthsTokens();
-  XBreakpointsTokens breakpoints = const XBreakpointsTokens();
-  XDurationsTokens durations = const XDurationsTokens();
-  XElevationsTokens elevations = const XElevationsTokens();
-  XFormFactor formFactor = XFormFactor.medium;
-  XIconSizesTokens iconSizes = const XIconSizesTokens();
-  XLayoutGridTokens layoutGrid = const XLayoutGridTokens();
-  XOpacitiesTokens opacities = const XOpacitiesTokens();
-  XRadiiTokens radii = const XRadiiTokens();
-  XSpacingsTokens spacings = const XSpacingsTokens();
-  XTextShadowsTokens textShadows = const XTextShadowsTokens();
-  XZIndexesTokens zIndexes = const XZIndexesTokens();
+  BoxShadowTokens boxShadows = const BoxShadowTokens();
+  BorderWidthTokens borderWidths = const BorderWidthTokens();
+  BreakpointTokens breakpoints = const BreakpointTokens();
+  DurationTokens durations = const DurationTokens();
+  ElevationTokens elevations = const ElevationTokens();
+  FormFactor formFactor = FormFactor.medium;
+  IconSizeTokens iconSizes = const IconSizeTokens();
+  LayoutGridTokens layoutGrid = const LayoutGridTokens();
+  OpacityTokens opacities = const OpacityTokens();
+  RadiusTokens radii = const RadiusTokens();
+  SpacingTokens spacings = const SpacingTokens();
+  TextShadowTokens textShadows = const TextShadowTokens();
+  ZIndexTokens zIndexes = const ZIndexTokens();
 
-  XDesignTokens get tokens => XDesignTokens(
+  DesignTokens get tokens => DesignTokens(
     boxShadows: boxShadows,
     borderWidths: borderWidths,
     breakpoints: breakpoints,
@@ -33,97 +33,97 @@ class ThemeNotifier extends ChangeNotifier {
   );
 
   /// Updates the box shadows tokens and notifies listeners.
-  void updateBoxShadowsTokens(XBoxShadowsTokens newBoxShadows) {
+  void updateBoxShadowsTokens(BoxShadowTokens newBoxShadows) {
     boxShadows = newBoxShadows;
     notifyListeners();
   }
 
   /// Updates the borderWidths tokens and notifies listeners.
-  void updateBorderWidthsTokens(XBorderWidthsTokens newBorderWidths) {
+  void updateBorderWidthsTokens(BorderWidthTokens newBorderWidths) {
     borderWidths = newBorderWidths;
     notifyListeners();
   }
 
   /// Updates the breakpoints tokens and notifies listeners.
-  void updateBreakpointsTokens(XBreakpointsTokens newBreakpoints) {
+  void updateBreakpointsTokens(BreakpointTokens newBreakpoints) {
     breakpoints = newBreakpoints;
     notifyListeners();
   }
 
   /// Updates the durations tokens and notifies listeners.
-  void updateDurationsTokens(XDurationsTokens newDurations) {
+  void updateDurationsTokens(DurationTokens newDurations) {
     durations = newDurations;
     notifyListeners();
   }
 
   /// Updates the elevations tokens and notifies listeners.
-  void updateElevationsTokens(XElevationsTokens newElevations) {
+  void updateElevationsTokens(ElevationTokens newElevations) {
     elevations = newElevations;
     notifyListeners();
   }
 
   /// Updates the form factor and notifies listeners.
-  void updateFormFactor(XFormFactor newFormFactor) {
+  void updateFormFactor(FormFactor newFormFactor) {
     formFactor = newFormFactor;
     notifyListeners();
   }
 
   /// Updates the icon sizes tokens and notifies listeners.
-  void updateIconSizesTokens(XIconSizesTokens newIconSizes) {
+  void updateIconSizesTokens(IconSizeTokens newIconSizes) {
     iconSizes = newIconSizes;
     notifyListeners();
   }
 
   /// Updates the layoutGrid tokens and notifies listeners.
-  void updateLayoutGridTokens(XLayoutGridTokens newLayoutGrid) {
+  void updateLayoutGridTokens(LayoutGridTokens newLayoutGrid) {
     layoutGrid = newLayoutGrid;
     notifyListeners();
   }
 
   /// Updates the opacities tokens and notifies listeners.
-  void updateOpacitiesTokens(XOpacitiesTokens newOpacities) {
+  void updateOpacitiesTokens(OpacityTokens newOpacities) {
     opacities = newOpacities;
     notifyListeners();
   }
 
   /// Updates the radii tokens and notifies listeners.
-  void updateRadiiTokens(XRadiiTokens newRadii) {
+  void updateRadiiTokens(RadiusTokens newRadii) {
     radii = newRadii;
     notifyListeners();
   }
 
   /// Updates the spacings tokens and notifies listeners.
-  void updateSpacingsTokens(XSpacingsTokens newSpacings) {
+  void updateSpacingsTokens(SpacingTokens newSpacings) {
     spacings = newSpacings;
     notifyListeners();
   }
 
   /// Updates the text shadows tokens and notifies listeners.
-  void updateTextShadowsTokens(XTextShadowsTokens newTextShadows) {
+  void updateTextShadowsTokens(TextShadowTokens newTextShadows) {
     textShadows = newTextShadows;
     notifyListeners();
   }
 
   /// Updates the zIndexes tokens and notifies listeners.
-  void updateZIndexesTokens(XZIndexesTokens newZIndexes) {
+  void updateZIndexesTokens(ZIndexTokens newZIndexes) {
     zIndexes = newZIndexes;
     notifyListeners();
   }
 
-  void resetXDesignTokens() {
-    boxShadows = const XBoxShadowsTokens();
-    borderWidths = const XBorderWidthsTokens();
-    breakpoints = const XBreakpointsTokens();
-    durations = const XDurationsTokens();
-    elevations = const XElevationsTokens();
-    formFactor = XFormFactor.medium;
-    iconSizes = const XIconSizesTokens();
-    layoutGrid = const XLayoutGridTokens();
-    opacities = const XOpacitiesTokens();
-    radii = const XRadiiTokens();
-    spacings = const XSpacingsTokens();
-    textShadows = const XTextShadowsTokens();
-    zIndexes = const XZIndexesTokens();
+  void resetDesignTokens() {
+    boxShadows = const BoxShadowTokens();
+    borderWidths = const BorderWidthTokens();
+    breakpoints = const BreakpointTokens();
+    durations = const DurationTokens();
+    elevations = const ElevationTokens();
+    formFactor = FormFactor.medium;
+    iconSizes = const IconSizeTokens();
+    layoutGrid = const LayoutGridTokens();
+    opacities = const OpacityTokens();
+    radii = const RadiusTokens();
+    spacings = const SpacingTokens();
+    textShadows = const TextShadowTokens();
+    zIndexes = const ZIndexTokens();
     notifyListeners();
   }
 }

@@ -13,7 +13,7 @@ class GroupItemSubtitle extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     final tokens = theme.tokens;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

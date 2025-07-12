@@ -9,32 +9,32 @@ import 'package:material_toolkit_demo/widgets/info_component.dart';
 import 'package:material_toolkit_demo/widgets/number_field.dart';
 import 'package:provider/provider.dart';
 
-extension XRadiiTokensExtension on XRadiiTokens {
-  double getValue(XRadii type) {
+extension MaterialRadiusTokensExtension on RadiusTokens {
+  double getValue(MaterialRadius type) {
     return switch (type) {
-      XRadii.none => none,
-      XRadii.extraSmall => extraSmall,
-      XRadii.semiSmall => semiSmall,
-      XRadii.small => small,
-      XRadii.medium => medium,
-      XRadii.semiLarge => semiLarge,
-      XRadii.large => large,
-      XRadii.extraLarge => extraLarge,
-      XRadii.superLarge => superLarge,
+      MaterialRadius.none => none,
+      MaterialRadius.extraSmall => extraSmall,
+      MaterialRadius.semiSmall => semiSmall,
+      MaterialRadius.small => small,
+      MaterialRadius.medium => medium,
+      MaterialRadius.semiLarge => semiLarge,
+      MaterialRadius.large => large,
+      MaterialRadius.extraLarge => extraLarge,
+      MaterialRadius.superLarge => superLarge,
     };
   }
 
-  XRadiiTokens copyWithFromType(XRadii type, double value) {
+  RadiusTokens copyWithFromType(MaterialRadius type, double value) {
     return switch (type) {
-      XRadii.none => const XRadiiTokens(),
-      XRadii.extraSmall => copyWith(extraSmall: value),
-      XRadii.semiSmall => copyWith(semiSmall: value),
-      XRadii.small => copyWith(small: value),
-      XRadii.medium => copyWith(medium: value),
-      XRadii.semiLarge => copyWith(semiLarge: value),
-      XRadii.large => copyWith(large: value),
-      XRadii.extraLarge => copyWith(extraLarge: value),
-      XRadii.superLarge => copyWith(superLarge: value),
+      MaterialRadius.none => const RadiusTokens(),
+      MaterialRadius.extraSmall => copyWith(extraSmall: value),
+      MaterialRadius.semiSmall => copyWith(semiSmall: value),
+      MaterialRadius.small => copyWith(small: value),
+      MaterialRadius.medium => copyWith(medium: value),
+      MaterialRadius.semiLarge => copyWith(semiLarge: value),
+      MaterialRadius.large => copyWith(large: value),
+      MaterialRadius.extraLarge => copyWith(extraLarge: value),
+      MaterialRadius.superLarge => copyWith(superLarge: value),
     };
   }
 }
@@ -45,9 +45,9 @@ class BorderRadiusCircularGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = Theme.of(context).tokens;
-    final gaps = tokens.gaps;
+    final gaps = tokens.gap;
 
-    Widget row(List<XRadii> items) {
+    Widget row(List<MaterialRadius> items) {
       return GroupItemRow(
         children: [
           for (var i = 0; i < items.length; i++) ...[
@@ -66,11 +66,23 @@ class BorderRadiusCircularGroup extends StatelessWidget {
         gaps.small,
         GroupItemContainer(
           children: [
-            row([XRadii.none, XRadii.extraSmall, XRadii.semiSmall]),
+            row([
+              MaterialRadius.none,
+              MaterialRadius.extraSmall,
+              MaterialRadius.semiSmall,
+            ]),
             gaps.small,
-            row([XRadii.small, XRadii.medium, XRadii.semiLarge]),
+            row([
+              MaterialRadius.small,
+              MaterialRadius.medium,
+              MaterialRadius.semiLarge,
+            ]),
             gaps.small,
-            row([XRadii.large, XRadii.extraLarge, XRadii.superLarge]),
+            row([
+              MaterialRadius.large,
+              MaterialRadius.extraLarge,
+              MaterialRadius.superLarge,
+            ]),
           ],
         ),
       ],
@@ -79,7 +91,7 @@ class BorderRadiusCircularGroup extends StatelessWidget {
 }
 
 class BorderRadiusCircularComponent extends StatelessWidget {
-  final XRadii radius;
+  final MaterialRadius radius;
 
   const BorderRadiusCircularComponent(this.radius, {super.key});
 
@@ -95,7 +107,7 @@ class BorderRadiusCircularComponent extends StatelessWidget {
 }
 
 class BorderRadiusComponent extends StatefulWidget {
-  final XRadii type;
+  final MaterialRadius type;
   final String info;
   final BorderRadius borderRadius;
 
@@ -133,7 +145,7 @@ class _BorderRadiusComponentState extends State<BorderRadiusComponent> {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
-    final gaps = theme.tokens.gaps;
+    final gaps = theme.tokens.gap;
 
     final label = widget.type.toString().split('.').last;
     const size = 128.0;
@@ -159,7 +171,7 @@ class _BorderRadiusComponentState extends State<BorderRadiusComponent> {
               InfoComponent(info: widget.info),
             ],
           ),
-          if (widget.type != XRadii.none)
+          if (widget.type != MaterialRadius.none)
             NumberField(
               controller: _controller,
               onChanged: (value) {
