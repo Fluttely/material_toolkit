@@ -1,5 +1,10 @@
 part of 'x_helpers.dart';
 
+/// Commonly used size constants.
+///
+/// These values follow a 4px grid and are meant to provide a
+/// predictable scale throughout the design system.
+
 abstract final class XStandardSizes {
   /// + 4
   static const double zero = 0;

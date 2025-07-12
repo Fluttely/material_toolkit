@@ -1,5 +1,11 @@
 part of 'x_helpers.dart';
 
+/// A [StatelessWidget] that builds platform specific widgets.
+///
+/// Override the platform build methods to provide custom widgets for each
+/// target platform. When a platform override is not provided the
+/// [standardBuild] implementation is used instead.
+
 abstract class XAdaptiveWidget extends StatelessWidget {
   const XAdaptiveWidget({super.key});
 

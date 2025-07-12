@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Shadow presets for text elements.
+
+/// Predefined [Shadow] values used for text.
 class XTextShadowsTokens extends Equatable {
   const XTextShadowsTokens({
     Shadow? small,

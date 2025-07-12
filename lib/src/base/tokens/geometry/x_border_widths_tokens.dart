@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Stroke widths used when drawing borders.
+
+/// Collection of standard border stroke widths.
 class XBorderWidthsTokens extends Equatable {
   const XBorderWidthsTokens({
     double? hairline,

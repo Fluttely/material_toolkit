@@ -1,8 +1,14 @@
+/// Unit tests covering the various token data classes.
+///
+/// These tests validate default values and utility conversions
+/// for spacing, radii, breakpoints and other design primitives.
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 void main() {
+  // Validates the default spacing values and their conversion to
+  // standard sizes.
   group('XSpacingsData defaults', () {
     const tokens = XSpacingsTokens();
 
@@ -20,6 +26,7 @@ void main() {
     });
   });
 
+  // Checks the default radius presets and the behavior of copyWith.
   group('XRadiiData', () {
     const tokens = XRadiiTokens();
 
@@ -44,6 +51,8 @@ void main() {
     });
   });
 
+  // Ensures that only the selected fields are overridden when calling
+  // [XDesignTokens.copyWith].
   group('XDesignTokens.copyWith', () {
     test('overrides selected fields', () {
       final tokens = XDesignTokens();
@@ -55,6 +64,8 @@ void main() {
     });
   });
 
+  // Validates all other token defaults such as icon sizes, breakpoints
+  // and durations.
   group('Other data defaults', () {
     test('XIconSizesData', () {
       const tokens = XIconSizesTokens();
@@ -154,6 +165,8 @@ void main() {
     });
   });
 
+  // Tests that spacings can be converted to [EdgeInsets] and wrapped
+  // with [Padding] widgets using the resolvers.
   group('EdgeInsets and Padding', () {
     const spacings = XSpacingsTokens();
     const edgeInsets = XEdgeInsetsResolver(spacings);

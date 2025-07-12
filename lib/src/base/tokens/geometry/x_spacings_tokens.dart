@@ -1,5 +1,7 @@
 part of '../x_design_tokens.dart';
 
+/// Spacing scale used for margins, padding and gaps.
+
 enum XSpacings {
   none,
   superSmall,
@@ -28,6 +30,7 @@ enum XSpacings {
   }
 }
 
+/// Common spacing values following a 4 px scale.
 class XSpacingsTokens extends Equatable {
   const XSpacingsTokens({
     double? superSmall,

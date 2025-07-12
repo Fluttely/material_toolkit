@@ -1,5 +1,7 @@
 part of 'x_helpers.dart';
 
+/// Standard durations used across the Material Toolkit animations.
+
 abstract final class XStandardMilliseconds {
   static const int zero = 0;
   static const int x100 = 100;

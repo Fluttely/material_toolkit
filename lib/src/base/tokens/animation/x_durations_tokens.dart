@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Duration values used for animations.
+
+/// Defines a set of durations for animations used throughout the UI.
 class XDurationsTokens extends Equatable {
   const XDurationsTokens({
     final bool? areAnimationEnabled,

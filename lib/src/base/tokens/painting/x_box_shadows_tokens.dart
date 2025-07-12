@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Box shadow presets used by components.
+
+/// Predefined [BoxShadow] values for different elevation levels.
 class XBoxShadowsTokens extends Equatable {
   const XBoxShadowsTokens({
     BoxShadow? small,

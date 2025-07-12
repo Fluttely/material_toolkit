@@ -1,5 +1,7 @@
 part of 'x_helpers.dart';
 
+/// Additional size constants that complement [XStandardSizes].
+
 abstract final class XAuxiliarySizes {
   /// Random
   static const double x008 = 0.08;

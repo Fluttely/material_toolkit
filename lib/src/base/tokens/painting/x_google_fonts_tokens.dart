@@ -1,5 +1,8 @@
 part of '../x_design_tokens.dart';
 
+/// Helper for accessing fonts from the Google Fonts package.
+
+/// Provides utilities for retrieving Google Fonts and their names.
 class XGoogleFontsTokens extends Equatable {
   const XGoogleFontsTokens();
 

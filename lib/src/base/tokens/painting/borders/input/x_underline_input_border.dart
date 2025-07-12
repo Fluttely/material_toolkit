@@ -38,10 +38,10 @@ class XUnderlineInputBorder {
     );
   }
 
-  /// Converte um [XUnderlineInputBorder] para um [UnderlineInputBorder].
+  /// Converts an [XUnderlineInputBorder] into an [UnderlineInputBorder].
   ///
-  /// Retorna um [UnderlineInputBorder] com a mesma configuração de [borderSide]
-  /// e [borderRadius].
+  /// Returns an [UnderlineInputBorder] with the same [borderSide] and
+  /// [borderRadius] configuration.
   UnderlineInputBorder toUnderlineInputBorder(XRadiiTokens radiiTokens) {
     return UnderlineInputBorder(
       borderSide: borderSide,
