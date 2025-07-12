@@ -15,7 +15,7 @@ class GroupItemSubtitle extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    final tokens = theme.extension<XDesignTokens>()!;
+    final tokens = theme.tokens;
     final gaps = tokens.gaps;
 
     return Row(

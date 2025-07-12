@@ -27,6 +27,7 @@ class XDurationsTokens extends Equatable {
       quick: d('quick'),
     );
   }
+
   final bool areAnimationEnabled;
   final Duration slow;
   final Duration regular;

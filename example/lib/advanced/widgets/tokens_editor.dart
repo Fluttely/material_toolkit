@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit_example/advanced/widgets/number_field.dart';
 import 'package:provider/provider.dart';
 
 import '../notifiers/theme_notifier.dart';
@@ -15,7 +16,6 @@ class TokensEditor extends StatefulWidget {
 
 class _TokensEditorState extends State<TokensEditor> {
   late final TextEditingController spacingsSmallController;
-  late final TextEditingController radiiExtraSmallController;
   late final TextEditingController iconSmallController;
   late final TextEditingController elevationOneController;
   late final TextEditingController durationSlowController;
@@ -29,8 +29,6 @@ class _TokensEditorState extends State<TokensEditor> {
     final notifier = context.read<ThemeNotifier>();
     spacingsSmallController =
         TextEditingController(text: notifier.spacings.small.toString());
-    radiiExtraSmallController =
-        TextEditingController(text: notifier.radiiTokens.extraSmall.toString());
     iconSmallController =
         TextEditingController(text: notifier.iconSizes.small.toString());
     elevationOneController =
@@ -52,7 +50,6 @@ class _TokensEditorState extends State<TokensEditor> {
   @override
   void dispose() {
     spacingsSmallController.dispose();
-    radiiExtraSmallController.dispose();
     iconSmallController.dispose();
     elevationOneController.dispose();
     durationSlowController.dispose();
@@ -65,7 +62,7 @@ class _TokensEditorState extends State<TokensEditor> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final tokens = theme.extension<XDesignTokens>()!;
+    final tokens = theme.tokens;
     final gaps = tokens.gaps;
     final themeNotifier = Provider.of<ThemeNotifier>(context, listen: false);
 
@@ -77,7 +74,7 @@ class _TokensEditorState extends State<TokensEditor> {
           children: [
             Text('Tokens Editor', style: theme.textTheme.titleLarge),
             gaps.small,
-            _NumberField(
+            NumberField(
               label: 'Spacings small',
               controller: spacingsSmallController,
               onChanged: (value) {
@@ -100,20 +97,7 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            _NumberField(
-              label: 'Radii extraSmall',
-              controller: radiiExtraSmallController,
-              onChanged: (value) {
-                final v = double.tryParse(value);
-                if (v != null) {
-                  themeNotifier.updateRadiiTokens(
-                    themeNotifier.radiiTokens.copyWith(extraSmall: v),
-                  );
-                }
-              },
-            ),
-            gaps.small,
-            _NumberField(
+            NumberField(
               label: 'IconSize small',
               controller: iconSmallController,
               onChanged: (value) {
@@ -135,7 +119,7 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            _NumberField(
+            NumberField(
               label: 'Elevation level1',
               controller: elevationOneController,
               onChanged: (value) {
@@ -154,7 +138,7 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            _NumberField(
+            NumberField(
               label: 'Duration slow (ms)',
               controller: durationSlowController,
               onChanged: (value) {
@@ -173,7 +157,7 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            _NumberField(
+            NumberField(
               label: 'Breakpoint mobile max',
               controller: breakpointMobileMaxController,
               onChanged: (value) {
@@ -194,7 +178,7 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            _NumberField(
+            NumberField(
               label: 'BoxShadow small blur',
               controller: boxShadowBlurController,
               onChanged: (value) {
@@ -212,7 +196,7 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            _NumberField(
+            NumberField(
               label: 'TextShadow small blur',
               controller: textShadowBlurController,
               onChanged: (value) {
@@ -250,28 +234,6 @@ class _TokensEditorState extends State<TokensEditor> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _NumberField extends StatelessWidget {
-  final String label;
-  final TextEditingController controller;
-  final ValueChanged<String> onChanged;
-
-  const _NumberField({
-    required this.label,
-    required this.controller,
-    required this.onChanged,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(labelText: label),
-      keyboardType: TextInputType.number,
-      controller: controller,
-      onChanged: onChanged,
     );
   }
 }

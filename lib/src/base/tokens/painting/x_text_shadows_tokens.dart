@@ -46,6 +46,7 @@ class XTextShadowsTokens extends Equatable {
       large: parseShadow('large'),
     );
   }
+
   final Shadow small;
   final Shadow medium;
   final Shadow large;

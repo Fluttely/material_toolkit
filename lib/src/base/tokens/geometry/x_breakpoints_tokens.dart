@@ -43,6 +43,7 @@ class XBreakpointsTokens extends Equatable {
       infinity: parseBreakpoint('infinity'),
     );
   }
+
   final XBreakpoint mobile;
   final XBreakpoint tablet;
   final XBreakpoint desktop;

@@ -50,6 +50,7 @@ class XBoxShadowsTokens extends Equatable {
       large: parseShadow('large'),
     );
   }
+
   final BoxShadow small;
   final BoxShadow medium;
   final BoxShadow large;

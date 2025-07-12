@@ -37,6 +37,22 @@ part 'painting/x_opacities_tokens.dart';
 part 'painting/x_text_shadows_tokens.dart';
 part 'painting/x_z_indexes_tokens.dart';
 
+extension XDesignTokensContextExtension on BuildContext {
+  XDesignTokens get tokens {
+    final tokens = Theme.of(this).extension<XDesignTokens>();
+    assert(tokens != null, 'XDesignTokens not found in Theme extensions');
+    return tokens!;
+  }
+}
+
+extension XDesignTokensThemeExtension on ThemeData {
+  XDesignTokens get tokens {
+    final tokens = extension<XDesignTokens>();
+    assert(tokens != null, 'XDesignTokens not found in Theme extensions');
+    return tokens!;
+  }
+}
+
 class XDesign extends InheritedWidget {
   const XDesign({required super.child, required this.tokens, super.key});
 
@@ -123,6 +139,7 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
   factory XDesignTokens.fromJson(String json) {
     return XDesignTokens.fromMap(jsonDecode(json) as Map<String, dynamic>);
   }
+
   final XBoxShadowsTokens boxShadows;
   final XBorderWidthsTokens borderWidths;
   final XBreakpointsTokens breakpoints;

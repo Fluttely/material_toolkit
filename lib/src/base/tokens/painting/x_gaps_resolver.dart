@@ -15,7 +15,9 @@ class XGapsResolver extends Equatable {
   Gap get extraLarge => Gap(_spacings.extraLarge);
   Gap get superLarge => Gap(_spacings.superLarge);
 
-  // Gap get x64 => Gap(_spacings.x64);
+  Gap get x64 => Gap(_spacings.x64);
+  Gap get x128 => Gap(_spacings.x128);
+  Gap get x256 => Gap(_spacings.x256);
 
   @override
   List<Object?> get props => [

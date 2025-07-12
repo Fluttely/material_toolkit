@@ -14,7 +14,7 @@ class GroupItemContainer extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
 
-    final tokens = theme.extension<XDesignTokens>()!;
+    final tokens = theme.tokens;
     final borderRadius = tokens.borderRadius;
     final edgeInsets = tokens.edgeInsets;
 
@@ -25,7 +25,7 @@ class GroupItemContainer extends StatelessWidget {
       // width: 300,
       padding: edgeInsets.symmetric(
         vertical: XSpacings.medium,
-        horizontal: XSpacings.extraLarge,
+        horizontal: XSpacings.small,
       ),
       decoration: BoxDecoration(
         color: colorScheme.surface,

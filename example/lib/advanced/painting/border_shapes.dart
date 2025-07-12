@@ -12,7 +12,7 @@ class BorderRadiusGroup extends StatelessWidget {
     final theme = Theme.of(context);
     // final textTheme = theme.textTheme;
 
-    final tokens = theme.extension<XDesignTokens>()!;
+    final tokens = theme.tokens;
     final borderRadius = tokens.borderRadius;
     final gaps = tokens.gaps;
 

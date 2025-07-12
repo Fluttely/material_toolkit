@@ -17,7 +17,7 @@ class GroupCard extends StatelessWidget {
     final textTheme = theme.textTheme;
     final colorScheme = theme.colorScheme;
 
-    final tokens = theme.extension<XDesignTokens>()!;
+    final tokens = theme.tokens;
     final padding = tokens.padding;
     final gaps = tokens.gaps;
 

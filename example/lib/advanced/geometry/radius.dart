@@ -37,7 +37,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(extraSmall: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(extraSmall: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -47,7 +47,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(small: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(small: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -57,7 +57,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(semiSmall: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(semiSmall: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -67,7 +67,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(medium: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(medium: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -77,7 +77,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(semiLarge: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(semiLarge: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -87,7 +87,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(large: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(large: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -97,7 +97,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(extraLarge: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(extraLarge: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),
@@ -107,7 +107,7 @@
 //               onChanged: (newValue) {
 //                 // newValue
 //                 themeNotifier.updateRadiiTokens(
-//                   themeNotifier.radiiTokens.copyWith(superLarge: Radius.circular(newValue!)),
+//                   themeNotifier.radii.copyWith(superLarge: Radius.circular(newValue!)),
 //                 );
 //               },
 //             ),

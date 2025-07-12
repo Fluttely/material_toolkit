@@ -33,6 +33,7 @@ class XIconSizesTokens extends Equatable {
       superLarge: d('superLarge'),
     );
   }
+
   final double extraSmall;
   final double small;
   final double semiSmall;

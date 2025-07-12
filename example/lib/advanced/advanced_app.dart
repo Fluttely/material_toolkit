@@ -26,12 +26,7 @@ class AdvancedApp extends StatelessWidget {
         builder: (_, themeNotifier, __) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme:
-                  ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
-              // extensions: [themeNotifier.tokens],
-              extensions: [XDesignTokens()],
-            ),
+            theme: ThemeData(extensions: [themeNotifier.tokens]),
             home: const RootPage(),
           );
         },
@@ -54,9 +49,9 @@ class _RootPageState extends State<RootPage> {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    final tokens = theme.extension<XDesignTokens>()!;
+    final tokens = theme.tokens;
     final gaps = tokens.gaps;
-    // final inputBorders = tokens.inputBorders;
+    // final inputBorder = tokens.inputBorder;
     // final breakpoints = tokens.breakpoints;
 
     final themeNotifier = Provider.of<ThemeNotifier>(context);
@@ -93,21 +88,6 @@ class _RootPageState extends State<RootPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
-              controller: themeNotifier.primaryColorTextFieldController,
-              decoration: InputDecoration(
-                labelText: 'Enter Primary Color (Hex, e.g. FF0000 for Red)',
-                labelStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
-                fillColor: colorScheme.primary,
-                filled: true,
-                isDense: true,
-                // border: inputBorders.none,
-              ),
-              style: const TextStyle(color: Colors.white),
-              cursorColor: Colors.white,
-              onChanged: themeNotifier.updatePrimaryColor,
-            ),
-            gaps.large,
             ElevatedButton(
               onPressed: themeNotifier.resetXDesignTokens,
               child: Text(

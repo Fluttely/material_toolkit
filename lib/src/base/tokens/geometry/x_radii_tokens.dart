@@ -59,6 +59,7 @@ class XRadiiTokens extends Equatable {
       superLarge: parse('superLarge'),
     );
   }
+
   final double extraSmall;
   final double small;
   final double semiSmall;

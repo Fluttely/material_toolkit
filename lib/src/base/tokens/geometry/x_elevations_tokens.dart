@@ -24,6 +24,7 @@ class XElevationsTokens extends Equatable {
       level5: d('level5'),
     );
   }
+
   final double level1;
   final double level2;
   final double level3;

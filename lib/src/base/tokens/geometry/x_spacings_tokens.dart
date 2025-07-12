@@ -64,6 +64,7 @@ class XSpacingsTokens extends Equatable {
       superLarge: d('superLarge'),
     );
   }
+
   final double superSmall;
   final double extraSmall;
   final double small;
