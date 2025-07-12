@@ -30,8 +30,10 @@ class XUnderlineInputBorder {
 
   /// Returns a copy of this XUnderlineInputBorder with the given fields
   /// replaced with the new values.
-  XUnderlineInputBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XUnderlineInputBorder copyWith({
+    BorderSide? borderSide,
+    XBorderRadius? borderRadius,
+  }) {
     return XUnderlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
@@ -42,7 +44,7 @@ class XUnderlineInputBorder {
   ///
   /// Returns an [UnderlineInputBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
-  UnderlineInputBorder toUnderlineInputBorder(XRadiiTokens radiiTokens) {
+  UnderlineInputBorder toUnderline(XRadiiTokens radiiTokens) {
     return UnderlineInputBorder(
       borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiTokens),

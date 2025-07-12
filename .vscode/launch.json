@@ -1,10 +1,17 @@
 {
   "configurations": [
     {
-      "name": "MT EXAMPLE",
+      "name": "Example App",
       "type": "dart",
       "request": "launch",
       "program": "example/lib/main.dart",
+      "args": ["-d", "chrome", "--web-experimental-hot-reload"]
+    },
+    {
+      "name": "Demo App",
+      "type": "dart",
+      "request": "launch",
+      "program": "demo/lib/main.dart",
       "args": ["-d", "chrome", "--web-experimental-hot-reload"]
     }
   ]

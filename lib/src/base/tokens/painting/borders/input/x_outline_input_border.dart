@@ -34,8 +34,10 @@ class XOutlineInputBorder {
 
   /// Returns a copy of this XOutlineInputBorder with the given fields
   /// replaced with the new values.
-  XOutlineInputBorder copyWith(
-      {BorderSide? borderSide, XBorderRadius? borderRadius}) {
+  XOutlineInputBorder copyWith({
+    BorderSide? borderSide,
+    XBorderRadius? borderRadius,
+  }) {
     return XOutlineInputBorder(
       borderSide: borderSide ?? this.borderSide,
       borderRadius: borderRadius ?? this.borderRadius,
@@ -46,7 +48,7 @@ class XOutlineInputBorder {
   ///
   /// Returns an [OutlineInputBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
-  OutlineInputBorder toOutlineInputBorder(XRadiiTokens radiiTokens) {
+  OutlineInputBorder toOutline(XRadiiTokens radiiTokens) {
     return OutlineInputBorder(
       borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiTokens),

@@ -33,7 +33,7 @@ part 'painting/edge_insets/x_edge_insets_resolver.dart';
 part 'painting/edge_insets/x_padding_resolver.dart';
 part 'painting/x_box_shadows_tokens.dart';
 part 'painting/x_gaps_resolver.dart';
-part 'painting/x_google_fonts_tokens.dart';
+part 'painting/x_google_fonts_resolver.dart';
 part 'painting/x_opacities_tokens.dart';
 part 'painting/x_text_shadows_tokens.dart';
 part 'painting/x_z_indexes_tokens.dart';
@@ -59,8 +59,9 @@ class XDesign extends InheritedWidget {
   const XDesign({required super.child, required this.tokens, super.key});
 
   static XDesignTokens of(BuildContext context) {
-    final tokens =
-        context.dependOnInheritedWidgetOfExactType<XDesign>()?.tokens;
+    final tokens = context
+        .dependOnInheritedWidgetOfExactType<XDesign>()
+        ?.tokens;
 
     assert(tokens != null, 'No DesignTokens found in context');
 
@@ -97,7 +98,7 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
     this.spacings = const XSpacingsTokens(),
     this.textShadows = const XTextShadowsTokens(),
     this.zIndexes = const XZIndexesTokens(),
-  }) : googleFonts = const XGoogleFontsTokens();
+  }) : googleFonts = const XGoogleFontsResolver();
 
   factory XDesignTokens.material({Map<String, dynamic>? overrides}) {
     var tokens = XDesignTokens();
@@ -105,34 +106,41 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
       tokens = tokens.copyWith(
         boxShadows: overrides['boxShadows'] != null
             ? XBoxShadowsTokens.fromMap(
-                overrides['boxShadows'] as Map<String, dynamic>)
+                overrides['boxShadows'] as Map<String, dynamic>,
+              )
             : null,
         breakpoints: overrides['breakpoints'] != null
             ? XBreakpointsTokens.fromMap(
-                overrides['breakpoints'] as Map<String, dynamic>)
+                overrides['breakpoints'] as Map<String, dynamic>,
+              )
             : null,
         durations: overrides['durations'] != null
             ? XDurationsTokens.fromMap(
-                overrides['durations'] as Map<String, dynamic>)
+                overrides['durations'] as Map<String, dynamic>,
+              )
             : null,
         elevations: overrides['elevations'] != null
             ? XElevationsTokens.fromMap(
-                overrides['elevations'] as Map<String, dynamic>)
+                overrides['elevations'] as Map<String, dynamic>,
+              )
             : null,
         iconSizes: overrides['iconSizes'] != null
             ? XIconSizesTokens.fromMap(
-                overrides['iconSizes'] as Map<String, dynamic>)
+                overrides['iconSizes'] as Map<String, dynamic>,
+              )
             : null,
         radii: overrides['radii'] != null
             ? XRadiiTokens.fromMap(overrides['radii'] as Map<String, dynamic>)
             : null,
         spacings: overrides['spacings'] != null
             ? XSpacingsTokens.fromMap(
-                overrides['spacings'] as Map<String, dynamic>)
+                overrides['spacings'] as Map<String, dynamic>,
+              )
             : null,
         textShadows: overrides['textShadows'] != null
             ? XTextShadowsTokens.fromMap(
-                overrides['textShadows'] as Map<String, dynamic>)
+                overrides['textShadows'] as Map<String, dynamic>,
+              )
             : null,
       );
     }
@@ -160,7 +168,7 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
   final XSpacingsTokens spacings;
   final XTextShadowsTokens textShadows;
   final XZIndexesTokens zIndexes;
-  final XGoogleFontsTokens googleFonts;
+  final XGoogleFontsResolver googleFonts;
 
   /// Spacings
   late final gaps = XGapsResolver(spacings);
@@ -175,7 +183,9 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
 
   @override
   ThemeExtension<XDesignTokens> lerp(
-      ThemeExtension<XDesignTokens>? other, double t) {
+    ThemeExtension<XDesignTokens>? other,
+    double t,
+  ) {
     if (other is! XDesignTokens) {
       return this;
     } else {
@@ -261,7 +271,8 @@ class XDesignTokens extends ThemeExtension<XDesignTokens> {
       googleFonts.hashCode;
 
   @override
-  String toString() => '''
+  String toString() =>
+      '''
     DesignTokensTokens(
       boxShadows: $boxShadows,
       breakpoints: $breakpoints,

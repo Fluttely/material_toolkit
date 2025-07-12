@@ -10,27 +10,30 @@ class XInputBorderResolver extends Equatable {
 
   InputBorder get none => InputBorder.none;
 
-  OutlineInputBorder outlineInputBorder({
+  OutlineInputBorder outline({
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
-  }) =>
-      XOutlineInputBorder(borderSide: borderSide, borderRadius: borderRadius)
-          .toOutlineInputBorder(_radiiTokens);
+  }) => XOutlineInputBorder(
+    borderSide: borderSide,
+    borderRadius: borderRadius,
+  ).toOutline(_radiiTokens);
 
-  UnderlineInputBorder underlineInputBorder({
+  UnderlineInputBorder underline({
     BorderSide borderSide = BorderSide.none,
     XBorderRadius borderRadius = XBorderRadius.none,
-  }) =>
-      XUnderlineInputBorder(borderSide: borderSide, borderRadius: borderRadius)
-          .toUnderlineInputBorder(_radiiTokens);
+  }) => XUnderlineInputBorder(
+    borderSide: borderSide,
+    borderRadius: borderRadius,
+  ).toUnderline(_radiiTokens);
 
   @override
   List<Object?> get props => [
-        _radiiTokens.named('_radiiTokens'),
-      ];
+    _radiiTokens.named('_radiiTokens'),
+  ];
 
   @override
-  String toString() => '''
+  String toString() =>
+      '''
     XShapes(
       _radiiTokens: $_radiiTokens,
     )

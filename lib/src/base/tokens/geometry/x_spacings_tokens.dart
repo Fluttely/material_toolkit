@@ -42,15 +42,15 @@ class XSpacingsTokens extends Equatable {
     double? large,
     double? extraLarge,
     double? superLarge,
-  })  : superSmall = superSmall ?? XAuxiliarySizes.x2,
-        extraSmall = extraSmall ?? XStandardSizes.x4,
-        small = small ?? XStandardSizes.x8,
-        semiSmall = semiSmall ?? XStandardSizes.x12,
-        medium = medium ?? XStandardSizes.x16,
-        semiLarge = semiLarge ?? XStandardSizes.x20,
-        large = large ?? XStandardSizes.x24,
-        extraLarge = extraLarge ?? XStandardSizes.x32,
-        superLarge = superLarge ?? XStandardSizes.x48;
+  }) : superSmall = superSmall ?? XAuxiliarySizes.x2,
+       extraSmall = extraSmall ?? XStandardSizes.x4,
+       small = small ?? XStandardSizes.x8,
+       semiSmall = semiSmall ?? XStandardSizes.x12,
+       medium = medium ?? XStandardSizes.x16,
+       semiLarge = semiLarge ?? XStandardSizes.x20,
+       large = large ?? XStandardSizes.x24,
+       extraLarge = extraLarge ?? XStandardSizes.x32,
+       superLarge = superLarge ?? XStandardSizes.x48;
 
   factory XSpacingsTokens.fromMap(Map<String, dynamic> map) {
     double? d(String key) => (map[key] as num?)?.toDouble();
@@ -141,20 +141,21 @@ class XSpacingsTokens extends Equatable {
 
   @override
   List<Object?> get props => [
-        none,
-        superSmall,
-        extraSmall,
-        small,
-        semiSmall,
-        medium,
-        semiLarge,
-        large,
-        extraLarge,
-        superLarge,
-      ];
+    none,
+    superSmall,
+    extraSmall,
+    small,
+    semiSmall,
+    medium,
+    semiLarge,
+    large,
+    extraLarge,
+    superLarge,
+  ];
 
   @override
-  String toString() => '''
+  String toString() =>
+      '''
 XSpacingsTokens(
   none: $none,
   superSmall: $superSmall,
