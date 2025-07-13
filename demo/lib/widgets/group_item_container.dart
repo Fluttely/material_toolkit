@@ -3,8 +3,8 @@ import 'package:material_toolkit/material_toolkit.dart';
 
 class GroupItemContainer extends StatelessWidget {
   const GroupItemContainer({
-    super.key,
     required this.children,
+    super.key,
   });
 
   final List<Widget> children;
@@ -24,8 +24,8 @@ class GroupItemContainer extends StatelessWidget {
 
       // width: 300,
       padding: edgeInsets.symmetric(
-        vertical: MaterialSpacings.medium,
-        horizontal: MaterialSpacings.small,
+        vertical: MaterialSpacing.medium,
+        horizontal: MaterialSpacing.small,
       ),
       decoration: BoxDecoration(
         color: colorScheme.surface,

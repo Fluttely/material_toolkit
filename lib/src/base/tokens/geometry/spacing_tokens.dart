@@ -1,7 +1,7 @@
 part of '../design_tokens.dart';
 
 /// Spacing scale used for margins, padding and gaps following Material Design 3.
-enum MaterialSpacings {
+enum MaterialSpacing {
   none,
   extraSmall,
   small,
@@ -11,12 +11,12 @@ enum MaterialSpacings {
 
   double toDouble(SpacingTokens spacings) {
     return switch (this) {
-      MaterialSpacings.none => spacings.none,
-      MaterialSpacings.extraSmall => spacings.extraSmall,
-      MaterialSpacings.small => spacings.small,
-      MaterialSpacings.medium => spacings.medium,
-      MaterialSpacings.large => spacings.large,
-      MaterialSpacings.extraLarge => spacings.extraLarge,
+      MaterialSpacing.none => spacings.none,
+      MaterialSpacing.extraSmall => spacings.extraSmall,
+      MaterialSpacing.small => spacings.small,
+      MaterialSpacing.medium => spacings.medium,
+      MaterialSpacing.large => spacings.large,
+      MaterialSpacing.extraLarge => spacings.extraLarge,
     };
   }
 }

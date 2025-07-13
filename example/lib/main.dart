@@ -37,7 +37,7 @@ class Page extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: tokens.padding.all(
-          MaterialSpacings.medium,
+          MaterialSpacing.medium,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -74,7 +74,7 @@ class Page extends StatelessWidget {
                 context,
                 'Breakpoint Tokens',
                 Container(
-                  padding: tokens.edgeInsets.all(MaterialSpacings.medium),
+                  padding: tokens.edgeInsets.all(MaterialSpacing.medium),
                   color: Colors.grey.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,7 +156,7 @@ class Page extends StatelessWidget {
                 context,
                 'Form Factor Tokens',
                 Container(
-                  padding: tokens.edgeInsets.all(MaterialSpacings.medium),
+                  padding: tokens.edgeInsets.all(MaterialSpacing.medium),
                   color: Colors.grey.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -267,15 +267,15 @@ class Page extends StatelessWidget {
                 'Gaps Resolver + Spacing Tokens',
                 Column(
                   children: [
-                    _buildSpacingDemo(tokens, 'Small', MaterialSpacings.small),
+                    _buildSpacingDemo(tokens, 'Small', MaterialSpacing.small),
                     gaps.medium,
                     _buildSpacingDemo(
                       tokens,
                       'Medium',
-                      MaterialSpacings.medium,
+                      MaterialSpacing.medium,
                     ),
                     gaps.medium,
-                    _buildSpacingDemo(tokens, 'Large', MaterialSpacings.large),
+                    _buildSpacingDemo(tokens, 'Large', MaterialSpacing.large),
                   ],
                 ),
               ),
@@ -398,7 +398,7 @@ class Page extends StatelessWidget {
   Widget _buildSpacingDemo(
     DesignTokens tokens,
     String label,
-    MaterialSpacings spacing,
+    MaterialSpacing spacing,
   ) {
     final spacings = tokens.spacings;
     return Row(
@@ -481,7 +481,7 @@ class Page extends StatelessWidget {
       child: Container(
         width: 80,
         height: 80,
-        padding: tokens.edgeInsets.all(MaterialSpacings.small),
+        padding: tokens.edgeInsets.all(MaterialSpacing.small),
         child: Center(
           child: Text(
             label,

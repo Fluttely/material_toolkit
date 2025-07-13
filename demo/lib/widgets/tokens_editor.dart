@@ -70,7 +70,7 @@ class _TokensEditorState extends State<TokensEditor> {
 
     return Card(
       child: Padding(
-        padding: tokens.edgeInsets.all(MaterialSpacings.medium),
+        padding: tokens.edgeInsets.all(MaterialSpacing.medium),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -86,12 +86,9 @@ class _TokensEditorState extends State<TokensEditor> {
                     SpacingTokens(
                       extraSmall: themeNotifier.spacings.extraSmall,
                       small: v,
-                      semiSmall: themeNotifier.spacings.semiSmall,
                       medium: themeNotifier.spacings.medium,
-                      semiLarge: themeNotifier.spacings.semiLarge,
                       large: themeNotifier.spacings.large,
                       extraLarge: themeNotifier.spacings.extraLarge,
-                      superLarge: themeNotifier.spacings.superLarge,
                     ),
                   );
                 }

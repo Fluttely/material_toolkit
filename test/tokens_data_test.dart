@@ -186,13 +186,13 @@ void main() {
     test('EdgeInsets conversions', () {
       expect(edgeInsets.none, EdgeInsets.zero);
       expect(
-        edgeInsets.all(MaterialSpacings.small),
+        edgeInsets.all(MaterialSpacing.small),
         EdgeInsets.all(spacings.small),
       );
       expect(
         edgeInsets.symmetric(
-          vertical: MaterialSpacings.extraSmall,
-          horizontal: MaterialSpacings.large,
+          vertical: MaterialSpacing.extraSmall,
+          horizontal: MaterialSpacing.large,
         ),
         EdgeInsets.symmetric(
           vertical: spacings.extraSmall,
@@ -200,14 +200,14 @@ void main() {
         ),
       );
       expect(
-        edgeInsets.only(left: MaterialSpacings.medium),
+        edgeInsets.only(left: MaterialSpacing.medium),
         EdgeInsets.only(left: spacings.medium),
       );
     });
 
     test('Padding conversions', () {
       final widget = padding.all(
-        MaterialSpacings.medium,
+        MaterialSpacing.medium,
         child: const Text('data'),
       );
       expect(widget.padding, EdgeInsets.all(spacings.medium));

@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
 class GroupCard extends StatelessWidget {
-  final String title;
-  final List<Widget> children;
-
   const GroupCard({
-    super.key,
     required this.title,
     required this.children,
+    super.key,
   });
+  final String title;
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +24,9 @@ class GroupCard extends StatelessWidget {
       color: colorScheme.surfaceContainerLow,
       elevation: 0,
       child: padding.all(
-        MaterialSpacings.semiLarge,
+        MaterialSpacing.large,
         child: Align(
-          alignment: Alignment.center,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
