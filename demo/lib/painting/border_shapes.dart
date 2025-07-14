@@ -26,19 +26,19 @@ class BorderRadiusGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   description: 'None',
-                  borderRadius: borderRadius.circular(MaterialRadius.none),
+                  borderRadius: borderRadius.circular(RadiusToken.none),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Extra Small',
                   borderRadius: borderRadius.circular(
-                    MaterialRadius.extraSmall,
+                    RadiusToken.extraSmall,
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Small',
-                  borderRadius: borderRadius.circular(MaterialRadius.small),
+                  borderRadius: borderRadius.circular(RadiusToken.small),
                 ),
               ],
             ),
@@ -47,17 +47,17 @@ class BorderRadiusGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   description: 'Semi Small',
-                  borderRadius: borderRadius.circular(MaterialRadius.semiSmall),
+                  borderRadius: borderRadius.circular(RadiusToken.semiSmall),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Medium',
-                  borderRadius: borderRadius.circular(MaterialRadius.medium),
+                  borderRadius: borderRadius.circular(RadiusToken.medium),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Semi Large',
-                  borderRadius: borderRadius.circular(MaterialRadius.semiLarge),
+                  borderRadius: borderRadius.circular(RadiusToken.semiLarge),
                 ),
               ],
             ),
@@ -66,20 +66,20 @@ class BorderRadiusGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   description: 'Large',
-                  borderRadius: borderRadius.circular(MaterialRadius.large),
+                  borderRadius: borderRadius.circular(RadiusToken.large),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Extra Large',
                   borderRadius: borderRadius.circular(
-                    MaterialRadius.extraLarge,
+                    RadiusToken.extraLarge,
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
                   description: 'Super Large',
                   borderRadius: borderRadius.circular(
-                    MaterialRadius.superLarge,
+                    RadiusToken.superLarge,
                   ),
                 ),
               ],

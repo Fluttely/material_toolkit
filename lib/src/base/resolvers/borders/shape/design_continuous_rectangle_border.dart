@@ -45,7 +45,7 @@ class DesignContinuousRectangleBorder {
   /// Returns a [ContinuousRectangleBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
   ContinuousRectangleBorder toContinuousRectangleBorder(
-    RadiusTokens radiiTokens,
+    RadiusTokensData radiiTokens,
   ) {
     return ContinuousRectangleBorder(
       side: borderSide,

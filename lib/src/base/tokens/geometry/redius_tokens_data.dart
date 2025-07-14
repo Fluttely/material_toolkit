@@ -1,8 +1,19 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
+
+/// Semantic radius values for Material Design 3.
+abstract final class MaterialRadius {
+  static const double extraSmall = 4;
+  static const double small = 8;
+  static const double semiSmall = 12;
+  static const double medium = 16;
+  static const double semiLarge = 20;
+  static const double large = 24;
+  static const double extraLarge = 32;
+  static const double superLarge = 48;
+}
 
 /// Defines radius values and helpers to resolve them.
-
-enum MaterialRadius {
+enum RadiusToken {
   none,
   extraSmall,
   small,
@@ -13,24 +24,24 @@ enum MaterialRadius {
   extraLarge,
   superLarge;
 
-  double toDouble(RadiusTokens tokens) {
+  double toDouble(RadiusTokensData tokens) {
     return switch (this) {
-      MaterialRadius.none => tokens.none,
-      MaterialRadius.extraSmall => tokens.extraSmall,
-      MaterialRadius.small => tokens.small,
-      MaterialRadius.semiSmall => tokens.semiSmall,
-      MaterialRadius.medium => tokens.medium,
-      MaterialRadius.semiLarge => tokens.semiLarge,
-      MaterialRadius.large => tokens.large,
-      MaterialRadius.extraLarge => tokens.extraLarge,
-      MaterialRadius.superLarge => tokens.superLarge,
+      RadiusToken.none => tokens.none,
+      RadiusToken.extraSmall => tokens.extraSmall,
+      RadiusToken.small => tokens.small,
+      RadiusToken.semiSmall => tokens.semiSmall,
+      RadiusToken.medium => tokens.medium,
+      RadiusToken.semiLarge => tokens.semiLarge,
+      RadiusToken.large => tokens.large,
+      RadiusToken.extraLarge => tokens.extraLarge,
+      RadiusToken.superLarge => tokens.superLarge,
     };
   }
 }
 
 /// Radius presets used to build shapes and borders.
-class RadiusTokens extends Equatable {
-  const RadiusTokens({
+class RadiusTokensData extends Equatable {
+  const RadiusTokensData({
     double? extraSmall,
     double? small,
     double? semiSmall,
@@ -39,19 +50,20 @@ class RadiusTokens extends Equatable {
     double? large,
     double? extraLarge,
     double? superLarge,
-  }) : extraSmall = extraSmall ?? MaterialDimensions.x4,
-       small = small ?? MaterialDimensions.x8,
-       semiSmall = semiSmall ?? MaterialDimensions.x12,
-       medium = medium ?? MaterialDimensions.x16,
-       semiLarge = semiLarge ?? MaterialDimensions.x20,
-       large = large ?? MaterialDimensions.x24,
-       extraLarge = extraLarge ?? MaterialDimensions.x32,
-       superLarge = superLarge ?? MaterialDimensions.x48;
+  }) : none = MaterialSpacing.none,
+       extraSmall = extraSmall ?? MaterialRadius.extraSmall,
+       small = small ?? MaterialRadius.small,
+       semiSmall = semiSmall ?? MaterialRadius.semiSmall,
+       medium = medium ?? MaterialRadius.medium,
+       semiLarge = semiLarge ?? MaterialRadius.semiLarge,
+       large = large ?? MaterialRadius.large,
+       extraLarge = extraLarge ?? MaterialRadius.extraLarge,
+       superLarge = superLarge ?? MaterialRadius.superLarge;
 
-  factory RadiusTokens.fromMap(Map<String, dynamic> map) {
+  factory RadiusTokensData.fromMap(Map<String, dynamic> map) {
     double? parse(String key) => (map[key] as num?)?.toDouble();
 
-    return RadiusTokens(
+    return RadiusTokensData(
       extraSmall: parse('extraSmall'),
       small: parse('small'),
       semiSmall: parse('semiSmall'),
@@ -63,6 +75,7 @@ class RadiusTokens extends Equatable {
     );
   }
 
+  final double none;
   final double extraSmall;
   final double small;
   final double semiSmall;
@@ -72,9 +85,7 @@ class RadiusTokens extends Equatable {
   final double extraLarge;
   final double superLarge;
 
-  double get none => MaterialDimensions.zero;
-
-  RadiusTokens copyWith({
+  RadiusTokensData copyWith({
     double? extraSmall,
     double? small,
     double? semiSmall,
@@ -84,7 +95,7 @@ class RadiusTokens extends Equatable {
     double? extraLarge,
     double? superLarge,
   }) {
-    return RadiusTokens(
+    return RadiusTokensData(
       extraSmall: extraSmall ?? this.extraSmall,
       small: small ?? this.small,
       semiSmall: semiSmall ?? this.semiSmall,

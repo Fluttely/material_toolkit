@@ -6,7 +6,7 @@ part of 'resolvers.dart';
 class GapResolver extends Equatable {
   const GapResolver(this._spacings);
 
-  final SpacingTokens _spacings;
+  final SpacingTokensData _spacings;
 
   /// Semantic gap getters
   Gap get none => Gap(_spacings.none);

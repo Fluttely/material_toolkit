@@ -35,8 +35,8 @@ class _TokensEditorState extends State<TokensEditor> {
     elevationOneController = TextEditingController(
       text: notifier.elevations.small.toString(),
     );
-    durationSlowController = TextEditingController(
-      text: notifier.durations.slow.inMilliseconds.toString(),
+    motionSlowController = TextEditingController(
+      text: notifier.motions.slow.inMilliseconds.toString(),
     );
     breakpointMobileMaxController = TextEditingController(
       text: notifier.breakpoints.mobile.maxWidth.toString(),
@@ -70,7 +70,7 @@ class _TokensEditorState extends State<TokensEditor> {
 
     return Card(
       child: Padding(
-        padding: tokens.edgeInsets.all(MaterialSpacing.medium),
+        padding: tokens.edgeInsets.all(SpacingToken.medium),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -83,7 +83,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateSpacingsTokens(
-                    SpacingTokens(
+                    SpacingTokensData(
                       extraSmall: themeNotifier.spacings.extraSmall,
                       small: v,
                       medium: themeNotifier.spacings.medium,
@@ -128,12 +128,12 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = int.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateDurationsTokens(
-                    DurationTokens(
+                    MotionTokensData(
                       areAnimationEnabled:
-                          themeNotifier.durations.areAnimationEnabled,
+                          themeNotifier.motions.areAnimationEnabled,
                       slow: Duration(milliseconds: v),
-                      regular: themeNotifier.durations.regular,
-                      quick: themeNotifier.durations.quick,
+                      regular: themeNotifier.motions.regular,
+                      quick: themeNotifier.motions.quick,
                     ),
                   );
                 }
@@ -147,7 +147,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 final v = double.tryParse(value);
                 if (v != null) {
                   themeNotifier.updateBreakpointsTokens(
-                    BreakpointTokens(
+                    BreakpointTokensData(
                       mobile: DesignBreakpoint(
                         minWidth: themeNotifier.breakpoints.mobile.minWidth,
                         maxWidth: v,
@@ -169,7 +169,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   final small = themeNotifier.boxShadows.small;
                   themeNotifier.updateBoxShadowsTokens(
-                    BoxShadowTokens(
+                    BoxShadowTokensData(
                       small: small.copyWith(blurRadius: v),
                       medium: themeNotifier.boxShadows.medium,
                       large: themeNotifier.boxShadows.large,
@@ -187,7 +187,7 @@ class _TokensEditorState extends State<TokensEditor> {
                 if (v != null) {
                   final small = themeNotifier.textShadows.small;
                   themeNotifier.updateTextShadowsTokens(
-                    TextShadowTokens(
+                    TextShadowTokensData(
                       small:
                           small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
                       medium: themeNotifier.textShadows.medium,

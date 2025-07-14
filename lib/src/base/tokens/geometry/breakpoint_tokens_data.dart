@@ -1,37 +1,37 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
+
+abstract final class MaterialBreakpoint {
+  static const mobile = DesignBreakpoint(
+    maxWidth: 599,
+  );
+  static const tablet = DesignBreakpoint(
+    minWidth: 600,
+    maxWidth: 1023,
+  );
+  static const desktop = DesignBreakpoint(
+    minWidth: 1024,
+    maxWidth: 1439,
+  );
+  static const infinity = DesignBreakpoint(
+    minWidth: 1440,
+  );
+}
 
 /// Breakpoints defining responsive layout ranges.
 
 /// Contains screen size ranges for responsive layouts.
-class BreakpointTokens extends Equatable {
-  const BreakpointTokens({
+class BreakpointTokensData extends Equatable {
+  const BreakpointTokensData({
     DesignBreakpoint? mobile,
     DesignBreakpoint? tablet,
     DesignBreakpoint? desktop,
     DesignBreakpoint? infinity,
-  }) : mobile =
-           mobile ??
-           const DesignBreakpoint(
-             maxWidth: ExtendedValues.x599,
-           ),
-       tablet =
-           tablet ??
-           const DesignBreakpoint(
-             minWidth: ExtendedValues.x600,
-             maxWidth: ExtendedValues.x1023,
-           ),
-       desktop =
-           desktop ??
-           const DesignBreakpoint(
-             minWidth: MaterialDimensions.x1024,
-             maxWidth: ExtendedValues.x1439,
-           ),
-       infinity =
-           infinity ??
-           const DesignBreakpoint(
-             minWidth: ExtendedValues.x1440,
-           );
-  factory BreakpointTokens.fromMap(Map<String, dynamic> map) {
+  }) : mobile = mobile ?? MaterialBreakpoint.mobile,
+       tablet = tablet ?? MaterialBreakpoint.tablet,
+       desktop = desktop ?? MaterialBreakpoint.desktop,
+       infinity = infinity ?? MaterialBreakpoint.infinity;
+
+  factory BreakpointTokensData.fromMap(Map<String, dynamic> map) {
     DesignBreakpoint? parseBreakpoint(String key) {
       final value = map[key];
       if (value is Map<String, dynamic>) {
@@ -43,7 +43,7 @@ class BreakpointTokens extends Equatable {
       return null;
     }
 
-    return BreakpointTokens(
+    return BreakpointTokensData(
       mobile: parseBreakpoint('mobile'),
       tablet: parseBreakpoint('tablet'),
       desktop: parseBreakpoint('desktop'),

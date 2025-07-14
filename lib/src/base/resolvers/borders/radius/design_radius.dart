@@ -6,7 +6,7 @@ class DesignRadius {
   ///
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/radius_circular.png#gh-light-mode-only)
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/radius_circular_dark.png#gh-dark-mode-only)
-  const DesignRadius.circular(MaterialRadius radius)
+  const DesignRadius.circular(RadiusToken radius)
     : this.elliptical(
         radius,
         radius,
@@ -22,20 +22,20 @@ class DesignRadius {
   );
 
   /// The radius value on the horizontal axis.
-  final MaterialRadius x;
+  final RadiusToken x;
 
   /// The radius value on the vertical axis.
-  final MaterialRadius y;
+  final RadiusToken y;
 
   /// A radius with [x] and [y] values set to none.
   ///
   /// You can use [DesignRadius.none] with [RRect] to have right-angle corners.
-  static const DesignRadius none = DesignRadius.circular(MaterialRadius.none);
+  static const DesignRadius none = DesignRadius.circular(RadiusToken.none);
 
   /// Converts [DesignRadius] to a Flutter [Radius].
   ///
   /// Otherwise, it returns a [Radius.elliptical] with the given `x` and `y`.
-  Radius toRadius(RadiusTokens radiiTokens) {
+  Radius toRadius(RadiusTokensData radiiTokens) {
     return Radius.elliptical(
       x.toDouble(radiiTokens),
       y.toDouble(radiiTokens),

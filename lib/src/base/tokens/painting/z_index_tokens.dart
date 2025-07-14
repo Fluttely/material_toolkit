@@ -1,22 +1,22 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
 
 /// Z-index values defining the stacking order of components.
 
 /// Defines the stacking order for widgets using integer z-indexes.
-class ZIndexTokens extends Equatable {
-  const ZIndexTokens({
+class ZIndexTokensData extends Equatable {
+  const ZIndexTokensData({
     int? background,
     int? content,
     int? dropdown,
     int? modal,
     int? tooltip,
     int? overlay,
-  }) : background = background ?? ExtendedValues.zeroInt,
-       content = content ?? ExtendedValues.x1Int,
-       dropdown = dropdown ?? ExtendedValues.x10Int,
-       modal = modal ?? ExtendedValues.x100Int,
-       tooltip = tooltip ?? ExtendedValues.x1000Int,
-       overlay = overlay ?? ExtendedValues.x9999Int;
+  }) : background = background ?? MaterialExtendedValues.zeroInt,
+       content = content ?? MaterialExtendedValues.x1Int,
+       dropdown = dropdown ?? MaterialExtendedValues.x10Int,
+       modal = modal ?? MaterialExtendedValues.x100Int,
+       tooltip = tooltip ?? MaterialExtendedValues.x1000Int,
+       overlay = overlay ?? MaterialExtendedValues.x9999Int;
   final int background;
   final int content;
   final int dropdown;

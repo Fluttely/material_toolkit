@@ -48,7 +48,7 @@ class DesignOutlineInputBorder {
   ///
   /// Returns an [OutlineInputBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
-  OutlineInputBorder toOutline(RadiusTokens radiiTokens) {
+  OutlineInputBorder toOutline(RadiusTokensData radiiTokens) {
     return OutlineInputBorder(
       borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiTokens),

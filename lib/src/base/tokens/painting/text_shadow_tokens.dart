@@ -1,36 +1,36 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
 
 /// Shadow presets for text elements.
 
 /// Predefined [Shadow] values used for text.
-class TextShadowTokens extends Equatable {
-  const TextShadowTokens({
+class TextShadowTokensData extends Equatable {
+  const TextShadowTokensData({
     Shadow? small,
     Shadow? medium,
     Shadow? large,
   }) : small =
            small ??
            const Shadow(
-             blurRadius: ExtendedValues.x2,
+             blurRadius: MaterialExtendedValues.x2,
              offset: Offset(0, 1),
              color: Color(0x44000000),
            ),
        medium =
            medium ??
            const Shadow(
-             blurRadius: ExtendedValues.x4,
+             blurRadius: MaterialExtendedValues.x4,
              offset: Offset(0, 2),
              color: Color(0x44000000),
            ),
        large =
            large ??
            const Shadow(
-             blurRadius: ExtendedValues.x8,
+             blurRadius: MaterialExtendedValues.x8,
              offset: Offset(0, 4),
              color: Color(0x44000000),
            );
 
-  factory TextShadowTokens.fromMap(Map<String, dynamic> map) {
+  factory TextShadowTokensData.fromMap(Map<String, dynamic> map) {
     Shadow? parseShadow(String key) {
       final value = map[key];
       if (value is Map<String, dynamic>) {
@@ -46,7 +46,7 @@ class TextShadowTokens extends Equatable {
       return null;
     }
 
-    return TextShadowTokens(
+    return TextShadowTokensData(
       small: parseShadow('small'),
       medium: parseShadow('medium'),
       large: parseShadow('large'),

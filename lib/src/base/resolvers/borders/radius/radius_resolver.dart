@@ -2,16 +2,16 @@ part of '../../resolvers.dart';
 
 /// Utility class for converting [DesignRadius] values to Flutter [Radius] objects.
 
-/// Resolves [DesignRadius] values using the provided [RadiusTokens].
+/// Resolves [DesignRadius] values using the provided [RadiusTokensData].
 class RadiusResolver extends Equatable {
   const RadiusResolver(this._radii);
-  final RadiusTokens _radii;
+  final RadiusTokensData _radii;
 
   Radius get none => DesignRadius.none.toRadius(_radii);
 
-  Radius circular(MaterialRadius radius) =>
+  Radius circular(RadiusToken radius) =>
       DesignRadius.circular(radius).toRadius(_radii);
-  Radius elliptical(MaterialRadius x, MaterialRadius y) =>
+  Radius elliptical(RadiusToken x, RadiusToken y) =>
       DesignRadius.elliptical(x, y).toRadius(_radii);
 
   @override

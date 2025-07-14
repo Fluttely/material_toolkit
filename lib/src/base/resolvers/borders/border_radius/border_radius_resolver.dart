@@ -5,14 +5,14 @@ part of '../../resolvers.dart';
 /// Converts [DesignBorderRadius] definitions to concrete [BorderRadius] objects.
 class BorderRadiusResolver extends Equatable {
   const BorderRadiusResolver(this._radii);
-  final RadiusTokens _radii;
+  final RadiusTokensData _radii;
 
   BorderRadius get none => DesignBorderRadius.none.toBorderRadius(_radii);
 
   BorderRadius all(DesignRadius radius) =>
       DesignBorderRadius.all(radius).toBorderRadius(_radii);
 
-  BorderRadius circular(MaterialRadius radius) =>
+  BorderRadius circular(RadiusToken radius) =>
       DesignBorderRadius.circular(radius).toBorderRadius(_radii);
 
   BorderRadius vertical({

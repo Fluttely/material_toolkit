@@ -9,32 +9,32 @@ import 'package:material_toolkit_demo/widgets/info_component.dart';
 import 'package:material_toolkit_demo/widgets/number_field.dart';
 import 'package:provider/provider.dart';
 
-extension MaterialRadiusTokensExtension on RadiusTokens {
-  double getValue(MaterialRadius type) {
+extension MaterialRadiusTokensExtension on RadiusTokensData {
+  double getValue(RadiusToken type) {
     return switch (type) {
-      MaterialRadius.none => none,
-      MaterialRadius.extraSmall => extraSmall,
-      MaterialRadius.semiSmall => semiSmall,
-      MaterialRadius.small => small,
-      MaterialRadius.medium => medium,
-      MaterialRadius.semiLarge => semiLarge,
-      MaterialRadius.large => large,
-      MaterialRadius.extraLarge => extraLarge,
-      MaterialRadius.superLarge => superLarge,
+      RadiusToken.none => none,
+      RadiusToken.extraSmall => extraSmall,
+      RadiusToken.semiSmall => semiSmall,
+      RadiusToken.small => small,
+      RadiusToken.medium => medium,
+      RadiusToken.semiLarge => semiLarge,
+      RadiusToken.large => large,
+      RadiusToken.extraLarge => extraLarge,
+      RadiusToken.superLarge => superLarge,
     };
   }
 
-  RadiusTokens copyWithFromType(MaterialRadius type, double value) {
+  RadiusTokensData copyWithFromType(RadiusToken type, double value) {
     return switch (type) {
-      MaterialRadius.none => const RadiusTokens(),
-      MaterialRadius.extraSmall => copyWith(extraSmall: value),
-      MaterialRadius.semiSmall => copyWith(semiSmall: value),
-      MaterialRadius.small => copyWith(small: value),
-      MaterialRadius.medium => copyWith(medium: value),
-      MaterialRadius.semiLarge => copyWith(semiLarge: value),
-      MaterialRadius.large => copyWith(large: value),
-      MaterialRadius.extraLarge => copyWith(extraLarge: value),
-      MaterialRadius.superLarge => copyWith(superLarge: value),
+      RadiusToken.none => const RadiusTokensData(),
+      RadiusToken.extraSmall => copyWith(extraSmall: value),
+      RadiusToken.semiSmall => copyWith(semiSmall: value),
+      RadiusToken.small => copyWith(small: value),
+      RadiusToken.medium => copyWith(medium: value),
+      RadiusToken.semiLarge => copyWith(semiLarge: value),
+      RadiusToken.large => copyWith(large: value),
+      RadiusToken.extraLarge => copyWith(extraLarge: value),
+      RadiusToken.superLarge => copyWith(superLarge: value),
     };
   }
 }
@@ -47,7 +47,7 @@ class BorderRadiusCircularGroup extends StatelessWidget {
     final tokens = Theme.of(context).tokens;
     final gaps = tokens.gap;
 
-    Widget row(List<MaterialRadius> items) {
+    Widget row(List<RadiusToken> items) {
       return GroupItemRow(
         children: [
           for (var i = 0; i < items.length; i++) ...[
@@ -67,21 +67,21 @@ class BorderRadiusCircularGroup extends StatelessWidget {
         GroupItemContainer(
           children: [
             row([
-              MaterialRadius.none,
-              MaterialRadius.extraSmall,
-              MaterialRadius.semiSmall,
+              RadiusToken.none,
+              RadiusToken.extraSmall,
+              RadiusToken.semiSmall,
             ]),
             gaps.small,
             row([
-              MaterialRadius.small,
-              MaterialRadius.medium,
-              MaterialRadius.semiLarge,
+              RadiusToken.small,
+              RadiusToken.medium,
+              RadiusToken.semiLarge,
             ]),
             gaps.small,
             row([
-              MaterialRadius.large,
-              MaterialRadius.extraLarge,
-              MaterialRadius.superLarge,
+              RadiusToken.large,
+              RadiusToken.extraLarge,
+              RadiusToken.superLarge,
             ]),
           ],
         ),
@@ -91,7 +91,7 @@ class BorderRadiusCircularGroup extends StatelessWidget {
 }
 
 class BorderRadiusCircularComponent extends StatelessWidget {
-  final MaterialRadius radius;
+  final RadiusToken radius;
 
   const BorderRadiusCircularComponent(this.radius, {super.key});
 
@@ -107,7 +107,7 @@ class BorderRadiusCircularComponent extends StatelessWidget {
 }
 
 class BorderRadiusComponent extends StatefulWidget {
-  final MaterialRadius type;
+  final RadiusToken type;
   final String info;
   final BorderRadius borderRadius;
 
@@ -171,7 +171,7 @@ class _BorderRadiusComponentState extends State<BorderRadiusComponent> {
               InfoComponent(info: widget.info),
             ],
           ),
-          if (widget.type != MaterialRadius.none)
+          if (widget.type != RadiusToken.none)
             NumberField(
               controller: _controller,
               onChanged: (value) {

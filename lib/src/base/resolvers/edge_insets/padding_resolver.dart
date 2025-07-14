@@ -15,7 +15,7 @@ class PaddingResolver extends Equatable {
   );
 
   Padding all(
-    final MaterialSpacing value, {
+    final SpacingToken value, {
     final Widget? child,
   }) => Padding(
     padding: _edgeInsets.all(value),
@@ -23,8 +23,8 @@ class PaddingResolver extends Equatable {
   );
 
   Padding symmetric({
-    final MaterialSpacing? vertical,
-    final MaterialSpacing? horizontal,
+    final SpacingToken? vertical,
+    final SpacingToken? horizontal,
     final Widget? child,
   }) => Padding(
     padding: _edgeInsets.symmetric(
@@ -35,10 +35,10 @@ class PaddingResolver extends Equatable {
   );
 
   Padding only({
-    final MaterialSpacing? left,
-    final MaterialSpacing? top,
-    final MaterialSpacing? right,
-    final MaterialSpacing? bottom,
+    final SpacingToken? left,
+    final SpacingToken? top,
+    final SpacingToken? right,
+    final SpacingToken? bottom,
     final Widget? child,
   }) => Padding(
     padding: _edgeInsets.only(

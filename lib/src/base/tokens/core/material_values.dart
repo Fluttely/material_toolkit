@@ -1,6 +1,6 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
 
-abstract final class MaterialDimensions {
+abstract final class MaterialValues {
   static const double zero = 0;
   static const int zeroInt = 0;
   static const double x4 = 4;

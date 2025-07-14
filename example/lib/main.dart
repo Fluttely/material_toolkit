@@ -10,7 +10,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tokens = DesignTokens();
+    final tokens = DesignTokens(
+      shadowColor: Colors.red, // TODO(Kevin): this is for test porpuses
+    );
     return MaterialApp(
       title: 'Material Toolkit Complete Example',
       theme: ThemeData(
@@ -33,14 +35,22 @@ class Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Material Design Tokens Example'),
-        elevation: ElevationTokens.level3,
+        elevation: MaterialElevation.level3,
       ),
       body: SingleChildScrollView(
         child: tokens.padding.all(
-          MaterialSpacing.medium,
+          SpacingToken.medium,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Container(
+              //   decoration: BoxDecoration(
+
+              //   ),
+              // ),
+              // Card(
+
+              // ),
               // Animation
               _buildSection(
                 context,
@@ -50,19 +60,19 @@ class Page extends StatelessWidget {
                     _buildAnimationDemo(
                       tokens,
                       'Quick',
-                      tokens.durations.quick,
+                      tokens.motions.quick,
                     ),
                     gaps.medium,
                     _buildAnimationDemo(
                       tokens,
                       'Regular',
-                      tokens.durations.regular,
+                      tokens.motions.regular,
                     ),
                     gaps.medium,
                     _buildAnimationDemo(
                       tokens,
                       'Slow',
-                      tokens.durations.slow,
+                      tokens.motions.slow,
                     ),
                   ],
                 ),
@@ -74,7 +84,7 @@ class Page extends StatelessWidget {
                 context,
                 'Breakpoint Tokens',
                 Container(
-                  padding: tokens.edgeInsets.all(MaterialSpacing.medium),
+                  padding: tokens.edgeInsets.all(SpacingToken.medium),
                   color: Colors.grey.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,52 +111,52 @@ class Page extends StatelessWidget {
                     _buildElevatedCard(
                       tokens,
                       'Small',
-                      tokens.elevations.small,
+                      tokens.elevation.small,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Medium',
-                      tokens.elevations.medium,
+                      tokens.elevation.medium,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Large',
-                      tokens.elevations.large,
+                      tokens.elevation.large,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Extra Large',
-                      tokens.elevations.extraLarge,
+                      tokens.elevation.extraLarge,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Maximum',
-                      tokens.elevations.maximum,
+                      tokens.elevation.maximum,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 1',
-                      ElevationTokens.level1,
+                      MaterialElevation.level1,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 2',
-                      ElevationTokens.level2,
+                      MaterialElevation.level2,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 3',
-                      ElevationTokens.level3,
+                      MaterialElevation.level3,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 4',
-                      ElevationTokens.level4,
+                      MaterialElevation.level4,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 5',
-                      ElevationTokens.level5,
+                      MaterialElevation.level5,
                     ),
                   ],
                 ),
@@ -156,7 +166,7 @@ class Page extends StatelessWidget {
                 context,
                 'Form Factor Tokens',
                 Container(
-                  padding: tokens.edgeInsets.all(MaterialSpacing.medium),
+                  padding: tokens.edgeInsets.all(SpacingToken.medium),
                   color: Colors.grey.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -222,9 +232,9 @@ class Page extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildRadiusCard(tokens, 'Small', MaterialRadius.small),
-                    _buildRadiusCard(tokens, 'Medium', MaterialRadius.medium),
-                    _buildRadiusCard(tokens, 'Large', MaterialRadius.large),
+                    _buildRadiusCard(tokens, 'Small', RadiusToken.small),
+                    _buildRadiusCard(tokens, 'Medium', RadiusToken.medium),
+                    _buildRadiusCard(tokens, 'Large', RadiusToken.large),
                   ],
                 ),
               ),
@@ -251,13 +261,21 @@ class Page extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildShadowCard(tokens, 'Small', tokens.boxShadows.small),
+                    _buildShadowCard(
+                      tokens,
+                      'Small',
+                      tokens.elevation.toBoxShadow(ElevationToken.small),
+                    ),
                     _buildShadowCard(
                       tokens,
                       'Medium',
-                      tokens.boxShadows.medium,
+                      tokens.elevation.toBoxShadow(ElevationToken.medium),
                     ),
-                    _buildShadowCard(tokens, 'Large', tokens.boxShadows.large),
+                    _buildShadowCard(
+                      tokens,
+                      'Large',
+                      tokens.elevation.toBoxShadow(ElevationToken.large),
+                    ),
                   ],
                 ),
               ),
@@ -267,15 +285,15 @@ class Page extends StatelessWidget {
                 'Gaps Resolver + Spacing Tokens',
                 Column(
                   children: [
-                    _buildSpacingDemo(tokens, 'Small', MaterialSpacing.small),
+                    _buildSpacingDemo(tokens, 'Small', SpacingToken.small),
                     gaps.medium,
                     _buildSpacingDemo(
                       tokens,
                       'Medium',
-                      MaterialSpacing.medium,
+                      SpacingToken.medium,
                     ),
                     gaps.medium,
-                    _buildSpacingDemo(tokens, 'Large', MaterialSpacing.large),
+                    _buildSpacingDemo(tokens, 'Large', SpacingToken.large),
                   ],
                 ),
               ),
@@ -398,7 +416,7 @@ class Page extends StatelessWidget {
   Widget _buildSpacingDemo(
     DesignTokens tokens,
     String label,
-    MaterialSpacing spacing,
+    SpacingToken spacing,
   ) {
     final spacings = tokens.spacings;
     return Row(
@@ -418,12 +436,12 @@ class Page extends StatelessWidget {
   Widget _buildShadowCard(
     DesignTokens tokens,
     String label,
-    BoxShadow shadow,
+    List<BoxShadow> boxShadow,
   ) {
     return Container(
       width: 80,
       height: 80,
-      decoration: BoxDecoration(color: Colors.white, boxShadow: [shadow]),
+      decoration: BoxDecoration(color: Colors.white, boxShadow: boxShadow),
       child: Center(
         child: Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
       ),
@@ -433,7 +451,7 @@ class Page extends StatelessWidget {
   Widget _buildRadiusCard(
     DesignTokens tokens,
     String label,
-    MaterialRadius radius,
+    RadiusToken radius,
   ) {
     return Container(
       width: 80,
@@ -481,7 +499,7 @@ class Page extends StatelessWidget {
       child: Container(
         width: 80,
         height: 80,
-        padding: tokens.edgeInsets.all(MaterialSpacing.small),
+        padding: tokens.edgeInsets.all(SpacingToken.small),
         child: Center(
           child: Text(
             label,

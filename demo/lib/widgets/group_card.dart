@@ -24,7 +24,7 @@ class GroupCard extends StatelessWidget {
       color: colorScheme.surfaceContainerLow,
       elevation: 0,
       child: padding.all(
-        MaterialSpacing.large,
+        SpacingToken.large,
         child: Align(
           child: Column(
             mainAxisSize: MainAxisSize.min,

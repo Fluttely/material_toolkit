@@ -6,7 +6,7 @@ part of '../../resolvers.dart';
 /// [DesignBorderRadius] tokens.
 class InputBorderResolver extends Equatable {
   const InputBorderResolver(this._radii);
-  final RadiusTokens _radii;
+  final RadiusTokensData _radii;
 
   InputBorder get none => InputBorder.none;
 

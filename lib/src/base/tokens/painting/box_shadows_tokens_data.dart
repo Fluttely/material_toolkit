@@ -1,39 +1,39 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
 
 /// Box shadow presets used by components.
 
 /// Predefined [BoxShadow] values for different elevation levels.
-class BoxShadowTokens extends Equatable {
-  const BoxShadowTokens({
+class BoxShadowTokensData extends Equatable {
+  const BoxShadowTokensData({
     BoxShadow? small,
     BoxShadow? medium,
     BoxShadow? large,
   }) : small =
            small ??
            const BoxShadow(
-             blurRadius: ExtendedValues.x2,
-             spreadRadius: ExtendedValues.x1,
+             blurRadius: MaterialExtendedValues.x2,
+             spreadRadius: MaterialExtendedValues.x1,
              offset: Offset(0, 2),
              color: Color(0x44000000),
            ),
        medium =
            medium ??
            const BoxShadow(
-             blurRadius: ExtendedValues.x4,
-             spreadRadius: ExtendedValues.x1,
+             blurRadius: MaterialExtendedValues.x4,
+             spreadRadius: MaterialExtendedValues.x1,
              offset: Offset(0, 4),
              color: Color(0x44000000),
            ),
        large =
            large ??
            const BoxShadow(
-             blurRadius: ExtendedValues.x8,
-             spreadRadius: ExtendedValues.x2,
+             blurRadius: MaterialExtendedValues.x8,
+             spreadRadius: MaterialExtendedValues.x2,
              offset: Offset(0, 8),
              color: Color(0x44000000),
            );
 
-  factory BoxShadowTokens.fromMap(Map<String, dynamic> map) {
+  factory BoxShadowTokensData.fromMap(Map<String, dynamic> map) {
     BoxShadow? parseShadow(String key) {
       final value = map[key];
       if (value is Map<String, dynamic>) {
@@ -50,7 +50,7 @@ class BoxShadowTokens extends Equatable {
       return null;
     }
 
-    return BoxShadowTokens(
+    return BoxShadowTokensData(
       small: parseShadow('small'),
       medium: parseShadow('medium'),
       large: parseShadow('large'),

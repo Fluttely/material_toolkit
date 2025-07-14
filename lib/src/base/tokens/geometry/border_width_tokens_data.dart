@@ -1,24 +1,25 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
 
 /// Stroke widths used when drawing borders.
 
 /// Collection of standard border stroke widths.
-class BorderWidthTokens extends Equatable {
-  const BorderWidthTokens({
+class BorderWidthTokensData extends Equatable {
+  const BorderWidthTokensData({
     double? hairline,
     double? thin,
     double? regular,
     double? thick,
-  }) : hairline = hairline ?? ExtendedValues.x05,
-       thin = thin ?? ExtendedValues.x1,
-       regular = regular ?? ExtendedValues.x2,
-       thick = thick ?? MaterialDimensions.x4;
+  }) : none = MaterialSpacing.none,
+       hairline = hairline ?? MaterialExtendedValues.x05,
+       thin = thin ?? MaterialExtendedValues.x1,
+       regular = regular ?? MaterialExtendedValues.x2,
+       thick = thick ?? MaterialValues.x4;
+
+  final double none;
   final double hairline;
   final double thin;
   final double regular;
   final double thick;
-
-  double get none => MaterialDimensions.zero;
 
   @override
   List<Object?> get props => [

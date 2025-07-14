@@ -30,22 +30,22 @@ class BorderRadiusAllGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 const BorderRadiusCircularComponent(
-                  radius: MaterialRadius.none,
+                  radius: RadiusToken.none,
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: MaterialRadius.extraSmall,
+                  type: RadiusToken.extraSmall,
                   info:
                       'borderRadius.all(DesignRadius.circular(MaterialRadius.extraSmall))',
                   borderRadius: borderRadius.all(
-                    const DesignRadius.circular(MaterialRadius.extraSmall),
+                    const DesignRadius.circular(RadiusToken.extraSmall),
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: MaterialRadius.small,
+                  type: RadiusToken.small,
                   info: 'borderRadius.circular(MaterialRadius.small)',
-                  borderRadius: borderRadius.circular(MaterialRadius.small),
+                  borderRadius: borderRadius.circular(RadiusToken.small),
                 ),
               ],
             ),
@@ -53,43 +53,43 @@ class BorderRadiusAllGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  type: MaterialRadius.semiSmall,
+                  type: RadiusToken.semiSmall,
                   info:
                       'borderRadius.vertical(top: DesignRadius.circular(MaterialRadius.semiSmall), bottom: DesignRadius.circular(MaterialRadius.semiSmall))',
                   borderRadius: borderRadius.vertical(
-                    top: const DesignRadius.circular(MaterialRadius.semiSmall),
+                    top: const DesignRadius.circular(RadiusToken.semiSmall),
                     bottom: const DesignRadius.circular(
-                      MaterialRadius.semiSmall,
+                      RadiusToken.semiSmall,
                     ),
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: MaterialRadius.medium,
+                  type: RadiusToken.medium,
                   info:
                       'borderRadius.horizontal(left: DesignRadius.circular(MaterialRadius.medium), right: DesignRadius.circular(MaterialRadius.medium))',
                   borderRadius: borderRadius.horizontal(
-                    left: const DesignRadius.circular(MaterialRadius.medium),
-                    right: const DesignRadius.circular(MaterialRadius.medium),
+                    left: const DesignRadius.circular(RadiusToken.medium),
+                    right: const DesignRadius.circular(RadiusToken.medium),
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: MaterialRadius.semiLarge,
+                  type: RadiusToken.semiLarge,
                   info:
                       'onlborderRadiusy(topLeft: DesignRadius.circular(MaterialRadius.semiLarge),topRight: DesignRadius.circular(MaterialRadius.semiLarge),bottomLeft: DesignRadius.circular(MaterialRadius.semiLarge),bottomRight: DesignRadius.circular(MaterialRadius.semiLarge))',
                   borderRadius: borderRadius.only(
                     topLeft: const DesignRadius.circular(
-                      MaterialRadius.semiLarge,
+                      RadiusToken.semiLarge,
                     ),
                     topRight: const DesignRadius.circular(
-                      MaterialRadius.semiLarge,
+                      RadiusToken.semiLarge,
                     ),
                     bottomLeft: const DesignRadius.circular(
-                      MaterialRadius.semiLarge,
+                      RadiusToken.semiLarge,
                     ),
                     bottomRight: const DesignRadius.circular(
-                      MaterialRadius.semiLarge,
+                      RadiusToken.semiLarge,
                     ),
                   ),
                 ),
@@ -99,24 +99,24 @@ class BorderRadiusAllGroup extends StatelessWidget {
             GroupItemRow(
               children: [
                 BorderRadiusComponent(
-                  type: MaterialRadius.large,
+                  type: RadiusToken.large,
                   info: 'borderRadius.circular(MaterialRadius.large)',
-                  borderRadius: borderRadius.circular(MaterialRadius.large),
+                  borderRadius: borderRadius.circular(RadiusToken.large),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: MaterialRadius.extraLarge,
+                  type: RadiusToken.extraLarge,
                   info: 'borderRadius.circular(MaterialRadius.extraLarge)',
                   borderRadius: borderRadius.circular(
-                    MaterialRadius.extraLarge,
+                    RadiusToken.extraLarge,
                   ),
                 ),
                 gaps.small,
                 BorderRadiusComponent(
-                  type: MaterialRadius.superLarge,
+                  type: RadiusToken.superLarge,
                   info: 'borderRadius.circular(MaterialRadius.superLarge)',
                   borderRadius: borderRadius.circular(
-                    MaterialRadius.superLarge,
+                    RadiusToken.superLarge,
                   ),
                 ),
               ],
@@ -131,7 +131,7 @@ class BorderRadiusAllGroup extends StatelessWidget {
 class BorderRadiusCircularComponent extends StatelessWidget {
   const BorderRadiusCircularComponent({required this.radius, super.key});
 
-  final MaterialRadius radius;
+  final RadiusToken radius;
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +155,7 @@ class BorderRadiusComponent extends StatelessWidget {
     required this.borderRadius,
     super.key,
   });
-  final MaterialRadius type;
+  final RadiusToken type;
   final String info;
   final BorderRadius borderRadius;
 

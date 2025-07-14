@@ -1,11 +1,11 @@
 part of '../../resolvers.dart';
 
-/// Provides convenience methods for creating border shapes using [RadiusTokens].
+/// Provides convenience methods for creating border shapes using [RadiusTokensData].
 
 /// Builds Flutter shapes from [DesignBorderRadius] definitions.
 class ShapeResolver extends Equatable {
   const ShapeResolver(this._radii);
-  final RadiusTokens _radii;
+  final RadiusTokensData _radii;
 
   BoxShape get rectangleBoxShape => BoxShape.rectangle;
   BoxShape get circleBoxShape => BoxShape.circle;

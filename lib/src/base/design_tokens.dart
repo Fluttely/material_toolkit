@@ -6,23 +6,23 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit/src/base/resolvers/elevation_resolver.dart';
 
-part 'animation/duration_tokens.dart';
-part 'core/extended_values.dart';
-part 'core/material_dimensions.dart';
-part 'core/material_timings.dart';
-part 'geometry/border_width_tokens.dart';
-part 'geometry/breakpoint_tokens.dart';
-part 'geometry/elevation_tokens.dart';
-part 'geometry/form_factor.dart';
-part 'geometry/icon_size_tokens.dart';
-part 'geometry/layout_grid_tokens.dart';
-part 'geometry/redius_tokens.dart';
-part 'geometry/spacing_tokens.dart';
-part 'painting/box_shadows_tokens.dart';
-part 'painting/opacity_tokens.dart';
-part 'painting/text_shadow_tokens.dart';
-part 'painting/z_index_tokens.dart';
+part 'tokens/animation/motion_tokens_data.dart';
+part 'tokens/core/material_extended_values.dart';
+part 'tokens/core/material_values.dart';
+part 'tokens/geometry/border_width_tokens_data.dart';
+part 'tokens/geometry/breakpoint_tokens_data.dart';
+part 'tokens/geometry/elevation_tokens_data.dart';
+part 'tokens/geometry/form_factor.dart';
+part 'tokens/geometry/icon_size_tokens_data.dart';
+part 'tokens/geometry/layout_grid_tokens_data.dart';
+part 'tokens/geometry/redius_tokens_data.dart';
+part 'tokens/geometry/spacing_tokens_data.dart';
+part 'tokens/painting/box_shadows_tokens_data.dart';
+part 'tokens/painting/opacity_tokens.dart';
+part 'tokens/painting/text_shadow_tokens.dart';
+part 'tokens/painting/z_index_tokens.dart';
 
 extension DesignTokensContextExtension on BuildContext {
   DesignTokens get tokens {
@@ -70,60 +70,70 @@ class DesignProvider extends InheritedWidget {
 
 class DesignTokens extends ThemeExtension<DesignTokens> {
   DesignTokens({
-    this.boxShadows = const BoxShadowTokens(),
-    this.borderWidths = const BorderWidthTokens(),
-    this.breakpoints = const BreakpointTokens(),
-    this.durations = const DurationTokens(),
-    this.elevations = const ElevationTokens(),
+    required this.shadowColor,
+    // this.boxShadows = const BoxShadowTokensData(),
+    this.borderWidths = const BorderWidthTokensData(),
+    this.breakpoints = const BreakpointTokensData(),
+    this.motions = const MotionTokensData(),
+    this.elevations = const ElevationTokensData(),
     this.formFactor = FormFactor.medium,
-    this.iconSizes = const IconSizeTokens(),
-    this.layoutGrid = const LayoutGridTokens(),
-    this.opacities = const OpacityTokens(),
-    this.radii = const RadiusTokens(),
-    this.spacings = const SpacingTokens(),
-    this.textShadows = const TextShadowTokens(),
-    this.zIndexes = const ZIndexTokens(),
+    this.iconSizes = const IconSizeTokensData(),
+    this.layoutGrid = const LayoutGridTokensData(),
+    this.opacities = const OpacityTokensData(),
+    this.radii = const RadiusTokensData(),
+    this.spacings = const SpacingTokensData(),
+    this.textShadows = const TextShadowTokensData(),
+    this.zIndexes = const ZIndexTokensData(),
   }) : googleFonts = const GoogleFontsResolver();
 
   factory DesignTokens.material({Map<String, dynamic>? overrides}) {
-    var tokens = DesignTokens();
+    var tokens = DesignTokens(
+      shadowColor: Colors.black,
+    ); // TODO(Kevin): remove this static Colors.black value
     if (overrides != null) {
       tokens = tokens.copyWith(
-        boxShadows: overrides['boxShadows'] != null
-            ? BoxShadowTokens.fromMap(
-                overrides['boxShadows'] as Map<String, dynamic>,
-              )
-            : null,
+        // shadowColor: overrides['shadowColor'] != null // TODO(Kevin):
+        //     ? Colors.fromMap(
+        //         overrides['shadowColor'] as Map<String, dynamic>,
+        //       )
+        //     : null,
+        // boxShadows: overrides['boxShadows'] != null
+        //     ? BoxShadowTokensData.fromMap(
+        //         overrides['boxShadows'] as Map<String, dynamic>,
+        //       )
+        //     : null,
         breakpoints: overrides['breakpoints'] != null
-            ? BreakpointTokens.fromMap(
+            ? BreakpointTokensData.fromMap(
                 overrides['breakpoints'] as Map<String, dynamic>,
               )
             : null,
-        durations: overrides['durations'] != null
-            ? DurationTokens.fromMap(
-                overrides['durations'] as Map<String, dynamic>,
+        motions: overrides['motions'] != null
+            ? MotionTokensData.fromMap(
+                overrides['motions'] as Map<String, dynamic>,
               )
             : null,
         elevations: overrides['elevations'] != null
-            ? ElevationTokens.fromMap(
+            ? ElevationTokensData.fromMap(
                 overrides['elevations'] as Map<String, dynamic>,
               )
             : null,
         iconSizes: overrides['iconSizes'] != null
-            ? IconSizeTokens.fromMap(
+            ? IconSizeTokensData.fromMap(
                 overrides['iconSizes'] as Map<String, dynamic>,
               )
             : null,
         radii: overrides['radii'] != null
-            ? RadiusTokens.fromMap(overrides['radii'] as Map<String, dynamic>)
+            ? RadiusTokensData.fromMap(
+                overrides['radii'] as Map<String, dynamic>,
+              )
             : null,
         spacings: overrides['spacings'] != null
-            ? SpacingTokens.fromMap(
+            ? SpacingTokensData.fromMap(
                 overrides['spacings'] as Map<String, dynamic>,
               )
             : null,
         textShadows: overrides['textShadows'] != null
-            ? TextShadowTokens.fromMap(
+            ? TextShadowTokensData.fromMap(
                 overrides['textShadows'] as Map<String, dynamic>,
               )
             : null,
@@ -140,19 +150,20 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
     return DesignTokens.fromMap(jsonDecode(json) as Map<String, dynamic>);
   }
 
-  final BoxShadowTokens boxShadows;
-  final BorderWidthTokens borderWidths;
-  final BreakpointTokens breakpoints;
-  final DurationTokens durations;
-  final ElevationTokens elevations;
+  final Color shadowColor;
+  // final BoxShadowTokensData boxShadows;
+  final BorderWidthTokensData borderWidths;
+  final BreakpointTokensData breakpoints;
+  final MotionTokensData motions;
+  final ElevationTokensData elevations;
   final FormFactor formFactor;
-  final IconSizeTokens iconSizes;
-  final LayoutGridTokens layoutGrid;
-  final OpacityTokens opacities;
-  final RadiusTokens radii;
-  final SpacingTokens spacings;
-  final TextShadowTokens textShadows;
-  final ZIndexTokens zIndexes;
+  final IconSizeTokensData iconSizes;
+  final LayoutGridTokensData layoutGrid;
+  final OpacityTokensData opacities;
+  final RadiusTokensData radii;
+  final SpacingTokensData spacings;
+  final TextShadowTokensData textShadows;
+  final ZIndexTokensData zIndexes;
   final GoogleFontsResolver googleFonts;
 
   /// Spacings
@@ -166,6 +177,12 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   late final shape = ShapeResolver(radii);
   late final inputBorder = InputBorderResolver(radii);
 
+  /// Elevation
+  late final elevation = ElevationResolver(
+    shadowColor: shadowColor,
+    elevations: elevations,
+  );
+
   @override
   ThemeExtension<DesignTokens> lerp(
     ThemeExtension<DesignTokens>? other,
@@ -175,9 +192,10 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
       return this;
     } else {
       return DesignTokens(
-        boxShadows: boxShadows,
+        shadowColor: shadowColor,
+        // boxShadows: boxShadows,
         breakpoints: breakpoints,
-        durations: durations,
+        motions: motions,
         elevations: elevations,
         formFactor: formFactor,
         iconSizes: iconSizes,
@@ -190,20 +208,22 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
 
   @override
   DesignTokens copyWith({
-    BoxShadowTokens? boxShadows,
-    BreakpointTokens? breakpoints,
-    DurationTokens? durations,
-    ElevationTokens? elevations,
+    Color? shadowColor,
+    // BoxShadowTokensData? boxShadows,
+    BreakpointTokensData? breakpoints,
+    MotionTokensData? motions,
+    ElevationTokensData? elevations,
     FormFactor? formFactor,
-    IconSizeTokens? iconSizes,
-    RadiusTokens? radii,
-    SpacingTokens? spacings,
-    TextShadowTokens? textShadows,
+    IconSizeTokensData? iconSizes,
+    RadiusTokensData? radii,
+    SpacingTokensData? spacings,
+    TextShadowTokensData? textShadows,
   }) {
     return DesignTokens(
-      boxShadows: boxShadows ?? this.boxShadows,
+      shadowColor: shadowColor ?? this.shadowColor,
+      // boxShadows: boxShadows ?? this.boxShadows,
       breakpoints: breakpoints ?? this.breakpoints,
-      durations: durations ?? this.durations,
+      motions: motions ?? this.motions,
       elevations: elevations ?? this.elevations,
       formFactor: formFactor ?? this.formFactor,
       iconSizes: iconSizes ?? this.iconSizes,
@@ -217,9 +237,9 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is DesignTokens &&
-          boxShadows == other.boxShadows &&
+          // boxShadows == other.boxShadows &&
           breakpoints == other.breakpoints &&
-          durations == other.durations &&
+          motions == other.motions &&
           elevations == other.elevations &&
           formFactor == other.formFactor &&
           iconSizes == other.iconSizes &&
@@ -237,9 +257,10 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
 
   @override
   int get hashCode =>
-      boxShadows.hashCode ^
+      shadowColor.hashCode ^
+      // boxShadows.hashCode ^
       breakpoints.hashCode ^
-      durations.hashCode ^
+      motions.hashCode ^
       elevations.hashCode ^
       formFactor.hashCode ^
       iconSizes.hashCode ^
@@ -259,9 +280,9 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   String toString() =>
       '''
     DesignTokensTokens(
-      boxShadows: $boxShadows,
+      shadowColor: $shadowColor,
       breakpoints: $breakpoints,
-      durations: $durations,
+      motions: $motions,
       elevations: $elevations,
       formFactor: $formFactor,
       iconSizes: $iconSizes,
@@ -278,4 +299,5 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
       googleFonts: $googleFonts,
     )
   ''';
+  // boxShadows: $boxShadows,
 }

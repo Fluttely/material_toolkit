@@ -1,22 +1,22 @@
-part of '../design_tokens.dart';
+part of '../../design_tokens.dart';
 
 /// Opacity values used for interactive states.
 
 /// Defines opacity values for different component states.
-class OpacityTokens extends Equatable {
-  const OpacityTokens({
+class OpacityTokensData extends Equatable {
+  const OpacityTokensData({
     double? disabled,
     double? hover,
     double? focus,
     double? pressed,
     double? backdrop,
     double? divider,
-  }) : disabled = disabled ?? ExtendedValues.x038,
-       hover = hover ?? ExtendedValues.x008,
-       focus = focus ?? ExtendedValues.x012,
-       pressed = pressed ?? ExtendedValues.x016,
-       backdrop = backdrop ?? ExtendedValues.x05,
-       divider = divider ?? ExtendedValues.x012;
+  }) : disabled = disabled ?? MaterialExtendedValues.x038,
+       hover = hover ?? MaterialExtendedValues.x008,
+       focus = focus ?? MaterialExtendedValues.x012,
+       pressed = pressed ?? MaterialExtendedValues.x016,
+       backdrop = backdrop ?? MaterialExtendedValues.x05,
+       divider = divider ?? MaterialExtendedValues.x012;
   final double disabled;
   final double hover;
   final double focus;

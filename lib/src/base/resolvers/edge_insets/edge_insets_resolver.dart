@@ -1,35 +1,35 @@
 part of '../resolvers.dart';
 
-/// Converts [MaterialSpacing] values into Flutter [EdgeInsets].
+/// Converts [SpacingToken] values into Flutter [EdgeInsets].
 
 /// Helper that maps spacing tokens to [EdgeInsets] instances.
 class EdgeInsetsResolver extends Equatable {
   const EdgeInsetsResolver(this._spacings);
-  final SpacingTokens _spacings;
+  final SpacingTokensData _spacings;
 
   EdgeInsets get none => EdgeInsets.all(_spacings.none);
 
-  EdgeInsets all(final MaterialSpacing value) =>
+  EdgeInsets all(final SpacingToken value) =>
       EdgeInsets.all(value.toDouble(_spacings));
 
   EdgeInsets symmetric({
-    final MaterialSpacing? vertical,
-    final MaterialSpacing? horizontal,
+    final SpacingToken? vertical,
+    final SpacingToken? horizontal,
   }) => EdgeInsets.symmetric(
-    horizontal: (horizontal ?? MaterialSpacing.none).toDouble(_spacings),
-    vertical: (vertical ?? MaterialSpacing.none).toDouble(_spacings),
+    horizontal: (horizontal ?? SpacingToken.none).toDouble(_spacings),
+    vertical: (vertical ?? SpacingToken.none).toDouble(_spacings),
   );
 
   EdgeInsets only({
-    final MaterialSpacing? left,
-    final MaterialSpacing? top,
-    final MaterialSpacing? right,
-    final MaterialSpacing? bottom,
+    final SpacingToken? left,
+    final SpacingToken? top,
+    final SpacingToken? right,
+    final SpacingToken? bottom,
   }) => EdgeInsets.only(
-    left: (left ?? MaterialSpacing.none).toDouble(_spacings),
-    top: (top ?? MaterialSpacing.none).toDouble(_spacings),
-    right: (right ?? MaterialSpacing.none).toDouble(_spacings),
-    bottom: (bottom ?? MaterialSpacing.none).toDouble(_spacings),
+    left: (left ?? SpacingToken.none).toDouble(_spacings),
+    top: (top ?? SpacingToken.none).toDouble(_spacings),
+    right: (right ?? SpacingToken.none).toDouble(_spacings),
+    bottom: (bottom ?? SpacingToken.none).toDouble(_spacings),
   );
 
   // EdgeInsets get allExtraSmall => EdgeInsets.all(_spacings.extraSmall);

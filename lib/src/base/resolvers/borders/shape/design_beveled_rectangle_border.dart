@@ -44,7 +44,9 @@ class DesignBeveledRectangleBorder {
   ///
   /// Returns a [BeveledRectangleBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
-  BeveledRectangleBorder toBeveledRectangleBorder(RadiusTokens radiiTokens) {
+  BeveledRectangleBorder toBeveledRectangleBorder(
+    RadiusTokensData radiiTokens,
+  ) {
     return BeveledRectangleBorder(
       side: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiTokens),

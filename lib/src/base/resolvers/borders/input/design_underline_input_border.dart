@@ -44,7 +44,7 @@ class DesignUnderlineInputBorder {
   ///
   /// Returns an [UnderlineInputBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
-  UnderlineInputBorder toUnderline(RadiusTokens radiiTokens) {
+  UnderlineInputBorder toUnderline(RadiusTokensData radiiTokens) {
     return UnderlineInputBorder(
       borderSide: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiTokens),

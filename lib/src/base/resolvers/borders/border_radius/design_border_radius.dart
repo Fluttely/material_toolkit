@@ -20,7 +20,7 @@ class DesignBorderRadius {
       );
 
   /// Creates a border radius where all radii are [DesignRadius.circular(radius)].
-  DesignBorderRadius.circular(MaterialRadius radius)
+  DesignBorderRadius.circular(RadiusToken radius)
     : this.all(
         DesignRadius.circular(radius),
       );
@@ -94,7 +94,7 @@ class DesignBorderRadius {
   /// Converts [DesignBorderRadius] to a Flutter [BorderRadius].
   ///
   /// Otherwise, it returns a [BorderRadius.only] with the given radii for each corner.
-  BorderRadius toBorderRadius(RadiusTokens radiiTokens) {
+  BorderRadius toBorderRadius(RadiusTokensData radiiTokens) {
     return BorderRadius.only(
       topLeft: Radius.elliptical(
         topLeft.toRadius(radiiTokens).x,

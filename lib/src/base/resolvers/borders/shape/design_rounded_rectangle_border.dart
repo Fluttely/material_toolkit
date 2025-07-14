@@ -44,7 +44,9 @@ class DesignRoundedRectangleBorder {
   ///
   /// Returns a [RoundedRectangleBorder] with the same [borderSide] and
   /// [borderRadius] configuration.
-  RoundedRectangleBorder toRoundedRectangleBorder(RadiusTokens radiiTokens) {
+  RoundedRectangleBorder toRoundedRectangleBorder(
+    RadiusTokensData radiiTokens,
+  ) {
     return RoundedRectangleBorder(
       side: borderSide,
       borderRadius: borderRadius.toBorderRadius(radiiTokens),
