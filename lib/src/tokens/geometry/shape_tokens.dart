@@ -1,6 +1,6 @@
-part of '../../design_tokens.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
-/// Defines the shape border values for the application.
 enum ShapeToken {
   /// A rectangular shape.
   rectangle,

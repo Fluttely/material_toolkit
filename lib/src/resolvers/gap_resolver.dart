@@ -1,4 +1,6 @@
-part of 'resolvers.dart';
+import 'package:equatable/equatable.dart';
+import 'package:gap/gap.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 /// Creates [Gap] widgets based on spacing tokens with extended functionality.
 ///

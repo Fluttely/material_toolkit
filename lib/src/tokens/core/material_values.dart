@@ -1,5 +1,3 @@
-part of '../../design_tokens.dart';
-
 abstract final class MaterialValues {
   static const double zero = 0;
   static const int zeroInt = 0;

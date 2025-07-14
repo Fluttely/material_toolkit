@@ -3,48 +3,9 @@ library;
 
 import 'dart:convert';
 
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 import 'package:material_toolkit/src/resolvers/elevation_resolver.dart';
-
-part 'tokens/animation/motion_tokens_data.dart';
-part 'tokens/core/material_extended_values.dart';
-part 'tokens/core/material_values.dart';
-part 'tokens/geometry/border_radius_tokens.dart';
-part 'tokens/geometry/border_width_tokens_data.dart';
-part 'tokens/geometry/breakpoint_tokens_data.dart';
-part 'tokens/geometry/elevation_tokens_data.dart';
-part 'tokens/geometry/icon_size_tokens_data.dart';
-part 'tokens/geometry/layout_grid_tokens_data.dart';
-part 'tokens/geometry/radius_tokens_data.dart';
-part 'tokens/geometry/shape_tokens.dart';
-part 'tokens/geometry/spacing_tokens_data.dart';
-part 'tokens/painting/box_shadows_tokens_data.dart';
-part 'tokens/painting/opacity_tokens.dart';
-part 'tokens/painting/text_shadow_tokens.dart';
-part 'tokens/painting/z_index_tokens.dart';
-part 'tokens/typography/text_style_tokens.dart';
-
-/// An extension on [BuildContext] to easily access the [DesignTokens].
-extension DesignTokensContextExtension on BuildContext {
-  /// Returns the [DesignTokens] from the nearest [Theme].
-  DesignTokens get tokens {
-    final tokens = Theme.of(this).extension<DesignTokens>();
-    assert(tokens != null, 'DesignTokens not found in Theme extensions');
-    return tokens!;
-  }
-}
-
-/// An extension on [ThemeData] to easily access the [DesignTokens].
-extension DesignTokensThemeExtension on ThemeData {
-  /// Returns the [DesignTokens] from the theme extensions.
-  DesignTokens get tokens {
-    final tokens = extension<DesignTokens>();
-    assert(tokens != null, 'DesignTokens not found in Theme extensions');
-    return tokens!;
-  }
-}
 
 /// An [InheritedWidget] that provides [DesignTokens] to its descendants.
 class DesignProvider extends InheritedWidget {

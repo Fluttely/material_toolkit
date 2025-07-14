@@ -1,4 +1,5 @@
-part of '../../resolvers.dart';
+import 'package:flutter/material.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 /// A rectangular border with rounded corners.
 ///

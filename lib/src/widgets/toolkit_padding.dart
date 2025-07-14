@@ -1,4 +1,5 @@
-part of 'widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 enum _PaddingType {
   none,

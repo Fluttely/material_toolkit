@@ -1,4 +1,6 @@
-part of 'widgets.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:universal_io/io.dart' as io_platform;
 
 /// A [StatelessWidget] that builds platform specific widgets.
 ///

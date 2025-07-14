@@ -1,5 +1,3 @@
-part of 'helpers.dart';
-
 /// Error messages used when accessing unsupported design token attributes.
 
 enum DesignTokensAttributeError {

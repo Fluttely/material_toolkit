@@ -1,4 +1,5 @@
-part of '../../design_tokens.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 abstract final class Breakpoint {
   static const mobile = DesignBreakpoint(

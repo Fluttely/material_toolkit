@@ -1,4 +1,5 @@
-part of '../../design_tokens.dart';
+import 'package:equatable/equatable.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 /// Spacing scale used for margins, padding and gaps following Material Design 3.
 enum SpacingToken {

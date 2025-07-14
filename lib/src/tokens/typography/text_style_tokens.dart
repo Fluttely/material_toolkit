@@ -1,6 +1,6 @@
-part of '../../design_tokens.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
-/// Defines the text styles for the application.
 enum TextStyleToken {
   /// The default text style.
   body,

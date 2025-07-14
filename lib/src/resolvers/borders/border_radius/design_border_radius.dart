@@ -1,4 +1,5 @@
-part of '../../resolvers.dart';
+import 'package:flutter/material.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 /// An immutable set of radii for each corner of a rectangle.
 ///

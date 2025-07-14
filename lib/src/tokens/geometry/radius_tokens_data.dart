@@ -1,4 +1,5 @@
-part of '../../design_tokens.dart';
+import 'package:equatable/equatable.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 /// Defines radius values and helpers to resolve them.
 enum RadiusToken {

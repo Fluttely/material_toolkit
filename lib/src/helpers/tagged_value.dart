@@ -1,4 +1,4 @@
-part of 'helpers.dart';
+import 'package:equatable/equatable.dart';
 
 /// Associates a [name] to a given [value].
 class TaggedValue<T> extends Equatable {

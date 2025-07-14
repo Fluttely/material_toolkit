@@ -1,4 +1,6 @@
-part of '../../design_tokens.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 
 /// Semantic elevation tokens for Material Design 3.
 ///
