@@ -4,8 +4,9 @@
 /// custom design systems on top of Flutter's `MaterialApp`.
 library;
 
-export 'src/base/design_tokens.dart';
-export 'src/base/helpers/helpers.dart';
-export 'src/base/resolvers/resolvers.dart';
-export 'src/base/widgets/widgets.dart';
-export 'src/material/material.dart';
+export 'package:material_design/material_design.dart';
+
+export 'src/design_tokens.dart';
+export 'src/helpers/helpers.dart';
+export 'src/resolvers/resolvers.dart';
+export 'src/widgets/widgets.dart';

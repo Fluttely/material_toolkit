@@ -16,6 +16,8 @@ dependencies:
   gap: ^3.0.1
   google_fonts: ^6.2.1
   universal_io: ^2.2.2
+  material_design:
+    path: packages/material_design_research # TODO: remove this local path before publish
 
 dev_dependencies:
   flutter_lints: ^3.0.0

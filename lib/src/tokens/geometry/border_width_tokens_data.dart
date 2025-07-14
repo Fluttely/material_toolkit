@@ -9,7 +9,7 @@ class BorderWidthTokensData extends Equatable {
     double? thin,
     double? regular,
     double? thick,
-  }) : none = Spacing.none,
+  }) : none = MaterialSpacing.none,
        hairline = hairline ?? MaterialExtendedValues.x05,
        thin = thin ?? MaterialExtendedValues.x1,
        regular = regular ?? MaterialExtendedValues.x2,

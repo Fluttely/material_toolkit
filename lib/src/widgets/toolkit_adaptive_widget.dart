@@ -7,7 +7,7 @@ part of 'widgets.dart';
 /// [standardBuild] implementation is used instead.
 
 abstract class ToolkitAdaptiveWidget extends StatefulWidget {
-  // TODO(Kevin): refactor to implement the oficial materia design documentation
+  // TODO: refactor to implement the oficial materia design documentation
   const ToolkitAdaptiveWidget({super.key});
 
   Widget standardBuild(BuildContext context);

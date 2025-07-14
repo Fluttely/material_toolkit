@@ -29,12 +29,12 @@ class SpacingTokensData extends Equatable {
     double? medium,
     double? large,
     double? extraLarge,
-  }) : none = Spacing.none,
-       extraSmall = extraSmall ?? Spacing.extraSmall,
-       small = small ?? Spacing.small,
-       medium = medium ?? Spacing.medium,
-       large = large ?? Spacing.large,
-       extraLarge = extraLarge ?? Spacing.extraLarge;
+  }) : none = MaterialSpacing.none,
+       extraSmall = extraSmall ?? MaterialSpacing.extraSmall,
+       small = small ?? MaterialSpacing.small,
+       medium = medium ?? MaterialSpacing.medium,
+       large = large ?? MaterialSpacing.large,
+       extraLarge = extraLarge ?? MaterialSpacing.extraLarge;
 
   factory SpacingTokensData.fromMap(Map<String, dynamic> map) {
     double? d(String key) => (map[key] as num?)?.toDouble();

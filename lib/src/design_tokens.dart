@@ -6,22 +6,25 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit/src/base/resolvers/elevation_resolver.dart';
+import 'package:material_toolkit/src/resolvers/elevation_resolver.dart';
 
 part 'tokens/animation/motion_tokens_data.dart';
 part 'tokens/core/material_extended_values.dart';
 part 'tokens/core/material_values.dart';
+part 'tokens/geometry/border_radius_tokens.dart';
 part 'tokens/geometry/border_width_tokens_data.dart';
 part 'tokens/geometry/breakpoint_tokens_data.dart';
 part 'tokens/geometry/elevation_tokens_data.dart';
 part 'tokens/geometry/icon_size_tokens_data.dart';
 part 'tokens/geometry/layout_grid_tokens_data.dart';
 part 'tokens/geometry/radius_tokens_data.dart';
+part 'tokens/geometry/shape_tokens.dart';
 part 'tokens/geometry/spacing_tokens_data.dart';
 part 'tokens/painting/box_shadows_tokens_data.dart';
 part 'tokens/painting/opacity_tokens.dart';
 part 'tokens/painting/text_shadow_tokens.dart';
 part 'tokens/painting/z_index_tokens.dart';
+part 'tokens/typography/text_style_tokens.dart';
 
 /// An extension on [BuildContext] to easily access the [DesignTokens].
 extension DesignTokensContextExtension on BuildContext {
@@ -86,12 +89,15 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   /// Creates a new instance of [DesignTokens].
   DesignTokens({
     required this.shadowColor,
-    // this.boxShadows = const BoxShadowTokensData(),
+    this.textStyles = const TextStyleTokensData(),
+    this.borderRadii = const BorderRadiusTokensData(),
+    this.shapes = const ShapeTokensData(),
+    this.clipBehavior = Clip.none,
     this.borderWidths = const BorderWidthTokensData(),
     this.breakpoints = const BreakpointTokensData(),
     this.motions = const MotionTokensData(),
     this.elevations = const ElevationTokensData(),
-    this.formFactor = FormFactor.medium,
+    this.formFactor = MaterialFormFactor.medium,
     this.iconSizes = const IconSizeTokensData(),
     this.layoutGrid = const LayoutGridTokensData(),
     this.opacities = const OpacityTokensData(),
@@ -108,19 +114,9 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   factory DesignTokens.material({Map<String, dynamic>? overrides}) {
     var tokens = DesignTokens(
       shadowColor: Colors.black,
-    ); // TODO(Kevin): remove this static Colors.black value
+    ); // TODO: remove this static Colors.black value
     if (overrides != null) {
       tokens = tokens.copyWith(
-        // shadowColor: overrides['shadowColor'] != null // TODO(Kevin):
-        //     ? Colors.fromMap(
-        //         overrides['shadowColor'] as Map<String, dynamic>,
-        //       )
-        //     : null,
-        // boxShadows: overrides['boxShadows'] != null
-        //     ? BoxShadowTokensData.fromMap(
-        //         overrides['boxShadows'] as Map<String, dynamic>,
-        //       )
-        //     : null,
         breakpoints: overrides['breakpoints'] != null
             ? BreakpointTokensData.fromMap(
                 overrides['breakpoints'] as Map<String, dynamic>,
@@ -174,7 +170,10 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   /// The color used for shadows.
   final Color shadowColor;
 
-  // final BoxShadowTokensData boxShadows;
+  final TextStyleTokensData textStyles;
+  final BorderRadiusTokensData borderRadii;
+  final ShapeTokensData shapes;
+  final Clip clipBehavior;
 
   /// Defines the border widths used throughout the application.
   final BorderWidthTokensData borderWidths;
@@ -189,7 +188,7 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   final ElevationTokensData elevations;
 
   /// The current form factor of the device.
-  final FormFactor formFactor;
+  final MaterialFormFactor formFactor;
 
   /// Defines the sizes for icons.
   final IconSizeTokensData iconSizes;
@@ -231,7 +230,7 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   late final borderRadius = BorderRadiusResolver(radii);
 
   /// A resolver for creating shape borders.
-  late final shape = ShapeResolver(radii);
+  late final shapeResolver = ShapeResolver(radii);
 
   /// A resolver for creating input borders.
   late final inputBorder = InputBorderResolver(radii);
@@ -251,16 +250,23 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
       return this;
     } else {
       return DesignTokens(
-        shadowColor: shadowColor,
-        // boxShadows: boxShadows,
+        shadowColor: Color.lerp(shadowColor, other.shadowColor, t)!,
+        textStyles: textStyles,
+        borderRadii: borderRadii,
+        shapes: shapes,
+        clipBehavior: other.clipBehavior,
+        borderWidths: borderWidths,
         breakpoints: breakpoints,
         motions: motions,
         elevations: elevations,
         formFactor: formFactor,
         iconSizes: iconSizes,
+        layoutGrid: layoutGrid,
+        opacities: opacities,
         radii: radii,
         spacings: spacings,
         textShadows: textShadows,
+        zIndexes: zIndexes,
       );
     }
   }
@@ -268,27 +274,41 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   @override
   DesignTokens copyWith({
     Color? shadowColor,
-    // BoxShadowTokensData? boxShadows,
+    TextStyleTokensData? textStyles,
+    BorderRadiusTokensData? borderRadii,
+    ShapeTokensData? shapes,
+    Clip? clipBehavior,
+    BorderWidthTokensData? borderWidths,
     BreakpointTokensData? breakpoints,
     MotionTokensData? motions,
     ElevationTokensData? elevations,
-    FormFactor? formFactor,
+    MaterialFormFactor? formFactor,
     IconSizeTokensData? iconSizes,
+    LayoutGridTokensData? layoutGrid,
+    OpacityTokensData? opacities,
     RadiusTokensData? radii,
     SpacingTokensData? spacings,
     TextShadowTokensData? textShadows,
+    ZIndexTokensData? zIndexes,
   }) {
     return DesignTokens(
       shadowColor: shadowColor ?? this.shadowColor,
-      // boxShadows: boxShadows ?? this.boxShadows,
+      textStyles: textStyles ?? this.textStyles,
+      borderRadii: borderRadii ?? this.borderRadii,
+      shapes: shapes ?? this.shapes,
+      clipBehavior: clipBehavior ?? this.clipBehavior,
+      borderWidths: borderWidths ?? this.borderWidths,
       breakpoints: breakpoints ?? this.breakpoints,
       motions: motions ?? this.motions,
       elevations: elevations ?? this.elevations,
       formFactor: formFactor ?? this.formFactor,
       iconSizes: iconSizes ?? this.iconSizes,
+      layoutGrid: layoutGrid ?? this.layoutGrid,
+      opacities: opacities ?? this.opacities,
       radii: radii ?? this.radii,
       spacings: spacings ?? this.spacings,
       textShadows: textShadows ?? this.textShadows,
+      zIndexes: zIndexes ?? this.zIndexes,
     );
   }
 
@@ -296,67 +316,75 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is DesignTokens &&
-          // boxShadows == other.boxShadows &&
+          runtimeType == other.runtimeType &&
+          shadowColor == other.shadowColor &&
+          textStyles == other.textStyles &&
+          borderRadii == other.borderRadii &&
+          shapes == other.shapes &&
+          clipBehavior == other.clipBehavior &&
+          borderWidths == other.borderWidths &&
           breakpoints == other.breakpoints &&
           motions == other.motions &&
           elevations == other.elevations &&
           formFactor == other.formFactor &&
           iconSizes == other.iconSizes &&
+          layoutGrid == other.layoutGrid &&
+          opacities == other.opacities &&
           radii == other.radii &&
           spacings == other.spacings &&
           textShadows == other.textShadows &&
-          gap == other.gap &&
-          edgeInsets == other.edgeInsets &&
-          padding == other.padding &&
-          radius == other.radius &&
-          borderRadius == other.borderRadius &&
-          shape == other.shape &&
-          inputBorder == other.inputBorder &&
-          googleFonts == other.googleFonts;
+          zIndexes == other.zIndexes;
 
   @override
   int get hashCode =>
       shadowColor.hashCode ^
-      // boxShadows.hashCode ^
+      textStyles.hashCode ^
+      borderRadii.hashCode ^
+      shapes.hashCode ^
+      clipBehavior.hashCode ^
+      borderWidths.hashCode ^
       breakpoints.hashCode ^
       motions.hashCode ^
       elevations.hashCode ^
       formFactor.hashCode ^
       iconSizes.hashCode ^
+      layoutGrid.hashCode ^
+      opacities.hashCode ^
       radii.hashCode ^
       spacings.hashCode ^
       textShadows.hashCode ^
-      gap.hashCode ^
-      edgeInsets.hashCode ^
-      padding.hashCode ^
-      radius.hashCode ^
-      borderRadius.hashCode ^
-      shape.hashCode ^
-      inputBorder.hashCode ^
-      googleFonts.hashCode;
+      zIndexes.hashCode;
 
   @override
   String toString() =>
       '''
-    DesignTokensTokens(
+    DesignTokens(
       shadowColor: $shadowColor,
+      textStyles: $textStyles,
+      borderRadii: $borderRadii,
+      shapes: $shapes,
+      clipBehavior: $clipBehavior,
+      borderWidths: $borderWidths,
       breakpoints: $breakpoints,
       motions: $motions,
       elevations: $elevations,
       formFactor: $formFactor,
       iconSizes: $iconSizes,
+      layoutGrid: $layoutGrid,
+      opacities: $opacities,
       radii: $radii,
       spacings: $spacings,
       textShadows: $textShadows,
-      gaps: $gap,
+      zIndexes: $zIndexes,
+      googleFonts: $googleFonts,
+      gap: $gap,
       edgeInsets: $edgeInsets,
       padding: $padding,
       radius: $radius,
-      borderRadius: $borderRadius,
-      shape: $shape,
+      borderRadiusResolver: $borderRadius,
+      shapeResolver: $shapeResolver,
       inputBorder: $inputBorder,
-      googleFonts: $googleFonts,
+      elevation: $elevation,
     )
   ''';
-  // boxShadows: $boxShadows,
 }

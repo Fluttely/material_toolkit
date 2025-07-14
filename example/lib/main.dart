@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tokens = DesignTokens(
-      shadowColor: Colors.red, // TODO(Kevin): this is for test porpuses
+      shadowColor: Colors.red, // TODO: this is for test porpuses
     );
     return MaterialApp(
       title: 'Material Toolkit Complete Example',
@@ -39,7 +39,6 @@ class Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Material Design Tokens Example'),
-        elevation: Elevation.level3,
       ),
       body: SingleChildScrollView(
         child: tokens.padding.all(
@@ -83,7 +82,7 @@ class Page extends StatelessWidget {
               ),
               gaps.extraLarge,
               // Geometry
-              // TODO(Kevin): x_border_widths_tokens
+              // TODO: x_border_widths_tokens
               _buildSection(
                 context,
                 'Breakpoint Tokens',
@@ -137,31 +136,6 @@ class Page extends StatelessWidget {
                       'Maximum',
                       tokens.elevation.maximum,
                     ),
-                    _buildElevatedCard(
-                      tokens,
-                      'Level 1',
-                      Elevation.level1,
-                    ),
-                    _buildElevatedCard(
-                      tokens,
-                      'Level 2',
-                      Elevation.level2,
-                    ),
-                    _buildElevatedCard(
-                      tokens,
-                      'Level 3',
-                      Elevation.level3,
-                    ),
-                    _buildElevatedCard(
-                      tokens,
-                      'Level 4',
-                      Elevation.level4,
-                    ),
-                    _buildElevatedCard(
-                      tokens,
-                      'Level 5',
-                      Elevation.level5,
-                    ),
                   ],
                 ),
               ),
@@ -176,9 +150,9 @@ class Page extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Text('Form Factor: ${tokens.formFactor.name}'),
-                      Text('Form Factor: ${FormFactor.small.name}'),
-                      Text('Form Factor: ${FormFactor.medium.name}'),
-                      Text('Form Factor: ${FormFactor.large.name}'),
+                      Text('Form Factor: ${MaterialFormFactor.small.name}'),
+                      Text('Form Factor: ${MaterialFormFactor.medium.name}'),
+                      Text('Form Factor: ${MaterialFormFactor.large.name}'),
                     ],
                   ),
                 ),
@@ -229,7 +203,7 @@ class Page extends StatelessWidget {
                 ),
               ),
               gaps.extraLarge,
-              // TODO(Kevin): x_layout_grid_tokens
+              // TODO: x_layout_grid_tokens
               _buildSection(
                 context,
                 'Radii Tokens + Border Radius Resolver',
@@ -302,7 +276,7 @@ class Page extends StatelessWidget {
                 ),
               ),
               gaps.extraLarge,
-              // TODO(Kevin): x_google_fonts_tokens, rename to x_google_fonts_resolver?
+              // TODO: x_google_fonts_tokens, rename to x_google_fonts_resolver?
               _buildSection(
                 context,
                 'Opacity Tokens',
@@ -363,8 +337,8 @@ class Page extends StatelessWidget {
                 ),
               ),
               gaps.extraLarge,
-              // TODO(Kevin): x_z_indexes_tokens
-              // TODO(Kevin):
+              // TODO: x_z_indexes_tokens
+              // TODO:
 
               /// Resolvers
               // ...

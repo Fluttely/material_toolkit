@@ -2,7 +2,7 @@ part of '../../design_tokens.dart';
 
 /// Additional size constants that complement [MaterialValues].
 
-// TODO(Kevin): create material values for box shadow tokens, opacity tokens, text shadow tokens and z index tokens.
+// TODO: create material values for box shadow tokens, opacity tokens, text shadow tokens and z index tokens.
 abstract final class MaterialExtendedValues {
   /// Random
   static const int zeroInt = 0;

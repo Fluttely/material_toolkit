@@ -20,7 +20,7 @@ class ThemeNotifier extends ChangeNotifier {
   ElevationTokensData elevations = const ElevationTokensData();
 
   /// The form factor.
-  FormFactor formFactor = FormFactor.medium;
+  MaterialFormFactor formFactor = MaterialFormFactor.medium;
 
   /// The icon size tokens.
   IconSizeTokensData iconSizes = const IconSizeTokensData();
@@ -45,20 +45,20 @@ class ThemeNotifier extends ChangeNotifier {
 
   /// Returns the [DesignTokens] created from the current notifier state.
   DesignTokens get tokens => DesignTokens(
-        boxShadows: boxShadows,
-        borderWidths: borderWidths,
-        breakpoints: breakpoints,
-        motions: motions,
-        elevations: elevations,
-        formFactor: formFactor,
-        iconSizes: iconSizes,
-        layoutGrid: layoutGrid,
-        opacities: opacities,
-        radii: radii,
-        spacings: spacings,
-        textShadows: textShadows,
-        zIndexes: zIndexes,
-      );
+    boxShadows: boxShadows,
+    borderWidths: borderWidths,
+    breakpoints: breakpoints,
+    motions: motions,
+    elevations: elevations,
+    formFactor: formFactor,
+    iconSizes: iconSizes,
+    layoutGrid: layoutGrid,
+    opacities: opacities,
+    radii: radii,
+    spacings: spacings,
+    textShadows: textShadows,
+    zIndexes: zIndexes,
+  );
 
   /// Updates the box shadows tokens and notifies listeners.
   void updateBoxShadowsTokens(BoxShadowTokensData newBoxShadows) {
@@ -91,7 +91,7 @@ class ThemeNotifier extends ChangeNotifier {
   }
 
   /// Updates the form factor and notifies listeners.
-  void updateFormFactor(FormFactor newFormFactor) {
+  void updateFormFactor(MaterialFormFactor newFormFactor) {
     formFactor = newFormFactor;
     notifyListeners();
   }
@@ -145,7 +145,7 @@ class ThemeNotifier extends ChangeNotifier {
     breakpoints = const BreakpointTokensData();
     motions = const MotionTokensData();
     elevations = const ElevationTokensData();
-    formFactor = FormFactor.medium;
+    formFactor = MaterialFormFactor.medium;
     iconSizes = const IconSizeTokensData();
     layoutGrid = const LayoutGridTokensData();
     opacities = const OpacityTokensData();

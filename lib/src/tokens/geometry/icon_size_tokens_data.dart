@@ -62,14 +62,14 @@ class IconSizeTokensData extends Equatable {
     double? hero,
     double? jumbo,
     double? giant,
-  }) : small = small ?? IconSize.small,
-       medium = medium ?? IconSize.medium,
-       standard = standard ?? IconSize.standard,
-       large = large ?? IconSize.large,
-       extraLarge = extraLarge ?? IconSize.extraLarge,
-       hero = hero ?? IconSize.hero,
-       jumbo = jumbo ?? IconSize.jumbo,
-       giant = giant ?? IconSize.giant;
+  }) : small = small ?? MaterialIconSize.small,
+       medium = medium ?? MaterialIconSize.medium,
+       standard = standard ?? MaterialIconSize.standard,
+       large = large ?? MaterialIconSize.large,
+       extraLarge = extraLarge ?? MaterialIconSize.extraLarge,
+       hero = hero ?? MaterialIconSize.hero,
+       jumbo = jumbo ?? MaterialIconSize.jumbo,
+       giant = giant ?? MaterialIconSize.giant;
 
   /// Creates icon size tokens from a map configuration.
   factory IconSizeTokensData.fromMap(Map<String, dynamic> map) {

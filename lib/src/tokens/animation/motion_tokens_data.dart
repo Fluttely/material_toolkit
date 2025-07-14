@@ -41,13 +41,13 @@ class MotionTokensData extends Equatable {
     Duration? complex,
     Duration? pageTransition,
   }) : areAnimationEnabled = areAnimationEnabled ?? true,
-       none = Motion.none,
-       microInteraction = microInteraction ?? Motion.microInteraction,
-       quick = quick ?? Motion.smallElement,
-       regular = regular ?? Motion.mediumElement,
-       slow = slow ?? Motion.largeElement,
-       complex = complex ?? Motion.complexTransition,
-       pageTransition = pageTransition ?? Motion.pageTransition;
+       none = MaterialMotion.none,
+       microInteraction = microInteraction ?? MaterialMotion.microInteraction,
+       quick = quick ?? MaterialMotion.smallElement,
+       regular = regular ?? MaterialMotion.mediumElement,
+       slow = slow ?? MaterialMotion.largeElement,
+       complex = complex ?? MaterialMotion.complexTransition,
+       pageTransition = pageTransition ?? MaterialMotion.pageTransition;
 
   factory MotionTokensData.fromMap(Map<String, dynamic> map) {
     Duration? d(String key) {

@@ -8,6 +8,7 @@ class ToolkitMaterial extends StatelessWidget {
     this.shadowColor,
     this.surfaceTintColor,
     this.borderOnForeground = true,
+    this.clipBehavior = Clip.none,
     this.animationDuration,
     this.child,
     super.key,
@@ -22,7 +23,7 @@ class ToolkitMaterial extends StatelessWidget {
   // BorderRadiusGeometry? borderRadius,
   // ShapeBorder? shape,
   final bool borderOnForeground;
-  // Clip clipBehavior = Clip.none,
+  final Clip clipBehavior;
   final MotionToken? animationDuration;
 
   final Widget? child;
@@ -45,8 +46,7 @@ class ToolkitMaterial extends StatelessWidget {
       // BorderRadiusGeometry? borderRadius,
       // ShapeBorder? shape,
       borderOnForeground: borderOnForeground,
-      // Clip clipBehavior = Clip.none,
-      // Duration animationDuration = kThemeChangeDuration,
+      clipBehavior: clipBehavior,
       animationDuration:
           animationDuration?.toDuration(motions) ?? kThemeChangeDuration,
       child: child,

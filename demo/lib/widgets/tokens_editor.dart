@@ -193,7 +193,7 @@ class _TokensEditorState extends State<TokensEditor> {
                   themeNotifier.updateTextShadowsTokens(
                     TextShadowTokensData(
                       small:
-                          small, // .copyWith(blurRadius: v), // TODO(Kevin): create copyWith feature
+                          small, // .copyWith(blurRadius: v), // TODO: create copyWith feature
                       medium: themeNotifier.textShadows.medium,
                       large: themeNotifier.textShadows.large,
                     ),
@@ -202,14 +202,14 @@ class _TokensEditorState extends State<TokensEditor> {
               },
             ),
             gaps.small,
-            DropdownButton<FormFactor>(
+            DropdownButton<MaterialFormFactor>(
               value: themeNotifier.formFactor,
-  onChanged: (value) {
+              onChanged: (value) {
                 if (value != null) {
                   themeNotifier.updateFormFactor(value);
                 }
               },
-              items: FormFactor.values
+              items: MaterialFormFactor.values
                   .map(
                     (e) => DropdownMenuItem(
                       value: e,
