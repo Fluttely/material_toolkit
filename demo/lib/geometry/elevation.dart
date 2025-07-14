@@ -61,32 +61,32 @@ class ElevationGroup extends StatelessWidget {
                 ),
                 const ElevationComponent(
                   description: 'Level 0\ndp',
-                  elevation: MaterialElevation.level0,
+                  elevation: Elevation.level0,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: MaterialElevation.level1,
+                  elevation: Elevation.level1,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: MaterialElevation.level2,
+                  elevation: Elevation.level2,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: MaterialElevation.level3,
+                  elevation: Elevation.level3,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 4\ndp',
-                  elevation: MaterialElevation.level4,
+                  elevation: Elevation.level4,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: MaterialElevation.level5,
+                  elevation: Elevation.level5,
                   isSurface: true,
                 ),
               ],
@@ -101,19 +101,19 @@ class ElevationGroup extends StatelessWidget {
               children: [
                 ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: MaterialElevation.level1,
+                  elevation: Elevation.level1,
                   isSurface: true,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: MaterialElevation.level2,
+                  elevation: Elevation.level2,
                   isSurface: true,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: MaterialElevation.level3,
+                  elevation: Elevation.level3,
                   isSurface: true,
                   isShadow: true,
                 ),
@@ -125,7 +125,7 @@ class ElevationGroup extends StatelessWidget {
                 // ),
                 ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: MaterialElevation.level5,
+                  elevation: Elevation.level5,
                   isSurface: true,
                   isShadow: true,
                 ),
@@ -138,17 +138,17 @@ class ElevationGroup extends StatelessWidget {
               children: [
                 ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: MaterialElevation.level1,
+                  elevation: Elevation.level1,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: MaterialElevation.level2,
+                  elevation: Elevation.level2,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: MaterialElevation.level3,
+                  elevation: Elevation.level3,
                   isShadow: true,
                 ),
                 // ElevationComponent(
@@ -158,7 +158,7 @@ class ElevationGroup extends StatelessWidget {
                 // ),
                 ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: MaterialElevation.level5,
+                  elevation: Elevation.level5,
                   isShadow: true,
                 ),
               ],

@@ -2,6 +2,7 @@ part of '../../design_tokens.dart';
 
 /// Semantic radius values for Material Design 3.
 abstract final class MaterialRadius {
+  // TODO(Kevin): do not use this, use shapes only as mention in material design?
   static const double extraSmall = 4;
   static const double small = 8;
   static const double semiSmall = 12;
@@ -26,15 +27,15 @@ enum RadiusToken {
 
   double toDouble(RadiusTokensData tokens) {
     return switch (this) {
-      RadiusToken.none => tokens.none,
-      RadiusToken.extraSmall => tokens.extraSmall,
-      RadiusToken.small => tokens.small,
-      RadiusToken.semiSmall => tokens.semiSmall,
-      RadiusToken.medium => tokens.medium,
-      RadiusToken.semiLarge => tokens.semiLarge,
-      RadiusToken.large => tokens.large,
-      RadiusToken.extraLarge => tokens.extraLarge,
-      RadiusToken.superLarge => tokens.superLarge,
+      none => tokens.none,
+      extraSmall => tokens.extraSmall,
+      small => tokens.small,
+      semiSmall => tokens.semiSmall,
+      medium => tokens.medium,
+      semiLarge => tokens.semiLarge,
+      large => tokens.large,
+      extraLarge => tokens.extraLarge,
+      superLarge => tokens.superLarge,
     };
   }
 }
@@ -50,7 +51,7 @@ class RadiusTokensData extends Equatable {
     double? large,
     double? extraLarge,
     double? superLarge,
-  }) : none = MaterialSpacing.none,
+  }) : none = Spacing.none,
        extraSmall = extraSmall ?? MaterialRadius.extraSmall,
        small = small ?? MaterialRadius.small,
        semiSmall = semiSmall ?? MaterialRadius.semiSmall,

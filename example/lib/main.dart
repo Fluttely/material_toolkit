@@ -39,7 +39,7 @@ class Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Material Design Tokens Example'),
-        elevation: MaterialElevation.level3,
+        elevation: Elevation.level3,
       ),
       body: SingleChildScrollView(
         child: tokens.padding.all(
@@ -140,27 +140,27 @@ class Page extends StatelessWidget {
                     _buildElevatedCard(
                       tokens,
                       'Level 1',
-                      MaterialElevation.level1,
+                      Elevation.level1,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 2',
-                      MaterialElevation.level2,
+                      Elevation.level2,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 3',
-                      MaterialElevation.level3,
+                      Elevation.level3,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 4',
-                      MaterialElevation.level4,
+                      Elevation.level4,
                     ),
                     _buildElevatedCard(
                       tokens,
                       'Level 5',
-                      MaterialElevation.level5,
+                      Elevation.level5,
                     ),
                   ],
                 ),
@@ -248,11 +248,11 @@ class Page extends StatelessWidget {
               //   'Spacing Tokens + Gaps Resolver',
               //   Column(
               //     children: [
-              //       _buildSpacingDemo(tokens, 'Small', MaterialSpacings.small),
+              //       _buildSpacingDemo(tokens, 'Small', Spacing.small),
               //       gaps.medium,
-              //       _buildSpacingDemo(tokens, 'Medium', MaterialSpacings.medium),
+              //       _buildSpacingDemo(tokens, 'Medium', Spacing.medium),
               //       gaps.medium,
-              //       _buildSpacingDemo(tokens, 'Large', MaterialSpacings.large),
+              //       _buildSpacingDemo(tokens, 'Large', Spacing.large),
               //     ],
               //   ),
               // ),
@@ -407,9 +407,9 @@ class Page extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
-              ),
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
         ),
         gaps.medium,
         child,

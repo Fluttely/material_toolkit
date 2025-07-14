@@ -8,7 +8,7 @@ part of '../../material.dart';
 /// dp values.
 ///
 /// Reference: https://m3.material.io/styles/elevation/tokens
-abstract final class MaterialElevation {
+abstract final class Elevation {
   /// No elevation (0dp) - Used for surfaces at the base level.
   static const double level0 = 0;
 
@@ -29,7 +29,7 @@ abstract final class MaterialElevation {
 }
 
 /// A utility class to map elevation values to [BoxShadow]s.
-class ElevationMapper {
+class ElevationHelper {
   /// Generates a Material Design-like shadow list algorithmically for any
   /// given elevation `value`.
   ///

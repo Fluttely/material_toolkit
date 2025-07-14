@@ -5,7 +5,10 @@
 library;
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:material_toolkit/material_toolkit.dart';
 import 'package:universal_io/io.dart' as io_platform;
 
-part 'adaptive_widget.dart';
+part 'toolkit_adaptive_widget.dart';
+part 'toolkit_material.dart';
+part 'toolkit_padding.dart';

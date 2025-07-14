@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit/src/material/material.dart';
 
 /// A class that translates an [ElevationToken] into concrete shadow values
 /// for Flutter.
@@ -9,8 +8,8 @@ class ElevationResolver {
   const ElevationResolver({
     required Color shadowColor,
     required ElevationTokensData elevations,
-  })  : _shadowColor = shadowColor,
-        _elevations = elevations;
+  }) : _shadowColor = shadowColor,
+       _elevations = elevations;
 
   /// The base color for the shadows.
   /// This usually comes from your [ColorScheme].
@@ -39,6 +38,6 @@ class ElevationResolver {
   /// This is the most robust and recommended way to apply elevation.
   List<BoxShadow> toBoxShadow(ElevationToken elevation) {
     final value = elevation.toDouble(_elevations);
-    return ElevationMapper.toBoxShadow(value, shadowColor: _shadowColor);
+    return ElevationHelper.toBoxShadow(value, shadowColor: _shadowColor);
   }
 }

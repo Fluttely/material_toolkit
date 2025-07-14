@@ -6,8 +6,9 @@ part of 'widgets.dart';
 /// target platform. When a platform override is not provided the
 /// [standardBuild] implementation is used instead.
 
-abstract class AdaptiveWidget extends StatefulWidget {
-  const AdaptiveWidget({super.key});
+abstract class ToolkitAdaptiveWidget extends StatefulWidget {
+  // TODO(Kevin): refactor to implement the oficial materia design documentation
+  const ToolkitAdaptiveWidget({super.key});
 
   Widget standardBuild(BuildContext context);
   Widget? androidBuild(BuildContext context) => null;

@@ -1,6 +1,6 @@
 part of '../../design_tokens.dart';
 
-abstract final class MaterialBreakpoint {
+abstract final class Breakpoint {
   static const mobile = DesignBreakpoint(
     maxWidth: 599,
   );
@@ -26,10 +26,10 @@ class BreakpointTokensData extends Equatable {
     DesignBreakpoint? tablet,
     DesignBreakpoint? desktop,
     DesignBreakpoint? infinity,
-  }) : mobile = mobile ?? MaterialBreakpoint.mobile,
-       tablet = tablet ?? MaterialBreakpoint.tablet,
-       desktop = desktop ?? MaterialBreakpoint.desktop,
-       infinity = infinity ?? MaterialBreakpoint.infinity;
+  }) : mobile = mobile ?? Breakpoint.mobile,
+       tablet = tablet ?? Breakpoint.tablet,
+       desktop = desktop ?? Breakpoint.desktop,
+       infinity = infinity ?? Breakpoint.infinity;
 
   factory BreakpointTokensData.fromMap(Map<String, dynamic> map) {
     DesignBreakpoint? parseBreakpoint(String key) {

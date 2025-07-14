@@ -35,12 +35,12 @@ enum ElevationToken {
   /// shadow implementation.
   double toDouble(ElevationTokensData elevations) {
     return switch (this) {
-      ElevationToken.none => elevations.none,
-      ElevationToken.small => elevations.small,
-      ElevationToken.medium => elevations.medium,
-      ElevationToken.large => elevations.large,
-      ElevationToken.extraLarge => elevations.extraLarge,
-      ElevationToken.maximum => elevations.maximum,
+      none => elevations.none,
+      small => elevations.small,
+      medium => elevations.medium,
+      large => elevations.large,
+      extraLarge => elevations.extraLarge,
+      maximum => elevations.maximum,
     };
   }
 
@@ -51,7 +51,7 @@ enum ElevationToken {
     Color shadowColor = Colors.black,
   }) {
     final value = toDouble(elevations);
-    return ElevationMapper.toBoxShadow(value, shadowColor: shadowColor);
+    return ElevationHelper.toBoxShadow(value, shadowColor: shadowColor);
   }
 }
 
@@ -124,16 +124,17 @@ class ElevationTokensData extends Equatable {
 
   @override
   List<Object?> get props => [
-        none,
-        small,
-        medium,
-        large,
-        extraLarge,
-        maximum,
-      ];
+    none,
+    small,
+    medium,
+    large,
+    extraLarge,
+    maximum,
+  ];
 
   @override
-  String toString() => '''
+  String toString() =>
+      '''
 ElevationTokens(
   none: ${none}dp,
   small: ${small}dp,

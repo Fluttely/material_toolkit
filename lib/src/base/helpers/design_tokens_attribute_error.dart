@@ -9,13 +9,13 @@ enum DesignTokensAttributeError {
     required String attribute,
     required String location,
   }) {
-    switch (this) {
-      case DesignTokensAttributeError.unsupportedError:
-        return '''
+    return switch (this) {
+      DesignTokensAttributeError.unsupportedError =>
+        '''
         Access to $attribute has been intentionally blocked in tokens.$location. 
         This property should not be used or accessed directly, as its usage has been deprecated or is reserved for internal purposes only. 
         Please review your implementation to avoid relying on this property and ensure your application's compatibility with future changes.
-        ''';
-    }
+        ''',
+    };
   }
 }

@@ -1,4 +1,4 @@
-part of '../../design_tokens.dart';
+part of '../../material.dart';
 
 /// Identifiers for device form factors.
 
