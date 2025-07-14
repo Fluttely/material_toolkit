@@ -6,7 +6,9 @@ import 'package:material_toolkit_demo/widgets/group_item_subtitle.dart';
 import 'package:material_toolkit_demo/widgets/group_item_title.dart';
 import 'package:material_toolkit_demo/widgets/info_component.dart';
 
+/// A widget that displays a group of border radius components.
 class BorderRadiusAllGroup extends StatelessWidget {
+  /// Creates a [BorderRadiusAllGroup].
   const BorderRadiusAllGroup({super.key});
 
   @override
@@ -35,8 +37,10 @@ class BorderRadiusAllGroup extends StatelessWidget {
                 gaps.small,
                 BorderRadiusComponent(
                   type: RadiusToken.extraSmall,
-                  info:
-                      'borderRadius.all(DesignRadius.circular(MaterialRadius.extraSmall))',
+                  info: '''
+borderRadius.all(
+  DesignRadius.circular(MaterialRadius.extraSmall),
+)''',
                   borderRadius: borderRadius.all(
                     const DesignRadius.circular(RadiusToken.extraSmall),
                   ),
@@ -54,8 +58,11 @@ class BorderRadiusAllGroup extends StatelessWidget {
               children: [
                 BorderRadiusComponent(
                   type: RadiusToken.semiSmall,
-                  info:
-                      'borderRadius.vertical(top: DesignRadius.circular(MaterialRadius.semiSmall), bottom: DesignRadius.circular(MaterialRadius.semiSmall))',
+                  info: '''
+borderRadius.vertical(
+  top: DesignRadius.circular(MaterialRadius.semiSmall),
+  bottom: DesignRadius.circular(MaterialRadius.semiSmall),
+)''',
                   borderRadius: borderRadius.vertical(
                     top: const DesignRadius.circular(RadiusToken.semiSmall),
                     bottom: const DesignRadius.circular(
@@ -66,8 +73,11 @@ class BorderRadiusAllGroup extends StatelessWidget {
                 gaps.small,
                 BorderRadiusComponent(
                   type: RadiusToken.medium,
-                  info:
-                      'borderRadius.horizontal(left: DesignRadius.circular(MaterialRadius.medium), right: DesignRadius.circular(MaterialRadius.medium))',
+                  info: '''
+borderRadius.horizontal(
+  left: DesignRadius.circular(MaterialRadius.medium),
+  right: DesignRadius.circular(MaterialRadius.medium),
+)''',
                   borderRadius: borderRadius.horizontal(
                     left: const DesignRadius.circular(RadiusToken.medium),
                     right: const DesignRadius.circular(RadiusToken.medium),
@@ -76,8 +86,13 @@ class BorderRadiusAllGroup extends StatelessWidget {
                 gaps.small,
                 BorderRadiusComponent(
                   type: RadiusToken.semiLarge,
-                  info:
-                      'onlborderRadiusy(topLeft: DesignRadius.circular(MaterialRadius.semiLarge),topRight: DesignRadius.circular(MaterialRadius.semiLarge),bottomLeft: DesignRadius.circular(MaterialRadius.semiLarge),bottomRight: DesignRadius.circular(MaterialRadius.semiLarge))',
+                  info: '''
+borderRadius.only(
+  topLeft: DesignRadius.circular(MaterialRadius.semiLarge),
+  topRight: DesignRadius.circular(MaterialRadius.semiLarge),
+  bottomLeft: DesignRadius.circular(MaterialRadius.semiLarge),
+  bottomRight: DesignRadius.circular(MaterialRadius.semiLarge),
+)''',
                   borderRadius: borderRadius.only(
                     topLeft: const DesignRadius.circular(
                       RadiusToken.semiLarge,
@@ -128,9 +143,12 @@ class BorderRadiusAllGroup extends StatelessWidget {
   }
 }
 
+/// A widget that displays a circular border radius component.
 class BorderRadiusCircularComponent extends StatelessWidget {
+  /// Creates a [BorderRadiusCircularComponent].
   const BorderRadiusCircularComponent({required this.radius, super.key});
 
+  /// The radius token to use.
   final RadiusToken radius;
 
   @override
@@ -148,15 +166,23 @@ class BorderRadiusCircularComponent extends StatelessWidget {
   }
 }
 
+/// A widget that displays a border radius component.
 class BorderRadiusComponent extends StatelessWidget {
+  /// Creates a [BorderRadiusComponent].
   const BorderRadiusComponent({
     required this.type,
     required this.info,
     required this.borderRadius,
     super.key,
   });
+
+  /// The type of the radius token.
   final RadiusToken type;
+
+  /// The information text to display.
   final String info;
+
+  /// The border radius to apply.
   final BorderRadius borderRadius;
 
   @override

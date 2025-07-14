@@ -7,6 +7,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 import 'package:material_toolkit/src/base/resolvers/elevation_resolver.dart';
+import 'package:material_toolkit/src/material/material.dart';
 
 part 'tokens/animation/motion_tokens_data.dart';
 part 'tokens/core/material_extended_values.dart';
@@ -24,7 +25,9 @@ part 'tokens/painting/opacity_tokens.dart';
 part 'tokens/painting/text_shadow_tokens.dart';
 part 'tokens/painting/z_index_tokens.dart';
 
+/// An extension on [BuildContext] to easily access the [DesignTokens].
 extension DesignTokensContextExtension on BuildContext {
+  /// Returns the [DesignTokens] from the nearest [Theme].
   DesignTokens get tokens {
     final tokens = Theme.of(this).extension<DesignTokens>();
     assert(tokens != null, 'DesignTokens not found in Theme extensions');
@@ -32,7 +35,9 @@ extension DesignTokensContextExtension on BuildContext {
   }
 }
 
+/// An extension on [ThemeData] to easily access the [DesignTokens].
 extension DesignTokensThemeExtension on ThemeData {
+  /// Returns the [DesignTokens] from the theme extensions.
   DesignTokens get tokens {
     final tokens = extension<DesignTokens>();
     assert(tokens != null, 'DesignTokens not found in Theme extensions');
@@ -40,13 +45,19 @@ extension DesignTokensThemeExtension on ThemeData {
   }
 }
 
+/// An [InheritedWidget] that provides [DesignTokens] to its descendants.
 class DesignProvider extends InheritedWidget {
+  /// Creates a [DesignProvider].
   const DesignProvider({
     required super.child,
     required this.tokens,
     super.key,
   });
 
+  /// The [DesignTokens] provided by this widget.
+  final DesignTokens tokens;
+
+  /// Returns the [DesignTokens] from the nearest [DesignProvider] ancestor.
   static DesignTokens of(BuildContext context) {
     final tokens = context
         .dependOnInheritedWidgetOfExactType<DesignProvider>()
@@ -57,18 +68,24 @@ class DesignProvider extends InheritedWidget {
     return tokens!;
   }
 
+  /// Returns the [DesignTokens] from the nearest [DesignProvider] ancestor,
+  /// or null if not found.
   static DesignTokens? maybeOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<DesignProvider>()?.tokens;
   }
-
-  final DesignTokens tokens;
 
   @override
   bool updateShouldNotify(DesignProvider oldWidget) =>
       tokens != oldWidget.tokens;
 }
 
+/// A [ThemeExtension] that holds all the design tokens for the application.
+///
+/// This class encapsulates the design system values, such as colors, spacing,
+/// typography, and more. It allows for a consistent and centralized way to
+/// manage the visual appearance of the application.
 class DesignTokens extends ThemeExtension<DesignTokens> {
+  /// Creates a new instance of [DesignTokens].
   DesignTokens({
     required this.shadowColor,
     // this.boxShadows = const BoxShadowTokensData(),
@@ -86,6 +103,10 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
     this.zIndexes = const ZIndexTokensData(),
   }) : googleFonts = const GoogleFontsResolver();
 
+  /// Creates a [DesignTokens] instance with Material Design defaults.
+  ///
+  /// An optional [overrides] map can be provided to customize the default
+  /// token values.
   factory DesignTokens.material({Map<String, dynamic>? overrides}) {
     var tokens = DesignTokens(
       shadowColor: Colors.black,
@@ -142,42 +163,82 @@ class DesignTokens extends ThemeExtension<DesignTokens> {
     return tokens;
   }
 
+  /// Creates a [DesignTokens] instance from a map.
   factory DesignTokens.fromMap(Map<String, dynamic> map) {
     return DesignTokens.material(overrides: map);
   }
 
+  /// Creates a [DesignTokens] instance from a JSON string.
   factory DesignTokens.fromJson(String json) {
     return DesignTokens.fromMap(jsonDecode(json) as Map<String, dynamic>);
   }
 
+  /// The color used for shadows.
   final Color shadowColor;
+
   // final BoxShadowTokensData boxShadows;
+
+  /// Defines the border widths used throughout the application.
   final BorderWidthTokensData borderWidths;
+
+  /// Defines the breakpoints for responsive layouts.
   final BreakpointTokensData breakpoints;
+
+  /// Defines the motion and animation tokens.
   final MotionTokensData motions;
+
+  /// Defines the elevation levels and their corresponding shadows.
   final ElevationTokensData elevations;
+
+  /// The current form factor of the device.
   final FormFactor formFactor;
+
+  /// Defines the sizes for icons.
   final IconSizeTokensData iconSizes;
+
+  /// Defines the layout grid configuration.
   final LayoutGridTokensData layoutGrid;
+
+  /// Defines the opacity levels.
   final OpacityTokensData opacities;
+
+  /// Defines the corner radii.
   final RadiusTokensData radii;
+
+  /// Defines the spacing values.
   final SpacingTokensData spacings;
+
+  /// Defines the text shadow styles.
   final TextShadowTokensData textShadows;
+
+  /// Defines the z-index values for stacking elements.
   final ZIndexTokensData zIndexes;
+
+  /// A resolver for Google Fonts.
   final GoogleFontsResolver googleFonts;
 
-  /// Spacings
+  /// A resolver for creating gaps and spacing.
   late final gap = GapResolver(spacings);
+
+  /// A resolver for creating [EdgeInsets].
   late final edgeInsets = EdgeInsetsResolver(spacings);
+
+  /// A resolver for creating padding [EdgeInsets].
   late final padding = PaddingResolver(edgeInsets);
 
-  /// Radii
+  /// A resolver for creating [Radius] objects.
   late final radius = RadiusResolver(radii);
+
+  /// A resolver for creating [BorderRadius] objects.
   late final borderRadius = BorderRadiusResolver(radii);
+
+  /// A resolver for creating shape borders.
   late final shape = ShapeResolver(radii);
+
+  /// A resolver for creating input borders.
   late final inputBorder = InputBorderResolver(radii);
 
-  /// Elevation
+  /// A resolver for creating elevation effects.
   late final elevation = ElevationResolver(
     shadowColor: shadowColor,
     elevations: elevations,

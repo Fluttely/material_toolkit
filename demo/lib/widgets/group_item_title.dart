@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
+/// A widget that displays a title for a group of items.
 class GroupItemTitle extends StatelessWidget {
+  /// The title to display.
   final String title;
 
+  /// Creates a [GroupItemTitle].
   const GroupItemTitle({
     super.key,
     required this.title,

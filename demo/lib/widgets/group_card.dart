@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
+/// A card that displays a group of widgets with a title.
 class GroupCard extends StatelessWidget {
+  /// Creates a [GroupCard].
   const GroupCard({
     required this.title,
     required this.children,
     super.key,
   });
+
+  /// The title of the card.
   final String title;
+
+  /// The widgets to display in the card.
   final List<Widget> children;
 
   @override

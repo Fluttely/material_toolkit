@@ -4,7 +4,9 @@ import 'package:material_toolkit_demo/widgets/group_item_container.dart';
 import 'package:material_toolkit_demo/widgets/group_item_row.dart';
 import 'package:material_toolkit_demo/widgets/group_item_title.dart';
 
+/// A widget that displays a group of border radius components.
 class BorderRadiusGroup extends StatelessWidget {
+  /// Creates a [BorderRadiusGroup].
   const BorderRadiusGroup({super.key});
 
   @override
@@ -91,10 +93,15 @@ class BorderRadiusGroup extends StatelessWidget {
   }
 }
 
+/// A widget that displays a border radius component.
 class BorderRadiusComponent extends StatelessWidget {
+  /// The description of the border radius.
   final String description;
+
+  /// The border radius to apply.
   final BorderRadius borderRadius;
 
+  /// Creates a [BorderRadiusComponent].
   const BorderRadiusComponent({
     super.key,
     required this.description,

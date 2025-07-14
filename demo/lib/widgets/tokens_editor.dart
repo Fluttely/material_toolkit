@@ -4,9 +4,13 @@ import 'package:material_toolkit_demo/notifiers/theme_notifier.dart';
 import 'package:material_toolkit_demo/widgets/number_field.dart';
 import 'package:provider/provider.dart';
 
-/// Widget to edit [DesignTokens] values without losing the focus of the
-/// text fields while typing.
+/// A widget for editing [DesignTokens] values in real-time.
+///
+/// This widget provides a set of text fields and other controls to modify
+/// the design tokens, and it uses a [ThemeNotifier] to apply the changes
+/// to the application's theme.
 class TokensEditor extends StatefulWidget {
+  /// Creates a [TokensEditor].
   const TokensEditor({super.key});
 
   @override
@@ -17,7 +21,7 @@ class _TokensEditorState extends State<TokensEditor> {
   late final TextEditingController spacingsSmallController;
   late final TextEditingController iconSmallController;
   late final TextEditingController elevationOneController;
-  late final TextEditingController durationSlowController;
+  late final TextEditingController motionSlowController;
   late final TextEditingController breakpointMobileMaxController;
   late final TextEditingController boxShadowBlurController;
   late final TextEditingController textShadowBlurController;
@@ -54,7 +58,7 @@ class _TokensEditorState extends State<TokensEditor> {
     spacingsSmallController.dispose();
     iconSmallController.dispose();
     elevationOneController.dispose();
-    durationSlowController.dispose();
+    motionSlowController.dispose();
     breakpointMobileMaxController.dispose();
     boxShadowBlurController.dispose();
     textShadowBlurController.dispose();
@@ -123,7 +127,7 @@ class _TokensEditorState extends State<TokensEditor> {
             gaps.small,
             NumberField(
               label: 'Duration slow (ms)',
-              controller: durationSlowController,
+              controller: motionSlowController,
               onChanged: (value) {
                 final v = int.tryParse(value);
                 if (v != null) {
@@ -200,7 +204,7 @@ class _TokensEditorState extends State<TokensEditor> {
             gaps.small,
             DropdownButton<FormFactor>(
               value: themeNotifier.formFactor,
-              onChanged: (value) {
+  onChanged: (value) {
                 if (value != null) {
                   themeNotifier.updateFormFactor(value);
                 }

@@ -1,31 +1,44 @@
-// lib/src/resolvers/elevation_resolver.dart
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_toolkit/src/material/material.dart';
 
-/// Uma classe que traduz um ElevationToken em valores concretos de sombra para o Flutter.
+/// A class that translates an [ElevationToken] into concrete shadow values
+/// for Flutter.
 class ElevationResolver {
+  /// Creates an [ElevationResolver].
   const ElevationResolver({
     required Color shadowColor,
     required ElevationTokensData elevations,
-  }) : _shadowColor = shadowColor,
-       _elevations = elevations;
+  })  : _shadowColor = shadowColor,
+        _elevations = elevations;
 
-  /// A cor base para as sombras. Geralmente vem do seu ColorScheme.
+  /// The base color for the shadows.
+  /// This usually comes from your [ColorScheme].
   final Color _shadowColor;
   final ElevationTokensData _elevations;
 
-  /// Semantic gap getters
+  /// The elevation level for no elevation.
   double get none => _elevations.none;
+
+  /// The elevation level for small elevation.
   double get small => _elevations.small;
+
+  /// The elevation level for medium elevation.
   double get medium => _elevations.medium;
+
+  /// The elevation level for large elevation.
   double get large => _elevations.large;
+
+  /// The elevation level for extra-large elevation.
   double get extraLarge => _elevations.extraLarge;
+
+  /// The elevation level for maximum elevation.
   double get maximum => _elevations.maximum;
 
-  /// Retorna a lista de BoxShadow correspondente a um token de elevação.
-  /// Esta é a forma mais robusta e recomendada de aplicar elevação.
+  /// Returns the list of [BoxShadow] corresponding to an elevation token.
+  /// This is the most robust and recommended way to apply elevation.
   List<BoxShadow> toBoxShadow(ElevationToken elevation) {
     final value = elevation.toDouble(_elevations);
-    return ElevationTokensData.toBoxShadow(value, shadowColor: _shadowColor);
+    return ElevationMapper.toBoxShadow(value, shadowColor: _shadowColor);
   }
 }

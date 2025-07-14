@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 import 'package:material_toolkit_demo/widgets/group_item_container.dart';
 
+/// A widget that displays a group of elevation components.
 class ElevationGroup extends StatelessWidget {
+  /// Creates an [ElevationGroup].
   const ElevationGroup({super.key});
 
   @override
@@ -59,32 +61,32 @@ class ElevationGroup extends StatelessWidget {
                 ),
                 const ElevationComponent(
                   description: 'Level 0\ndp',
-                  elevation: ElevationTokensData.level0,
+                  elevation: MaterialElevation.level0,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: ElevationTokensData.level1,
+                  elevation: MaterialElevation.level1,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: ElevationTokensData.level2,
+                  elevation: MaterialElevation.level2,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: ElevationTokensData.level3,
+                  elevation: MaterialElevation.level3,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 4\ndp',
-                  elevation: ElevationTokensData.level4,
+                  elevation: MaterialElevation.level4,
                   isSurface: true,
                 ),
                 const ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: ElevationTokensData.level5,
+                  elevation: MaterialElevation.level5,
                   isSurface: true,
                 ),
               ],
@@ -99,19 +101,19 @@ class ElevationGroup extends StatelessWidget {
               children: [
                 ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: ElevationTokensData.level1,
+                  elevation: MaterialElevation.level1,
                   isSurface: true,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: ElevationTokensData.level2,
+                  elevation: MaterialElevation.level2,
                   isSurface: true,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: ElevationTokensData.level3,
+                  elevation: MaterialElevation.level3,
                   isSurface: true,
                   isShadow: true,
                 ),
@@ -123,7 +125,7 @@ class ElevationGroup extends StatelessWidget {
                 // ),
                 ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: ElevationTokensData.level5,
+                  elevation: MaterialElevation.level5,
                   isSurface: true,
                   isShadow: true,
                 ),
@@ -136,17 +138,17 @@ class ElevationGroup extends StatelessWidget {
               children: [
                 ElevationComponent(
                   description: 'Level 1\ndp',
-                  elevation: ElevationTokensData.level1,
+                  elevation: MaterialElevation.level1,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 2\ndp',
-                  elevation: ElevationTokensData.level2,
+                  elevation: MaterialElevation.level2,
                   isShadow: true,
                 ),
                 ElevationComponent(
                   description: 'Level 3\ndp',
-                  elevation: ElevationTokensData.level3,
+                  elevation: MaterialElevation.level3,
                   isShadow: true,
                 ),
                 // ElevationComponent(
@@ -156,7 +158,7 @@ class ElevationGroup extends StatelessWidget {
                 // ),
                 ElevationComponent(
                   description: 'Level 5\ndp',
-                  elevation: ElevationTokensData.level5,
+                  elevation: MaterialElevation.level5,
                   isShadow: true,
                 ),
               ],
@@ -168,7 +170,9 @@ class ElevationGroup extends StatelessWidget {
   }
 }
 
+/// A widget that displays an elevation component.
 class ElevationComponent extends StatelessWidget {
+  /// Creates an [ElevationComponent].
   const ElevationComponent({
     required this.description,
     required this.elevation,
@@ -176,9 +180,17 @@ class ElevationComponent extends StatelessWidget {
     this.isSurface = false,
     this.isShadow = false,
   });
+
+  /// The description of the elevation.
   final String description;
+
+  /// The elevation value.
   final double elevation;
+
+  /// Whether to apply a surface tint color.
   final bool isSurface;
+
+  /// Whether to apply a shadow color.
   final bool isShadow;
 
   @override

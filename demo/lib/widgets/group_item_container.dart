@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:material_toolkit/material_toolkit.dart';
 
+/// A container for a group of items.
 class GroupItemContainer extends StatelessWidget {
+  /// Creates a [GroupItemContainer].
   const GroupItemContainer({
     required this.children,
     super.key,
   });
 
+  /// The widgets to display in the container.
   final List<Widget> children;
 
   @override

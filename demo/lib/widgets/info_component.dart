@@ -1,9 +1,11 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+/// A widget that displays an info icon with a tooltip.
 class InfoComponent extends StatelessWidget {
+  /// The information to display in the tooltip.
   final String info;
 
+  /// Creates an [InfoComponent].
   const InfoComponent({
     super.key,
     required this.info,

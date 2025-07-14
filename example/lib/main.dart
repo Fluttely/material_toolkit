@@ -5,7 +5,9 @@ void main() {
   runApp(const App());
 }
 
+/// The main application widget.
 class App extends StatelessWidget {
+  /// Creates an [App].
   const App({super.key});
 
   @override
@@ -24,7 +26,9 @@ class App extends StatelessWidget {
   }
 }
 
+/// The main page of the example application.
 class Page extends StatelessWidget {
+  /// Creates a [Page].
   const Page({super.key});
 
   @override
@@ -403,9 +407,9 @@ class Page extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
-          ),
+                fontWeight: FontWeight.bold,
+                color: Colors.deepPurple,
+              ),
         ),
         gaps.medium,
         child,
@@ -531,7 +535,9 @@ class Page extends StatelessWidget {
   }
 }
 
+/// A widget that demonstrates an animated container.
 class AnimatedContainerDemo extends StatefulWidget {
+  /// Creates an [AnimatedContainerDemo].
   const AnimatedContainerDemo({
     required this.label,
     required this.duration,
@@ -539,8 +545,13 @@ class AnimatedContainerDemo extends StatefulWidget {
     super.key,
   });
 
+  /// The label for the demo.
   final String label;
+
+  /// The duration of the animation.
   final Duration duration;
+
+  /// The design tokens.
   final DesignTokens tokens;
 
   @override

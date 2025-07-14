@@ -9,7 +9,9 @@ import 'package:material_toolkit_demo/widgets/info_component.dart';
 import 'package:material_toolkit_demo/widgets/number_field.dart';
 import 'package:provider/provider.dart';
 
+/// An extension on [RadiusTokensData] to provide utility methods.
 extension MaterialRadiusTokensExtension on RadiusTokensData {
+  /// Returns the value of a given [RadiusToken].
   double getValue(RadiusToken type) {
     return switch (type) {
       RadiusToken.none => none,
@@ -24,6 +26,8 @@ extension MaterialRadiusTokensExtension on RadiusTokensData {
     };
   }
 
+  /// Creates a copy of this object with the given [RadiusToken] replaced
+  /// with the new value.
   RadiusTokensData copyWithFromType(RadiusToken type, double value) {
     return switch (type) {
       RadiusToken.none => const RadiusTokensData(),
@@ -39,7 +43,9 @@ extension MaterialRadiusTokensExtension on RadiusTokensData {
   }
 }
 
+/// A widget that displays a group of circular border radius components.
 class BorderRadiusCircularGroup extends StatelessWidget {
+  /// Creates a [BorderRadiusCircularGroup].
   const BorderRadiusCircularGroup({super.key});
 
   @override
@@ -90,9 +96,12 @@ class BorderRadiusCircularGroup extends StatelessWidget {
   }
 }
 
+/// A widget that displays a circular border radius component.
 class BorderRadiusCircularComponent extends StatelessWidget {
+  /// The radius token to display.
   final RadiusToken radius;
 
+  /// Creates a [BorderRadiusCircularComponent].
   const BorderRadiusCircularComponent(this.radius, {super.key});
 
   @override
@@ -106,11 +115,18 @@ class BorderRadiusCircularComponent extends StatelessWidget {
   }
 }
 
+/// A widget that displays a border radius component.
 class BorderRadiusComponent extends StatefulWidget {
+  /// The type of the radius token.
   final RadiusToken type;
+
+  /// The information text to display.
   final String info;
+
+  /// The border radius to apply.
   final BorderRadius borderRadius;
 
+  /// Creates a [BorderRadiusComponent].
   const BorderRadiusComponent({
     super.key,
     required this.type,

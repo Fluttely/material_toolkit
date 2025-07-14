@@ -12,7 +12,9 @@ void main() {
   runApp(const AdvancedApp());
 }
 
+/// The main application widget for the advanced demo.
 class AdvancedApp extends StatelessWidget {
+  /// Creates an [AdvancedApp].
   const AdvancedApp({super.key});
 
   @override
@@ -35,7 +37,9 @@ class AdvancedApp extends StatelessWidget {
   }
 }
 
+/// The root page of the advanced demo application.
 class RootPage extends StatefulWidget {
+  /// Creates a [RootPage].
   const RootPage({super.key});
 
   @override
