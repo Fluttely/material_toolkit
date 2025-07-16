@@ -1,154 +1,174 @@
 import 'package:flutter/material.dart';
-import 'package:material_toolkit/material_toolkit.dart';
-import 'package:material_toolkit_example/geometry/elevation.dart';
-import 'package:material_toolkit_example/notifiers/root_notifier.dart';
-import 'package:material_toolkit_example/notifiers/theme_notifier.dart';
-import 'package:material_toolkit_example/paiting/border_radius_circular_group.dart';
-import 'package:material_toolkit_example/widgets/group_card.dart';
 import 'package:provider/provider.dart';
 
+import 'showcase_pages/elevation_page.dart';
+import 'theme_provider.dart';
+
 void main() {
-  runApp(const DemoApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      child: const TokenShowcaseApp(),
+    ),
+  );
 }
 
-class DemoApp extends StatelessWidget {
-  const DemoApp({super.key});
+class TokenShowcaseApp extends StatelessWidget {
+  const TokenShowcaseApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<ThemeNotifier>(create: (_) => ThemeNotifier()),
-        ChangeNotifierProvider<RootNotifier>(create: (_) => RootNotifier()),
-      ],
-      child: Consumer<ThemeNotifier>(
-        builder: (_, themeNotifier, __) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme:
-                  ColorScheme.fromSeed(seedColor: themeNotifier.primaryColor),
-              extensions: [themeNotifier.metrics],
-            ),
-            home: const Root(),
-          );
-        },
-      ),
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return MaterialApp(
+      title: 'Material Design Tokens Showcase',
+      theme: themeProvider.lightTheme,
+      darkTheme: themeProvider.darkTheme,
+      themeMode: themeProvider.themeMode,
+      debugShowCheckedModeBanner: false,
+      home: const ShowcaseHomePage(),
     );
   }
 }
 
-class Root extends StatefulWidget {
-  const Root({super.key});
+class ShowcaseHomePage extends StatefulWidget {
+  const ShowcaseHomePage({super.key});
 
   @override
-  State<Root> createState() => _RootState();
+  State<ShowcaseHomePage> createState() => _ShowcaseHomePageState();
 }
 
-class _RootState extends State<Root> {
+class _ShowcaseHomePageState extends State<ShowcaseHomePage> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    // const ColorPage(),
+    // const TypographyPage(),
+    // const ShapePage(),
+    const ElevationPage(),
+    // const SpacingPage(),
+    // const MotionPage(),
+    // const OtherTokensPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final textTheme = theme.textTheme;
-
-    final metrics = theme.extension<XMetricsData>()!;
-    final gaps = metrics.gap;
-    // final inputBorders = metrics.inputBorders;
-    // final breakpoints = metrics.breakpoints;
-
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
-    final rootNotifier = Provider.of<RootNotifier>(context);
+    final isSmallScreen = MediaQuery.of(context).size.width < 600;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Material Toolkit'),
-        centerTitle: false,
-      ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: rootNotifier.selectedIndex,
-        onDestinationSelected: rootNotifier.onItemTapped,
-        destinations: const <NavigationDestination>[
-          NavigationDestination(
-            icon: Icon(Icons.brush),
-            label: 'Paiting',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.category),
-            label: 'Geometry',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.text_fields),
-            label: 'Text',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.motion_photos_on),
-            label: 'Animation',
-          ),
+      appBar: isSmallScreen
+          ? AppBar(title: const Text('Material Tokens'))
+          : null,
+      drawer: isSmallScreen
+          ? NavigationDrawer(
+              selectedIndex: _selectedIndex,
+              onDestinationSelected: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                  Navigator.of(context).pop();
+                });
+              },
+              children: _buildNavigationDestinations(context),
+            )
+          : null,
+      body: Row(
+        children: [
+          if (!isSmallScreen)
+            NavigationDrawer(
+              selectedIndex: _selectedIndex,
+              onDestinationSelected: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              children: _buildNavigationDestinations(context),
+            ),
+          Expanded(child: _pages[_selectedIndex]),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: themeNotifier.primaryColorTextFieldController,
-              decoration: InputDecoration(
-                labelText: 'Enter Primary Color (Hex, e.g. FF0000 for Red)',
-                labelStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
-                fillColor: colorScheme.primary,
-                filled: true,
-                isDense: true,
-                // border: inputBorders.none,
-              ),
-              style: const TextStyle(color: Colors.white),
-              cursorColor: Colors.white,
-              onChanged: themeNotifier.updatePrimaryColor,
-            ),
-            gaps.large,
-            ElevatedButton(
-              onPressed: themeNotifier.resetMetricsData,
-              child: Text(
-                'Reset MetricsData to default',
-                style: textTheme.bodyMedium?.copyWith(color: colorScheme.error),
-              ),
-            ),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                return ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 480),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    // child: ListView(
-                    // shrinkWrap: true,
-                    // scrollDirection:
-                    //     constraints.maxWidth < breakpoints.mobile.maxWidth ? Axis.vertical : Axis.horizontal,
-                    children: [
-                      GroupCard(
-                        title: 'Shapes',
-                        children: [
-                          // const RadiusGroup(),
-                          // gaps.large,
-                          const BorderRadiusCircularGroup(),
-                          gaps.large,
-                          // XBorderShapes
-                        ],
-                      ),
-                      // gaps.extraSmall,
-                      const GroupCard(
-                        title: 'Shadows',
-                        children: [
-                          ElevationGroup(),
-                        ],
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
     );
+  }
+
+  List<Widget> _buildNavigationDestinations(BuildContext context) {
+    // final themeProvider = Provider.of<ThemeProvider>(context);
+    return [
+      // const Padding(
+      //   padding: EdgeInsets.fromLTRB(28, 16, 16, 10),
+      //   child: Text('Tokens'),
+      // ),
+      // const NavigationDrawerDestination(
+      //   icon: Icon(Icons.palette_outlined),
+      //   label: Text('Color'),
+      // ),
+      // const NavigationDrawerDestination(
+      //   icon: Icon(Icons.text_fields_outlined),
+      //   label: Text('Typography'),
+      // ),
+      // const NavigationDrawerDestination(
+      //   icon: Icon(Icons.rounded_corner_outlined),
+      //   label: Text('Shape'),
+      // ),
+      const NavigationDrawerDestination(
+        icon: Icon(Icons.copy_outlined),
+        label: Text('Elevation'),
+      ),
+      // const NavigationDrawerDestination(
+      //   icon: Icon(Icons.space_bar_outlined),
+      //   label: Text('Spacing'),
+      // ),
+      // const NavigationDrawerDestination(
+      //   icon: Icon(Icons.animation),
+      //   label: Text('Motion'),
+      // ),
+      // const NavigationDrawerDestination(
+      //   icon: Icon(Icons.token_outlined),
+      //   label: Text('Others'),
+      // ),
+      // const Padding(
+      //   padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
+      //   child: Divider(),
+      // ),
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 28),
+      //   child: Text('Theme', style: MaterialTypeScale.titleSmall),
+      // ),
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 16),
+      //   child: Row(
+      //     children: [
+      //       const Text('Brightness'),
+      //       const Spacer(),
+      //       Switch(
+      //         value: themeProvider.themeMode == ThemeMode.light,
+      //         onChanged: (isOn) {
+      //           themeProvider.changeThemeMode(
+      //             isOn ? ThemeMode.light : ThemeMode.dark,
+      //           );
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 16),
+      //   child: Row(
+      //     children: [
+      //       const Text('Seed Color'),
+      //       const Spacer(),
+      //       IconButton(
+      //         icon: Icon(Icons.color_lens, color: themeProvider.seedColor),
+      //         onPressed: () async {
+      //           final newColor = await showColorPickerDialog(
+      //             context,
+      //             themeProvider.seedColor,
+      //           );
+      //           if (newColor != null) {
+      //             themeProvider.changeSeedColor(newColor);
+      //           }
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
+    ];
   }
 }

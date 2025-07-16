@@ -8,7 +8,7 @@
 PRODUCT_NAME = material_toolkit_example
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.remottely.materialToolkitExample
+PRODUCT_BUNDLE_IDENTIFIER = com.fluttely.materialToolkitExample
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.remottely. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 com.fluttely. All rights reserved.
