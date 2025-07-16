@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:material_toolkit/material_toolkit.dart';
+import 'package:material_design/material_design.dart';
 
 class ColorPage extends StatelessWidget {
   const ColorPage({super.key});

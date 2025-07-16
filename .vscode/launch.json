@@ -6,13 +6,6 @@
       "request": "launch",
       "program": "example/lib/main.dart",
       "args": ["-d", "chrome", "--web-experimental-hot-reload"]
-    },
-    {
-      "name": "Demo",
-      "type": "dart",
-      "request": "launch",
-      "program": "demo/lib/main.dart",
-      "args": ["-d", "chrome", "--web-experimental-hot-reload"]
     }
   ]
 }
