@@ -1,5 +1,5 @@
 name: material_toolkit_example
-description: "A new Flutter project."
+description: ""
 
 publish_to: "none"
 
@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   material_toolkit:
     path: ../
+  provider: ^6.1.5
 
 dev_dependencies:
   flutter_lints: ^5.0.0
