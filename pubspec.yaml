@@ -1,8 +1,7 @@
 name: material_toolkit
 description: A toolkit for building custom design systems on top of Flutter's MaterialApp, offering enhanced flexibility and scalability for your app's visual identity.
 version: 0.1.0
-# author: Kevin Kobori <kevinyujikobori@gmail.com>
-publisher: fluttely.com
+# author: Kevin Kobori <https://www.linkedin.com/in/kevin-kobori/>
 homepage:
 repository: https://github.com/fluttely/material_toolkit
 
@@ -16,8 +15,7 @@ dependencies:
   gap: ^3.0.1
   google_fonts: ^6.2.1
   universal_io: ^2.2.2
-  material_design:
-    path: packages/material_design # TODO: remove this local path before publish
+  material_design: ^0.2.4
 
 dev_dependencies:
   flutter_lints: ^3.0.0
