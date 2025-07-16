@@ -174,10 +174,10 @@ packages:
   material_design:
     dependency: transitive
     description:
-      path: "../packages/material_design_research"
+      path: "../packages/material_design"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.2.2"
   material_toolkit:
     dependency: "direct main"
     description:

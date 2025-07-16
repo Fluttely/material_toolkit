@@ -32,6 +32,7 @@ export 'src/tokens/geometry/border_radius_tokens.dart';
 export 'src/tokens/geometry/border_width_tokens_data.dart';
 export 'src/tokens/geometry/breakpoint_tokens_data.dart';
 export 'src/tokens/geometry/elevation_tokens_data.dart';
+export 'src/tokens/geometry/form_factor.dart';
 export 'src/tokens/geometry/icon_size_tokens_data.dart';
 export 'src/tokens/geometry/layout_grid_tokens_data.dart';
 export 'src/tokens/geometry/radius_tokens_data.dart';
