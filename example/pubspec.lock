@@ -177,7 +177,7 @@ packages:
       path: "../packages/material_design"
       relative: true
     source: path
-    version: "0.2.2"
+    version: "0.2.3"
   material_toolkit:
     dependency: "direct main"
     description:
