@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.0
+
+### Added
+
+- `MaterialAnimatedVisibility`: A widget that animates the appearance and disappearance of its child.
+- `MaterialContainerTransform`: A widget that creates a container transform animation between two widgets.
+- `RouteAwareContainerTransform`: A container transform animation that is aware of the current route.
+- `MaterialSharedAxisSwitcher`: A widget that animates between two widgets using a shared axis transition.
+- `MaterialPageTransitionsBuilder`: A page transitions builder that uses the shared axis transition.
+- New showcase pages in the example app for the new motion widgets.
+
+### Changed
+
+- **BREAKING**: Moved `MaterialSurface` to `lib/src/widgets/elevation/surface.dart`.
+- Updated the example application to showcase the new motion widgets.
+- Updated `theme_provider.dart` to manage page transitions.
+
+### Removed
+
+- **BREAKING**: Removed `MaterialAnimatedContainer`.
+
+### Dependencies
+
+- Added the `animations` package.
+
 ## 0.1.0
 
 ### Changed

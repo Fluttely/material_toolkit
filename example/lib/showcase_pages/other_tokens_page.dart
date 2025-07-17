@@ -101,7 +101,7 @@ class OtherTokensPage extends StatelessWidget {
         const Text('Z-Index', style: MaterialTypeScale.titleLarge),
         const SizedBox(height: MaterialSpacing.space16),
         SizedBox(
-          height: 150,
+          height: MaterialSpacing.space144,
           child: Stack(
             children: zIndexes.map((zIndex) {
               final (label, value) = zIndex;
@@ -110,8 +110,8 @@ class OtherTokensPage extends StatelessWidget {
                 left: position,
                 top: position,
                 child: Container(
-                  width: 100,
-                  height: 100,
+                  width: MaterialSpacing.space104,
+                  height: MaterialSpacing.space104,
                   color: colorScheme.primary.withOpacity(0.8),
                   child: Center(
                     child: Text(
@@ -189,8 +189,8 @@ class OtherTokensPage extends StatelessWidget {
           children: opacities.map((opacity) {
             final (label, value) = opacity;
             return Container(
-              width: 120,
-              height: 80,
+              width: MaterialSpacing.space120,
+              height: MaterialSpacing.space80,
               decoration: BoxDecoration(
                 color: colorScheme.primary.withValues(alpha: value),
                 borderRadius: BorderRadius.circular(MaterialRadius.small),

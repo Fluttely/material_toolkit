@@ -12,11 +12,7 @@ class ElevationPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(MaterialSpacing.space24),
         children: const [
-          _ElevationShowcase(
-            title: 'Surface',
-            useSurfaceTint: true,
-            useShadow: true,
-          ),
+          _ElevationShowcase(),
         ],
       ),
     );
@@ -24,15 +20,7 @@ class ElevationPage extends StatelessWidget {
 }
 
 class _ElevationShowcase extends StatelessWidget {
-  const _ElevationShowcase({
-    required this.title,
-    required this.useSurfaceTint,
-    required this.useShadow,
-  });
-
-  final String title;
-  final bool useSurfaceTint;
-  final bool useShadow;
+  const _ElevationShowcase();
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +39,7 @@ class _ElevationShowcase extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: MaterialTypeScale.titleLarge),
+          MaterialTitle(title: 'MaterialSurface (Widget)'),
           const SizedBox(height: MaterialSpacing.space16),
           Wrap(
             spacing: MaterialSpacing.space16,
@@ -63,7 +51,7 @@ class _ElevationShowcase extends StatelessWidget {
 
               return SizedBox(
                 width: double.infinity,
-                height: 120,
+                height: MaterialSpacing.space120,
                 child: MaterialSurface(
                   elevation: elevation,
                   shape: MaterialShape.small,
