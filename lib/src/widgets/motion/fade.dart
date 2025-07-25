@@ -11,21 +11,21 @@ import 'package:material_design/material_design.dart';
 ///  * [Material Design 3 Motion: Fade](https://m3.material.io/styles/motion/transitions/transition-patterns)
 class MaterialAnimatedVisibility extends StatelessWidget {
   const MaterialAnimatedVisibility({
-    super.key,
     required this.isVisible,
     required this.child,
-    this.incomingToken = MaterialMotion.standardIncoming,
-    this.outgoingToken = MaterialMotion.standardOutgoing,
+    super.key,
+    this.incomingToken = M3MotionToken.standardIncoming,
+    this.outgoingToken = M3MotionToken.standardOutgoing,
   });
 
   /// Determines whether the child is visible.
   final bool isVisible;
 
   /// The motion token for the incoming (enter) animation.
-  final MotionScheme incomingToken;
+  final M3MotionToken incomingToken;
 
   /// The motion token for the outgoing (exit) animation.
-  final MotionScheme outgoingToken;
+  final M3MotionToken outgoingToken;
 
   /// The widget below this widget in the tree.
   final Widget child;
@@ -33,10 +33,10 @@ class MaterialAnimatedVisibility extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-      duration: incomingToken.duration,
-      reverseDuration: outgoingToken.duration,
-      switchInCurve: incomingToken.curve,
-      switchOutCurve: outgoingToken.curve,
+      duration: incomingToken.value.duration.value,
+      reverseDuration: outgoingToken.value.duration.value,
+      switchInCurve: incomingToken.value.easing.value,
+      switchOutCurve: outgoingToken.value.easing.value,
       transitionBuilder: (Widget aChild, Animation<double> animation) {
         return FadeTransition(
           opacity: animation,

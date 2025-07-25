@@ -1,6 +1,12 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design/material_design.dart';
+import 'package:material_toolkit/material_toolkit.dart'
+    show MaterialContainerTransform;
+import 'package:material_toolkit/src/widgets/motion/container_transform.dart'
+    show MaterialContainerTransform;
+import 'package:material_toolkit/src/widgets/widgets.dart'
+    show MaterialContainerTransform;
 
 /// A wrapper that simplifies using the [MaterialContainerTransform] as a page
 /// route transition.
@@ -14,9 +20,9 @@ import 'package:material_design/material_design.dart';
 ///  * [OpenContainer], the underlying widget from the `animations` package.
 class RouteAwareContainerTransform extends StatelessWidget {
   const RouteAwareContainerTransform({
-    super.key,
     required this.closedBuilder,
     required this.page,
+    super.key,
   });
 
   /// A builder for the closed container.
@@ -29,9 +35,9 @@ class RouteAwareContainerTransform extends StatelessWidget {
   Widget build(BuildContext context) {
     return OpenContainer(
       transitionType: ContainerTransitionType.fadeThrough,
-      transitionDuration: MaterialMotion.emphasized.duration,
+      transitionDuration: M3MotionDurationToken.long2.value,
       closedShape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+        borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       closedElevation: 0,
       closedColor: Theme.of(context).scaffoldBackgroundColor,

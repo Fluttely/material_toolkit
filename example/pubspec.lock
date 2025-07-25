@@ -134,18 +134,17 @@ packages:
   material_design:
     dependency: "direct main"
     description:
-      name: material_design
-      sha256: "0ce0b7e3c4124f094396ba11c6c43cda0f69d7270c9f8238abee2112a6b65fe6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.5"
+      path: "../packages/material_design"
+      relative: true
+    source: path
+    version: "0.2.6"
   material_toolkit:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.2.0"
+    version: "0.2.1"
   meta:
     dependency: transitive
     description:

@@ -15,21 +15,21 @@ import 'package:material_design/material_design.dart';
 abstract final class MaterialPageTransitionsBuilder {
   /// A page transition that uses the shared-axis pattern on the X-axis.
   static PageTransitionsBuilder sharedAxisX = _SharedAxisPageTransitionsBuilder(
-    transitionToken: MaterialMotion.emphasized,
+    transitionToken: M3MotionToken.emphasized,
     fillColor: Colors.transparent,
     transitionType: SharedAxisTransitionType.horizontal,
   );
 
   /// A page transition that uses the shared-axis pattern on the Y-axis.
   static PageTransitionsBuilder sharedAxisY = _SharedAxisPageTransitionsBuilder(
-    transitionToken: MaterialMotion.emphasized,
+    transitionToken: M3MotionToken.emphasized,
     fillColor: Colors.transparent,
     transitionType: SharedAxisTransitionType.vertical,
   );
 
   /// A page transition that uses the shared-axis pattern on the Z-axis.
   static PageTransitionsBuilder sharedAxisZ = _SharedAxisPageTransitionsBuilder(
-    transitionToken: MaterialMotion.emphasized,
+    transitionToken: M3MotionToken.emphasized,
     fillColor: Colors.transparent,
     transitionType: SharedAxisTransitionType.scaled,
   );
@@ -37,7 +37,7 @@ abstract final class MaterialPageTransitionsBuilder {
   /// A page transition that uses the fade-through pattern.
   static PageTransitionsBuilder fadeThrough =
       _FadeThroughPageTransitionsBuilder(
-        transitionToken: MaterialMotion.standard,
+        transitionToken: M3MotionToken.standard,
         fillColor: Colors.transparent,
       );
 
@@ -48,10 +48,10 @@ abstract final class MaterialPageTransitionsBuilder {
 
 class _SharedAxisPageTransitionsBuilder extends PageTransitionsBuilder {
   _SharedAxisPageTransitionsBuilder({
-    required MotionScheme transitionToken,
+    required M3MotionToken transitionToken,
     required this.transitionType,
     this.fillColor,
-  }) : transitionDuration = transitionToken.duration;
+  }) : transitionDuration = transitionToken.value.duration.value;
 
   @override
   final Duration transitionDuration;
@@ -78,9 +78,9 @@ class _SharedAxisPageTransitionsBuilder extends PageTransitionsBuilder {
 
 class _FadeThroughPageTransitionsBuilder extends PageTransitionsBuilder {
   _FadeThroughPageTransitionsBuilder({
-    required MotionScheme transitionToken,
+    required M3MotionToken transitionToken,
     this.fillColor,
-  }) : transitionDuration = transitionToken.duration;
+  }) : transitionDuration = transitionToken.value.duration.value;
 
   @override
   final Duration transitionDuration;

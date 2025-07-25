@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.1
+
+### Changed
+
+- Enable `very_good_analysis` code analysis rules for improved code quality
+- Update README.md with package development status and reference to stable `material_design` package
+
+### Removed
+
+- **BREAKING**: Remove deprecated example application files and showcase pages
+- Clean up duplicate and unused example files (`main copy.dart`, `main copy 2.dart`)
+- Remove obsolete showcase pages (color, typography, shape, spacing, motion pages)
+- Remove auxiliary components (color picker, theme provider, details page)
+
+### Fixed
+
+- Clean up project structure by removing outdated example implementations
+- Improve package organization and maintainability
+
 ## 0.2.0
 
 ### Added

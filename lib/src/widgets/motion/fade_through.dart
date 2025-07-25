@@ -15,8 +15,8 @@
 //   const MaterialFadeThrough({
 //     super.key,
 //     required this.child,
-//     this.duration = MotionDurations.medium2,
-//     this.curve = MotionEasings.standard,
+//     this.duration = MotionDuration.medium2,
+//     this.easing = MotionEasing.standard,
 //   });
 
 //   final Duration duration;

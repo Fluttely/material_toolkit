@@ -13,10 +13,10 @@ import 'package:material_design/material_design.dart';
 ///  * [Material Design 3 Motion: Shared Axis](https://m3.material.io/styles/motion/transitions/shared-axis)
 class MaterialSharedAxisSwitcher extends StatelessWidget {
   const MaterialSharedAxisSwitcher({
-    super.key,
     required this.child,
+    super.key,
     this.axis = SharedAxisTransitionType.horizontal,
-    this.token = MaterialMotion.emphasized,
+    this.token = M3MotionToken.emphasized,
   });
 
   /// The widget to display.
@@ -26,12 +26,12 @@ class MaterialSharedAxisSwitcher extends StatelessWidget {
   final SharedAxisTransitionType axis;
 
   /// The motion token that defines the transition's duration and curve.
-  final MotionScheme token;
+  final M3MotionToken token;
 
   @override
   Widget build(BuildContext context) {
     return PageTransitionSwitcher(
-      duration: token.duration,
+      duration: token.value.duration.value,
       transitionBuilder:
           (
             Widget child,
@@ -41,11 +41,11 @@ class MaterialSharedAxisSwitcher extends StatelessWidget {
             return SharedAxisTransition(
               animation: CurvedAnimation(
                 parent: primaryAnimation,
-                curve: token.curve,
+                curve: token.value.easing.value,
               ),
               secondaryAnimation: CurvedAnimation(
                 parent: secondaryAnimation,
-                curve: token.curve,
+                curve: token.value.easing.value,
               ),
               transitionType: axis,
               child: child,
